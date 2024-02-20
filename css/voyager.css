@@ -1,0 +1,54 @@
+body{
+    background-color: #00334C;
+    color: #F7E214;
+}
+
+hr {
+    border-top: 2px solid #56B2CB;
+}
+
+.bg-turquoise{
+    background-color: #56B2CB !important;
+}
+.text-turquoise{
+    color: #56B2CB !important;
+}
+.bg-navy{
+    background-color: #00334C !important;
+}
+.bg-yellow{
+    background-color: #F7E214 !important;
+}
+.bg-gray{
+    background-color: #818387 !important;
+}
+.navbar-brand, .nav-link {
+    color: #56B2CB; /* White text */
+}
+.navbar-brand img {
+    max-height: 120px; /* Adjust based on your preference */
+    width: auto; /* This will ensure the logo maintains its aspect ratio */
+}
+.navbar-nav .nav-link {
+    font-size: 2rem; /* Adjust the value based on your preference */
+}
+.social-icon {
+    font-size: 24px; /* Or any other size */
+    color: #F7E214; /* Social icon color */
+    margin: 0 10px; /* Spacing between icons */
+}
+
+.social-icon:hover {
+    color: #56B2CB; /* Color on hover */
+}
+.footer {
+    color:white;
+    margin-top: 20px;
+}
+.gradient-text {
+    background: linear-gradient(to right, #f9d423 0%, #ff4e50 100%); /* Gradient from bright yellow to dark yellow */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent; /* Fallback for browsers that do not support this effect */
+}

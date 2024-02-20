@@ -1,0 +1,21 @@
+.intro{
+    font-size: 1.5em;
+}
+
+.col {
+    flex: 1 0 300px; /* This sets the base width of each column. Adjust as necessary. */
+}
+
+.row img{
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.board{
+    color: #00334C;
+}
+
+.partners{
+    color: #00334C;
+}

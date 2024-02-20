@@ -1,0 +1,40 @@
+.carousel-item img {
+    width: 100%;  /* Make the image fill the container */
+    height: 500px; /* Set a fixed height */
+    object-fit: cover; /* This will cover the area without distorting the aspect ratio */
+}
+
+.banner {
+    background-color: #F7E214; /* Adjust the color to match the exact yellow of your brand */
+    padding: 40px; /* Adjust the padding as needed */
+    color: #818387; /* Adjust the text color as needed */
+    text-align: center; /* Centers the text */
+  }
+
+  .banner .headline {
+    font-size: 3rem; /* Adjust the size as needed */
+    font-weight: bold; /* Makes the headline bold */
+    margin: 0 0 20px; /* Adds spacing between the headline and the subtext */
+    text-transform: uppercase; /* Capitalizes all letters */
+  }
+
+  .banner .subtext {
+    font-size: 1.5rem; /* Adjust the size as needed */
+    margin: 0; /* Adjusts the margin as needed */
+  }
+
+  .about {
+    color: #F7E214;
+  }
+
+  .about-text{
+    font-size: 1.5rem;
+  }
+
+  .video {
+    margin: 3%;
+  }
+
+  h2 {
+    font-size: 3rem;
+  }
