@@ -1,0 +1,31 @@
+body {
+    background-color: #56B2CB;
+    text-align: center;
+}
+form {
+    max-width: 300px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #00334C;
+    color: #F7E214;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #F7E214;
+}
+input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+}
+button {
+    background-color: #ffffff;
+    color: #00334C;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+}
