@@ -3,6 +3,21 @@
     height: 500px; /* Set a fixed height */
     object-fit: cover; /* This will cover the area without distorting the aspect ratio */
 }
+@media (max-width: 576px) {
+  .headline sup {
+      position: relative; /* Make position relative to allow for top and left adjustments */
+      top: 0; /* Adjust if needed */
+      left: 0; /* Adjust if needed */
+      font-size: 75%; /* Adjust size to make it fit better */
+      line-height: 1; /* This ensures the line height is normal for the superscript text */
+      vertical-align: baseline; /* Aligns the text to the baseline */
+      margin-left: 0.2em; /* Adds space to the left of 'higher.' */
+      margin-right: 0.2em; /* Adds space to the right of 'higher.' if needed */
+  }
+  .headline {
+      padding: 1rem; /* Add padding to the headline container */
+  }
+}
 
 .banner {
     background-color: #F7E214; /* Adjust the color to match the exact yellow of your brand */
