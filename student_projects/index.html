@@ -7,21 +7,28 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="../css/voyager.css">
+        <link rel="stylesheet" type="text/css" href="student_style.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script>
-          $(document).ready(function(){
-              $("#navbar-placeholder").load("nav.html");
-          });
-        </script>
-        <script>
             $(document).ready(function(){
+                $("#navbar-placeholder").load("nav.html");
                 $("#sub-navbar-placeholder").load("sub-nav.html");
             });
-          </script>
+      
+            function accessProtectedLink() {
+                var password = prompt("Please enter the password:");
+                if (password == "prepkcpass") {
+                    window.location.href = "https://docs.google.com/spreadsheets/d/1iQcpM2uuH3lhxxYWc4EcSawwEz49-49Sx1SRs-JqsWg/edit?usp=sharing"; // Replace this URL with your actual Google Sheet URL
+                } else {
+                    alert("Incorrect password. Access denied.");
+                }
+            }
+        </script>
     </head>
     <body class="container">
         <div id="navbar-placeholder"></div>
         <div id="sub-navbar-placeholder"></div>
+
         <!-- FOOTER -->
         <footer>
             <div class="footer row">
