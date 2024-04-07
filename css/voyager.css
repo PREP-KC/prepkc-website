@@ -6,7 +6,9 @@ body{
 hr {
     border-top: 2px solid #56B2CB;
 }
-
+.text-black{
+    color: black !important;
+}
 .bg-turquoise{
     background-color: #56B2CB !important;
 }

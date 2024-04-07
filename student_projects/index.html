@@ -14,34 +14,42 @@
                 $("#navbar-placeholder").load("nav.html");
                 $("#sub-navbar-placeholder").load("sub-nav.html");
             });
-      
-            function accessProtectedLink() {
-                var password = prompt("Please enter the password:");
-                if (password == "prepkcpass") {
-                    window.location.href = "https://docs.google.com/spreadsheets/d/1iQcpM2uuH3lhxxYWc4EcSawwEz49-49Sx1SRs-JqsWg/edit?usp=sharing"; // Replace this URL with your actual Google Sheet URL
-                } else {
-                    alert("Incorrect password. Access denied.");
-                }
-            }
         </script>
     </head>
     <body class="container">
         <div id="navbar-placeholder"></div>
         <div id="sub-navbar-placeholder"></div>
-        <h1 class="text-center">Spring 24</h1>
-        <p>Assignments Q4:</p>
-        <ul>
-            <li>Data Certification Test - <a href="data_project.html">Link</a></li>
-            <li>Data Analyst Project - <a href="data_project.html">Link</a></li>
-            <li>Final Presentation - <a href="">Link</a></li>
-            <li>Final Reflection - <a href="">Link</a></li>
-            <li>Spring Project + Reflection - <a href="">Reflection Link</a></li>
-        </ul>
-        <p>Deadlines Q4:</p>
-        <ul>
-            <li>4/9 - Data Exploration Form</li>
-        </ul>
-
+        <h1>Spring 24</h1>
+        <div class="row">
+            <div class="col">
+                <p>Assignments Q4:</p>
+                <ul>
+                    <li>Data Certification Test - <a href="data_project.html">Link</a></li>
+                    <li>Data Analyst Project - <a href="data_project.html">Link</a></li>
+                    <li>Final Presentation - <a href="">Link coming Soon</a></li>
+                    <li>Final Reflection - <a href="">Link coming Soon</a></li>
+                    <li>Spring Project + Reflection - <a href="">Reflection Link coming Soon</a></li>
+                </ul>
+            </div>
+            <div class="col">
+                <p>Deadlines Q4:</p>
+                <ul>
+                    <li>
+                        <div class="text-danger">
+                            Due Tuesday 4/9
+                        </div> 
+                        Data Exploration Form - <a href="https://docs.google.com/forms/d/e/1FAIpQLSfDpHuatjLU3OIqARHEotL95vMtiPoWjzMARRo8mWSJfKlTsA/viewform?usp=sf_link">Link</a>
+                        <section>
+                            Resources
+                            <ul>
+                                <li>Data Profile - <a href="student_event_data_profile.html">Link</a></li>
+                                <li>Event Data - <a href="href=https://docs.google.com/spreadsheets/d/1bHUj8DfOqkJy_tRCnPzoVv9bugZiR3bFcBWh9wjlJQQ/edit?usp=sharing">Link</a></li>
+                            </ul>
+                        </section>
+                    </li>
+                </ul>
+            </div>
+        </div>
         <!-- FOOTER -->
         <footer>
             <div class="footer row">
