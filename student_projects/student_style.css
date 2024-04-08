@@ -1,3 +1,23 @@
 p, li{
     color: white;
 }
+
+/* Sub-navbar styles */
+.subnavbar {
+    background-color: #6699CC; /* Lighter blue */
+    color: #ffffff;
+}
+.subnavbar .nav-link {
+    color: #ffffff; /* Text color */
+    font-size: 1.5em;
+}
+.subnavbar .nav-link:hover,
+.subnavbar .nav-link:focus {
+    color: #FFCC00; /* Accent color for hover and focus */
+    background-color: #336699; /* Slightly darker blue for hover background */
+}
+.subnavbar .pathways-to-tech {
+    font-size: 1em; /* Adjust the size as needed, em is relative to the current font size */
+    padding: 0.5em 1em; /* Add padding to match the alignment and spacing of nav-link items */
+    color: inherit; /* This makes the color match other nav items, you can set a specific color if needed */
+}
