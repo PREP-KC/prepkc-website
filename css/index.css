@@ -1,0 +1,127 @@
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+}
+
+.card {
+    position: relative;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 4em;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    padding: 20px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.card .letter {
+    font-size: 6em;
+    z-index: 2;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.card .phrase {
+    display: none;
+    font-size: 1.5em;
+    margin-top: 20px;
+    z-index: 2;
+    color: #fff;
+    text-align: center;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+#card1 {
+    background-color: #56B2CB; /* Light Blue */
+}
+
+#card2 {
+    background-color: #818387; /* Gray */
+}
+
+#card3 {
+    background-color: #00334C; /* Dark Blue */
+}
+
+#card4 {
+    background-color: #F7E214; /* Yellow */
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: no-repeat center center/cover;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.card:hover {
+    flex: 3;
+    font-size: 2em;
+}
+
+.card:hover::before {
+    opacity: 0.7; /* Adjust opacity to make the image partially transparent */
+}
+
+.card:hover .letter {
+    display: none;
+}
+
+.card:hover .phrase {
+    display: block;
+}
+
+.container .card:not(:hover) {
+    flex: 1;
+    font-size: 4em;
+}
+
+
+#card1::before {
+    background-image: url('../img/background1.jpg'); /* Change path to your image */
+}
+
+#card2::before {
+    background-image: url('../img/footprint.png'); /* Change path to your image */
+}
+
+#card3::before {
+    background-image: url('../img/background3.jpg'); /* Change path to your image */
+}
+
+#card4::before {
+    background-image: url('../img/background4.jpg'); /* Change path to your image */
+}
+
+/* KC Box styles */
+.kc-box {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff; /* Change to preferred text color */
+    font-size: 10em; /* Increased font size */
+    font-weight: bold;
+    text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000; /* Adjusted text shadow for readability */
+}
