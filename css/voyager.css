@@ -9,6 +9,18 @@ hr {
 .text-black{
     color: black !important;
 }
+.text-turquoise{
+    color: #56B2CB !important;
+}
+.text-navy{
+    color: #00334C !important;
+}
+.text-yellow{
+    color: #F7E214 !important;
+}
+.text-gray{
+    color: #818387 !important;
+}
 .bg-turquoise{
     background-color: #56B2CB !important;
 }
