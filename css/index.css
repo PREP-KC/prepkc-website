@@ -1,16 +1,25 @@
 body {
     margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    font-family: Arial, sans-serif;
     background-color: #f0f0f0;
     overflow: hidden;
-    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    background-color: #00334C;
 }
 
-.container {
+#nav-container {
+    width: 100%;
+    background-color: #333; /* Change to desired background color */
+    color: white;
     display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container-fluid {
+    display: flex;
+    padding: 0;
     width: 100vw;
     height: 100vh;
 }
@@ -29,6 +38,7 @@ body {
     padding: 20px;
     text-align: center;
     box-sizing: border-box;
+    text-decoration: none; /* Remove underline from links */
 }
 
 .card .letter {
@@ -92,11 +102,10 @@ body {
     display: block;
 }
 
-.container .card:not(:hover) {
+.container-fluid .card:not(:hover) {
     flex: 1;
     font-size: 4em;
 }
-
 
 #card1::before {
     background-image: url('../img/background1.jpg'); /* Change path to your image */
