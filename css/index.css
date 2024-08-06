@@ -42,9 +42,10 @@ body {
 }
 
 .card .letter {
-    font-size: 6em;
+    font-size: 5em;
     z-index: 2;
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    transform:translateY(-25%);
 }
 
 .card .phrase {
