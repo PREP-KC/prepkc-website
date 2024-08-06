@@ -141,6 +141,20 @@
     .card-text{
       font-size:1.2em;
     }
+    .custom-card {
+        border: 2px solid white;
+        padding: 10px;
+        background-color: #194376;
+        border-radius: 10px;
+        text-align: center;
+    }
+    
+    .custom-image {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        border-radius: 10px;
+    }
         </style>
         <script src="https://unpkg.com/htmx.org@2.0.1"></script>
     </head>
@@ -223,52 +237,51 @@
               <p class="text-center custom-subtitle">(MANAGED & CO-FUNDED BY PREP-KC)</p>
               <ul class="list-unstyled custom-list-items" style="font-size:1.5em">
                   <li class="text-navy">HealthStart Academy</li>
-                  <li>Business & Finance Institute</li>
+                  <li class="text-navy">Business & Finance Institute</li>
                   <li class="text-navy">Pathways to Technology</li>
-                  <li>Student Law Academy</li>
+                  <li class="text-navy">Student Law Academy</li>
                   <li class="text-navy">Pathways to Graphic Design</li>
-                  <li>Pathways to Teaching</li>
+                  <li class="text-navy">Pathways to Teaching</li>
                   <li class="text-navy">Pathways to Energy</li>
-                  <li>Data Science Pathway (2023)</li>
+                  <li class="text-navy">Data Science Pathway (2023)</li>
               </ul>
           </div>
         </div>
         <div class="row my-5">
-          <div class="col-md-6 mb-4">
-              <div class="text-center">
-                  <h3 class="event-title text-turquoise">14<sup>th</sup> Annual PREP-KC Regional Math Relays</h3>
-                  <p class="event-date">November 11, 2023</p>
-                  <img src="img/mathrelays2.jpg" alt="14th Annual PREP-KC Regional Math Relays" class="img-fluid event-image">
+          <div class="col-md-4 mb-4">
+              <div class="custom-card">
+                <img src="img/mathrelays2.jpg" alt="Descriptive Alt Text" class="custom-image">
+                <div class="text-center mt-3 row">
+                    <div class="col-8">
+                        Annual PREP-KC Math Relays are a highlight of the year for students and teachers alike.
+                    </div>
+                    <div class="col-4">
+                        <a href="mathrelays.html" class="btn btn-primary">Learn More!</a>
+                    </div>
+                </div>
               </div>
-          </div>
-          <div class="col-md-6 mb-4">
-              <div class="text-center">
-                  <h3 class="event-title text-turquoise">10<sup>th</sup> Annual PREP-KC Junior Math Relays</h3>
-                  <p class="event-date">March 2, 2024</p>
-                  <img src="img/mathrelays1.jpg" alt="10th Annual PREP-KC Junior Math Relays" class="img-fluid event-image">
-              </div>
+            </div>
+            <div class="col-md-8 mb-4">
+                <img src="img/students/1.jpg" alt="Math Relays 1" class="img-fluid event-image">
+            </div>
           </div>
         </div>
         <div class="row">
           <div class="col-md-8">
-              <div class="row">
-                  <div class="col-md-12 mb-4">
-                      <img src="img/students/1.jpg" alt="Data Science Initiative 1" class="img-fluid event-image">
-                  </div>
-                  <div class="col-md-6 mb-4">
-                      <img src="img/one.jpg" alt="Data Science Initiative 2" class="img-fluid event-image">
-                  </div>
-                  <div class="col-md-6 mb-4">
-                      <img src="img/students/data_science.jpg" alt="Data Science Initiative 3" class="img-fluid event-image">
-                  </div>
-              </div>
+            <img src="img/students/3.jpg" alt="Math Relays 1" class="img-fluid event-image">
           </div>
-          <div class="col-md-4 custom-list">
-              <h2 class="text-center custom-title">PREP-KC’s DATA SCIENCE INITIATIVE</h2>
-              <p style="font-size:1.5em">New <em>Data in Action!</em> Course for 8<sup>th</sup>-graders</p>
-              <p style="font-size:1.2em">Immersive Data Science Bootcamp held for teachers in the Summer of 2023 and 2024</p>
-              <p style="font-size:1.2em">Positive feedback and engagement from the region’s industry data science professionals</p>
-          </div>
+          <div class="col-md-4">
+                <div class="custom-card">
+                <img src="img/students/data_science.jpg" alt="Descriptive Alt Text" class="custom-image">
+                <div class="text-center mt-3 row">
+                    <div class="col-8">
+                        New Data in Action! Course for 8th-graders!
+                        </div>
+                    <div class="col-4">
+                        <a href="dsi.html" class="btn btn-primary">Learn More!</a>
+                    </div>
+                </div>
+            </div>
         </div>
         <!-- FOOTER -->
         <footer>
