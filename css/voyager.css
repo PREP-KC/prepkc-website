@@ -1,6 +1,33 @@
+@font-face {
+    font-family: 'Georgia';
+    src:    url('../fonts/georgia.ttf') format('truetype');
+
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Avenir';
+    src:    url('../fonts/AvenirMedium.ttf') format('truetype');
+
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'DIN1451';
+    src:    url('../fonts/DINEngschriftStd.otf') format('opentype'),
+            url('../fonts/DINMittelschriftStd.otf') format('opentype');
+
+    font-weight: normal;
+    font-style: normal;
+}
+
+
 body{
     background-color: #00334C;
     color: #F7E214;
+    font-family: 'Georgia', sans-serif;
 }
 
 .btn-primary {
@@ -40,6 +67,10 @@ hr {
 }
 .bg-gray{
     background-color: #818387 !important;
+}
+
+.navbar{
+    font-family: DIN1451, sans-serif !important;
 }
 .navbar-brand, .nav-link {
     color: #56B2CB; /* text color */

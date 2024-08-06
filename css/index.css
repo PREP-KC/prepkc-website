@@ -1,3 +1,13 @@
+@font-face {
+    font-family: 'DIN1451';
+    src:    url('../fonts/DINEngschriftStd.otf') format('opentype'),
+            url('../fonts/DINMittelschriftStd.otf') format('opentype');
+
+    font-weight: normal;
+    font-style: normal;
+}
+
+
 body {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -6,6 +16,7 @@ body {
     display: flex;
     flex-direction: column;
     background-color: #00334C;
+    font-family: DIN1451, sans-serif;
 }
 
 #nav-container {
