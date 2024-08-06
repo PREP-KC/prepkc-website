@@ -52,37 +52,11 @@
                 color: yellow; /* Adjust the color of the heading */
             }
         </style>
+        <script src="https://unpkg.com/htmx.org@2.0.1"></script>
     </head>
     <body class="container">
-        <!-- NAV BAR -->
-        <nav class="navbar navbar-expand-lg navbar-light bg-navy">
-            <a class="navbar-brand" href="index.html">
-                <img src="img/logo/logo_yellow.png" alt="Logo"> <!-- Adjust the path and add a CSS class -->
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-              <ul class="navbar-nav ms-auto"> <!-- ml-auto pushes the nav to the right -->
-                <li class="nav-item active">
-                  <a class="nav-link" href="index.html">Home</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="strategies.html">Strategies</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="about.html">About</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="impact.html">Impact</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="volunteer.html">Volunteer</a>
-                </li>
-              </ul>
-            </div>
-        </nav>
-        <!-- END NAV BAR -->
+        <div id="nav-container"></div>
+        <div hx-get="nav.html" hx-target="#nav-container" hx-trigger="load"></div>
         <!-- Intro -->
         <div class="row">
             <div class="col-8">
