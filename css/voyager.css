@@ -3,6 +3,11 @@ body{
     color: #F7E214;
 }
 
+.btn-primary {
+    background-color: #56B2CB; /* Replace with your desired color */
+    border-color: #56B2CB; /* Replace with your desired color */
+}
+
 hr {
     border-top: 2px solid #56B2CB;
 }
