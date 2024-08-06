@@ -7,6 +7,134 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="css/voyager.css">
+        <style>
+            .custom-card {
+              background-color: #56B2CB;
+              min-height: 500px;
+              color: #fff;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+          }
+          
+          .circle-image {
+              width: 100%;
+              height: 75%;
+              border-radius: 50%;
+              overflow: hidden;
+              margin-bottom: 15px;
+              border: 4px solid #fff; /* Optional: Add border to make the circle more prominent */
+          }
+        
+          .circle-image img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+          }
+          .arrow-bar {
+            position: relative;
+            background-color: #194376;
+            color: #fff;
+            text-align: center;
+            padding: 15px 0;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-top: 20px;
+        }
+        
+        .arrow-bar::before,
+        .arrow-bar::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            border-style: solid;
+        }
+        
+        .arrow-bar::before {
+            left: -40px;
+            border-width: 20px 40px 20px 0;
+            border-color: transparent #194376 transparent transparent;
+        }
+        
+        .arrow-bar::after {
+            right: -40px;
+            border-width: 20px 0 20px 40px;
+            border-color: transparent transparent transparent #194376;
+        }
+        .custom-title {
+          color: #fff;
+          font-weight: bold;
+          font-size: 2rem;
+          margin-top: 20px;
+      }
+      
+      .custom-subtitle {
+          color: #fff;
+          font-style: italic;
+          margin-bottom: 20px;
+      }
+      
+      .custom-list-items {
+          font-size: 1.1rem;
+          padding-left: 20px;
+          background-color: #56B2CB;
+          padding: 20px;
+          border-radius: 5px;
+      }
+      
+      .custom-list-items li {
+          margin-bottom: 10px;
+          list-style-type: disc;
+          color: #FFD700; /* Gold color for list items */
+      }
+      
+      .custom-image {
+          border: 5px solid #fff;
+          border-radius: 5px;
+      }
+      
+      .custom-list {
+          background-color: #56B2CB;
+          padding: 20px;
+          border-radius: 5px;
+          color: #194376; /* Dark text color for better contrast */
+      }
+      
+      .custom-list h2,
+      .custom-list p {
+          color: #fff;
+      }
+      
+      .custom-list h2 {
+          font-size: 2rem;
+          margin-bottom: 10px;
+      }
+      
+      .custom-list p {
+          font-size: 1rem;
+          margin-bottom: 20px;
+      }
+      .event-title {
+        color: #fff;
+        font-weight: bold;
+        font-size: 1.5rem;
+        margin-top: 20px;
+    }
+    
+    .event-date {
+        color: #fff;
+        font-size: 1rem;
+        margin-bottom: 20px;
+    }
+    
+    .event-image {
+        border: 5px solid #fff;
+        border-radius: 10px;
+        margin-bottom: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow for a better effect */
+    }
+        </style>
     </head>
     <body class="container">
         <!-- NAV BAR -->
@@ -45,15 +173,123 @@
           <p style="font-size:1.5em;">Empowering students from Kansas City’s urban schools with pathways to meaningful careers. PREP-KC helps ensure that students attending our region’s urban schools have equal access to the knowledge, opportunities, and experiences they need to pursue meaningful careers.  We implement unique, hands-on strategies that allow 3rd through 12th-grade students to explore college and careers through hands-on, real-world opportunities.</p>
         </div>
         <!-- End Intro -->
-        <!-- Strategies -->
-        <div class="row text-center">
-          <h1 class="text-white">Academic and Essential Skills Foundation</h1>
-          <img src="img/continuum.png" alt="Academic and Essential Skills Foundation" class="img-fluid">
-          <img src="img/careerpathways.png" alt="Career Pathways" class="img-fluid">
-          <h1 class="text-white">Math Relays</h1>
-          <img src="img/mathrelays.png" alt="Math Relays" class="img-fluid">
-          <h1 class="text-white">Data Science Initiative</h1>
-          <img src="img/dsi.png" alt="Data Science Initiative" class="img-fluid">
+        <div class="container">
+          <h1 class="text-white text-center">Academic and Essential Skills Foundation</h1>
+          <div class="row">
+              <div class="col-lg-3 col-md-6 mb-4">
+                  <div class="card text-center h-100 custom-card">
+                      <div class="card-body">
+                          <div class="circle-image mx-auto">
+                              <img src="img/elementary-career-explore.jpg" alt="3rd-5th Grade">
+                          </div>
+                          <h5 class="card-title">3rd - 5th Grade</h5>
+                          <p class="card-subtitle mb-2">Exposure</p>
+                          <p class="card-text">Career Speakers & Campus Visits</p>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-lg-3 col-md-6 mb-4">
+                  <div class="card text-center h-100 custom-card">
+                      <div class="card-body">
+                          <div class="circle-image mx-auto">
+                              <img src="img/middle-career-exploration.jpg" alt="6th-8th Grade">
+                          </div>
+                          <h5 class="card-title">6th - 8th Grade</h5>
+                          <p class="card-subtitle mb-2">Exploration</p>
+                          <p class="card-text">Career Jumping, IGNITE, & Data Science Initiative</p>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-lg-3 col-md-6 mb-4">
+                  <div class="card text-center h-100 custom-card">
+                      <div class="card-body">
+                          <div class="circle-image mx-auto">
+                              <img src="img/highschool-prep.jpg" alt="9th-10th Grade">
+                          </div>
+                          <h5 class="card-title">9th - 10th Grade</h5>
+                          <p class="card-subtitle mb-2">Preparation</p>
+                          <p class="card-text">Client Projects & Workplace/Campus Visits</p>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-lg-3 col-md-6 mb-4">
+                  <div class="card text-center h-100 custom-card">
+                      <div class="card-body">
+                          <div class="circle-image mx-auto">
+                              <img src="img/highschool-immersion.jpg" alt="11th-12th Grade">
+                          </div>
+                          <h5 class="card-title">11th - 12th Grade</h5>
+                          <p class="card-subtitle mb-2">Immersion</p>
+                          <p class="card-text">Earn MVA, Career Fairs / College Application Fairs</p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+        </div>
+        <div class="row justify-content-center mb-5">
+          <div class="col-12">
+              <div class="arrow-bar">
+                  <span>Virtual Connector sessions & workplace/ campus visits</span>
+              </div>
+          </div>
+        </div>
+        <div class="row align-items-center">
+          <div class="col-md-7">
+            <img src="img/background4.jpg" alt="Career Pathways" class="img-fluid custom-image">
+          </div>
+          <div class="col-md-5 custom-list">
+            <h2 class="text-center custom-title">CAREER PATHWAYS</h2>
+              <p class="text-center custom-subtitle">(MANAGED & CO-FUNDED BY PREP-KC)</p>
+              <ul class="list-unstyled custom-list-items">
+                  <li>HealthStart Academy</li>
+                  <li>Business & Finance Institute</li>
+                  <li>Pathways to Technology</li>
+                  <li>Student Law Academy</li>
+                  <li>Pathways to Graphic Design</li>
+                  <li>Pathways to Teaching</li>
+                  <li>Pathways to Energy</li>
+                  <li>Data Science Pathway (2023)</li>
+              </ul>
+          </div>
+        </div>
+        <div class="row my-5">
+          <div class="col-md-6 mb-4">
+              <div class="text-center">
+                  <h3 class="event-title text-turquoise">14<sup>th</sup> Annual PREP-KC Regional Math Relays</h3>
+                  <p class="event-date">November 11, 2023</p>
+                  <img src="img/mathrelays2.jpg" alt="14th Annual PREP-KC Regional Math Relays" class="img-fluid event-image">
+              </div>
+          </div>
+          <div class="col-md-6 mb-4">
+              <div class="text-center">
+                  <h3 class="event-title text-turquoise">10<sup>th</sup> Annual PREP-KC Junior Math Relays</h3>
+                  <p class="event-date">March 2, 2024</p>
+                  <img src="img/mathrelays1.jpg" alt="10th Annual PREP-KC Junior Math Relays" class="img-fluid event-image">
+              </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-8">
+              <div class="row">
+                  <div class="col-md-12 mb-4">
+                      <img src="img/students/1.jpg" alt="Data Science Initiative 1" class="img-fluid event-image">
+                  </div>
+                  <div class="col-md-6 mb-4">
+                      <img src="img/one.jpg" alt="Data Science Initiative 2" class="img-fluid event-image">
+                  </div>
+                  <div class="col-md-6 mb-4">
+                      <img src="img/students/data_science.jpg" alt="Data Science Initiative 3" class="img-fluid event-image">
+                  </div>
+              </div>
+          </div>
+          <div class="col-md-4 custom-list">
+              <h2 class="text-center custom-title">PREP-KC’s DATA SCIENCE INITIATIVE</h2>
+              <ul class="list-unstyled custom-list-items">
+                  <li>New <em>Data in Action!</em> Course for 8<sup>th</sup>-graders</li>
+                  <li>Immersive Data Science Bootcamp held for teachers in the Summer of 2023 and 2024</li>
+                  <li>Positive feedback and engagement from the region’s industry data science professionals</li>
+              </ul>
+          </div>
         </div>
         <!-- FOOTER -->
         <footer>
