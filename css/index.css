@@ -112,15 +112,15 @@ body {
 }
 
 #card2::before {
-    background-image: url('../img/footprint.png'); /* Change path to your image */
+    background-image: url('../img/four.jpg'); /* Change path to your image */
 }
 
 #card3::before {
-    background-image: url('../img/background3.jpg'); /* Change path to your image */
+    background-image: url('../img/two.jpeg'); /* Change path to your image */
 }
 
 #card4::before {
-    background-image: url('../img/background4.jpg'); /* Change path to your image */
+    background-image: url('../img/three.jpg'); /* Change path to your image */
 }
 
 /* KC Box styles */
