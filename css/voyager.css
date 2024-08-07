@@ -22,7 +22,10 @@
     font-weight: normal;
     font-style: normal;
 }
-
+.title-format{
+    font-family: 'DIN1451', sans-serif;
+    text-transform:uppercase;
+}
 
 body{
     background-color: #00334C;

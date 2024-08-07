@@ -55,7 +55,7 @@ body {
 .card .letter {
     font-size: 5em;
     z-index: 2;
-    text-shadow: -3px -3px 0 #000, 3px -3px 0 #000, -3px 3px 0 #000, 3px 3px 0 #000;
+    filter: drop-shadow(3px 3px 3px #000);
     transform:translateY(-25%);
 }
 
@@ -66,7 +66,7 @@ body {
     z-index: 2;
     color: #fff;
     text-align: center;
-    text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
+    filter: drop-shadow(3px 3px 3px #000);
 }
 
 #card1 {
@@ -144,5 +144,6 @@ body {
     color: #fff; /* Change to preferred text color */
     font-size: 10em; /* Increased font size */
     font-weight: bold;
-    text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000; /* Adjusted text shadow for readability */
+    /* text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000; */
+    filter: drop-shadow(3px 3px 3px #000);
 }

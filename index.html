@@ -8,38 +8,68 @@
     <link rel="stylesheet" href="css/voyager.css">
     <link rel="stylesheet" href="css/index.css">
     <script src="https://unpkg.com/htmx.org@2.0.1"></script>
+    <style>
+        .index-nav{
+            background-image: url('img/kc.png'); /* Adjust the path as needed */
+            background-size: cover;
+            background-position: center; /* Center the image */
+            background-repeat: no-repeat; /* Prevent the image from repeating */
+            height: 25vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end; /* Position the navbar at the bottom */
+        }
+        .navbar {
+            background-color: transparent !important; /* Make the navbar background transparent */
+            margin-bottom: -20px;
+        }
+        .navbar .nav-link:hover,
+        .navbar .nav-link:focus,
+        .navbar .nav-link.active {
+            color: #00334C !important; /* Change the background color on hover, focus, and active */
+        }
+    </style>
 </head>
 <body>
-    <div id="nav-container"></div>
+    <!-- <div id="nav-container"></div>
     <div hx-get="nav.html" hx-target="#nav-container" hx-trigger="load"></div>
-
+    <div class="container d-flex justify-content-center p-0">
+        <p class="text-white text-center col-11" style="font-size:2em;">In a world where zip codes can predict outcomes, PREP-KC <span class="gradient-text">ignites potential</span> by bringing educators and industry professionals together to build paths to meaningful careers for students across the heart of bistate Kansas City.</p>
+    </div> -->
+    <div class="index-nav" hx-get="nav.html" hx-trigger="load">
+        <!-- Navbar will be loaded here by HTMX -->
+    </div>
     <div class="container-fluid p-0">
         <a href="about.html" class="card" id="card1">
             <span class="letter">P</span>
             <span class="phrase">
-                Partnerships with the Community<br />
-                <button type="button" class="btn btn-primary btn-lg">About PREP-KC</button>
+                Partnership for
+                <!-- Partnerships with the Community<br /> -->
+                <!-- <button type="button" class="btn btn-primary btn-lg">About PREP-KC</button> -->
             </span>
         </a>
         <a href="impact.html" class="card" id="card2">
             <span class="letter">R</span>
             <span class="phrase">
-                Regional Impact<br />
-                <button type="button" class="btn btn-primary btn-lg">Data</button>
+                Regional
+                <!-- Regional Impact<br /> -->
+                <!-- <button type="button" class="btn btn-primary btn-lg">Data</button> -->
             </span>
         </a>
         <a href="strategies.html" class="card" id="card3">
             <span class="letter">E</span>
             <span class="phrase">
-                Educational Excellence<br />
-                <button type="button" class="btn btn-primary btn-lg">Strategies that Work</button>
+                Educational
+                <!-- Educational Excellence<br /> -->
+                <!-- <button type="button" class="btn btn-primary btn-lg">Strategies that Work</button> -->
             </span>
         </a>
         <a href="volunteer.html" class="card" id="card4">
             <span class="letter">P</span>
             <span class="phrase">
-                Preparation for Future Success<br />
-                <button type="button" class="btn btn-primary btn-lg">Volunteer</button>
+                Preparation
+                <!-- Preparation for Future Success<br /> -->
+                <!-- <button type="button" class="btn btn-primary btn-lg">Volunteer</button> -->
             </span>
         </a>
     </div>
