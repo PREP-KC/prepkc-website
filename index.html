@@ -76,5 +76,21 @@
     <div class="kc-box">
         <span>K C</span>
     </div>
+    <script>
+        // JavaScript to hide/show kc-box on hover
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const kcBox = document.querySelector('.kc-box');
+            const cards = document.querySelectorAll('.card');
+
+            cards.forEach(card => {
+                card.addEventListener('mouseover', () => {
+                    kcBox.style.display = 'none';
+                });
+                card.addEventListener('mouseout', () => {
+                    kcBox.style.display = 'block';
+                });
+            });
+        });
+    </script>
 </body>
 </html>
