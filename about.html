@@ -9,18 +9,25 @@
         <link rel="stylesheet" type="text/css" href="css/voyager.css">
         <link rel="stylesheet" type="text/css" href="css/about.css">
         <script src="https://unpkg.com/htmx.org@2.0.1"></script>
+        <style>
+            body{
+                background-color: #56B2CB;
+            }
+            .nav-link{
+                color: #F7E214;
+            }
+        </style>
     </head>
     <body class="container">
         <div id="nav-container"></div>
         <div hx-get="nav.html" hx-target="#nav-container" hx-trigger="load"></div>
         <!-- Intro -->
-        <h1 class="text-center">About</h1>
+        <h1 class="text-center title-format display-3">About</h1>
         <div class="bg-turquoise rounded m-3 p-3 row intro">
             <div class="col">
-                <p class="text-navy">In a world where zip codes can predict outcomes, PREP-KC <span class="gradient-text"><b>IGNITES POTENTIAL</b></span> by bringing educators and industry professionals together to build paths to meaningful careers for students across the heart of bistate Kansas City.</p>
                 <div style="color:white;">
-                    <p>PREP-KC partners with <b class="text-navy">6 districts</b> and <b class="text-navy">4 charters</b>; enrolling over <b class="text-navy">67,000 students</b>. 
-                        <span class="text-yellow">Representing the culturally rich, diverse, talented, communities across the heart of Kansas City.</span></p>
+                    <p>PREP-KC partners with <b class="text-navy">6 districts</b> and <b class="text-navy">4 charters</b> enrolling over <b class="text-navy">67,000 students</b>. 
+                        <span class="fst-italic">Representing the culturally rich, diverse, talented, communities across the heart of Kansas City.</span></p>
                     <ul>
                         <li><b class="text-navy">80%</b> students of color</li>
                         <li><b class="text-navy">84%</b> low-income students</li>
@@ -38,7 +45,7 @@
         <!-- END Intro -->
         <!-- TEAM -->
         <div class="team">
-            <h2>Our Team</h2>
+            <h2 class="title-format display-4">Our Team</h2>
             <div class="row">
                 <div class="col">
                     <img src="img/team/susan_wally.jpg" alt="Susan Wally" class="rounded-5">
