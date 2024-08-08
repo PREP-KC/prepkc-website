@@ -10,11 +10,12 @@
     <script src="https://unpkg.com/htmx.org@2.0.1"></script>
 
 </head>
-<body>
-    <div class="index-nav" hx-get="nav.html" hx-trigger="load">
-        <!-- Navbar will be loaded here by HTMX -->
+<body class="container-stretch">
+    <div class="index-nav">
+        <div id="nav-container"></div>
     </div>
-    <div style="background-color:black;" class="d-flex justify-content-center">
+    <div hx-get="nav.html" hx-target="#nav-container" hx-trigger="load"></div>
+    <div style="background-color:black;" class="d-flex justify-content-center row">
         <p class="text-white text-center col-10" style="font-size:1.75em;">In a world where zip codes can predict outcomes, PREP-KC <span class="gradient-text">ignites potential</span> by bringing educators and industry professionals together to build paths to meaningful careers for students across the heart of bistate Kansas City.</p>
     </div>
     <div class="container-fluid p-0">
@@ -55,20 +56,40 @@
         <span>K C</span>
     </div>
     <script>
-        // JavaScript to hide/show kc-box on hover
+        // JavaScript to hide/show kc-box on hover and based on screen size
         document.addEventListener('DOMContentLoaded', (event) => {
             const kcBox = document.querySelector('.kc-box');
             const cards = document.querySelectorAll('.card');
-
+    
+            function checkScreenSize() {
+                if (window.innerWidth < 768) {
+                    kcBox.style.display = 'none';
+                } else {
+                    kcBox.style.display = 'block';
+                }
+            }
+    
+            // Initial check
+            checkScreenSize();
+    
+            // Check on resize
+            window.addEventListener('resize', checkScreenSize);
+    
+            // Hide/show kc-box on hover
             cards.forEach(card => {
                 card.addEventListener('mouseover', () => {
-                    kcBox.style.display = 'none';
+                    if (window.innerWidth >= 768) {
+                        kcBox.style.display = 'none';
+                    }
                 });
                 card.addEventListener('mouseout', () => {
-                    kcBox.style.display = 'block';
+                    if (window.innerWidth >= 768) {
+                        kcBox.style.display = 'block';
+                    }
                 });
             });
         });
-    </script>
+    </script>    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>    </body>
 </body>
 </html>

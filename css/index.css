@@ -8,41 +8,32 @@
 }
 
 body {
-    background-color: #f0f0f0;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
     background-color: #00334C;
     font-family: DIN1451, sans-serif;
 }
 
-#nav-container {
-    width: 100%;
-    background-color: #333;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+@media (min-width: 768px) {
+    .index-nav {
+        background-image: url('../img/kc.png');
+        background-size: cover;
+        background-position: center; /* Center the image */
+        background-repeat: no-repeat; /* Prevent the image from repeating */
+        height: 25vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end; /* Position the navbar at the bottom */
+    }
 }
 
-.index-nav{
-    background-image: url('../img/kc.png'); /* Adjust the path as needed */
-    background-size: cover;
-    background-position: center; /* Center the image */
-    background-repeat: no-repeat; /* Prevent the image from repeating */
-    height: 25vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end; /* Position the navbar at the bottom */
-}
+
 .navbar {
-    background-color: transparent !important; /* Make the navbar background transparent */
     margin-bottom: -20px;
 }
+
 .navbar .nav-link:hover,
 .navbar .nav-link:focus,
 .navbar .nav-link.active {
-    color: #00334C !important; /* Change the background color on hover, focus, and active */
+    color: #F7E214 !important; /* Change the background color on hover, focus, and active */
 }
 
 .container-fluid {
@@ -70,7 +61,7 @@ body {
 }
 
 .card .letter {
-    font-size: 5em;
+    font-size: 30vh;
     z-index: 2;
     filter: drop-shadow(3px 3px 3px #000);
     transform:translateY(-50%);
@@ -162,4 +153,5 @@ body {
     font-size: 10em;
     font-weight: bold;
     filter: drop-shadow(3px 3px 3px #000);
+    margin-bottom: -40px;
 }
