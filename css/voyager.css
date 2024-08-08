@@ -30,6 +30,13 @@
 body{
     background-color: #00334C;
     color: #F7E214;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Avenir', sans-serif;
+}
+
+p{
     font-family: 'Georgia', sans-serif;
 }
 
