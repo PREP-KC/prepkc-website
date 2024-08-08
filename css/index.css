@@ -40,7 +40,6 @@ body {
     display: flex;
     padding: 0;
     width: 100vw;
-    height: 100vh;
 }
 
 .card {
@@ -61,10 +60,33 @@ body {
 }
 
 .card .letter {
-    font-size: 30vh;
+    font-size: 35vh;
     z-index: 2;
     filter: drop-shadow(3px 3px 3px #000);
-    transform:translateY(-50%);
+}
+
+@media (max-width: 1200px) {
+    .card .letter {
+        font-size: 35vw; /* Slightly larger for medium screens */
+    }
+}
+
+@media (max-width: 992px) {
+    .card .letter {
+        font-size: 30vw; /* Slightly larger for smaller screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .card .letter {
+        font-size: 25vw; /* Larger for tablet screens */
+    }
+}
+
+@media (max-width: 576px) {
+    .card .letter {
+        font-size: 20vw; /* Largest for mobile screens */
+    }
 }
 
 .card .phrase {
