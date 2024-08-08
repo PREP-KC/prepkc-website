@@ -34,8 +34,8 @@ body{
 }
 
 .btn-primary {
-    background-color: #56B2CB; /* Replace with your desired color */
-    border-color: #56B2CB; /* Replace with your desired color */
+    background-color: #56B2CB;
+    border-color: #56B2CB;
 }
 
 hr {
@@ -76,23 +76,23 @@ hr {
     font-family: DIN1451, sans-serif !important;
 }
 .navbar-brand, .nav-link {
-    color: #56B2CB; /* text color */
+    color: #56B2CB;
 }
 .navbar-brand img {
-    max-height: 90px; /* Adjust based on your preference */
-    width: auto; /* This will ensure the logo maintains its aspect ratio */
+    max-height: 90px; 
+    width: auto; 
 }
 .navbar-nav .nav-link {
-    font-size: 3rem; /* Adjust the value based on your preference */
+    font-size: 3rem;
 }
 .social-icon {
-    font-size: 24px; /* Or any other size */
-    color: #F7E214; /* Social icon color */
-    margin: 0 10px; /* Spacing between icons */
+    font-size: 24px; 
+    color: #F7E214; 
+    margin: 0 10px; 
 }
 
 .social-icon:hover {
-    color: #56B2CB; /* Color on hover */
+    color: #56B2CB; 
 }
 .footer {
     color:white;
