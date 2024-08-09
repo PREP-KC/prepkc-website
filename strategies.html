@@ -7,155 +7,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="css/voyager.css">
-        <style>
-            .custom-card {
-              background-color: #56B2CB;
-              min-height: 500px;
-              color: #fff;
-              display: flex;
-              flex-direction: column;
-              justify-content: center;
-          }
-          
-          .circle-image {
-              width: 100%;
-              height: 60%;
-              border-radius: 50%;
-              overflow: hidden;
-              margin-bottom: 15px;
-              border: 4px solid #fff; /* Optional: Add border to make the circle more prominent */
-          }
-        
-          .circle-image img {
-              width: 100%;
-              height: 100%;
-              object-fit: cover;
-          }
-          .arrow-bar {
-            position: relative;
-            background-color: #194376;
-            color: #fff;
-            text-align: center;
-            padding: 15px 0;
-            font-weight: bold;
-            font-size: 1.2rem;
-            margin-top: 20px;
-        }
-        
-        .arrow-bar::before,
-        .arrow-bar::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            border-style: solid;
-        }
-        
-        .arrow-bar::before {
-            left: -40px;
-            border-width: 20px 40px 20px 0;
-            border-color: transparent #194376 transparent transparent;
-        }
-        
-        .arrow-bar::after {
-            right: -40px;
-            border-width: 20px 0 20px 40px;
-            border-color: transparent transparent transparent #194376;
-        }
-        .custom-title {
-          color: #fff;
-          font-weight: bold;
-          font-size: 2rem;
-          margin-top: 20px;
-      }
-      
-      .custom-subtitle {
-          color: #fff;
-          font-style: italic;
-          margin-bottom: 20px;
-      }
-      
-      .custom-list-items {
-          font-size: 1.1rem;
-          padding-left: 20px;
-          background-color: #56B2CB;
-          padding: 20px;
-          border-radius: 5px;
-      }
-      
-      .custom-list-items li {
-          margin-bottom: 10px;
-          list-style-type: disc;
-          color: #FFD700; /* Gold color for list items */
-      }
-      
-      .custom-image {
-          border: 5px solid #fff;
-          border-radius: 5px;
-      }
-      
-      .custom-list {
-          background-color: #56B2CB;
-          padding: 20px;
-          border-radius: 5px;
-          color: #194376; /* Dark text color for better contrast */
-      }
-      
-      .custom-list h2,
-      .custom-list p {
-          color: #fff;
-      }
-      
-      .custom-list h2 {
-          font-size: 2rem;
-          margin-bottom: 10px;
-      }
-      
-      .custom-list p {
-          font-size: 1rem;
-          margin-bottom: 20px;
-      }
-      .event-title {
-        color: #fff;
-        font-weight: bold;
-        font-size: 1.5rem;
-        margin-top: 20px;
-    }
-    
-    .event-date {
-        color: #fff;
-        font-size: 1rem;
-        margin-bottom: 20px;
-    }
-    
-    .event-image {
-        border: 5px solid #fff;
-        border-radius: 10px;
-        margin-bottom: 20px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow for a better effect */
-    }
-    .card-title{
-      font-size: 1.5em;
-      font-weight: bold;
-    }
-    .card-text{
-      font-size:1.2em;
-    }
-    .custom-card {
-        border: 2px solid white;
-        padding: 10px;
-        background-color: #194376;
-        border-radius: 10px;
-        text-align: center;
-    }
-    
-    .custom-image {
-        width: 100%;
-        max-width: 100%;
-        height: auto;
-        border-radius: 10px;
-    }
-        </style>
+        <link rel="stylesheet" type="text/css" href="css/strategies.css">
         <script src="https://unpkg.com/htmx.org@2.0.1"></script>
     </head>
     <body class="container">
@@ -170,7 +22,7 @@
         <div class="container">
           <div class="row">
               <div class="col-lg-3 col-md-6 mb-4">
-                  <div class="card text-center h-100 custom-card">
+                  <div class="card text-center h-100 continuum-card elementary-card">
                       <div class="card-body">
                           <div class="circle-image mx-auto">
                               <img src="img/elementary-career-explore.jpg" alt="3rd-5th Grade">
@@ -182,7 +34,7 @@
                   </div>
               </div>
               <div class="col-lg-3 col-md-6 mb-4">
-                  <div class="card text-center h-100 custom-card">
+                  <div class="card text-center h-100 continuum-card middle-card">
                       <div class="card-body">
                           <div class="circle-image mx-auto">
                               <img src="img/middle-career-exploration.jpg" alt="6th-8th Grade">
@@ -194,7 +46,7 @@
                   </div>
               </div>
               <div class="col-lg-3 col-md-6 mb-4">
-                  <div class="card text-center h-100 custom-card">
+                  <div class="card text-center h-100 continuum-card highschool-prep-card">
                       <div class="card-body">
                           <div class="circle-image mx-auto">
                               <img src="img/highschool-prep.jpg" alt="9th-10th Grade">
@@ -206,14 +58,14 @@
                   </div>
               </div>
               <div class="col-lg-3 col-md-6 mb-4">
-                  <div class="card text-center h-100 custom-card">
+                  <div class="card text-center h-100 continuum-card highschool-immersion-card">
                       <div class="card-body">
                           <div class="circle-image mx-auto">
                               <img src="img/highschool-immersion.jpg" alt="11th-12th Grade">
                           </div>
                           <h5 class="card-title">11th - 12th</h5><p>Grade</p>
                           <p class="card-subtitle mb-2 display-6">Immersion</p>
-                          <p class="card-text"><span class="text-yellow">Earn MVA</span>, Career Fairs / College Application Fairs</p>
+                          <p class="card-text"><span class="text-navy">Earn MVA</span>, Career Fairs / College Application Fairs</p>
                       </div>
                   </div>
               </div>
@@ -222,12 +74,12 @@
         <div class="row justify-content-center mb-5">
           <div class="col-12">
               <div class="arrow-bar">
-                  <span>Virtual Connector sessions & workplace/ campus visits</span>
+                  <span>Virtual Connector sessions & workplace/ campus visits 2nd Grade to Graduation!</span>
               </div>
           </div>
         </div>
         <div class="row align-items-center">
-          <div class="col-md-7">
+          <div class="col-md-7 mb-3">
             <img src="img/background4.jpg" alt="Career Pathways" class="img-fluid custom-image">
           </div>
           <div class="col-md-5 custom-list">
@@ -244,42 +96,6 @@
                   <li class="text-navy">Data Science Pathway (2023)</li>
               </ul>
           </div>
-        </div>
-        <div class="row my-5">
-          <div class="col-md-4 mb-4">
-              <div class="custom-card">
-                <img src="img/mathrelays2.JPG" alt="Descriptive Alt Text" class="custom-image">
-                <div class="text-center mt-3 row">
-                    <div class="col-8">
-                        Annual PREP-KC Math Relays are a highlight of the year for students and teachers alike.
-                    </div>
-                    <div class="col-4">
-                        <!-- <a href="mathrelays.html" class="btn btn-primary">Learn More!</a> -->
-                    </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-8 mb-4">
-                <img src="img/students/1.jpg" alt="Math Relays 1" class="img-fluid event-image">
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-8">
-            <img src="img/students/3.jpg" alt="Math Relays 1" class="img-fluid event-image">
-          </div>
-          <div class="col-md-4">
-                <div class="custom-card">
-                <img src="img/students/data_science.jpg" alt="Descriptive Alt Text" class="custom-image">
-                <div class="text-center mt-3 row">
-                    <div class="col-8">
-                        New Data in Action! Course for 8th-graders!
-                        </div>
-                    <div class="col-4">
-                        <!-- <a href="dsi.html" class="btn btn-primary">Learn More!</a> -->
-                    </div>
-                </div>
-            </div>
         </div>
         <!-- FOOTER -->
         <footer>
