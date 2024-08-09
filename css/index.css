@@ -27,6 +27,12 @@ body {
 
 .navbar {
     margin-bottom: -20px;
+    align-items: end;
+}
+
+.navbar-brand img {
+    max-height: 20vh; 
+    width: auto; 
 }
 
 .navbar .nav-link:hover,
@@ -150,6 +156,7 @@ body {
 
 #card1::before {
     background-image: url('../img/background1.jpg');
+    background-position: top;
 }
 
 #card2::before {
