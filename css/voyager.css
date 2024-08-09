@@ -45,6 +45,10 @@ p{
     border-color: #56B2CB;
 }
 
+.btn-primary:hover {
+    background-color: #00334C;
+}      
+
 hr {
     border-top: 2px solid #56B2CB;
 }
