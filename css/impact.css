@@ -4,49 +4,7 @@ body{
 .navbar-toggler-icon {
     background-image: url("data:image/svg+xml;charset=UTF8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%2300334C' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E") !important;
 }
-.box {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 10em;
-    width: 15em;
-    color: white;
-    font-weight: bold;
-    text-align: center;
-    border-radius: 50%;
-}
-.bg-orange { background-color: #f28c28; }
-.bg-green { background-color: #4caf50; }
-.bg-yellow { background-color: #ffc107; }
-.bg-blue { background-color: #2196f3; }
-.mva-container {
-    background-color: white;
-    border-radius: 25px;
-    padding: 30px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin: 0 auto; /* Center the container */
-    max-width: 600px; /* Set a max-width to control the overall width */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.mva-content {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-}
-.mva-item {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 50%;
-    padding: 10px;
-}
-.heading {
-    color: yellow; /* Adjust the color of the heading */
-}
+
 .custom-card {
     border: 2px solid white;
     padding: 10px;
@@ -59,7 +17,7 @@ body{
     width: 100%;
     max-width: 100%;
     height: auto;
-    border-radius: 10px;
+    border-radius: 1em;
 }
 
 .btn-primary {
