@@ -27,7 +27,7 @@ body {
 
 .navbar {
     display:flex;
-    margin-bottom: -20px;
+    margin-bottom: -5vh;
     align-items: end;
 }
 
