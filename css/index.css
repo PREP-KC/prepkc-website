@@ -14,7 +14,7 @@ body {
 
 @media (min-width: 768px) {
     .index-nav {
-        background-image: url('../img/kc.png');
+        background-image: url('../img/kc-2.png');
         background-size: cover;
         background-position: center; /* Center the image */
         background-repeat: no-repeat; /* Prevent the image from repeating */
@@ -26,10 +26,16 @@ body {
 }
 
 .navbar {
+    display:flex;
     margin-bottom: -20px;
     align-items: end;
 }
 
+.navbar-nav {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1; /* Allow the nav items to grow and center */
+}
 .navbar-brand img {
     max-height: 20vh; 
     width: auto; 
@@ -174,11 +180,11 @@ body {
 /* KC Box styles */
 .kc-box {
     position: absolute;
-    bottom: 20px;
+    bottom: -5vh;
     left: 50%;
     transform: translateX(-50%);
     color: #fff;
-    font-size: 8em;
+    font-size: 10em;
     font-weight: bold;
     filter: drop-shadow(3px 3px 3px #000);
 }
