@@ -1,3 +1,7 @@
+ .card{
+    border-radius: 0 !important;
+ }
+
  .continuum-card {
     background-color: #56B2CB;
     min-height: 25vh;
@@ -25,13 +29,13 @@
 
 .arrow-bar {
     position: relative;
-    background-color: #194376;
-    color: #fff;
+    background-color: #FFD700;
+    color: #00334C;
     text-align: center;
     padding: 15px 0;
     font-weight: bold;
     font-size: 1.2rem;
-    margin-top: 20px;
+    top: -2vh;
 }
         
 .arrow-bar::before,
@@ -46,13 +50,13 @@
 .arrow-bar::before {
     left: -40px;
     border-width: 20px 40px 20px 0;
-    border-color: transparent #194376 transparent transparent;
+    border-color: transparent #FFD700 transparent transparent;
 }
 
 .arrow-bar::after {
     right: -40px;
     border-width: 20px 0 20px 40px;
-    border-color: transparent transparent transparent #194376;
+    border-color: transparent transparent transparent #FFD700;
 }
 .custom-title {
     color: #fff;
