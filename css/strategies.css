@@ -32,32 +32,11 @@
     background-color: #FFD700;
     color: #00334C;
     text-align: center;
-    padding: 15px 0;
+    padding: 15px 40px;
     font-weight: bold;
     font-size: 1.2rem;
-    top: -2vh;
 }
         
-.arrow-bar::before,
-.arrow-bar::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    border-style: solid;
-}
-
-.arrow-bar::before {
-    left: -40px;
-    border-width: 20px 40px 20px 0;
-    border-color: transparent #FFD700 transparent transparent;
-}
-
-.arrow-bar::after {
-    right: -40px;
-    border-width: 20px 0 20px 40px;
-    border-color: transparent transparent transparent #FFD700;
-}
 .custom-title {
     color: #fff;
     font-weight: bold;
