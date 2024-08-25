@@ -23,3 +23,35 @@
 body{
     color: #F7E214;
 }
+
+.team .col {
+    flex: 0 0 300px; /* Fixed width for each column */
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.team img {
+    height: 20vh;
+    object-fit: cover; /* This will ensure the image covers the area without distortion */
+    border-radius: 5px;
+}
+
+.team h3 {
+    margin-top: 10px;
+    font-size: 1.2em;
+    line-height: 1.2;
+}
+
+.team p {
+    font-size: 1em;
+    line-height: 1.2;
+}
+
+.funders{
+    background-color: #fff;
+    color: #00334C;
+    padding: 2rem;
+    margin-top: 2rem;
+    border-radius: 1vh;
+}
