@@ -25,21 +25,6 @@ body {
     }
 }
 
-.navbar {
-    display:flex;
-    margin-bottom: -5vh;
-    align-items: end;
-}
-
-.navbar-nav {
-    display: flex;
-    justify-content: center;
-    flex-grow: 1; /* Allow the nav items to grow and center */
-}
-.navbar-brand img {
-    max-height: 20vh; 
-    width: auto; 
-}
 
 .navbar .nav-link:hover,
 .navbar .nav-link:focus,
