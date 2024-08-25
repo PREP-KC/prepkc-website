@@ -121,3 +121,47 @@ hr {
     background-clip: text;
     color: transparent; /* Fallback for browsers that do not support this effect */
 }
+
+/* Add these new styles at the end of the file */
+
+.row-cols-1 {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.col {
+    display: flex;
+    margin-bottom: 20px; /* Add some space between rows */
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(91, 192, 222, 0.3);
+    border: none;
+    border-radius: 10px;
+}
+
+.card-body {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+}
+
+.card-title {
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.btn-primary {
+    width: 100%;
+    margin-top: auto; /* Push button to bottom */
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(91, 192, 222, 0.5);
+}
