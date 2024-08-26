@@ -14,6 +14,30 @@
         .navbar-image{
             content: url("img/logo/turq.png");
         }
+        .impact-number {
+            font-size: 1.4em;
+            font-weight: bold;
+            color: #40E0D0; /* Turquoise color */
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            display: inline-block;
+            transform: scale(1.1);
+            transition: transform 0.2s ease-in-out;
+            text-shadow: 
+                -1px -1px 0 #000,
+                1px -1px 0 #000,
+                -1px 1px 0 #000,
+                1px 1px 0 #000;
+        }
+        .impact-number:hover {
+            transform: scale(1.2);
+        }
+        .fade-in {
+            opacity: 0;
+            transition: opacity .5s ease-in-out;
+        }
+        .fade-in.visible {
+            opacity: 1;
+        }
     </style>
     <body>
         <div class="container">
@@ -33,12 +57,14 @@
                     <div class="row mt-2">
                         <h1 class="text-center title-format display-3 text-navy">THE POSITIVE IMPACT OF PARTNERSHIPS</h1>
                         <p style="font-size:2em;" class="text-center title-format display-3 text-navy"><u>2023-2024 School Year</u></p>
-                        <p style="font-size:1.5em;" class="text-center text-navy"><span class="text-turquoise">1,134</span> volunteers engaged from <br/>
-                        <span class="text-turquoise">423</span> businesses and postsecondary institutions <br/>
-                        participated in <span class="text-turquoise">420</span> virtual and in-person events, and <br />
-                        provided <span class="text-turquoise">4,673</span> volunteer hours <br />
-                        while connecting with <span class="text-turquoise">7,479</span> students in person and <br />
-                        approximately <span class="text-turquoise">15,820</span> students virtually.</p>
+                        <p style="font-size:1.5em;" class="text-center text-navy">
+                            <span class="impact-number fade-in" data-value="1,134">0</span> volunteers engaged from <br/>
+                            <span class="impact-number fade-in" data-value="423">0</span> businesses and postsecondary institutions <br/>
+                            participated in <span class="impact-number fade-in" data-value="420">0</span> virtual and in-person events, and <br />
+                            provided <span class="impact-number fade-in" data-value="4,673">0</span> volunteer hours <br />
+                            while connecting with <span class="impact-number fade-in" data-value="7,479">0</span> students in person and <br />
+                            approximately <span class="impact-number fade-in" data-value="15,820">0</span> students virtually.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -85,8 +111,7 @@
       <footer>
         <div class="footer row bg-navy">
             <div class="footer-text col mx-5">
-                <p>PREP-KC</p>
-                <p>
+                <p>PREP-KC<br>
                     2300 Main St, Suite 340<br>
                     Kansas City, MO 64108<br>
                     816.931.PREP
@@ -101,6 +126,35 @@
         </div>
     </footer>
     <!-- END FOOTER -->
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>    
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+      <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const numbers = document.querySelectorAll('.impact-number');
+            let delay = 0;
+
+            numbers.forEach((number, index) => {
+                setTimeout(() => {
+                    number.classList.add('visible');
+                    const finalValue = parseInt(number.dataset.value.replace(',', ''));
+                    animateNumber(number, finalValue);
+                }, delay);
+                delay += 1000; // Increase delay for each subsequent number
+            });
+        });
+
+        function animateNumber(element, final) {
+            let start = 0;
+            const duration = 2000; // 2 seconds
+            const step = timestamp => {
+                if (!start) start = timestamp;
+                const progress = Math.min((timestamp - start) / duration, 1);
+                element.textContent = Math.floor(progress * final).toLocaleString();
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                }
+            };
+            window.requestAnimationFrame(step);
+        }
+      </script>
     </body>
 </html>
