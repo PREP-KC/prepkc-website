@@ -22,14 +22,19 @@ body {
         display: flex;
         flex-direction: column;
         justify-content: flex-end; /* Position the navbar at the bottom */
+        align-items: center;
     }
 }
-
 
 .navbar .nav-link:hover,
 .navbar .nav-link:focus,
 .navbar .nav-link.active {
     color: #F7E214 !important; /* Change the background color on hover, focus, and active */
+}
+
+.navbar-brand img {
+    max-height: 180px; 
+    width: auto;
 }
 
 .container-fluid {
