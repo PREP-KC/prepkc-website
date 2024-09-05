@@ -169,15 +169,32 @@ body {
 
 /* Static KC Box styles */
 .static-kc-box {
+    position: relative;
     text-align: center;
-    color: #00334C;
-    font-size: 20vw; /* Responsive font size */
+    font-size: 20vw;
     font-weight: bold;
     line-height: 1;
     padding: 20px 0;
     margin-top: 20px;
+    background-color: #F7E214; /* Solid yellow background */
+}
+
+.static-kc-box .fade-in {
+    position: relative;
+    display: inline-block;
+    color: transparent;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    background-image: url('../img/mathrelays2.JPG');
+    background-size: cover;
+    background-position: center;
+    -webkit-background-clip: text;
+    background-clip: text;
     filter: drop-shadow(3px 3px 3px #000);
-    background-color: #F7E214;
+}
+
+.static-kc-box .fade-in.visible {
+    opacity: 1;
 }
 
 @media (min-width: 768px) {
@@ -188,15 +205,6 @@ body {
 
 @media (min-width: 1200px) {
     .static-kc-box {
-        font-size: 12vw;
+        font-size: 18vw;
     }
-}
-
-.static-kc-box span {
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
-}
-
-.static-kc-box span.visible {
-    opacity: 1;
 }
