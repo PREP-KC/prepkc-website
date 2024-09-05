@@ -191,3 +191,12 @@ body {
         font-size: 12vw;
     }
 }
+
+.static-kc-box span {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.static-kc-box span.visible {
+    opacity: 1;
+}
