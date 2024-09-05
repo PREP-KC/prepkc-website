@@ -55,6 +55,7 @@
     </div>
     <div class="static-kc-box">
         <span class="fade-in">K C</span>
+        <img src="img/mathrelays2.JPG" alt="Math Realys" class="fade-in-image">
     </div>
     <div class="d-flex justify-content-center video m-5">
         <div class="ratio ratio-16x9">
@@ -120,6 +121,7 @@
         // Add fade-in effect for KC box
         const kcBox = document.querySelector('.static-kc-box');
         const kcText = kcBox.querySelector('span');
+        const kcImage = kcBox.querySelector('.fade-in-image');
 
         function checkScroll() {
             const kcBoxTop = kcBox.getBoundingClientRect().top;
@@ -127,8 +129,10 @@
 
             if (kcBoxTop < windowHeight * 0.75) {
                 kcText.classList.add('visible');
+                kcImage.classList.add('visible');
             } else {
                 kcText.classList.remove('visible');
+                kcImage.classList.remove('visible');
             }
         }
 
