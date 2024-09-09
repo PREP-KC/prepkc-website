@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Data In Action Events">
+    <title>Data In Action Events</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/voyager.css">
+    <style>
+        .card {
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(91, 192, 222, 0.3); /* Lighter blue shadow */
+            border: none;
+            border-radius: 10px;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(91, 192, 222, 0.5); /* Enhanced lighter blue shadow on hover */
+        }
+        .card-body {
+            padding: 1.5rem;
+        }
+        .card-title {
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+        .btn-primary {
+            width: 100%;
+            margin-top: 1rem;
+        }
+    </style>
+    <script src="https://unpkg.com/htmx.org@2.0.1"></script>
+</head>
+<body class="container">
+    <div id="nav-container"></div>
+    <div hx-get="nav.html" hx-target="#nav-container" hx-trigger="load"></div>
+
+    <!-- Intro-->
+    <h1 class="text-center text-yellow mb-3">Data In Action Events</h1>
+    <p style="color:white;">PREP-KC supports career exploration opportunities in a variety of formats for all ages. Each event is listed below for volunteers to sign up as they are available. We appreciate your careful consideration of your availability and thank you for making an impact in our students' lives!</p>
+
+
+     <!-- Data Dialogue Events -->
+     <div class="container my-5">
+        <h2 class="text-turquoise">Data Dialogue Events</h2>
+        <div class="row row-cols-1 row-cols-lg-3 g-4">
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Carl Bruce/Martin City Middle School Data Dialogue</h5>
+                        <p class="card-text"><strong>DATE/TIME</strong><br>Friday, November 1st, 9:30-1:15pm</p>
+                        <p class="card-text"><strong>LOCATION</strong><br>KU Medical Center</p>
+                        <p class="card-text"><strong>SPOTS OPEN</strong><br>6</p>
+                        <a href="https://www.tfaforms.com/4937950?tfa_2256=a1hUV000001culN" class="btn btn-primary">Sign up</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Gloria Willis/Hickman South Middle School Data Dialogue</h5>
+                        <p class="card-text"><strong>DATE/TIME</strong><br>Friday, November 8th, 10:00-1:30pm</p>
+                        <p class="card-text"><strong>LOCATION</strong><br>Rockhurst University</p>
+                        <p class="card-text"><strong>SPOTS OPEN</strong><br>6</p>
+                        <a href="https://www.tfaforms.com/4937950?tfa_2256=a1hUV000001cuGj" class="btn btn-primary">Sign up</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Center/Grandview/Rosedale Middle School Data Dialogue</h5>
+                        <p class="card-text"><strong>DATE/TIME</strong><br>Friday, December 6th, 8:45-12:15pm</p>
+                        <p class="card-text"><strong>LOCATION</strong><br>JCCC (Johnson County Community College)</p>
+                        <p class="card-text"><strong>SPOTS OPEN</strong><br>6</p>
+                        <a href="https://www.tfaforms.com/4937950?tfa_2256=a1hUV000000v8s5" class="btn btn-primary">Sign up</a>
+                    </div>
+                </div>
+            </div>            
+        </div>
+    </div>
+
+    <!-- Data Ethics Speaker Events -->
+    <div class="container my-5">
+        <h2 class="text-turquoise">Data Ethics Speaker</h2>
+        <div class="row row-cols-1 row-cols-lg-4 g-4">
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Center Middle School</h5>
+                        <p class="card-text"><strong>DATE/TIME</strong><br>Tuesday, September 24th, 11:45-12:30pm</p>
+                        <p class="card-text"><strong>SCHOOL DISTRICT</strong><br>Center School District</p>
+                        <a href="https://www.tfaforms.com/4937950?tfa_2256=a1hUV000001cYkr" class="btn btn-primary">Sign up</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Allen Village Charter School</h5>
+                        <p class="card-text"><strong>DATE/TIME</strong><br>Tuesday, September 24th, 1:35-2:20pm</p>
+                        <p class="card-text"><strong>SCHOOL DISTRICT</strong><br>Allen Village Charter School</p>
+                        <a href="https://www.tfaforms.com/4937950?tfa_2256=a1hUV000001cb2n" class="btn btn-primary">Sign up</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Carl B. Bruce Middle School</h5>
+                        <p class="card-text"><strong>DATE/TIME</strong><br>Wednesday, September 25th, 8:05-8:50am</p>
+                        <p class="card-text"><strong>SCHOOL DISTRICT</strong><br>KCK Public Schools</p>
+                        <a href="https://www.tfaforms.com/4937950?tfa_2256=a1hUV000001c253" class="btn btn-primary">Sign up</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Carl B. Bruce Middle School</h5>
+                        <p class="card-text"><strong>DATE/TIME</strong><br>Wednesday, September 25th, 8:50-9:30am</p>
+                        <p class="card-text"><strong>SCHOOL DISTRICT</strong><br>KCK Public Schools</p>
+                        <a href="https://www.tfaforms.com/4937950?tfa_2256=a1hUV000001c2JZ" class="btn btn-primary">Sign up</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Rosedale Middle School</h5>
+                        <p class="card-text"><strong>DATE/TIME</strong><br>Wednesday, September 25th, 9:35-10:20am</p>
+                        <p class="card-text"><strong>SCHOOL DISTRICT</strong><br>KCK Public Schools</p>
+                        <a href="https://www.tfaforms.com/4937950?tfa_2256=a1hUV000001cZ2b" class="btn btn-primary">Sign up</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Hickman Mills South Middle School</h5>
+                        <p class="card-text"><strong>DATE/TIME</strong><br>Friday, September 27th, 8:45-9:30am</p>
+                        <p class="card-text"><strong>SCHOOL DISTRICT</strong><br>Hickman Mills C-1 School District</p>
+                        <a href="#" class="btn btn-primary">Sign up</a>
+                    </div>
+                </div>
+            </div>
+             -->
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Hickman Mills South Middle School</h5>
+                        <p class="card-text"><strong>DATE/TIME</strong><br>Friday, September 27th, 10:35-11:20am</p>
+                        <p class="card-text"><strong>SCHOOL DISTRICT</strong><br>Hickman Mills C-1 School District</p>
+                        <a href="https://www.tfaforms.com/4937950?tfa_2256=a1hUV000001c1wz" class="btn btn-primary">Sign up</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Martin City Middle School</h5>
+                        <p class="card-text"><strong>DATE/TIME</strong><br>Monday, September 30th, 9:30-10:15am</p>
+                        <p class="card-text"><strong>SCHOOL DISTRICT</strong><br>Grandview School District</p>
+                        <a href="https://www.tfaforms.com/4937950?tfa_2256=a1hUV000001cbKX" class="btn btn-primary">Sign up</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Grandview Middle School</h5>
+                        <p class="card-text"><strong>DATE/TIME</strong><br>Tuesday, October 1st, 11:40-12:25pm</p>
+                        <p class="card-text"><strong>SCHOOL DISTRICT</strong><br>Grandview School District</p>
+                        <a href="" class="btn btn-primary">Sign up</a>
+                    </div>
+                </div>
+            </div> -->
+            
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Grandview Middle School</h5>
+                        <p class="card-text"><strong>DATE/TIME</strong><br>Tuesday, October 1st, 2:00-2:50pm</p>
+                        <p class="card-text"><strong>SCHOOL DISTRICT</strong><br>Grandview School District</p>
+                        <a href="https://www.tfaforms.com/4937950?tfa_2256=a1hUV000001c0uU" class="btn btn-primary">Sign up</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Gloria Willis Middle School</h5>
+                        <p class="card-text"><strong>DATE/TIME</strong><br>Wednesday, October 2nd, 11:15-12:00pm</p>
+                        <p class="card-text"><strong>SCHOOL DISTRICT</strong><br>KCK Public Schools</p>
+                        <a href="https://www.tfaforms.com/4937950?tfa_2256=a1hUV000001cbAr" class="btn btn-primary">Sign up</a>
+                    </div>
+                </div>
+            </div>            
+        </div>
+    </div>
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer row">
+            <div class="footer-text col">
+                <p>PREP-KC<br>info@prepkc.org<br>2300 Main St, Suite 340<br>Kansas City, MO 64108<br>816.931.PREP</p>
+            </div>
+            <div class="footer-social col">
+                <p>Connect</p>
+                <a href="https://www.facebook.com/prepkc/" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://twitter.com/PREPKC" class="social-icon"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.linkedin.com/company/prep-kc/" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>
