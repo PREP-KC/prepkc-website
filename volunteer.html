@@ -11,15 +11,16 @@
         <style>
           .card-container {
               display: flex;
+              flex-direction: column;
               justify-content: center;
               align-items: center;
-              height: 50vh;
+              min-height: 50vh;
           }
   
           .card {
-              width: 40%;
-              height: 300px;
-              margin: 20px;
+              width: 90%;
+              min-height: 200px;
+              margin: 10px 0;
               border-radius: 10px;
               color: white;
               display: flex;
@@ -29,30 +30,59 @@
               text-align: center;
               transition: transform 0.3s, box-shadow 0.3s;
               text-decoration: none;
+              padding: 20px;
           }
   
-          .card:hover {
-              transform: scale(1.05);
-              box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-              text-decoration: none; /* Prevent text decoration on hover */
-          }
-  
-          #card1 {
-              background-color: #56B2CB; /* Light Blue */
-          }
-  
-          #card2 {
-              background-color: #818387; /* Gray */
-          }
-  
-          #card3 {
-              background-color: #F7E214; 
-              color: #00334C;
+          #card1 { background-color: #3498db; } /* Blue */
+          #card2 { background-color: #2ecc71; } /* Green */
+          #card3 { background-color: #f1c40f; } /* Yellow */
+
+          .card h2 {
+              font-size: 1.5em;
+              margin-bottom: 10px;
           }
   
           .card-text {
-              font-size: 1.2em;
+              font-size: 1em;
               margin-top: 10px;
+          }
+  
+          @media (min-width: 768px) {
+              .card-container {
+                  flex-direction: row;
+                  flex-wrap: wrap;
+                  height: auto;
+              }
+  
+              .card {
+                  width: calc(33.33% - 20px);
+                  height: 300px;
+                  margin: 10px;
+              }
+  
+              .card h2 {
+                  font-size: 1.6em;
+              }
+  
+              .card-text {
+                  font-size: 1em;
+              }
+          }
+  
+          @media (min-width: 992px) {
+              .card h2 {
+                  font-size: 1.8em;
+              }
+  
+              .card-text {
+                  font-size: 1.1em;
+              }
+          }
+  
+          @media (min-width: 1200px) {
+              .card-text {
+                  font-size: 1.2em;
+              }
           }
       </style>
     </head>
