@@ -32,6 +32,15 @@
         }
     </style>
     <script src="https://unpkg.com/htmx.org@2.0.1"></script>
+    <script>
+        function refreshContent() {
+            var container = document.getElementById('event-container');
+            htmx.ajax('GET', 'inperson.html', '#event-container');
+        }
+
+        // Refresh content every 5 minutes (300000 milliseconds)
+        setInterval(refreshContent, 300000*30);
+    </script>
 </head>
 <body class="container">
     <div id="nav-container"></div>
@@ -48,19 +57,8 @@
     </div>
     <p style="color:white;">PREP-KC supports career exploration opportunities in a variety of formats for all ages. Each event is listed below for volunteers to sign up as they are available.</p>
     <p style="color:white;">We appreciate your help in carefully considering your availability to participate in our programming and understand that life happens. If you must cancel, please inform PREP-KC staff in advance if possible. We appreciate your help finding a replacement volunteer. Our students count on these life-changing experiences. Thank you!</p>
-    <div class="container my-5">
+    <div id="event-container" class="container my-5">
         <div class="row row-cols-1 row-cols-lg-4 g-4">
-            <div class="col">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">PREP-KC Virtual DEI Volunteer Orientation</h5>
-                        <p class="card-text"><strong>DATE/TIME</strong><br>September 20, 2024 <br> 12:00 PM - 1:00 PM</p>
-                        <p class="card-text"><strong>REQUESTED SKILLS</strong><br>None</p>
-                        <p class="card-text"><strong>AVAILABLE SLOTS</strong><br>20</p>
-                        <a href="https://www.tfaforms.com/4937950?tfa_2256=a1hUV0000014ok1" class="btn btn-primary">Sign up</a>
-                    </div>
-                </div>
-            </div>
             <div class="col">
                 <div class="card">
                     <div class="card-body">
