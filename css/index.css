@@ -1,15 +1,6 @@
-@font-face {
-    font-family: 'DIN1451';
-    src:    url('../fonts/DINEngschriftStd.otf') format('opentype'),
-            url('../fonts/DINMittelschriftStd.otf') format('opentype');
-
-    font-weight: normal;
-    font-style: normal;
-}
-
 body {
-    background-color: #00334C;
-    font-family: DIN1451, sans-serif;
+    background-color: var(--color-navy);
+    font-family: 'DIN1451', sans-serif;
 }
 
 @media (min-width: 768px) {
@@ -29,7 +20,7 @@ body {
 .navbar .nav-link:hover,
 .navbar .nav-link:focus,
 .navbar .nav-link.active {
-    color: #F7E214 !important; /* Change the background color on hover, focus, and active */
+    color: var(--color-yellow) !important; /* Change the background color on hover, focus, and active */
 }
 
 .navbar-brand img {
@@ -62,8 +53,66 @@ body {
 
 .card .letter {
     font-size: 35vh;
-    z-index: 2;
-    filter: drop-shadow(3px 3px 3px #000);
+    color: var(--color-white);
+    text-shadow: 
+        2px 2px 0 rgba(0, 0, 0, 0.1),
+        4px 4px 0 rgba(0, 0, 0, 0.1),
+        6px 6px 10px rgba(0, 0, 0, 0.2);
+    transition: transform var(--transition-normal);
+}
+
+/* Individual letter styles */
+#card1 .letter {
+    background-image: none;
+    color: var(--color-white);
+}
+
+#card2 .letter {
+    background-image: none;
+    color: var(--color-white);
+}
+
+#card3 .letter {
+    background-image: none;
+    color: var(--color-white);
+}
+
+#card4 .letter {
+    background-image: none;
+    color: var(--color-white);
+}
+
+/* Hover effects */
+.card:hover .letter {
+    transform: scale(1.05) translateY(-5px);
+    text-shadow: 
+        4px 4px 0 rgba(255, 255, 255, 0.2),
+        8px 8px 0 rgba(0, 0, 0, 0.15),
+        20px 20px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Add a subtle animation */
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.card .letter {
+    animation: float 3s ease-in-out infinite;
+}
+
+/* Disable animation for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    .card .letter {
+        animation: none;
+    }
 }
 
 @media (max-width: 1200px) {
@@ -101,19 +150,19 @@ body {
 }
 
 #card1 {
-    background-color: #56B2CB; /* Light Blue */
+    background-color: var(--color-turquoise);
 }
 
 #card2 {
-    background-color: #818387; /* Gray */
+    background-color: var(--color-gray);
 }
 
 #card3 {
-    background-color: #00334C; /* Dark Blue */
+    background-color: var(--color-navy);
 }
 
 #card4 {
-    background-color: #F7E214; /* Yellow */
+    background-color: var(--color-yellow);
 }
 
 .card::before {
@@ -125,7 +174,7 @@ body {
     height: 100%;
     background: no-repeat center center/cover;
     opacity: 0;
-    transition: opacity 0.3s ease;
+    transition: opacity var(--transition-normal);
 }
 
 .card:hover {
@@ -223,4 +272,16 @@ body {
     height: 100%;
     object-fit: cover;
     z-index: 0; /* Place the image behind the text */
+}
+
+/* Hero section styling */
+.hero {
+    padding: var(--space-xl) 0;
+    background-color: var(--color-black);
+}
+
+.hero p {
+    font-family: 'DIN1451', sans-serif;
+    font-weight: 400;
+    line-height: 1.2;
 }

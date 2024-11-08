@@ -27,16 +27,58 @@
     text-transform:uppercase;
 }
 
-body{
-    background-color: #00334C;
+:root {
+  /* Colors */
+  --color-navy: #00334C;
+  --color-turquoise: #56B2CB;
+  --color-yellow: #F7E214;
+  --color-gray: #818387;
+  
+  /* Typography */
+  --font-primary: 'DIN1451', sans-serif;
+  --font-secondary: 'Avenir', sans-serif;
+  --font-body: 'Georgia', sans-serif;
+  
+  /* Spacing */
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  
+  /* Shadows */
+  --shadow-card: 0 4px 6px rgba(91, 192, 222, 0.3);
+  --shadow-card-hover: 0 8px 15px rgba(91, 192, 222, 0.5);
+  
+  /* Transitions */
+  --transition-standard: all 0.3s ease;
 }
 
+/* Base Styles */
+body {
+  background-color: var(--color-navy);
+  font-family: var(--font-body);
+  line-height: 1.5;
+}
+
+/* Typography */
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Avenir', sans-serif;
+  font-family: var(--font-secondary);
 }
 
-p{
-    font-family: 'Georgia', sans-serif;
+/* Components */
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  transition: var(--transition-standard);
+  box-shadow: var(--shadow-card);
+  border: none;
+  border-radius: 10px;
+  padding: var(--spacing-md);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-card-hover);
 }
 
 .btn-primary {
