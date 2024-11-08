@@ -1,6 +1,8 @@
-body {
-    background-color: var(--color-navy);
-    font-family: 'DIN1451', sans-serif;
+:root {
+    --breakpoint-sm: 576px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 992px;
+    --breakpoint-xl: 1200px;
 }
 
 @media (min-width: 768px) {
@@ -30,142 +32,97 @@ body {
 
 .container-fluid {
     display: flex;
-    padding: 0;
-    width: 100vw;
+    padding: 0 var(--space-md);
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+    gap: 8px;
 }
 
-.card {
+/* Base card styles */
+.prep-card {
     position: relative;
     flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-size: 4em;
+    height: 45vh;
     font-weight: bold;
     color: white;
     cursor: pointer;
-    padding: 20px;
+    padding: 15px;
     text-align: center;
-    box-sizing: border-box;
     text-decoration: none;
+    border-radius: 24px;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
-.card .letter {
-    font-size: 35vh;
+/* Letter styles */
+.prep-card .letter {
+    font-size: 25vh;
     color: var(--color-white);
-    text-shadow: 
-        2px 2px 0 rgba(0, 0, 0, 0.1),
-        4px 4px 0 rgba(0, 0, 0, 0.1),
-        6px 6px 10px rgba(0, 0, 0, 0.2);
-    transition: transform var(--transition-normal);
+    text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    transition: opacity 0.3s ease-in-out;
 }
 
-/* Individual letter styles */
-#card1 .letter {
-    background-image: none;
-    color: var(--color-white);
-}
-
-#card2 .letter {
-    background-image: none;
-    color: var(--color-white);
-}
-
-#card3 .letter {
-    background-image: none;
-    color: var(--color-white);
-}
-
-#card4 .letter {
-    background-image: none;
-    color: var(--color-white);
+/* Phrase styles */
+.prep-card .phrase {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    font-size: 2.5em;
+    font-weight: 600;
+    color: #fff;
+    filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.5));
+    transition: opacity 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 /* Hover effects */
-.card:hover .letter {
-    transform: scale(1.05) translateY(-5px);
-    text-shadow: 
-        4px 4px 0 rgba(255, 255, 255, 0.2),
-        8px 8px 0 rgba(0, 0, 0, 0.15),
-        20px 20px 20px rgba(0, 0, 0, 0.3);
+.prep-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
 }
 
-/* Add a subtle animation */
-@keyframes float {
-    0% {
-        transform: translateY(0px);
-    }
-    50% {
-        transform: translateY(-5px);
-    }
-    100% {
-        transform: translateY(0px);
-    }
+.prep-card:hover .letter {
+    opacity: 0;
 }
 
-.card .letter {
-    animation: float 3s ease-in-out infinite;
+.prep-card:hover .phrase {
+    opacity: 1;
 }
 
-/* Disable animation for users who prefer reduced motion */
-@media (prefers-reduced-motion: reduce) {
-    .card .letter {
-        animation: none;
-    }
+/* Individual card background styles */
+#card1.prep-card {
+    background: linear-gradient(135deg, var(--color-turquoise), #3498db);
 }
 
-@media (max-width: 1200px) {
-    .card .letter {
-        font-size: 35vw;
-    }
+#card2.prep-card {
+    background: linear-gradient(135deg, var(--color-gray), #95a5a6);
 }
 
-@media (max-width: 992px) {
-    .card .letter {
-        font-size: 30vw;
-    }
+#card3.prep-card {
+    background: linear-gradient(135deg, var(--color-navy), #2c3e50);
 }
 
-@media (max-width: 768px) {
-    .card .letter {
-        font-size: 25vw;
-    }
+#card4.prep-card {
+    background: linear-gradient(135deg, var(--color-yellow), #f1c40f);
 }
 
-@media (max-width: 576px) {
-    .card .letter {
-        font-size: 20vw;
-    }
-}
-
-.card .phrase {
-    display: none;
-    font-size: 1.5em;
-    margin-top: 20px;
-    z-index: 2;
-    color: #fff;
-    text-align: center;
-    filter: drop-shadow(3px 3px 3px #000);
-}
-
-#card1 {
-    background-color: var(--color-turquoise);
-}
-
-#card2 {
-    background-color: var(--color-gray);
-}
-
-#card3 {
-    background-color: var(--color-navy);
-}
-
-#card4 {
-    background-color: var(--color-yellow);
-}
-
-.card::before {
+/* Background image hover effects */
+.prep-card::before {
     content: '';
     position: absolute;
     top: 0;
@@ -174,31 +131,14 @@ body {
     height: 100%;
     background: no-repeat center center/cover;
     opacity: 0;
-    transition: opacity var(--transition-normal);
+    transition: opacity 0.2s ease-in-out;
 }
 
-.card:hover {
-    flex: 3;
-    font-size: 2em;
+.prep-card:hover::before {
+    opacity: 0.7;
 }
 
-.card:hover::before {
-    opacity: 0.7; 
-}
-
-.card:hover .letter {
-    display: none;
-}
-
-.card:hover .phrase {
-    display: block;
-}
-
-.container-fluid .card:not(:hover) {
-    flex: 1;
-    font-size: 4em;
-}
-
+/* Individual card background images */
 #card1::before {
     background-image: url('../img/background1.jpg');
     background-position: top;
@@ -216,52 +156,85 @@ body {
     background-image: url('../img/three.jpg');
 }
 
+/* Responsive styles */
+@media (max-width: var(--breakpoint-lg)) {
+    .prep-card .letter {
+        font-size: 22vh;
+    }
+    
+    .prep-card .phrase {
+        font-size: 2em;
+    }
+}
+
+@media (max-width: var(--breakpoint-md)) {
+    .container-fluid {
+        padding: 0 var(--space-sm);
+        gap: 8px;
+    }
+    
+    .prep-card .letter {
+        font-size: 18vh;
+    }
+    
+    .prep-card .phrase {
+        font-size: 1.8em;
+    }
+}
+
+@media (max-width: var(--breakpoint-sm)) {
+    .prep-card .letter {
+        font-size: 15vh;
+    }
+    
+    .prep-card .phrase {
+        font-size: 1.5em;
+    }
+}
+
+/* Container styles */
+.container-fluid {
+    display: flex;
+    padding: 0 var(--space-md);
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+    gap: 8px;
+}
+
+/* Add subtle background patterns */
+.prep-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 60%);
+    opacity: 0.5;
+    z-index: 0;
+}
+
 /* Static KC Box styles */
 .static-kc-box {
     position: relative;
     text-align: center;
-    color: #00334C;
     font-size: 20vw;
     font-weight: bold;
     line-height: 1;
     padding: 20px 0;
     margin-top: 20px;
     filter: drop-shadow(3px 3px 3px #000);
-    background-color: #F7E214;
-    overflow: hidden; /* Add this to contain the image */
-}
-
-@media (min-width: 768px) {
-    .static-kc-box {
-        font-size: 15vw;
-    }
-}
-
-@media (min-width: 1200px) {
-    .static-kc-box {
-        font-size: 12vw;
-    }
-}
-
-.static-kc-box span,
-.static-kc-box .fade-in-image {
-    opacity: 0;
-    transition: opacity 0.8s ease-in-out; /* Increased duration for slower fade-in */
+    overflow: hidden;
+    background-color: var(--color-yellow); /* Always show yellow background */
 }
 
 .static-kc-box span {
-    transition: opacity 0.8s ease-in-out, color 0.8s ease-in-out; /* Added color transition */
+    color: var(--color-navy);
+    opacity: 1;
+    transition: opacity 0.8s ease-in-out, color 0.8s ease-in-out;
     position: relative;
-    z-index: 1; /* Ensure text is above the image */
-}
-
-.static-kc-box span.visible {
-    opacity: 1;
-    color: #F7E214; /* Yellow color when visible */
-}
-
-.static-kc-box .fade-in-image.visible {
-    opacity: 1;
+    z-index: 1;
 }
 
 .static-kc-box .fade-in-image {
@@ -271,7 +244,17 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    z-index: 0; /* Place the image behind the text */
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+    z-index: 0;
+}
+
+.static-kc-box span.visible {
+    color: var(--color-yellow);
+}
+
+.static-kc-box .fade-in-image.visible {
+    opacity: 1;
 }
 
 /* Hero section styling */
@@ -284,4 +267,124 @@ body {
     font-family: 'DIN1451', sans-serif;
     font-weight: 400;
     line-height: 1.2;
+}
+
+/* Better image loading strategy */
+.fade-in-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    will-change: opacity;
+    backface-visibility: hidden;
+}
+
+/* Add responsive image sizes */
+@media (max-width: 768px) {
+    .fade-in-image {
+        object-position: top center;
+    }
+}
+
+@media (max-width: var(--breakpoint-md)) {
+    .container-fluid {
+        padding: 0 var(--space-md);
+    }
+    
+    .card {
+        margin: 0 var(--space-xs);
+    }
+}
+
+/* Add subtle background patterns when not hovered */
+.card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 60%);
+    opacity: 0.5;
+    z-index: 0;
+}
+
+/* Enhanced phrase styling with more dramatic animation */
+.card .phrase {
+    display: none;
+    font-size: 2.5em;
+    font-weight: 600;
+    margin-top: 20px;
+    z-index: 2;
+    color: #fff;
+    text-align: center;
+    filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.5));
+    opacity: 0;
+    transform: translateY(30px) scale(0.85); /* More dramatic initial position */
+    transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Bouncy easing */
+}
+
+.card:hover .phrase {
+    display: block;
+    opacity: 1;
+    transform: translateY(0) scale(1.1); /* Slightly larger end scale for emphasis */
+    animation: scaleBack 0.2s ease-out 0.25s forwards;
+}
+
+/* Add a quick scale-back animation */
+@keyframes scaleBack {
+    0% { transform: translateY(0) scale(1.1); }
+    100% { transform: translateY(0) scale(1); }
+}
+
+.card .letter {
+    /* ... existing styles ... */
+    transition: all 0.2s ease-in-out;
+}
+
+/* Maintain consistent card width */
+.card:hover {
+    min-height: 45vh;
+    flex: 1;
+    transform: translateY(-3px);
+}
+
+/* Responsive adjustments */
+@media (max-width: var(--breakpoint-lg)) {
+    .card {
+        height: 35vh;
+    }
+    
+    .card .letter {
+        font-size: 18vh;
+    }
+}
+
+@media (max-width: var(--breakpoint-md)) {
+    .container-fluid {
+        padding: 0 var(--space-sm);
+        gap: 8px;
+    }
+    
+    .card {
+        height: 35vh;
+    }
+    
+    .card .letter {
+        font-size: 15vh;
+    }
+    
+    .card .phrase {
+        font-size: 1.8em;
+    }
+}
+
+@media (max-width: var(--breakpoint-sm)) {
+    .card {
+        height: 35vh;
+    }
+    
+    .card .letter {
+        font-size: 12vh;
+    }
 }

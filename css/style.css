@@ -27,21 +27,19 @@
     --color-white: #ffffff;
     --color-black: #000000;
     
-    /* Typography Scale */
-    --font-size-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
-    --font-size-sm: clamp(0.875rem, 0.8rem + 0.375vw, 1rem);
-    --font-size-base: clamp(1rem, 0.9rem + 0.5vw, 1.125rem);
-    --font-size-lg: clamp(1.125rem, 1rem + 0.625vw, 1.25rem);
-    --font-size-xl: clamp(1.25rem, 1.1rem + 0.75vw, 1.5rem);
-    --font-size-2xl: clamp(1.5rem, 1.3rem + 1vw, 2rem);
-    --font-size-3xl: clamp(2rem, 1.8rem + 1.25vw, 3rem);
+    /* Simplified typography scale */
+    --scale-ratio: 1.25;
+    --font-size-base: 1rem;
+    --font-size-md: calc(var(--font-size-base) * var(--scale-ratio));
+    --font-size-lg: calc(var(--font-size-md) * var(--scale-ratio));
+    --font-size-xl: calc(var(--font-size-lg) * var(--scale-ratio));
     
-    /* Spacing */
-    --space-xs: clamp(0.5rem, 0.4rem + 0.5vw, 0.75rem);
-    --space-sm: clamp(0.75rem, 0.6rem + 0.75vw, 1rem);
-    --space-md: clamp(1rem, 0.8rem + 1vw, 1.5rem);
-    --space-lg: clamp(1.5rem, 1.2rem + 1.5vw, 2rem);
-    --space-xl: clamp(2rem, 1.6rem + 2vw, 3rem);
+    /* Simplified spacing system */
+    --space-unit: 1rem;
+    --space-xs: calc(var(--space-unit) * 0.5);
+    --space-sm: var(--space-unit);
+    --space-md: calc(var(--space-unit) * 1.5);
+    --space-lg: calc(var(--space-unit) * 2);
     
     /* Border Radius */
     --radius-sm: 0.25rem;
@@ -57,6 +55,12 @@
     --transition-fast: 150ms ease;
     --transition-normal: 300ms ease;
     --transition-slow: 500ms ease;
+    
+    /* Breakpoints */
+    --breakpoint-sm: 576px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 992px;
+    --breakpoint-xl: 1200px;
 }
 
 /* Reset & Base Styles */
@@ -108,6 +112,8 @@ h3 { font-size: var(--font-size-xl); }
     z-index: 100;
     margin-bottom: -5vh;
     background-color: transparent;
+    transform: translateZ(0);
+    will-change: transform;
 }
 
 .navbar-brand {
@@ -185,7 +191,7 @@ hr.style-two {
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
+@media (max-width: var(--breakpoint-md)) {
     .navbar {
         margin-bottom: 0;
         padding: var(--space-sm) var(--space-md);
@@ -266,4 +272,16 @@ hr.style-two {
         transition-duration: 0.01ms !important;
         scroll-behavior: auto !important;
     }
-} 
+}
+
+/* Reduce paint operations */
+.navbar {
+    transform: translateZ(0);
+    will-change: transform;
+}
+
+/* Focus styles */
+:focus {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+}
