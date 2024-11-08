@@ -9,14 +9,6 @@
         <link rel="stylesheet" type="text/css" href="css/style.css">
         <link rel="stylesheet" type="text/css" href="css/about.css">
         <script src="https://unpkg.com/htmx.org@2.0.1"></script>
-        <style>
-            body{
-                background-color: #56B2CB;
-            }
-            .nav-link{
-                color: #F7E214;
-            }
-        </style>
     </head>
     <body class="container">
         <div id="nav-container"></div>
@@ -25,7 +17,7 @@
         <h1 class="text-center title-format display-3">About</h1>
         <div class="bg-navy rounded m-3 p-3 row intro">
             <div class="col">
-                <div style="color:white;">
+                <div class="text-white">
                     <p>PREP-KC partners with <b class="text-yellow">6 districts</b> and <b class="text-yellow">4 charters</b> enrolling over <b class="text-yellow">67,000 students</b>. 
                         <span class="fst-italic">Representing the culturally rich, diverse, talented, communities across the heart of Kansas City.</span></p>
                     <ul>
@@ -44,101 +36,110 @@
         </div>
         <!-- END Intro -->
         <!-- TEAM -->
-        <div class="team">
+        <div class="team" role="region" aria-label="Our Team">
             <h2 class="title-format display-4">Our Team</h2>
             <div class="row">
+                <!-- Executive Leadership -->
                 <div class="col">
-                    <img src="img/team/susan_wally.jpg" alt="Susan Wally" class="rounded-5">
+                    <img src="img/team/susan_wally.jpg" alt="Susan Wally">
                     <h3>Susan Wally</h3>
                     <p>President & CEO</p>
                 </div>
-                <div class="col mb-3">
-                    <img src="img/team/doug_elmer.jpg" alt="Doug Elmer" class="rounded-5">
+                <div class="col">
+                    <img src="img/team/doug_elmer.jpg" alt="Doug Elmer">
                     <h3>Doug Elmer</h3>
                     <p>Vice President</p>
                 </div>
-                <div class="col mb-3">
-                    <img src="img/team/beth_mccarthy.jpg" alt="Beth McCarthy" class="rounded-5">
+                <div class="col">
+                    <img src="img/team/beth_mccarthy.jpg" alt="Beth McCarthy">
                     <h3>Beth McCarthy</h3>
                     <p>Director of Community & Industry Partnerships</p>
                 </div>
-                <div class="col mb-3">
-                    <img src="img/team/susan_engelmann.jpg" alt="Susan Engelmann" class="rounded-5">
+                <div class="col">
+                    <img src="img/team/susan_engelmann.jpg" alt="Susan Engelmann">
                     <h3>Susan Engelmann</h3>
                     <p>Senior Design & Implementation Coach</p>
                 </div>
-                <div class="col mb-3">
-                    <img src="img/team/cecil_christwell.jpg" alt="Cecil Christwell" class="rounded-5">
+
+                <!-- Directors and Managers -->
+                <div class="col">
+                    <img src="img/team/cecil_christwell.jpg" alt="Cecil Christwell">
                     <h3>Cecil Christwell</h3>
                     <p>Director of Teaching & Learning</p>
                 </div>
-                <div class="col mb-3">
-                    <img src="img/team/candace_villanueva_greer.jpg" alt="Candace Villanueva Greer" class="rounded-5">
+                <div class="col">
+                    <img src="img/team/candace_villanueva_greer.jpg" alt="Candace Villanueva Greer">
                     <h3>Candace Villanueva Greer</h3>
                     <p>College & Career Manager</p>
                 </div>
-                <div class="col mb-3">
-                    <img src="img/team/keva_gorman.jpg" alt="Keva Gorman" class="rounded-5">
+                <div class="col">
+                    <img src="img/team/keva_gorman.jpg" alt="Keva Gorman">
                     <h3>Keva Gorman</h3>
                     <p>Career Pathways Specialist</p>
                 </div>
-                <div class="col mb-3">
-                    <img src="img/team/jonathan_lane.jpg" alt="Jonathan Lane" class="rounded-5">
+                <div class="col">
+                    <img src="img/team/jonathan_lane.jpg" alt="Jonathan Lane">
                     <h3>Jonathan Lane</h3>
                     <p>Technology Innovation Manager</p>
                 </div>
-                <div class="col mb-3">
-                    <img src="img/team/huey_ru_strauss.jpg" alt="Huey Ru Strauss" class="rounded-5">
+
+                <!-- Specialists and Coaches -->
+                <div class="col">
+                    <img src="img/team/huey_ru_strauss.jpg" alt="Huey Ru Strauss">
                     <h3>Huey Ru Strauss</h3>
                     <p>Pathways to Tech Facilitator</p>
                 </div>
-                <div class="col mb-3">
-                    <img src="img/team/brittany_verrette.jpg" alt="Brittany Verrette" class="rounded-5">
+                <div class="col">
+                    <img src="img/team/brittany_verrette.jpg" alt="Brittany Verrette">
                     <h3>Brittany Verrette</h3>
                     <p>Classroom Innovation Manager</p>
                 </div>
-                <div class="col mb-3">
-                    <img src="img/team/kristin_kush.jpg" alt="Kristin Kush" class="rounded-5">
+                <div class="col">
+                    <img src="img/team/kristin_kush.jpg" alt="Kristin Kush">
                     <h3>Kristin Kush</h3>
                     <p>Data & Evaluation Specialist</p>
                 </div>
-                <div class="col mb-3">
-                    <img src="img/team/emily_colebank.jpg" alt="Emily Colebank" class="rounded-5">
+                <div class="col">
+                    <img src="img/team/emily_colebank.jpg" alt="Emily Colebank">
                     <h3>Emily Colebank</h3>
                     <p>Data Science Teaching & Learning Coach</p>
                 </div>
-                <div class="col mb-3">
-                    <img src="img/team/jamie_provost.png" alt="Jamie Provost" class="rounded-5">
+
+                <!-- Additional Team Members -->
+                <div class="col">
+                    <img src="img/team/jamie_provost.png" alt="Jamie Provost">
                     <h3>Jamie Provost</h3>
                     <p>Data Science Teaching & Learning Coach</p>
                 </div>
-                <div class="col mb-3">
-                    <img src="img/team/lori_hewitt.jpg" alt="Lori Hewitt" class="rounded-5">
+                <div class="col">
+                    <img src="img/team/lori_hewitt.jpg" alt="Lori Hewitt">
                     <h3>Lori Hewitt</h3>
                     <p>Launch Specialist</p>
                 </div>
-                <div class="col mb-3">
-                    <img src="img/team/yandell_toevs.jpg" alt="Yandell Toevs" class="rounded-5">
+                <div class="col">
+                    <img src="img/team/yandell_toevs.jpg" alt="Yandell Toevs">
                     <h3>Yandell Toevs</h3>
                     <p>Teaching & Learning Coach</p>
                 </div>
-                <div class="col mb-3">
-                    <img src="img/team/andra_culp_warren.jpg" alt="Andra Culp Warren" class="rounded-5">
+                <div class="col">
+                    <img src="img/team/andra_culp_warren.jpg" alt="Andra Culp Warren">
                     <h3>Andra Culp Warren</h3>
                     <p>Executive Assistant & Office Manager</p>
                 </div>
-                <div class="col mb-3">
-                    <img src="img/team/linda_peterson.jpg" alt="Linda Peterson" class="rounded-5">
+
+                <!-- Support Staff -->
+                <div class="col">
+                    <img src="img/team/linda_peterson.jpg" alt="Linda Peterson">
                     <h3>Linda Peterson</h3>
                     <p>Program Assistant</p>
                 </div>
-                <div class="col mb-3">
-                    <!-- <img src="img/team/kristine_mayer.jpg" alt="Kristine Mayer" class="rounded-5"> -->
+                
+                <!-- Members without photos -->
+                <div class="col">
                     <h3>Kristine Mayer</h3>
                     <p>Administrative Assistant</p>
                 </div>
-                <div class="col mb-3">
-                    <!-- <img src="img/team/alejandra_pecina.jpg" alt="Alejandra Pecina" class="rounded-5"> -->
+                <div class="col">
                     <h3>Alejandra Pecina</h3>
                     <p>Volunteer Coordinator</p>
                 </div>
@@ -146,8 +147,8 @@
         </div>
         <!-- END TEAM -->
         <!-- BOARD -->
-        <div class="bg-gray p-3 board text-white">
-            <h2 class="mb-4 text-center">Board of Directors</h2>
+        <div class="board">
+            <h2>Board of Directors</h2>
             <div class="row">
                 <div class="col-md-6">
                     <h4>Madeline Romious, Board Chair</h4>
@@ -180,58 +181,70 @@
         <!-- END BOARD -->
         <!-- Start Funders -->
         <div class="funders">
-            <h2 class="text-center">Our 2023-2024 Funders</h2>
-            <div class="row">
-                <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">AT&T</div>
-                <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">American Century</div>
-                <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">Arvest Bank of Greater Kansas City</div>
-                <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">Bank of America Charitable Foundation</div>
-                <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">BioNexus KC</div>
-                <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">CBIZ MHM, LLC</div>
-                <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">Civic Council of Greater Kansas City</div>
-                <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">Commerce Bancshares Foundation</div>
-                <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">Common Wealth Charitable Fund</div>
-                <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">Edward F. Swinney Trust</div>
-                <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">Evergy Services, Inc.</div>
-                <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">Ewing Marion Kauffman Foundation</div>
-                <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">Francis Family Foundation</div>
-                <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">George & Anne Murphy Charitable Fund</div>
-                <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">Greater Kansas City Community Foundation</div>
-                <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">H&R Block Foundation</div>
-                <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">Hall Family Foundation</div>
-                <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">Health Forward Foundation</div>
-                <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">Honeywell Charitable Foundation</div>
-                <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">J.C. Nichols Company Charitable Trust</div>
-                <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">Kansas City Missouri Bar Foundation</div>
-                <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">Opus Foundation</div>
-                <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">Oracle Cerner Charitable Foundation</div>
-                <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">PricewaterhouseCoopers</div>
-                <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">Sherman Family Foundation</div>
-                <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">Shumaker Family Foundation</div>
-                <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">Spotlight AR</div>
-                <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">State Street Global Services</div>
-                <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">T-Mobile Foundation</div>
-                <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">United Way of Greater Kansas City</div>
-                <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">VanTrust Real Estate, LLC - Kansas City</div>
-                <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">W.K. Kellogg Foundation</div>
+            <h2>Our 2023-2024 Funders</h2>
+            <div class="row" role="list">
+                <div role="listitem">AT&T</div>
+                <div role="listitem">American Century</div>
+                <div role="listitem">Arvest Bank of Greater Kansas City</div>
+                <div role="listitem">Bank of America Charitable Foundation</div>
+                <div role="listitem">BioNexus KC</div>
+                <div role="listitem">CBIZ MHM, LLC</div>
+                <div role="listitem">Civic Council of Greater Kansas City</div>
+                <div role="listitem">Commerce Bancshares Foundation</div>
+                <div role="listitem">Common Wealth Charitable Fund</div>
+                <div role="listitem">Edward F. Swinney Trust</div>
+                <div role="listitem">Evergy Services, Inc.</div>
+                <div role="listitem">Ewing Marion Kauffman Foundation</div>
+                <div role="listitem">Francis Family Foundation</div>
+                <div role="listitem">George & Anne Murphy Charitable Fund</div>
+                <div role="listitem">Greater Kansas City Community Foundation</div>
+                <div role="listitem">H&R Block Foundation</div>
+                <div role="listitem">Hall Family Foundation</div>
+                <div role="listitem">Health Forward Foundation</div>
+                <div role="listitem">Honeywell Charitable Foundation</div>
+                <div role="listitem">J.C. Nichols Company Charitable Trust</div>
+                <div role="listitem">Kansas City Missouri Bar Foundation</div>
+                <div role="listitem">Opus Foundation</div>
+                <div role="listitem">Oracle Cerner Charitable Foundation</div>
+                <div role="listitem">PricewaterhouseCoopers</div>
+                <div role="listitem">Sherman Family Foundation</div>
+                <div role="listitem">Shumaker Family Foundation</div>
+                <div role="listitem">Spotlight AR</div>
+                <div role="listitem">State Street Global Services</div>
+                <div role="listitem">T-Mobile Foundation</div>
+                <div role="listitem">United Way of Greater Kansas City</div>
+                <div role="listitem">VanTrust Real Estate, LLC - Kansas City</div>
+                <div role="listitem">W.K. Kellogg Foundation</div>
             </div>
         </div>
         <!-- FOOTER -->
-        <footer>
+        <footer class="container mt-5">
             <div class="footer row">
-                <div class="footer-text col">
-                    <p>PREP-KC<br>
-                        info@prepkc.org<br>
+                <address class="footer-text col">
+                    <p> 
+                        PREP-KC<br>
+                        <a href="mailto:info@prepkc.org">info@prepkc.org</a><br>
                         2300 Main St, Suite 340<br>
                         Kansas City, MO 64108<br>
-                        816.931.PREP
+                        <a href="tel:+18169317737">816.931.PREP</a>
                     </p>
-                </div>
+                </address>
                 <div class="footer-social col">
-                    <p>Connect</p>
-                    <a href="https://www.facebook.com/prepkc/" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://twitter.com/PREPKC" class="social-icon"><i class="fab fa-twitter"></i></a>
-                    <a href="https://www.linkedin.com/company/prep-kc/" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                    <h2 class="h5">Connect</h2>
+                    <nav class="social-links" aria-label="Social Media Links">
+                        <a href="mailto:info@prepkc.org" class="social-icon" aria-label="Email">
+                            <i class="fas fa-envelope" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://www.facebook.com/prepkc/" class="social-icon" aria-label="Facebook">
+                            <i class="fab fa-facebook-f" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://twitter.com/PREPKC" class="social-icon" aria-label="Twitter">
+                            <i class="fab fa-twitter" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/company/prep-kc/" class="social-icon" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+                        </a>
+                    </nav>
                 </div>
             </div>
         </footer>

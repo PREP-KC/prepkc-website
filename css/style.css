@@ -33,6 +33,8 @@
     --font-size-md: calc(var(--font-size-base) * var(--scale-ratio));
     --font-size-lg: calc(var(--font-size-md) * var(--scale-ratio));
     --font-size-xl: calc(var(--font-size-lg) * var(--scale-ratio));
+    --font-size-2xl: calc(var(--font-size-xl) * var(--scale-ratio));
+    --font-size-3xl: calc(var(--font-size-2xl) * var(--scale-ratio));
     
     /* Simplified spacing system */
     --space-unit: 1rem;
@@ -61,6 +63,14 @@
     --breakpoint-md: 768px;
     --breakpoint-lg: 992px;
     --breakpoint-xl: 1200px;
+    
+    /* Add container widths */
+    --container-max-width: 1200px;
+    --container-padding: var(--space-lg);
+    
+    /* Add commonly used values */
+    --header-height: 80px;
+    --footer-height: auto;
 }
 
 /* Reset & Base Styles */
@@ -114,6 +124,8 @@ h3 { font-size: var(--font-size-xl); }
     background-color: transparent;
     transform: translateZ(0);
     will-change: transform;
+    position: sticky;  /* Change to sticky for better UX */
+
 }
 
 .navbar-brand {
@@ -336,4 +348,11 @@ hr.style-two {
 :focus {
     outline: 2px solid var(--color-accent);
     outline-offset: 2px;
+}
+
+/* Add print styles */
+@media print {
+    .navbar {
+        display: none;
+    }
 }
