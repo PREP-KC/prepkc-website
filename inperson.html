@@ -10,25 +10,56 @@
     <link rel="stylesheet" type="text/css" href="css/voyager.css">
     <style>
         .card {
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 6px rgba(91, 192, 222, 0.3); /* Lighter blue shadow */
-            border: none;
+            background-color: white;
             border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(86, 178, 203, 0.3);
+            transition: all 0.3s ease;
+            margin-bottom: 20px;
         }
+        
         .card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 15px rgba(91, 192, 222, 0.5); /* Enhanced lighter blue shadow on hover */
+            box-shadow: 0 8px 15px rgba(86, 178, 203, 0.5);
         }
-        .card-body {
-            padding: 1.5rem;
-        }
+        
         .card-title {
-            font-weight: bold;
-            margin-bottom: 1rem;
+            font-family: 'Avenir', sans-serif;
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
         }
-        .btn-primary {
-            width: 100%;
-            margin-top: 1rem;
+        
+        .event-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        
+        .event-detail {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: 'Georgia', sans-serif;
+        }
+        
+        .event-detail i {
+            width: 20px;
+        }
+        
+        .register-btn {
+            margin-top: 1.5rem;
+            background-color: #56B2CB;
+            border: none;
+            padding: 0.8rem;
+            font-family: 'DIN1451', sans-serif;
+            text-transform: uppercase;
+        }
+        
+        .register-btn:hover {
+            background-color: #00334C;
+        }
+        
+        .event-detail span {
+            color: #00334C;
         }
     </style>
     <script src="https://unpkg.com/htmx.org@2.0.1"></script>
@@ -57,132 +88,56 @@
     </div>
     <p style="color:white;">PREP-KC supports career exploration opportunities in a variety of formats for all ages. Each event is listed below for volunteers to sign up as they are available.</p>
     <p style="color:white;">We appreciate your help in carefully considering your availability to participate in our programming and understand that life happens. If you must cancel, please inform PREP-KC staff in advance if possible. We appreciate your help finding a replacement volunteer. Our students count on these life-changing experiences. Thank you!</p>
-    <div id="event-container" class="container my-5">
-        <div class="row row-cols-1 row-cols-lg-4 g-4">
-            <div class="col">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Allen Village Mad City Money - 11th Grade</h5>
-                        <p class="card-text"><strong>DATE/TIME</strong><br>November 13, 2024<br>8:30 AM - 10:15 AM</p>
-                        <p class="card-text"><strong>REQUESTED SKILLS</strong><br>Financial Literacy</p>
-                        <p class="card-text"><strong>AVAILABLE SLOTS</strong><br>2</p>
-                        <a href="https://www.tfaforms.com/4937950?tfa_2256=a1hUV0000013jb7" class="btn btn-primary">Sign up</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Rosedale Middle School Career Jumping 6th Grade</h5>
-                        <p class="card-text"><strong>DATE/TIME</strong><br>November 14, 2024 <br> 8 AM - 11:00 AM</p>
-                        <p class="card-text"><strong>REQUESTED SKILLS</strong><br>Career Jumping</p>
-                        <p class="card-text"><strong>AVAILABLE SLOTS</strong><br>8</p>
-                        <a href="https://www.tfaforms.com/4937950?tfa_2256=a1hUV000001fl7F" class="btn btn-primary">Sign up</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Guadalupe Center Career Speakers - 7th Grade</h5>
-                        <p class="card-text"><strong>DATE/TIME</strong><br>December 5, 2024<br>8:15 AM - 10:30 AM</p>
-                        <p class="card-text"><strong>REQUESTED SKILLS</strong><br>Career Speaking</p>
-                        <p class="card-text"><strong>AVAILABLE SLOTS</strong><br>1</p>
-                        <a href="https://www.tfaforms.com/4937950?tfa_2256=a1hUV000001jxbF" class="btn btn-primary">Sign up</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">PREP-KC Virtual DEI Volunteer Orientation</h5>
-                        <p class="card-text"><strong>DATE/TIME</strong><br>December 6, 2024 <br> 12:00 PM - 1:00 PM</p>
-                        <p class="card-text"><strong>REQUESTED SKILLS</strong><br>None</p>
-                        <p class="card-text"><strong>AVAILABLE SLOTS</strong><br>20</p>
-                        <a href="https://www.tfaforms.com/4937950?tfa_2256=a1hUV0000014old" class="btn btn-primary">Sign up</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Hickman Mills South Career Jumping - 7th Grade</h5>
-                        <p class="card-text"><strong>DATE/TIME</strong><br>January 24, 2024<br>8:30 AM - 10:20 AM</p>
-                        <p class="card-text"><strong>REQUESTED SKILLS</strong><br>Career Jumping</p>
-                        <p class="card-text"><strong>AVAILABLE SLOTS</strong><br>28</p>
-                        <a href="https://www.tfaforms.com/4937950?tfa_2256=a1hUV000001x2QD" class="btn btn-primary">Sign up</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Center Middle School Career Jumping - 8th Grade</h5>
-                        <p class="card-text"><strong>DATE/TIME</strong><br>January 28, 2024<br>8:10 AM - 10:40 AM</p>
-                        <p class="card-text"><strong>REQUESTED SKILLS</strong><br>Career Jumping</p>
-                        <p class="card-text"><strong>AVAILABLE SLOTS</strong><br>18</p>
-                        <a href="https://www.tfaforms.com/4937950?tfa_2256=a1hUV0000015sIX" class="btn btn-primary">Sign up</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Arrowhead Middle School Career Jumping - 6th Grade</h5>
-                        <p class="card-text"><strong>DATE/TIME</strong><br>January 29, 2024<br>8:15 AM - 10:40 AM</p>
-                        <p class="card-text"><strong>REQUESTED SKILLS</strong><br>Career Jumping</p>
-                        <p class="card-text"><strong>AVAILABLE SLOTS</strong><br>19</p>
-                        <a href="https://www.tfaforms.com/4937950?tfa_2256=a1hUV000001zrmo" class="btn btn-primary">Sign up</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Carl Bruce Middle School Career Jumping - 6th Grade</h5>
-                        <p class="card-text"><strong>DATE/TIME</strong><br>February 5, 2024<br>8:15 AM - 10:45 AM</p>
-                        <p class="card-text"><strong>REQUESTED SKILLS</strong><br>Career Jumping</p>
-                        <p class="card-text"><strong>AVAILABLE SLOTS</strong><br>29</p>
-                        <a href="https://www.tfaforms.com/4937950?tfa_2256=a1hUV0000021lJt" class="btn btn-primary">Sign up</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Hickman Mills Middle School Career Jumping - 8th Grade</h5>
-                        <p class="card-text"><strong>DATE/TIME</strong><br>February 11, 2024<br>7:45 AM - 10:45 AM</p>
-                        <p class="card-text"><strong>REQUESTED SKILLS</strong><br>Career Jumping</p>
-                        <p class="card-text"><strong>AVAILABLE SLOTS</strong><br>24</p>
-                        <a href="https://www.tfaforms.com/4937950?tfa_2256=a1hUV0000022HI9" class="btn btn-primary">Sign up</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Ervin Elementary Career Speakers - 3rd-5th Grades</h5>
-                        <p class="card-text"><strong>DATE/TIME</strong><br>February 21, 2024<br>1:00 PM - 3:00 PM</p>
-                        <p class="card-text"><strong>REQUESTED SKILLS</strong><br>Career Speaking</p>
-                        <p class="card-text"><strong>AVAILABLE SLOTS</strong><br>7</p>
-                        <a href="https://www.tfaforms.com/4937950?tfa_2256=a1hUV000001x4IL" class="btn btn-primary">Sign up</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Crossroads Academy Career Speakers - 5th-6th Grades</h5>
-                        <p class="card-text"><strong>DATE/TIME</strong><br>February 28, 2024<br>9:00 AM - 10:50 AM</p>
-                        <p class="card-text"><strong>REQUESTED SKILLS</strong><br>Career Speaking</p>
-                        <p class="card-text"><strong>AVAILABLE SLOTS</strong><br>3</p>
-                        <a href="https://www.tfaforms.com/4937950?tfa_2256=a1hUV000001wc17" class="btn btn-primary">Sign up</a>
-                    </div>
-                </div>
-            </div>
-
-        </div>
+    <div id="signup-container" class="row row-cols-1 row-cols-md-3 g-4">
+        <!-- Content will be loaded here -->
     </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('https://polaris-jlane.pythonanywhere.com/volunteer_signup_api')
+                .then(response => response.json())
+                .then(events => {
+                    const container = document.getElementById('signup-container');
+                    container.innerHTML = ''; // Clear existing content
+                    
+                    events.forEach(event => {
+                        const card = `
+                            <div class="col">
+                                <div class="card h-100">
+                                    <div class="card-body">
+                                        <h3 class="card-title text-navy">${event.Name}</h3>
+                                        <div class="event-info">
+                                            <div class="event-detail">
+                                                <i class="fas fa-users text-turquoise"></i>
+                                                <span>Volunteers Needed: ${event.Available_Slots__c}</span>
+                                            </div>
+                                            <div class="event-detail">
+                                                <i class="far fa-calendar-alt text-turquoise"></i>
+                                                <span>${event.Date_and_Time_for_Cal__c}</span>
+                                            </div>
+                                            <div class="event-detail">
+                                                <i class="fas fa-tag text-turquoise"></i>
+                                                <span>${event.Session_Type__c}</span>
+                                            </div>
+                                            <a href="https://www.tfaforms.com/4937950?tfa_2256=${event.Id}" 
+                                               target="_blank" 
+                                               class="btn btn-primary register-btn">
+                                                <i class="fas fa-external-link-alt"></i> Register Now
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+                        container.innerHTML += card;
+                    });
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    document.getElementById('signup-container').innerHTML = 
+                        '<div class="alert alert-danger">Error loading events. Please try again later.</div>';
+                });
+        });
+    </script>
     <!-- FOOTER -->
     <footer>
         <div class="footer row">
