@@ -21,11 +21,14 @@
     <script src="https://unpkg.com/htmx.org@2.0.1"></script>
 </head>
 <body>
-    <div class="container">
-        <div id="nav-container"></div>
+    <!-- Main content wrapper -->
+    <main class="container">
+        <!-- Navigation section using HTMX for dynamic loading -->
+        <nav id="nav-container"></nav>
         <div hx-get="nav.html" hx-target="#nav-container" hx-trigger="load"></div>
-        <!-- Intro -->
-        <div class="hero-section">
+
+        <!-- Hero Section -->
+        <header class="hero-section">
             <div class="row">
                 <div class="col-lg-8 title-container">
                     <h1 class="impact-title text-navy">Impact</h1>
@@ -34,68 +37,76 @@
                     <p class="impact-subtitle text-gray">IT TAKES MORE THAN JUST GOOD GRADES TO MAKE THE GRADE.</p>
                 </div>
             </div>
-        </div>
-        <div class="row justify-content-center">
+        </header>
+
+        <!-- Statistics Section -->
+        <section class="row justify-content-center">
             <div class="col-md-10">
-                <div class="stats-container">
+                <article class="stats-container">
                     <h2 class="stats-title">THE POSITIVE IMPACT OF PARTNERSHIPS</h2>
                     <h3 class="stats-year"><u>2023-2024 School Year</u></h3>
-                    <div class="stats-content">
+                    <!-- Using semantic paragraph tags for better structure -->
+                    <p class="stats-content">
                         <span class="impact-number fade-in" data-value="1,134">0</span> volunteers engaged from<br/>
                         <span class="impact-number fade-in" data-value="423">0</span> businesses and postsecondary institutions<br/>
                         participated in <span class="impact-number fade-in" data-value="420">0</span> virtual and in-person events, and<br/>
                         provided <span class="impact-number fade-in" data-value="4,673">0</span> volunteer hours<br/>
                         while connecting with <span class="impact-number fade-in" data-value="6,297">0</span> students in person and<br/>
                         approximately <span class="impact-number fade-in" data-value="15,820">0</span> students virtually.
-                    </div>
-                </div>
+                    </p>
+                </article>
             </div>
-        </div>
-        <div class="row mx-3 impact-cards-container">
-            <div class="col-lg-6 mb-4">
+        </section>
+
+        <!-- Feature Cards Section -->
+        <section class="row mx-3 impact-cards-container">
+            <!-- Main feature card -->
+            <article class="col-lg-6 mb-4">
                 <div class="feature-card">
-                    <img src="img/mva.JPG" alt="Market Value Assets" class="custom-image">
+                    <!-- Always include descriptive alt text for accessibility -->
+                    <img src="img/mva.JPG" alt="Students participating in Market Value Assets program" class="custom-image">
                     <div class="feature-card-content">
                         <p class="feature-card-text text-yellow">
                             Learn how PREP-KC pioneered the MVA movement and is close to reaching our goal of 10,000 MVAs by 2025!
                         </p>
-                        <a href="mva.html" class="btn-impact">About Market Value Assets</a>
+                        <a href="mva.html" class="btn-impact" role="button">About Market Value Assets</a>
                     </div>
                 </div>
-            </div>
-            
+            </article>
+
+            <!-- Info cards section -->
             <div class="col-lg-6">
                 <div class="row g-4">
-                    <div class="col-12">
+                    <article class="col-12">
                         <div class="info-card">
                             <h5 class="info-card-title">Volunteers</h5>
                             <p class="info-card-text">
                                 Connected 1,096 industry volunteers from 516 companies (352 from KC) to over 6,468 in person and 17,000 virtually in 22-23 school year.
                             </p>
                         </div>
-                    </div>
+                    </article>
                     
-                    <div class="col-12">
+                    <article class="col-12">
                         <div class="info-card">
                             <h5 class="info-card-title">Data Science Initiative</h5>
                             <p class="info-card-text">
                                 In 2023, we have launched a first-of-its-kind 8th grade data science course that is is currently offered to over 650 8th graders from our footprint.
                             </p>
                         </div>
-                    </div>
+                    </article>
                     
-                    <div class="col-12">
+                    <article class="col-12">
                         <div class="info-card">
                             <h5 class="info-card-title">Connector Platform</h5>
                             <p class="info-card-text">
                                 In 2022-23, we used our virtual connector platform to connect industry to classrooms from K-12. Over the 2384 sessions we hosted, over 17,000 students were impacted with 922 teachers engaging in the platform.
                             </p>
                         </div>
-                    </div>
+                    </article>
                 </div>
             </div>
         </div>
-    </div>
+    </main>
     <!-- FOOTER -->
     <footer class="container mt-5">
         <div class="footer row">
@@ -128,6 +139,7 @@
         </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <!-- Custom JavaScript for number animation -->
     <script>
     document.addEventListener('DOMContentLoaded', () => {
         const numbers = document.querySelectorAll('.impact-number');
