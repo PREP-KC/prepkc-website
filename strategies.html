@@ -17,10 +17,10 @@
     <div id="nav-container"></div>
     <div hx-get="nav.html" hx-target="#nav-container" hx-trigger="load"></div>
     <!-- Intro -->
-    <h1 class="text-center title-format gradient-text display-1">IGNITING POTENTIAL</h1>
-    <div class="row text-yellow">
-        <p style="font-size:1.5em;">Empowering students from Kansas City’s urban schools with pathways to meaningful
-            careers. PREP-KC helps ensure that students attending our region’s urban schools have equal access to the
+    <h1 class="strategies-title gradient-text">IGNITING POTENTIAL</h1>
+    <div class="row text-yellow justify-content-center">
+        <p class="intro-text text-center text-white">Empowering students from Kansas City's urban schools with pathways to meaningful
+            careers. PREP-KC helps ensure that students attending our region's urban schools have equal access to the
             knowledge, opportunities, and experiences they need to pursue meaningful careers. We implement unique,
             hands-on strategies that allow 3rd through 12th-grade students to explore college and careers through
             hands-on, real-world opportunities.</p>
@@ -34,7 +34,7 @@
                         <img src="img/elementary-career-explore.jpg" alt="3rd-5th Grade">
                     </div>
                     <h5 class="card-title">3rd - 5th</h5>
-                    <p>Grade</p>
+                    <p class="grade-text">Grade</p>
                     <p class="card-subtitle mb-2 display-6">Exposure</p>
                     <p class="card-text">Career Speakers & Campus Visits</p>
                 </div>
@@ -47,7 +47,7 @@
                         <img src="img/middle-career-exploration.jpg" alt="6th-8th Grade">
                     </div>
                     <h5 class="card-title">6th - 8th</h5>
-                    <p>Grade</p>
+                    <p class="grade-text">Grade</p>
                     <p class="card-subtitle mb-2 display-6">Exploration</p>
                     <p class="card-text">Career Jumping, IGNITE, & Data Science Initiative</p>
                 </div>
@@ -60,7 +60,7 @@
                         <img src="img/highschool-prep.jpg" alt="9th-10th Grade">
                     </div>
                     <h5 class="card-title">9th - 10th</h5>
-                    <p>Grade</p>
+                    <p class="grade-text">Grade</p>
                     <p class="card-subtitle mb-2 display-6">Preparation</p>
                     <p class="card-text">Client Projects & Workplace/Campus Visits</p>
                 </div>
@@ -73,7 +73,7 @@
                         <img src="img/highschool-immersion.jpg" alt="11th-12th Grade">
                     </div>
                     <h5 class="card-title">11th - 12th</h5>
-                    <p>Grade</p>
+                    <p class="grade-text">Grade</p>
                     <p class="card-subtitle mb-2 display-6">Immersion</p>
                     <p class="card-text"><span class="text-navy">Earn MVA</span>, Career Fairs / College Application
                         Fairs</p>
@@ -84,45 +84,58 @@
             <span>Virtual Connector sessions & workplace/ campus visits 2nd Grade to Graduation!</span>
         </div>
     </div>
-    <div class="row align-items-stretch">
-        <div class="col-md-7 d-flex align-items-stretch">
-            <img src="img/background4.jpg" alt="Career Pathways" class="img-fluid custom-image flex-fill">
-        </div>
-        <div class="col-md-5 d-flex align-items-stretch">
-            <div class="custom-list flex-fill d-flex flex-column justify-content-center">
-                <h2 class="text-center custom-title">CAREER PATHWAYS</h2>
-                <p class="text-center custom-subtitle">(MANAGED & CO-FUNDED BY PREP-KC)</p>
-                <ul class="list-unstyled custom-list-items" style="font-size:1.5em">
-                    <li class="text-navy">HealthStart Academy</li>
-                    <li class="text-navy">Business & Finance Institute</li>
-                    <li class="text-navy">Pathways to Technology</li>
-                    <li class="text-navy">Student Law Academy</li>
-                    <li class="text-navy">Pathways to Graphic Design</li>
-                    <li class="text-navy">Pathways to Teaching</li>
-                    <li class="text-navy">Pathways to Energy</li>
-                    <li class="text-navy">Data Science Pathway (2023)</li>
-                </ul>
+    <div class="career-pathways-section">
+        <div class="row align-items-stretch">
+            <div class="col-md-7 d-flex align-items-stretch">
+                <img src="img/background4.jpg" alt="Career Pathways" class="img-fluid custom-image flex-fill">
+            </div>
+            <div class="col-md-5 d-flex align-items-stretch">
+                <div class="custom-list flex-fill d-flex flex-column justify-content-center">
+                    <h2 class="text-center custom-title">CAREER PATHWAYS</h2>
+                    <p class="text-center custom-subtitle">(MANAGED & CO-FUNDED BY PREP-KC)</p>
+                    <ul class="list-unstyled custom-list-items">
+                        <li>HealthStart Academy</li>
+                        <li>Business & Finance Institute</li>
+                        <li>Pathways to Technology</li>
+                        <li>Student Law Academy</li>
+                        <li>Pathways to Graphic Design</li>
+                        <li>Pathways to Teaching</li>
+                        <li>Pathways to Energy</li>
+                        <li>Data Science Pathway (2023)</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
 
     <!-- FOOTER -->
-    <footer>
+    <footer class="container mt-5">
         <div class="footer row">
-            <div class="footer-text col">
-                <p>PREP-KC<br>
-                    info@prepkc.org<br>
+            <address class="footer-text col">
+                <p> 
+                    PREP-KC<br>
+                    <a href="mailto:info@prepkc.org">info@prepkc.org</a><br>
                     2300 Main St, Suite 340<br>
                     Kansas City, MO 64108<br>
-                    816.931.PREP
+                    <a href="tel:+18169317737">816.931.PREP</a>
                 </p>
-            </div>
+            </address>
             <div class="footer-social col">
-                <p>Connect</p>
-                <a href="https://www.facebook.com/prepkc/" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                <a href="https://twitter.com/PREPKC" class="social-icon"><i class="fab fa-twitter"></i></a>
-                <a href="https://www.linkedin.com/company/prep-kc/" class="social-icon"><i
-                        class="fab fa-linkedin-in"></i></a>
+                <h2 class="h5">Connect</h2>
+                <nav class="social-links" aria-label="Social Media Links">
+                    <a href="mailto:info@prepkc.org" class="social-icon" aria-label="Email">
+                        <i class="fas fa-envelope" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://www.facebook.com/prepkc/" class="social-icon" aria-label="Facebook">
+                        <i class="fab fa-facebook-f" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://twitter.com/PREPKC" class="social-icon" aria-label="Twitter">
+                        <i class="fab fa-twitter" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/company/prep-kc/" class="social-icon" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+                    </a>
+                </nav>
             </div>
         </div>
     </footer>
