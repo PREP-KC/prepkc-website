@@ -125,6 +125,7 @@ h3 { font-size: var(--font-size-xl); }
     transform: translateZ(0);
     will-change: transform;
     position: sticky;  /* Change to sticky for better UX */
+    min-height: inherit;
 
 }
 
@@ -354,5 +355,22 @@ hr.style-two {
 @media print {
     .navbar {
         display: none;
+    }
+}
+
+/* Add these styles to reserve space for navigation */
+.index-nav {
+    min-height: 120px; /* Adjust this value based on your nav height */
+    width: 100%;
+}
+
+#nav-container {
+    min-height: inherit;
+}
+
+/* Adjust the min-height for different screen sizes */
+@media (max-width: 768px) {
+    .index-nav {
+        min-height: 90px; /* Smaller height for mobile */
     }
 }
