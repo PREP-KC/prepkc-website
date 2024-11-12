@@ -1,161 +1,173 @@
-<html lang="en-US">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="PREP-KC">
-        <title>PREP-KC</title>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-        <link rel="stylesheet" type="text/css" href="css/voyager.css">
-        <link rel="stylesheet" type="text/css" href="css/impact.css">
-        <script src="https://unpkg.com/htmx.org@2.0.1"></script>
-    </head>
-    <style>
-        .navbar-image{
-            content: url("img/logo/turq.png");
-        }
-        .impact-number {
-            font-size: 1.4em;
-            font-weight: bold;
-            color: #40E0D0; /* Turquoise color */
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-            display: inline-block;
-            transform: scale(1.1);
-            transition: transform 0.2s ease-in-out;
-            text-shadow: 
-                -1px -1px 0 #000,
-                1px -1px 0 #000,
-                -1px 1px 0 #000,
-                1px 1px 0 #000;
-        }
-        .impact-number:hover {
-            transform: scale(1.2);
-        }
-        .fade-in {
-            opacity: 0;
-            transition: opacity .5s ease-in-out;
-        }
-        .fade-in.visible {
-            opacity: 1;
-        }
-    </style>
-    <body>
-        <div class="container">
-            <div id="nav-container"></div>
-            <div hx-get="nav.html" hx-target="#nav-container" hx-trigger="load"></div>
-            <!-- Intro -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta tags help with SEO and mobile responsiveness -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="PREP-KC ignites potential by connecting educators and industry professionals to build meaningful career paths across Kansas City.">
+    
+    <!-- Preloading improves performance by loading critical assets before they're needed -->
+    <link rel="preload" href="fonts/DINEngschriftStd.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="img/kc-2.png" as="image">
+    
+    <!-- External CSS libraries and custom stylesheets -->
+    <!-- Always load third-party CSS before your custom CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/impact.css">
+    
+    <!-- HTMX library enables AJAX functionality without writing JavaScript -->
+    <script src="https://unpkg.com/htmx.org@2.0.1"></script>
+</head>
+<body>
+    <!-- Main content wrapper -->
+    <main class="container">
+        <!-- Navigation section using HTMX for dynamic loading -->
+        <nav id="nav-container"></nav>
+        <div hx-get="nav.html" hx-target="#nav-container" hx-trigger="load"></div>
+
+        <!-- Hero Section -->
+        <header class="hero-section">
             <div class="row">
-                <div class="col-8">
-                    <h1 class="title-format text-navy" style="font-size:7em;">Impact</h1>
+                <div class="col-lg-8 title-container">
+                    <h1 class="impact-title text-navy">Impact</h1>
                 </div>
-                <div class=" col-4 d-flex align-items-center text-white fst-italic">
-                    <p class="text-gray" style="font-size:1.5em;">IT TAKES MORE THAN JUST GOOD GRADES TO MAKE THE GRADE.</div></p>        
-                </div>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-md-10">
-                    <div class="row mt-2">
-                        <h1 class="text-center title-format display-3 text-navy">THE POSITIVE IMPACT OF PARTNERSHIPS</h1>
-                        <p style="font-size:2em;" class="text-center title-format display-3 text-navy"><u>2023-2024 School Year</u></p>
-                        <p style="font-size:1.5em;" class="text-center text-navy">
-                            <span class="impact-number fade-in" data-value="1,134">0</span> volunteers engaged from <br/>
-                            <span class="impact-number fade-in" data-value="423">0</span> businesses and postsecondary institutions <br/>
-                            participated in <span class="impact-number fade-in" data-value="420">0</span> virtual and in-person events, and <br />
-                            provided <span class="impact-number fade-in" data-value="4,673">0</span> volunteer hours <br />
-                            while connecting with <span class="impact-number fade-in" data-value="6,297">0</span> students in person and <br />
-                            approximately <span class="impact-number fade-in" data-value="15,820">0</span> students virtually.
-                        </p>
-                    </div>
+                <div class="col-lg-4 d-flex align-items-center">
+                    <p class="impact-subtitle text-gray">IT TAKES MORE THAN JUST GOOD GRADES TO MAKE THE GRADE.</p>
                 </div>
             </div>
-            <div class="row mx-3 d-flex align-items-stretch">
-                <div class="col-lg-6 d-flex align-items-stretch">
-                    <div class="custom-card flex-fill">
-                        <img src="img/mva.JPG" alt="Descriptive Alt Text" class="custom-image">
-                        <div class="text-center text-yellow mt-3 row" style="font-size:1.2em;">
-                            <div class="col-lg-8">
-                                Learn how PREP-KC pioneered the MVA movement and is close to reaching our goal of 10,000 MVAs by 2025!
-                            </div>
-                            <div class="col-lg-4 mt-3">
-                                <a href="mva.html" class="btn btn-primary">About Market Value Assets</a>
-                            </div>
-                        </div>
+        </header>
+
+        <!-- Statistics Section -->
+        <section class="row justify-content-center">
+            <div class="col-md-10">
+                <article class="stats-container">
+                    <h2 class="stats-title">THE POSITIVE IMPACT OF PARTNERSHIPS</h2>
+                    <h3 class="stats-year"><u>2023-2024 School Year</u></h3>
+                    <!-- Using semantic paragraph tags for better structure -->
+                    <p class="stats-content">
+                        <span class="impact-number fade-in" data-value="1,134">0</span> volunteers engaged from<br/>
+                        <span class="impact-number fade-in" data-value="423">0</span> businesses and postsecondary institutions<br/>
+                        participated in <span class="impact-number fade-in" data-value="420">0</span> virtual and in-person events, and<br/>
+                        provided <span class="impact-number fade-in" data-value="4,673">0</span> volunteer hours<br/>
+                        while connecting with <span class="impact-number fade-in" data-value="6,297">0</span> students in person and<br/>
+                        approximately <span class="impact-number fade-in" data-value="15,820">0</span> students virtually.
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <!-- Feature Cards Section -->
+        <section class="row mx-3 impact-cards-container">
+            <!-- Main feature card -->
+            <article class="col-lg-6 mb-4">
+                <div class="feature-card">
+                    <!-- Always include descriptive alt text for accessibility -->
+                    <img src="img/mva.JPG" alt="Students participating in Market Value Assets program" class="custom-image">
+                    <div class="feature-card-content">
+                        <p class="feature-card-text text-yellow">
+                            Learn how PREP-KC pioneered the MVA movement and is close to reaching our goal of 10,000 MVAs by 2025!
+                        </p>
+                        <a href="mva.html" class="btn-impact" role="button">About Market Value Assets</a>
                     </div>
                 </div>
-                <div class="col-md-4 d-flex flex-column justify-content-between">
-                    <div class="card flex-fill mb-3">
-                        <div class="card-body" style="background-color:#818387">
-                            <h5 class="card-title text-yellow title-format">Volunteers</h5>
-                            <p class="card-text text-white">Connected 1,096 industry volunteers from 516 companies (352 from KC) to over 6,468 in person and 17,000 virtually in 22-23 school year.</p>
+            </article>
+
+            <!-- Info cards section -->
+            <div class="col-lg-6">
+                <div class="row g-4">
+                    <article class="col-12">
+                        <div class="info-card">
+                            <h5 class="info-card-title">Volunteers</h5>
+                            <p class="info-card-text">
+                                Connected 1,096 industry volunteers from 516 companies (352 from KC) to over 6,468 in person and 17,000 virtually in 22-23 school year.
+                            </p>
                         </div>
-                    </div>
-                    <div class="card flex-fill mb-3">
-                        <div class="card-body" style="background-color:#818387">
-                            <h5 class="card-title text-yellow title-format">Data Science Initiative</h5>
-                            <p class="card-text text-white">In 2023, we have launched a first-of-its-kind 8th grade data science course that is is currently offered to over 650 8th graders from our footprint.</p>
+                    </article>
+                    
+                    <article class="col-12">
+                        <div class="info-card">
+                            <h5 class="info-card-title">Data Science Initiative</h5>
+                            <p class="info-card-text">
+                                In 2023, we have launched a first-of-its-kind 8th grade data science course that is is currently offered to over 650 8th graders from our footprint.
+                            </p>
                         </div>
-                    </div>
-                    <div class="card flex-fill">
-                        <div class="card-body" style="background-color:#818387">
-                            <h5 class="card-title text-yellow title-format">Connector Platform</h5>
-                            <p class="card-text text-white">
-                            In 2022-23, we used our virtual connector platform to connect industry to classrooms from K-12. Over the 2384 sessions we hosted,
-                            over 17,000 students were impacted with 922 teachers engaging in the platform.
-                        </p>
+                    </article>
+                    
+                    <article class="col-12">
+                        <div class="info-card">
+                            <h5 class="info-card-title">Connector Platform</h5>
+                            <p class="info-card-text">
+                                In 2022-23, we used our virtual connector platform to connect industry to classrooms from K-12. Over the 2384 sessions we hosted, over 17,000 students were impacted with 922 teachers engaging in the platform.
+                            </p>
                         </div>
-                    </div>
+                    </article>
                 </div>
             </div>
         </div>
-      <!-- FOOTER -->
-      <footer>
-        <div class="footer row bg-navy">
-            <div class="footer-text col mx-5">
-                <p>PREP-KC<br>
-                    info@prepkc.org<br>
+    </main>
+    <!-- FOOTER -->
+    <footer class="container mt-5">
+        <div class="footer row">
+            <address class="footer-text col">
+                <p> 
+                    PREP-KC<br>
+                    <a href="mailto:info@prepkc.org">info@prepkc.org</a><br>
                     2300 Main St, Suite 340<br>
                     Kansas City, MO 64108<br>
-                    816.931.PREP
+                    <a href="tel:+18169317737">816.931.PREP</a>
                 </p>
-            </div>
+            </address>
             <div class="footer-social col">
-                <p>Connect</p>
-                <a href="https://www.facebook.com/prepkc/" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                <a href="https://twitter.com/PREPKC" class="social-icon"><i class="fab fa-twitter"></i></a>
-                <a href="https://www.linkedin.com/company/prep-kc/" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                <h2 class="h5">Connect</h2>
+                <nav class="social-links" aria-label="Social Media Links">
+                    <a href="mailto:info@prepkc.org" class="social-icon" aria-label="Email">
+                        <i class="fas fa-envelope" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://www.facebook.com/prepkc/" class="social-icon" aria-label="Facebook">
+                        <i class="fab fa-facebook-f" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://twitter.com/PREPKC" class="social-icon" aria-label="Twitter">
+                        <i class="fab fa-twitter" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/company/prep-kc/" class="social-icon" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+                    </a>
+                </nav>
             </div>
         </div>
     </footer>
-    <!-- END FOOTER -->
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-      <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const numbers = document.querySelectorAll('.impact-number');
-            let delay = 0;
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <!-- Custom JavaScript for number animation -->
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const numbers = document.querySelectorAll('.impact-number');
+        let delay = 0;
 
-            numbers.forEach((number, index) => {
-                setTimeout(() => {
-                    number.classList.add('visible');
-                    const finalValue = parseInt(number.dataset.value.replace(',', ''));
-                    animateNumber(number, finalValue);
-                }, delay);
-                delay += 1000; // Increase delay for each subsequent number
-            });
+        numbers.forEach((number, index) => {
+            setTimeout(() => {
+                number.classList.add('visible');
+                const finalValue = parseInt(number.dataset.value.replace(',', ''));
+                animateNumber(number, finalValue);
+            }, delay);
+            delay += 1000; // Increase delay for each subsequent number
         });
+    });
 
-        function animateNumber(element, final) {
-            let start = 0;
-            const duration = 2000; // 2 seconds
-            const step = timestamp => {
-                if (!start) start = timestamp;
-                const progress = Math.min((timestamp - start) / duration, 1);
-                element.textContent = Math.floor(progress * final).toLocaleString();
-                if (progress < 1) {
-                    window.requestAnimationFrame(step);
-                }
-            };
-            window.requestAnimationFrame(step);
-        }
-      </script>
-    </body>
+    function animateNumber(element, final) {
+        let start = 0;
+        const duration = 1000; // 1 seconds
+        const step = timestamp => {
+            if (!start) start = timestamp;
+            const progress = Math.min((timestamp - start) / duration, 1);
+            element.textContent = Math.floor(progress * final).toLocaleString();
+            if (progress < 1) {
+                window.requestAnimationFrame(step);
+            }
+        };
+        window.requestAnimationFrame(step);
+    }
+    </script>
+</body>
 </html>

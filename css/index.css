@@ -1,15 +1,8 @@
-@font-face {
-    font-family: 'DIN1451';
-    src:    url('../fonts/DINEngschriftStd.otf') format('opentype'),
-            url('../fonts/DINMittelschriftStd.otf') format('opentype');
-
-    font-weight: normal;
-    font-style: normal;
-}
-
-body {
-    background-color: #00334C;
-    font-family: DIN1451, sans-serif;
+:root {
+    --breakpoint-sm: 576px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 992px;
+    --breakpoint-xl: 1200px;
 }
 
 @media (min-width: 768px) {
@@ -29,7 +22,7 @@ body {
 .navbar .nav-link:hover,
 .navbar .nav-link:focus,
 .navbar .nav-link.active {
-    color: #F7E214 !important; /* Change the background color on hover, focus, and active */
+    color: var(--color-yellow) !important; /* Change the background color on hover, focus, and active */
 }
 
 .navbar-brand img {
@@ -39,84 +32,140 @@ body {
 
 .container-fluid {
     display: flex;
-    padding: 0;
-    width: 100vw;
+    padding: 0 var(--space-md);
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+    gap: 8px;
+    flex-direction: row; /* Default to row */
 }
 
-.card {
+/* Add media query for small screens using Bootstrap's breakpoint */
+@media (max-width: 576px) { /* Bootstrap's sm breakpoint */
+    .container-fluid {
+        flex-direction: column;
+        padding: 0 var(--space-sm);
+    }
+
+    .prep-card {
+        height: 25vh;
+        min-height: 150px; /* Add minimum height */
+        margin-bottom: 8px; /* Add some spacing between stacked cards */
+    }
+}
+
+/* Adjust existing media queries to match Bootstrap breakpoints */
+@media (max-width: 768px) { /* Bootstrap's md breakpoint */
+    .prep-card .letter {
+        font-size: 15vh;
+    }
+    
+    .prep-card .phrase {
+        font-size: 1.5em;
+    }
+}
+
+/* Base card styles */
+.prep-card {
     position: relative;
     flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-size: 4em;
+    height: 45vh;
     font-weight: bold;
     color: white;
     cursor: pointer;
-    padding: 20px;
+    padding: 15px;
     text-align: center;
-    box-sizing: border-box;
     text-decoration: none;
+    border-radius: 24px;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    border: 2px solid transparent;
+    transform-origin: center;
 }
 
-.card .letter {
-    font-size: 35vh;
-    z-index: 2;
-    filter: drop-shadow(3px 3px 3px #000);
+/* Letter styles */
+.prep-card .letter {
+    font-size: clamp(15vh, 20vw, 25vh);
+    color: var(--color-white);
+    text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    transition: opacity 0.3s ease-in-out;
 }
 
-@media (max-width: 1200px) {
-    .card .letter {
-        font-size: 35vw;
-    }
-}
-
-@media (max-width: 992px) {
-    .card .letter {
-        font-size: 30vw;
-    }
-}
-
-@media (max-width: 768px) {
-    .card .letter {
-        font-size: 25vw;
-    }
-}
-
-@media (max-width: 576px) {
-    .card .letter {
-        font-size: 20vw;
-    }
-}
-
-.card .phrase {
-    display: none;
-    font-size: 1.5em;
-    margin-top: 20px;
-    z-index: 2;
-    color: #fff;
+/* Phrase styles */
+.prep-card .phrase {
+    position: absolute;
+    width: 100%;
     text-align: center;
-    filter: drop-shadow(3px 3px 3px #000);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    font-weight: 600;
+    color: #fff;
+    filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.5));
+    transition: opacity 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    background: linear-gradient(
+        135deg,
+        rgba(0, 51, 76, 0.95),  /* Your navy color */
+        rgba(0, 51, 76, 0.85)
+    );
+    padding: 1.5rem;
+    border-radius: var(--radius-md);
+    width: 85%;
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transform: translateY(10px);
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-#card1 {
-    background-color: #56B2CB; /* Light Blue */
+/* Hover effects */
+.prep-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--color-yellow);
+    box-shadow: 
+        0 12px 28px rgba(0, 0, 0, 0.15),
+        0 0 0 2px var(--color-yellow);
 }
 
-#card2 {
-    background-color: #818387; /* Gray */
+.prep-card:hover .letter {
+    opacity: 0;
 }
 
-#card3 {
-    background-color: #00334C; /* Dark Blue */
+.prep-card:hover .phrase {
+    opacity: 1;
 }
 
-#card4 {
-    background-color: #F7E214; /* Yellow */
+/* Individual card background styles */
+#card1.prep-card {
+    background: linear-gradient(135deg, var(--color-turquoise), #3498db);
 }
 
-.card::before {
+#card2.prep-card {
+    background: linear-gradient(135deg, var(--color-gray), #95a5a6);
+}
+
+#card3.prep-card {
+    background: linear-gradient(135deg, var(--color-navy), #2c3e50);
+}
+
+#card4.prep-card {
+    background: linear-gradient(135deg, var(--color-yellow), #f1c40f);
+}
+
+/* Background image hover effects */
+.prep-card::before {
     content: '';
     position: absolute;
     top: 0;
@@ -125,31 +174,14 @@ body {
     height: 100%;
     background: no-repeat center center/cover;
     opacity: 0;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.2s ease-in-out;
 }
 
-.card:hover {
-    flex: 3;
-    font-size: 2em;
+.prep-card:hover::before {
+    opacity: 0.7;
 }
 
-.card:hover::before {
-    opacity: 0.7; 
-}
-
-.card:hover .letter {
-    display: none;
-}
-
-.card:hover .phrase {
-    display: block;
-}
-
-.container-fluid .card:not(:hover) {
-    flex: 1;
-    font-size: 4em;
-}
-
+/* Individual card background images */
 #card1::before {
     background-image: url('../img/background1.jpg');
     background-position: top;
@@ -167,52 +199,85 @@ body {
     background-image: url('../img/three.jpg');
 }
 
+/* Responsive styles */
+@media (max-width: var(--breakpoint-lg)) {
+    .prep-card .letter {
+        font-size: 22vh;
+    }
+    
+    .prep-card .phrase {
+        font-size: 2em;
+    }
+}
+
+@media (max-width: var(--breakpoint-md)) {
+    .container-fluid {
+        padding: 0 var(--space-sm);
+        gap: 8px;
+    }
+    
+    .prep-card .letter {
+        font-size: 18vh;
+    }
+    
+    .prep-card .phrase {
+        font-size: 1.8em;
+    }
+}
+
+@media (max-width: var(--breakpoint-sm)) {
+    .prep-card .letter {
+        font-size: 15vh;
+    }
+    
+    .prep-card .phrase {
+        font-size: 1.5em;
+    }
+}
+
+/* Container styles */
+.container-fluid {
+    display: flex;
+    padding: 0 var(--space-md);
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+    gap: 8px;
+}
+
+/* Add subtle background patterns */
+.prep-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 60%);
+    opacity: 0.5;
+    z-index: 0;
+}
+
 /* Static KC Box styles */
 .static-kc-box {
     position: relative;
     text-align: center;
-    color: #00334C;
     font-size: 20vw;
     font-weight: bold;
     line-height: 1;
     padding: 20px 0;
     margin-top: 20px;
     filter: drop-shadow(3px 3px 3px #000);
-    background-color: #F7E214;
-    overflow: hidden; /* Add this to contain the image */
-}
-
-@media (min-width: 768px) {
-    .static-kc-box {
-        font-size: 15vw;
-    }
-}
-
-@media (min-width: 1200px) {
-    .static-kc-box {
-        font-size: 12vw;
-    }
-}
-
-.static-kc-box span,
-.static-kc-box .fade-in-image {
-    opacity: 0;
-    transition: opacity 0.8s ease-in-out; /* Increased duration for slower fade-in */
+    overflow: hidden;
+    background-color: var(--color-yellow); /* Always show yellow background */
 }
 
 .static-kc-box span {
-    transition: opacity 0.8s ease-in-out, color 0.8s ease-in-out; /* Added color transition */
+    color: var(--color-navy);
+    opacity: 1;
+    transition: opacity 0.8s ease-in-out, color 0.8s ease-in-out;
     position: relative;
-    z-index: 1; /* Ensure text is above the image */
-}
-
-.static-kc-box span.visible {
-    opacity: 1;
-    color: #F7E214; /* Yellow color when visible */
-}
-
-.static-kc-box .fade-in-image.visible {
-    opacity: 1;
+    z-index: 1;
 }
 
 .static-kc-box .fade-in-image {
@@ -222,5 +287,217 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    z-index: 0; /* Place the image behind the text */
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+    z-index: 0;
+}
+
+.static-kc-box span.visible {
+    color: var(--color-yellow);
+}
+
+.static-kc-box .fade-in-image.visible {
+    opacity: 1;
+}
+
+/* Hero section styling */
+.hero {
+    padding: var(--space-xl) 0;
+    background-color: var(--color-black);
+}
+
+.hero p {
+    font-family: 'DIN1451', sans-serif;
+    font-weight: 400;
+    line-height: 1.2;
+    transform: translateY(20px);
+    opacity: 0;
+    animation: fadeInUp 1s ease-out forwards;
+    padding: 0 10%;
+}
+
+@keyframes fadeInUp {
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Better image loading strategy */
+.fade-in-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    will-change: opacity;
+    backface-visibility: hidden;
+}
+
+/* Add responsive image sizes */
+@media (max-width: 768px) {
+    .fade-in-image {
+        object-position: top center;
+    }
+}
+
+@media (max-width: var(--breakpoint-md)) {
+    .container-fluid {
+        padding: 0 var(--space-md);
+    }
+    
+    .card {
+        margin: 0 var(--space-xs);
+    }
+}
+
+/* Add subtle background patterns when not hovered */
+.card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 60%);
+    opacity: 0.5;
+    z-index: 0;
+}
+
+/* Enhanced phrase styling with more dramatic animation */
+.card .phrase {
+    display: none;
+    font-size: 2.5em;
+    font-weight: 600;
+    margin-top: 20px;
+    z-index: 2;
+    color: #fff;
+    text-align: center;
+    filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.5));
+    opacity: 0;
+    transform: translateY(30px) scale(0.85); /* More dramatic initial position */
+    transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Bouncy easing */
+}
+
+.card:hover .phrase {
+    display: block;
+    opacity: 1;
+    transform: translateY(0) scale(1.1); /* Slightly larger end scale for emphasis */
+    animation: scaleBack 0.2s ease-out 0.25s forwards;
+}
+
+/* Add a quick scale-back animation */
+@keyframes scaleBack {
+    0% { transform: translateY(0) scale(1.1); }
+    100% { transform: translateY(0) scale(1); }
+}
+
+.card .letter {
+    /* ... existing styles ... */
+    transition: all 0.2s ease-in-out;
+}
+
+/* Maintain consistent card width */
+.card:hover {
+    min-height: 45vh;
+    flex: 1;
+    transform: translateY(-3px);
+}
+
+/* Responsive adjustments */
+@media (max-width: var(--breakpoint-lg)) {
+    .card {
+        height: 35vh;
+    }
+    
+    .card .letter {
+        font-size: 18vh;
+    }
+}
+
+@media (max-width: var(--breakpoint-md)) {
+    .container-fluid {
+        padding: 0 var(--space-sm);
+        gap: 8px;
+    }
+    
+    .card {
+        height: 35vh;
+    }
+    
+    .card .letter {
+        font-size: 15vh;
+    }
+    
+    .card .phrase {
+        font-size: 1.8em;
+    }
+}
+
+@media (max-width: var(--breakpoint-sm)) {
+    .card {
+        height: 35vh;
+    }
+    
+    .card .letter {
+        font-size: 12vh;
+    }
+}
+
+/* Base card styles */
+.prep-card {
+    /* ... existing styles ... */
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Letter styles - ensure perfect centering */
+.prep-card .letter {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    padding: 0;
+    width: auto;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Phrase styles - improve centering and overlay */
+.prep-card .phrase {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 85%;
+    margin: 0;
+    padding: 1rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 20%;
+}
+
+/* Text overlay for the first card */
+#card1 .phrase {
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+}
+
+.video-section {
+    position: relative;
+    background: var(--color-navy);
+    padding: var(--space-xl) 0;
+}
+.ratio {
+    box-shadow: var(--shadow-lg);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
 }

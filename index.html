@@ -1,132 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Meta tags help with SEO and mobile responsiveness -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PREP-KC</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/voyager.css">
+    <meta name="description" content="PREP-KC ignites potential by connecting educators and industry professionals to build meaningful career paths across Kansas City.">
+    
+    <!-- Preloading improves performance by loading critical assets before they're needed -->
+    <link rel="preload" href="fonts/DINEngschriftStd.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="img/kc-2.png" as="image">
+    
+    <!-- External CSS libraries and custom stylesheets -->
+    <!-- Always load third-party CSS before your custom CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/index.css">
+    
+    <!-- HTMX library enables AJAX functionality without writing JavaScript -->
     <script src="https://unpkg.com/htmx.org@2.0.1"></script>
-
 </head>
-<body class="container-stretch">
-    <div class="index-nav">
-        <div id="nav-container"></div>
-    </div>
+<body>
+    <!-- Navigation using HTMX to load content dynamically -->
+    <!-- This is a common pattern for reusing navigation across multiple pages -->
+    <header class="index-nav">
+        <nav id="nav-container"></nav>
+    </header>
+    <!-- HTMX will automatically load nav.html when the page loads -->
     <div hx-get="nav.html" hx-target="#nav-container" hx-trigger="load"></div>
-    <div style="background-color:black;" class="d-flex justify-content-center row">
-        <p class="text-white text-center col-10" style="font-size:1.75em;">In a world where zip codes can predict outcomes, PREP-KC <span class="gradient-text">ignites potential</span> by bringing educators and industry professionals together to build paths to meaningful careers for students across the heart of bistate Kansas City.</p>
-    </div>
-    <div class="container-fluid p-0">
-        <a class="card" id="card1">
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <p class="text-white text-center col-10 mx-auto display-6">
+            In a world where zip codes can predict outcomes, PREP-KC 
+            <span class="gradient-text">ignites potential</span> 
+            by bringing educators and industry professionals together to build paths to meaningful careers for students across the heart of bistate Kansas City.
+        </p>
+    </section>
+
+    <!-- PREP Cards Section -->
+    <!-- Using semantic HTML: <main> for primary content -->
+    <main class="container-fluid p-0">
+        <!-- Each card is a clickable element with two parts:
+             1. A large letter
+             2. The word that letter stands for -->
+        <a class="prep-card" id="card1">
             <span class="letter">P</span>
-            <span class="phrase">
-                Partnership for
-                <!-- Partnerships with the Community<br /> -->
-                <!-- <button type="button" class="btn btn-primary btn-lg">About PREP-KC</button> -->
-            </span>
+            <span class="phrase">Partnership for</span>
         </a>
-        <a class="card" id="card2">
+        <a class="prep-card" id="card2">
             <span class="letter">R</span>
-            <span class="phrase">
-                Regional
-                <!-- Regional Impact<br /> -->
-                <!-- <button type="button" class="btn btn-primary btn-lg">Data</button> -->
-            </span>
+            <span class="phrase">Regional</span>
         </a>
-        <a class="card" id="card3">
+        <a class="prep-card" id="card3">
             <span class="letter">E</span>
-            <span class="phrase">
-                Educational
-                <!-- Educational Excellence<br /> -->
-                <!-- <button type="button" class="btn btn-primary btn-lg">Strategies that Work</button> -->
-            </span>
+            <span class="phrase">Educational</span>
         </a>
-        <a class="card" id="card4">
+        <a class="prep-card" id="card4">
             <span class="letter">P</span>
-            <span class="phrase">
-                Preparation
-                <!-- Preparation for Future Success<br /> -->
-                <!-- <button type="button" class="btn btn-primary btn-lg">Volunteer</button> -->
-            </span>
+            <span class="phrase">Preparation</span>
         </a>
-    </div>
-    <div class="static-kc-box">
+    </main>
+
+    <!-- KC Highlight Section with fade-in animation -->
+    <!-- The animation is controlled by JavaScript at the bottom of the page -->
+    <section class="static-kc-box">
         <span class="fade-in">K C</span>
         <img src="img/mathrelays2.JPG" alt="Math Realys" class="fade-in-image">
-    </div>
-    <div class="d-flex justify-content-center video m-5">
-        <div class="ratio ratio-16x9">
-            <iframe src="https://player.vimeo.com/video/191812434?h=2efccc1921" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+    </section>
+
+    <!-- Video Section -->
+    <section class="video-section m-5">
+        <div class="ratio ratio-16x9 mx-auto col-10">
+            <iframe 
+                src="https://player.vimeo.com/video/191812434?h=2efccc1921" 
+                title="PREP-KC Introduction Video"
+                allowfullscreen
+                loading="lazy"
+            ></iframe>
         </div>
-    </div>
-     <!-- FOOTER -->
-     <footer class="container mt-5">
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="container mt-5">
         <div class="footer row">
-            <div class="footer-text col">
-                <p>PREP-KC<br>
-                    info@prepkc.org<br>
+            <address class="footer-text col">
+                <p> 
+                    PREP-KC<br>
+                    <a href="mailto:info@prepkc.org">info@prepkc.org</a><br>
                     2300 Main St, Suite 340<br>
                     Kansas City, MO 64108<br>
-                    816.931.PREP
+                    <a href="tel:+18169317737">816.931.PREP</a>
                 </p>
-            </div>
+            </address>
             <div class="footer-social col">
-                <p>Connect</p>
-                <a href="info@prepkc.org" class="social-icon"><i class="fas fa-envelope"></i></a>
-                <a href="https://www.facebook.com/prepkc/" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                <a href="https://twitter.com/PREPKC" class="social-icon"><i class="fab fa-twitter"></i></a>
-                <a href="https://www.linkedin.com/company/prep-kc/" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                <h2 class="h5">Connect</h2>
+                <nav class="social-links" aria-label="Social Media Links">
+                    <a href="mailto:info@prepkc.org" class="social-icon" aria-label="Email">
+                        <i class="fas fa-envelope" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://www.facebook.com/prepkc/" class="social-icon" aria-label="Facebook">
+                        <i class="fab fa-facebook-f" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://twitter.com/PREPKC" class="social-icon" aria-label="Twitter">
+                        <i class="fab fa-twitter" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/company/prep-kc/" class="social-icon" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+                    </a>
+                </nav>
             </div>
         </div>
     </footer>
-    <!-- END FOOTER -->
+
+    <!-- JavaScript for fade-in animation -->
     <script>
-        // JavaScript to hide/show kc-box on hover and based on screen size
-        document.addEventListener('DOMContentLoaded', (event) => {
-            const kcBox = document.querySelector('.kc-box');
-            const cards = document.querySelectorAll('.card');
-    
-            function checkScreenSize() {
-                if (window.innerWidth < 1200) {
-                    kcBox.style.display = 'none';
-                } else {
-                    kcBox.style.display = 'block';
-                }
-            }
-    
-            // Initial check
-            checkScreenSize();
-    
-            // Check on resize
-            window.addEventListener('resize', checkScreenSize);
-    
-            // Hide/show kc-box on hover
-            cards.forEach(card => {
-                card.addEventListener('mouseover', () => {
-                    if (window.innerWidth >= 768) {
-                        kcBox.style.display = 'none';
-                    }
-                });
-                card.addEventListener('mouseout', () => {
-                    if (window.innerWidth >= 768) {
-                        kcBox.style.display = 'block';
-                    }
-                });
-            });
-        });
-        
-        // Add fade-in effect for KC box
+        // Select elements we want to animate
         const kcBox = document.querySelector('.static-kc-box');
         const kcText = kcBox.querySelector('span');
         const kcImage = kcBox.querySelector('.fade-in-image');
 
+        // Function to check if element is in viewport
         function checkScroll() {
+            // Get the distance from the top of the element to the viewport
             const kcBoxTop = kcBox.getBoundingClientRect().top;
             const windowHeight = window.innerHeight;
-
+            
+            // Add 'visible' class when element is 75% into view
+            // This triggers the CSS animation
             if (kcBoxTop < windowHeight * 0.75) {
                 kcText.classList.add('visible');
                 kcImage.classList.add('visible');
@@ -136,12 +137,14 @@
             }
         }
 
-        // Initial check
+        // Run the check when page loads
         checkScroll();
 
-        // Check on scroll
+        // Run the check whenever user scrolls
         window.addEventListener('scroll', checkScroll);
     </script>    
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>    </body>
+    
+    <!-- Bootstrap JavaScript bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 </html>
