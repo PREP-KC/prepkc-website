@@ -82,7 +82,7 @@
 
 body {
     background-color: var(--color-navy);
-    font-family: 'DIN1451', system-ui, sans-serif;
+    /* font-family: 'DIN1451', system-ui, sans-serif; */
     line-height: 1.5;
     color: var(--color-white);
     -webkit-font-smoothing: antialiased;
