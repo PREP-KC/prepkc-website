@@ -76,6 +76,29 @@
         .event-detail span {
             color: #00334C;
         }
+        
+        /* Sticky footer styles */
+        html {
+            position: relative;
+            min-height: 100%;
+        }
+        
+        body {
+            margin-bottom: 120px; /* Footer height plus extra space */
+        }
+        
+        footer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 100px; /* Footer height */
+            left: 0;
+            padding: 0 15px;
+        }
+        
+        #main-content {
+            padding-bottom: 40px; /* Space between content and footer */
+        }
     </style>
     <script src="https://unpkg.com/htmx.org@2.0.1"></script>
 </head>
@@ -83,7 +106,7 @@
     <div id="nav-container"></div>
     <div hx-get="nav.html" hx-target="#nav-container" hx-trigger="load"></div>
 
-    <div class="container">
+    <div id="main-content">
         <h1 class="text-center text-yellow mb-3">Data In Action Events</h1>
         <div class="row align-items-center">
             <div class="col text-left">
@@ -95,6 +118,10 @@
         <div id="dia-events-container" class="row row-cols-1 row-cols-md-3 g-4">
             <!-- Events will be dynamically loaded here -->
         </div>
+        
+        <div id="project-mentor-section">
+            <!-- Project Mentor section will be added here -->
+        </div>
     </div>
 
     <script>
@@ -102,41 +129,94 @@
             fetch('https://polaris-jlane.pythonanywhere.com/dia_events_api')
                 .then(response => response.json())
                 .then(events => {
-                    const container = document.getElementById('dia-events-container');
-                    container.innerHTML = ''; // Clear existing content
+                    // Group events by type
+                    const dataDialogueEvents = events.filter(event => event.Name.includes("Data Dialogue"));
+                    const projectMentorEvents = events.filter(event => event.Name.includes("Project Mentor"));
                     
-                    events.forEach(event => {
-                        // Parse the name to only show up to "Data Ethics Speaker"
-                        const truncatedName = event.Name.split('-')
-                            .slice(0, 2) // Take first two parts (school name and "Data Ethics Speaker")
-                            .join('-');
-                            
-                        const card = `
-                            <div class="col">
-                                <div class="card h-100">
-                                    <div class="card-body">
-                                        <h3 class="card-title text-navy">${truncatedName}</h3>
-                                        <div class="event-info">
-                                            <div class="event-detail">
-                                                <i class="far fa-calendar-alt text-turquoise"></i>
-                                                <span>${event.Date_and_Time_for_Cal__c}</span>
+                    // Handle Data Dialogue events
+                    const dialogueContainer = document.getElementById('dia-events-container');
+                    dialogueContainer.innerHTML = ''; // Clear existing content
+                    
+                    // Check if we have Data Dialogue events
+                    if (dataDialogueEvents.length > 0) {
+                        dataDialogueEvents.forEach(event => {
+                            // Parse the name to only show up to "Data Ethics Speaker"
+                            const truncatedName = event.Name.split('-')
+                                .slice(0, 2) // Take first two parts (school name and "Data Ethics Speaker")
+                                .join('-');
+                                
+                            const card = `
+                                <div class="col">
+                                    <div class="card h-100">
+                                        <div class="card-body">
+                                            <h3 class="card-title text-navy">${truncatedName}</h3>
+                                            <div class="event-info">
+                                                <div class="event-detail">
+                                                    <i class="far fa-calendar-alt text-turquoise"></i>
+                                                    <span>${event.Date_and_Time_for_Cal__c}</span>
+                                                </div>
+                                                <div class="event-detail">
+                                                    <i class="fas fa-map-marker-alt text-turquoise"></i>
+                                                    <span>Kansas City Area</span>
+                                                </div>
+                                                <a href="https://www.tfaforms.com/4937950?tfa_2256=${event.Id}" 
+                                                   target="_blank" 
+                                                   class="btn btn-primary register-btn">
+                                                    <i class="fas fa-external-link-alt"></i> Register Now
+                                                </a>
                                             </div>
-                                            <div class="event-detail">
-                                                <i class="fas fa-map-marker-alt text-turquoise"></i>
-                                                <span>Kansas City Area</span>
-                                            </div>
-                                            <a href="https://www.tfaforms.com/4937950?tfa_2256=${event.Id}" 
-                                               target="_blank" 
-                                               class="btn btn-primary register-btn">
-                                                <i class="fas fa-external-link-alt"></i> Register Now
-                                            </a>
                                         </div>
                                     </div>
                                 </div>
+                            `;
+                            dialogueContainer.innerHTML += card;
+                        });
+                    } else {
+                        dialogueContainer.innerHTML = '<div class="col-12"><div class="alert alert-info" role="alert">Please check back later for upcoming Data Dialogue events.</div></div>';
+                    }
+                    
+                    // Add Project Mentor section if events exist
+                    const mentorSectionHTML = `
+                        <div class="row align-items-center mt-5">
+                            <div class="col text-left">
+                                <h2 class="text-turquoise">Project Mentor Sessions</h2>
                             </div>
-                        `;
-                        container.innerHTML += card;
-                    });
+                        </div>
+                        <p style="color:white;">Want to help students who are learning about the data science process? PREP-KC is looking for industry professionals to donate an hour of their time to serve as Project Mentors.</p>
+                        <p style="color:white;">For the final project, our Data In Action! students will be telling stories with data by building Tableau storyboards. We are looking for Project Mentors to provide kind, specific and helpful feedback, helping students move forward with their projects. No specific expertise is required to be a Project Mentor. The PREP-KC team will provide just-in-time training!</p>
+                        <div id="mentor-events-container" class="row row-cols-1 row-cols-md-3 g-4">
+                        ${projectMentorEvents.length > 0 ? 
+                            projectMentorEvents.map(event => `
+                                <div class="col">
+                                    <div class="card h-100">
+                                        <div class="card-body">
+                                            <h3 class="card-title text-navy">${event.Name}</h3>
+                                            <div class="event-info">
+                                                <div class="event-detail">
+                                                    <i class="far fa-calendar-alt text-turquoise"></i>
+                                                    <span>${event.Date_and_Time_for_Cal__c}</span>
+                                                </div>
+                                                <div class="event-detail">
+                                                    <i class="fas fa-map-marker-alt text-turquoise"></i>
+                                                    <span>Kansas City Area</span>
+                                                </div>
+                                                <a href="https://www.tfaforms.com/4937950?tfa_2256=${event.Id}" 
+                                                   target="_blank" 
+                                                   class="btn btn-primary register-btn">
+                                                    <i class="fas fa-external-link-alt"></i> Register Now
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            `).join('') 
+                            : '<div class="col-12"><div class="alert alert-info" role="alert">Please check back later for upcoming Project Mentor sessions.</div></div>'
+                        }
+                        </div>
+                    `;
+                    
+                    // Add the Project Mentor section to a dedicated div
+                    document.getElementById('project-mentor-section').innerHTML = mentorSectionHTML;
                 })
                 .catch(error => {
                     console.error('Error:', error);
@@ -151,16 +231,6 @@
             htmx.ajax('GET', 'dia.html', '#dia-events-container');
         }, 300000*30);
     </script>
-
-    <!-- Project Mentor Sessions Column
-    <div class="col-md-6">
-        <h2 class="text-turquoise">Project Mentor Sessions</h2>
-        <p style="color:white;">Want to help students who are learning about the data science process? PREP-KC is looking for industry professionals to donate an hour of their time to serve as Project Mentors.</p>
-        
-        <p style="color:white;">For the final project, our Data In Action! students will be telling stories with data by building Tableau storyboards. We are looking for Project Mentors to provide kind, specific and helpful feedback, helping students move forward with their projects. No specific expertise is required to be a Project Mentor. The PREP-KC team will provide just-in-time training!</p>
-        <!-- <div class="alert alert-info" role="alert">
-            Please check back later for upcoming Project Mentor sessions.
-        </div> -->
 
     <!-- FOOTER -->
     <footer>
