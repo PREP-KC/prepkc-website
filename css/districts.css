@@ -1,0 +1,21 @@
+/* Add this to style.css */
+
+/* Adjust font size and weight for list items */
+.nav-link {
+    font-size: var(--font-size-lg); /* Adjust size as needed */
+    font-weight: bold; /* Make text bold for better readability */
+    padding: var(--space-sm) 0; /* Add vertical padding */
+}
+
+/* Add more spacing between list items */
+.list-unstyled li {
+    margin-bottom: var(--space-md); /* Add margin between items */
+}
+
+/* Enhance hover effects */
+.nav-link:hover,
+.nav-link:focus {
+    color: var(--color-turquoise); /* Change color on hover */
+    transform: translateY(-2px);
+    text-decoration: underline; /* Add underline on hover */
+}
