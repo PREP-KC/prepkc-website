@@ -135,14 +135,14 @@
                     
                     // Handle Data Dialogue events
                     const dialogueContainer = document.getElementById('dia-events-container');
-                    dialogueContainer.innerHTML = ''; // Clear existing content
+                    const dialogueSection = document.querySelector('.row.align-items-center');
+                    const dialogueDescription = dialogueSection.nextElementSibling;
                     
-                    // Check if we have Data Dialogue events
                     if (dataDialogueEvents.length > 0) {
+                        dialogueContainer.innerHTML = ''; // Clear existing content
                         dataDialogueEvents.forEach(event => {
-                            // Parse the name to only show up to "Data Ethics Speaker"
                             const truncatedName = event.Name.split('-')
-                                .slice(0, 2) // Take first two parts (school name and "Data Ethics Speaker")
+                                .slice(0, 2)
                                 .join('-');
                                 
                             const card = `
@@ -172,21 +172,26 @@
                             dialogueContainer.innerHTML += card;
                         });
                     } else {
-                        dialogueContainer.innerHTML = '<div class="col-12"><div class="alert alert-info" role="alert">Please check back later for upcoming Data Dialogue events.</div></div>';
+                        // Hide the entire Data Dialogue section
+                        dialogueSection.style.display = 'none';
+                        dialogueDescription.style.display = 'none';
+                        dialogueContainer.style.display = 'none';
                     }
                     
-                    // Add Project Mentor section if events exist
-                    const mentorSectionHTML = `
-                        <div class="row align-items-center mt-5">
-                            <div class="col text-left">
-                                <h2 class="text-turquoise">Project Mentor Sessions</h2>
+                    // Handle Project Mentor section
+                    const mentorSection = document.getElementById('project-mentor-section');
+                    
+                    if (projectMentorEvents.length > 0) {
+                        const mentorSectionHTML = `
+                            <div class="row align-items-center mt-5">
+                                <div class="col text-left">
+                                    <h2 class="text-turquoise">Project Mentor Sessions</h2>
+                                </div>
                             </div>
-                        </div>
-                        <p style="color:white;">Want to help students who are learning about the data science process? PREP-KC is looking for industry professionals to donate an hour of their time to serve as Project Mentors.</p>
-                        <p style="color:white;">For the final project, our Data In Action! students will be telling stories with data by building Tableau storyboards. We are looking for Project Mentors to provide kind, specific and helpful feedback, helping students move forward with their projects. No specific expertise is required to be a Project Mentor. The PREP-KC team will provide just-in-time training!</p>
-                        <div id="mentor-events-container" class="row row-cols-1 row-cols-md-3 g-4">
-                        ${projectMentorEvents.length > 0 ? 
-                            projectMentorEvents.map(event => `
+                            <p style="color:white;">Want to help students who are learning about the data science process? PREP-KC is looking for industry professionals to donate an hour of their time to serve as Project Mentors.</p>
+                            <p style="color:white;">For the final project, our Data In Action! students will be telling stories with data by building Tableau storyboards. We are looking for Project Mentors to provide kind, specific and helpful feedback, helping students move forward with their projects. No specific expertise is required to be a Project Mentor. The PREP-KC team will provide just-in-time training!</p>
+                            <div id="mentor-events-container" class="row row-cols-1 row-cols-md-3 g-4">
+                            ${projectMentorEvents.map(event => `
                                 <div class="col">
                                     <div class="card h-100">
                                         <div class="card-body">
@@ -209,14 +214,14 @@
                                         </div>
                                     </div>
                                 </div>
-                            `).join('') 
-                            : '<div class="col-12"><div class="alert alert-info" role="alert">Please check back later for upcoming Project Mentor sessions.</div></div>'
-                        }
-                        </div>
-                    `;
-                    
-                    // Add the Project Mentor section to a dedicated div
-                    document.getElementById('project-mentor-section').innerHTML = mentorSectionHTML;
+                            `).join('')}
+                            </div>
+                        `;
+                        mentorSection.innerHTML = mentorSectionHTML;
+                    } else {
+                        // Hide the entire Project Mentor section
+                        mentorSection.style.display = 'none';
+                    }
                 })
                 .catch(error => {
                     console.error('Error:', error);
