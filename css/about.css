@@ -96,8 +96,8 @@ body{
     margin-bottom: var(--space-sm);
     padding-left: var(--space-md);
     position: relative;
-    display: flex;
-    align-items: center;
+    /* display: flex;
+    align-items: center; */
 }
 
 .intro li::before {
@@ -112,7 +112,7 @@ body{
 .intro .text-yellow {
     position: relative;
     display: inline-block;
-    padding: 0 0.2em;
+    /* padding: 0 0.2em; */
 }
 
 .intro .text-yellow::after {
