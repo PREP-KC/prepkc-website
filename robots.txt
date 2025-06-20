@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://prepkc.org/sitemap.xml
+
+# Disallow crawling of these directories if they exist
+Disallow: /.git/
+Disallow: /.vscode/
+Disallow: /test.html
+
+# Crawl-delay: 1 
