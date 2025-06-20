@@ -11,7 +11,7 @@
       gtag('config', 'G-8TKE4R10Y3');
     </script>
     <!-- Meta tags help with SEO and mobile responsiveness -->
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="PREP-KC ignites potential by connecting educators and industry professionals to build meaningful career paths across Kansas City.">
     
@@ -52,6 +52,44 @@
     
     <!-- HTMX library enables AJAX functionality without writing JavaScript -->
     <script src="https://unpkg.com/htmx.org@2.0.1"></script>
+    
+    <!-- Structured Data (Organization Schema) for better SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "PREP-KC",
+      "alternateName": "Partnership for Regional Educational Preparation - Kansas City",
+      "url": "https://prepkc.org",
+      "logo": "https://prepkc.org/img/logo/navy.png",
+      "description": "PREP-KC ignites potential by connecting educators and industry professionals to build meaningful career paths across Kansas City.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "2300 Main St, Suite 340",
+        "addressLocality": "Kansas City",
+        "addressRegion": "MO",
+        "postalCode": "64108",
+        "addressCountry": "US"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+18169317737",
+        "contactType": "General Information",
+        "email": "info@prepkc.org"
+      },
+      "sameAs": [
+        "https://www.facebook.com/prepkc/",
+        "https://twitter.com/PREPKC",
+        "https://www.linkedin.com/company/prep-kc/"
+      ],
+      "foundingDate": "2015",
+      "nonprofitStatus": "NonprofitType",
+      "areaServed": {
+        "@type": "Place",
+        "name": "Kansas City Metropolitan Area"
+      }
+    }
+    </script>
 </head>
 <body>
     <!-- Navigation using HTMX to load content dynamically -->
@@ -178,6 +216,6 @@
     </script>    
     
     <!-- Bootstrap JavaScript bundle -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
