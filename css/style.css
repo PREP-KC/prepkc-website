@@ -113,7 +113,6 @@ h3 { font-size: var(--font-size-xl); }
 /* Component Styles */
 .navbar {
     font-family: 'DIN1451', system-ui, sans-serif;
-    padding: var(--space-md) var(--space-lg);
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
@@ -126,6 +125,16 @@ h3 { font-size: var(--font-size-xl); }
     position: sticky;  /* Change to sticky for better UX */
     min-height: inherit;
 
+}
+
+.navbar {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.navbar-brand {
+    margin: 0 !important;
+    padding:0 !important;
 }
 
 .navbar-brand {

@@ -52,12 +52,21 @@
 
 .container-fluid {
     display: flex;
-    padding: 0 var(--space-md);
     width: 100%;
     max-width: 1600px;
     margin: 0 auto;
     gap: 8px;
     flex-direction: row; /* Default to row */
+}
+
+.navbar {
+    padding-left: 0 !important;
+    margin-left: 0 !important;
+}
+
+.navbar-brand {
+    margin-left: 0 !important;
+    padding-left: 0 !important;
 }
 
 /* Add media query for small screens using Bootstrap's breakpoint */
