@@ -70,6 +70,14 @@
         .event-detail span {
             color: #00334C;
         }
+        
+        .no-events {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 2rem;
+            text-align: center;
+            margin: 2rem 0;
+        }
     </style>
     <script src="https://unpkg.com/htmx.org@2.0.1"></script>
     <script>
@@ -107,6 +115,18 @@
                 .then(events => {
                     const container = document.getElementById('signup-container');
                     container.innerHTML = ''; // Clear existing content
+                    
+                    if(events.length === 0) {
+                        container.innerHTML = `
+                            <div class="col-12">
+                                <div class="no-events">
+                                    <h3 class="text-yellow">No Upcoming In-Person Events</h3>
+                                    <p class="text-white">There are currently no upcoming in-person volunteer opportunities. Please check back later.</p>
+                                </div>
+                            </div>
+                        `;
+                        return;
+                    }
                     
                     events.forEach(event => {
                         const card = `
