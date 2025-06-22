@@ -16,6 +16,15 @@
         <meta name="description" content="Learn about PREP-KC's mission to ignite potential by connecting educators and industry professionals. We partner with 6 districts and 4 charters serving over 67,000 students across Kansas City.">
         <title>About PREP-KC - Partnership for Regional Educational Preparation</title>
 
+        <!-- Favicons -->
+        <link rel="icon" type="image/x-icon" href="/img/assets/favicon.ico">
+        <link rel="icon" type="image/png" sizes="32x32" href="/img/assets/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/img/assets/favicon-16x16.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="/img/assets/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="192x192" href="/img/assets/android-chrome-192x192.png">
+        <link rel="icon" type="image/png" sizes="512x512" href="/img/assets/android-chrome-512x512.png">
+        <link rel="manifest" href="/site.webmanifest">
+
         <!-- External CSS libraries loaded from CDNs -->
         <!-- Font Awesome for icons -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -31,218 +40,294 @@
     </head>
     <!-- Body with Bootstrap container class for content width control -->
     <body class="container">
-        <!-- Navigation section using HTMX -->
-        <!-- HTMX will load nav.html content into nav-container when page loads -->
+        <!-- Skip navigation link for accessibility -->
+        <a href="#main-content" class="visually-hidden-focusable btn btn-primary position-absolute" style="top: 10px; left: 10px; z-index: 1000;">Skip to main content</a>
+        
         <div id="nav-container"></div>
         <div hx-get="nav.html" hx-target="#nav-container" hx-trigger="load"></div>
-
+        
+        <!-- Breadcrumb navigation -->
+        <nav aria-label="breadcrumb" class="mt-3">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html" class="text-turquoise">Home</a></li>
+                <li class="breadcrumb-item active text-white" aria-current="page">About</li>
+            </ol>
+        </nav>
+        
         <!-- Main content sections -->
-        <!-- Introduction section with statistics -->
-        <h1 class="text-center title-format display-3">About</h1>
-        <div class="bg-navy rounded m-3 p-3 row intro">
-            <!-- Content in two columns using Bootstrap's grid system -->
-            <div class="col">
-                <div class="text-white">
-                    <p>PREP-KC partners with <b class="text-yellow">6 districts</b> and <b class="text-yellow">4 charters</b> enrolling over <b class="text-yellow">67,000 students</b>. 
-                        <span class="fst-italic">Representing the culturally rich, diverse, talented, communities across the heart of Kansas City.</span></p>
-                    <ul>
-                        <li><b class="text-yellow">80%</b> students of color</li>
-                        <li><b class="text-yellow">84%</b> low-income students</li>
-                        <li><b class="text-yellow">3,800</b> annual high school graduates</li>
-                        <li>21 high schools and 23 middle schools</li>
-                        <li>19 of the 20 zip codes with the lowest median household incomes</li>
+        <main id="main-content" role="main">
+            <h1 class="text-center title-format display-3">About</h1>
+            <div class="bg-navy rounded m-3 p-3 row intro">
+                <!-- Content in two columns using Bootstrap's grid system -->
+                <div class="col">
+                    <div class="text-white">
+                        <p>PREP-KC partners with <b class="text-yellow">6 districts</b> and <b class="text-yellow">4 charters</b> enrolling over <b class="text-yellow">67,000 students</b> across the Kansas City metropolitan area. 
+                            <span class="fst-italic">As a leading Missouri nonprofit, we represent the culturally rich, diverse, talented communities throughout the heart of Kansas City.</span></p>
+                        <ul>
+                            <li><b class="text-yellow">80%</b> students of color</li>
+                            <li><b class="text-yellow">84%</b> low-income students</li>
+                            <li><b class="text-yellow">3,800</b> annual high school graduates</li>
+                            <li>21 high schools and 23 middle schools across Kansas City</li>
+                            <li>19 of the 20 zip codes with the lowest median household incomes in Missouri</li>
 
-                    </ul>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col">
+                    <img src="img/PREP_KC_Map.png" alt="PREP-KC service area map showing Kansas City metropolitan footprint across Missouri and Kansas districts" class="rounded-5" style="width:85% mx-1">
                 </div>
             </div>
-            <div class="col">
-                <img src="img/PREP_KC_Map.png" alt="Map of our Footprint" class="rounded-5" style="width:85% mx-1">
+
+            <!-- Team section with role and aria-label for accessibility -->
+            <div class="team" role="region" aria-label="Our Team">
+                <!-- Team members organized in Bootstrap grid columns -->
+                <!-- Each team member has image, name, and title -->
+                <h2 class="title-format display-4">Our Team</h2>
+                <div class="row">
+                    <!-- Executive Leadership -->
+                    <div class="col">
+                        <div class="team-member">
+                            <h3>Susan Wally</h3>
+                            <p class="team-role">Chief Executive Officer</p>
+                            <img src="img/team/susan_wally.jpg" alt="Susan Wally, Chief Executive Officer" class="team-photo" loading="lazy">
+                            <p>Susan brings 25 years of experience in education leadership and strategic planning to PREP-KC.</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="team-member">
+                            <h3>Doug Elmer</h3>
+                            <p class="team-role">Chief Financial Officer</p>
+                            <img src="img/team/doug_elmer.jpg" alt="Doug Elmer, Chief Financial Officer" class="team-photo" loading="lazy">
+                            <p>Doug oversees financial operations and strategic business planning for organizational growth.</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="team-member">
+                            <h3>Beth McCarthy</h3>
+                            <p class="team-role">Director of Career Pathway Programs</p>
+                            <img src="img/team/beth_mccarthy.jpg" alt="Beth McCarthy, Director of Career Pathway Programs" class="team-photo" loading="lazy">
+                            <p>Beth leads the development and implementation of career exploration programming across districts.</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="team-member">
+                            <h3>Susan Engelmann</h3>
+                            <p class="team-role">Director of Partnerships</p>
+                            <img src="img/team/susan_engelmann.jpg" alt="Susan Engelmann, Director of Partnerships" class="team-photo" loading="lazy">
+                            <p>Susan cultivates relationships with industry partners and educational institutions.</p>
+                        </div>
+                    </div>
+
+                    <!-- Directors and Managers -->
+                    <div class="col">
+                        <div class="team-member">
+                            <h3>Cecil Christwell</h3>
+                            <p class="team-role">Director of Data Science Initiative</p>
+                            <img src="img/team/cecil_christwell.jpg" alt="Cecil Christwell, Director of Data Science Initiative" class="team-photo" loading="lazy">
+                            <p>Cecil oversees the innovative Data Science Initiative and DataViz KC competition.</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="team-member">
+                            <h3>Candace Villanueva Greer</h3>
+                            <p class="team-role">Director of Communications</p>
+                            <img src="img/team/candace_villanueva_greer.jpg" alt="Candace Villanueva Greer, Director of Communications" class="team-photo" loading="lazy">
+                            <p>Candace manages organizational communications and marketing strategies.</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="team-member">
+                            <h3>Keva Gorman</h3>
+                            <p class="team-role">Program Manager</p>
+                            <img src="img/team/keva_gorman.jpg" alt="Keva Gorman, Program Manager" class="team-photo" loading="lazy">
+                            <p>Keva coordinates program implementation and volunteer management across multiple districts.</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="team-member">
+                            <h3>Jonathan Lane</h3>
+                            <p class="team-role">Data Analytics Coordinator</p>
+                            <img src="img/team/jonathan_lane.jpg" alt="Jonathan Lane, Data Analytics Coordinator" class="team-photo" loading="lazy">
+                            <p>Jonathan supports data collection, analysis, and reporting for program effectiveness.</p>
+                        </div>
+                    </div>
+
+                    <!-- Specialists and Coaches -->
+                    <div class="col">
+                        <div class="team-member">
+                            <h3>Huey Ru Strauss</h3>
+                            <p class="team-role">Career Pathways Specialist</p>
+                            <img src="img/team/huey_ru_strauss.jpg" alt="Huey Ru Strauss, Career Pathways Specialist" class="team-photo" loading="lazy">
+                            <p>Huey Ru specializes in developing career pathway programming for middle and high school students.</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="team-member">
+                            <h3>Brittany Verrette</h3>
+                            <p class="team-role">Program Coordinator</p>
+                            <img src="img/team/brittany_verrette.jpg" alt="Brittany Verrette, Program Coordinator" class="team-photo" loading="lazy">
+                            <p>Brittany coordinates volunteer events and manages partnership relationships across districts.</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="team-member">
+                            <h3>Kristin Kush</h3>
+                            <p class="team-role">Administrative Assistant</p>
+                            <img src="img/team/kristin_kush.jpg" alt="Kristin Kush, Administrative Assistant" class="team-photo" loading="lazy">
+                            <p>Kristin provides administrative support and coordinates organizational operations.</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="team-member">
+                            <h3>Emily Colebank</h3>
+                            <p class="team-role">Marketing Coordinator</p>
+                            <img src="img/team/emily_colebank.jpg" alt="Emily Colebank, Marketing Coordinator" class="team-photo" loading="lazy">
+                            <p>Emily manages digital marketing, social media, and community outreach initiatives.</p>
+                        </div>
+                    </div>
+
+                    <!-- Additional Team Members -->
+                    <div class="col">
+                        <div class="team-member">
+                            <h3>Jamie Provost</h3>
+                            <p class="team-role">Program Specialist</p>
+                            <img src="img/team/jamie_provost.png" alt="Jamie Provost, Program Specialist" class="team-photo" loading="lazy">
+                            <p>Jamie supports program development and implementation across partner schools.</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="team-member">
+                            <h3>Lori Hewitt</h3>
+                            <p class="team-role">District Liaison</p>
+                            <img src="img/team/lori_hewitt.jpg" alt="Lori Hewitt, District Liaison" class="team-photo" loading="lazy">
+                            <p>Lori manages relationships with school district partners and coordinates program alignment.</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="team-member">
+                            <h3>Yandell Toevs</h3>
+                            <p class="team-role">Development Coordinator</p>
+                            <img src="img/team/yandell_toevs.jpg" alt="Yandell Toevs, Development Coordinator" class="team-photo" loading="lazy">
+                            <p>Yandell supports fundraising efforts and donor relationship management.</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="team-member">
+                            <h3>Andra Culp Warren</h3>
+                            <p class="team-role">Community Engagement Specialist</p>
+                            <img src="img/team/andra_culp_warren.jpg" alt="Andra Culp Warren, Community Engagement Specialist" class="team-photo" loading="lazy">
+                            <p>Andra builds community partnerships and coordinates stakeholder engagement.</p>
+                        </div>
+                    </div>
+
+                    <!-- Support Staff -->
+                    <div class="col">
+                        <div class="team-member">
+                            <h3>Linda Peterson</h3>
+                            <p class="team-role">Program Assistant</p>
+                            <img src="img/team/linda_peterson.jpg" alt="Linda Peterson, Program Assistant" class="team-photo" loading="lazy">
+                            <p>Linda provides essential program support and coordination across multiple districts.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Additional Team Members -->
+                    <div class="col">
+                        <div class="team-member">
+                            <h3>Kristine Mayer</h3>
+                            <p class="team-role">Administrative Assistant</p>
+                            <!-- Photo placeholder - add when available -->
+                            <div class="team-photo-placeholder" style="height: 200px; background-color: #f8f9fa; display: flex; align-items: center; justify-content: center; border-radius: 8px; margin: 1rem 0;">
+                                <i class="fas fa-user" style="font-size: 3rem; color: #6c757d;"></i>
+                            </div>
+                            <p>Kristine provides administrative support and coordination for organizational operations.</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="team-member">
+                            <h3>Alejandra Pecina</h3>
+                            <p class="team-role">Volunteer Coordinator</p>
+                            <!-- Photo placeholder - add when available -->
+                            <div class="team-photo-placeholder" style="height: 200px; background-color: #f8f9fa; display: flex; align-items: center; justify-content: center; border-radius: 8px; margin: 1rem 0;">
+                                <i class="fas fa-user" style="font-size: 3rem; color: #6c757d;"></i>
+                            </div>
+                            <p>Alejandra coordinates volunteer opportunities and manages community engagement initiatives.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
 
-        <!-- Team section with role and aria-label for accessibility -->
-        <div class="team" role="region" aria-label="Our Team">
-            <!-- Team members organized in Bootstrap grid columns -->
-            <!-- Each team member has image, name, and title -->
-            <h2 class="title-format display-4">Our Team</h2>
-            <div class="row">
-                <!-- Executive Leadership -->
-                <div class="col">
-                    <img src="img/team/susan_wally.jpg" alt="Susan Wally">
-                    <h3>Susan Wally</h3>
-                    <p>President & CEO</p>
-                </div>
-                <div class="col">
-                    <img src="img/team/doug_elmer.jpg" alt="Doug Elmer">
-                    <h3>Doug Elmer</h3>
-                    <p>Vice President</p>
-                </div>
-                <div class="col">
-                    <img src="img/team/beth_mccarthy.jpg" alt="Beth McCarthy">
-                    <h3>Beth McCarthy</h3>
-                    <p>Director of Community & Industry Partnerships</p>
-                </div>
-                <div class="col">
-                    <img src="img/team/susan_engelmann.jpg" alt="Susan Engelmann">
-                    <h3>Susan Engelmann</h3>
-                    <p>Senior Design & Implementation Coach</p>
-                </div>
+            <!-- Board of Directors section -->
+            <div class="board">
+                <h2>Board of Directors</h2>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h4>Madeline Romious, Board Chair</h4>
+                        <p>Regional Vice President-External Affairs, AT&T</p>
 
-                <!-- Directors and Managers -->
-                <div class="col">
-                    <img src="img/team/cecil_christwell.jpg" alt="Cecil Christwell">
-                    <h3>Cecil Christwell</h3>
-                    <p>Director of Teaching & Learning</p>
-                </div>
-                <div class="col">
-                    <img src="img/team/candace_villanueva_greer.jpg" alt="Candace Villanueva Greer">
-                    <h3>Candace Villanueva Greer</h3>
-                    <p>College & Career Manager</p>
-                </div>
-                <div class="col">
-                    <img src="img/team/keva_gorman.jpg" alt="Keva Gorman">
-                    <h3>Keva Gorman</h3>
-                    <p>Career Pathways Specialist</p>
-                </div>
-                <div class="col">
-                    <img src="img/team/jonathan_lane.jpg" alt="Jonathan Lane">
-                    <h3>Jonathan Lane</h3>
-                    <p>Technology Innovation Manager</p>
-                </div>
+                        <h4>David A. Warm, Finance Chair</h4>
+                        <p>Executive Director, Mid-America Regional Council (MARC)</p>
 
-                <!-- Specialists and Coaches -->
-                <div class="col">
-                    <img src="img/team/huey_ru_strauss.jpg" alt="Huey Ru Strauss">
-                    <h3>Huey Ru Strauss</h3>
-                    <p>Pathways to Tech Facilitator</p>
-                </div>
-                <div class="col">
-                    <img src="img/team/brittany_verrette.jpg" alt="Brittany Verrette">
-                    <h3>Brittany Verrette</h3>
-                    <p>Classroom Innovation Manager</p>
-                </div>
-                <div class="col">
-                    <img src="img/team/kristin_kush.jpg" alt="Kristin Kush">
-                    <h3>Kristin Kush</h3>
-                    <p>Data & Evaluation Specialist</p>
-                </div>
-                <div class="col">
-                    <img src="img/team/emily_colebank.jpg" alt="Emily Colebank">
-                    <h3>Emily Colebank</h3>
-                    <p>Data Science Teaching & Learning Coach</p>
-                </div>
+                        <h4>Brian C. Wimes</h4>
+                        <p>United States District Judge of the US District Court for the Eastern and Western District of Missouri</p>
 
-                <!-- Additional Team Members -->
-                <div class="col">
-                    <img src="img/team/jamie_provost.png" alt="Jamie Provost">
-                    <h3>Jamie Provost</h3>
-                    <p>Data Science Teaching & Learning Coach</p>
-                </div>
-                <div class="col">
-                    <img src="img/team/lori_hewitt.jpg" alt="Lori Hewitt">
-                    <h3>Lori Hewitt</h3>
-                    <p>Launch Specialist</p>
-                </div>
-                <div class="col">
-                    <img src="img/team/yandell_toevs.jpg" alt="Yandell Toevs">
-                    <h3>Yandell Toevs</h3>
-                    <p>Teaching & Learning Coach</p>
-                </div>
-                <div class="col">
-                    <img src="img/team/andra_culp_warren.jpg" alt="Andra Culp Warren">
-                    <h3>Andra Culp Warren</h3>
-                    <p>Executive Assistant & Office Manager</p>
-                </div>
+                        <h4>Edward F. Honesty</h4>
+                        <p>President/Chief Operating Officer, Best Harvest Bakeries</p>
+                    </div>
+                    <div class="col-md-6">
+                        <h4>Chris Gentile</h4>
+                        <p>Consultant | Retired President, Honeywell FM&T</p>
 
-                <!-- Support Staff -->
-                <div class="col">
-                    <img src="img/team/linda_peterson.jpg" alt="Linda Peterson">
-                    <h3>Linda Peterson</h3>
-                    <p>Program Assistant</p>
-                </div>
-                
-                <!-- Members without photos -->
-                <div class="col">
-                    <h3>Kristine Mayer</h3>
-                    <p>Administrative Assistant</p>
-                </div>
-                <div class="col">
-                    <h3>Alejandra Pecina</h3>
-                    <p>Volunteer Coordinator</p>
+                        <h4>Ray Daniels</h4>
+                        <p>Educational Consultant| Retired Superintendent, Kansas City, Kansas Public Schools</p>
+
+                        <h4>Thomas A. Forrester</h4>
+                        <p>Consultant | Former Senior VP/Managing Director, State Street Corporation</p>
+
+                        <h4>André Davis</h4>
+                        <p>Shareholder, Vice President | Alliant Insurance Services, Inc.</p>
+                    </div>
                 </div>
             </div>
-        </div>
-
-        <!-- Board of Directors section -->
-        <div class="board">
-            <h2>Board of Directors</h2>
-            <div class="row">
-                <div class="col-md-6">
-                    <h4>Madeline Romious, Board Chair</h4>
-                    <p>Regional Vice President-External Affairs, AT&T</p>
-
-                    <h4>David A. Warm, Finance Chair</h4>
-                    <p>Executive Director, Mid-America Regional Council (MARC)</p>
-
-                    <h4>Brian C. Wimes</h4>
-                    <p>United States District Judge of the US District Court for the Eastern and Western District of Missouri</p>
-
-                    <h4>Edward F. Honesty</h4>
-                    <p>President/Chief Operating Officer, Best Harvest Bakeries</p>
-                </div>
-                <div class="col-md-6">
-                    <h4>Chris Gentile</h4>
-                    <p>Consultant | Retired President, Honeywell FM&T</p>
-
-                    <h4>Ray Daniels</h4>
-                    <p>Educational Consultant| Retired Superintendent, Kansas City, Kansas Public Schools</p>
-
-                    <h4>Thomas A. Forrester</h4>
-                    <p>Consultant | Former Senior VP/Managing Director, State Street Corporation</p>
-
-                    <h4>André Davis</h4>
-                    <p>Shareholder, Vice President | Alliant Insurance Services, Inc.</p>
+            <!-- Funders section with accessibility roles -->
+            <div class="funders">
+                <h2>Our 2023-2024 Funders</h2>
+                <div class="row" role="list">
+                    <div role="listitem">AT&T</div>
+                    <div role="listitem">American Century</div>
+                    <div role="listitem">Arvest Bank of Greater Kansas City</div>
+                    <div role="listitem">Bank of America Charitable Foundation</div>
+                    <div role="listitem">BioNexus KC</div>
+                    <div role="listitem">CBIZ MHM, LLC</div>
+                    <div role="listitem">Civic Council of Greater Kansas City</div>
+                    <div role="listitem">Commerce Bancshares Foundation</div>
+                    <div role="listitem">Common Wealth Charitable Fund</div>
+                    <div role="listitem">Edward F. Swinney Trust</div>
+                    <div role="listitem">Evergy Services, Inc.</div>
+                    <div role="listitem">Ewing Marion Kauffman Foundation</div>
+                    <div role="listitem">Francis Family Foundation</div>
+                    <div role="listitem">George & Anne Murphy Charitable Fund</div>
+                    <div role="listitem">Greater Kansas City Community Foundation</div>
+                    <div role="listitem">H&R Block Foundation</div>
+                    <div role="listitem">Hall Family Foundation</div>
+                    <div role="listitem">Health Forward Foundation</div>
+                    <div role="listitem">Kansas City National Security Campus managed by Honeywell FM&T</div>
+                    <div role="listitem">J.C. Nichols Company Charitable Trust</div>
+                    <div role="listitem">Kansas City Missouri Bar Foundation</div>
+                    <div role="listitem">Opus Foundation</div>
+                    <div role="listitem">Oracle Cerner Charitable Foundation</div>
+                    <div role="listitem">PricewaterhouseCoopers</div>
+                    <div role="listitem">Sherman Family Foundation</div>
+                    <div role="listitem">Shumaker Family Foundation</div>
+                    <div role="listitem">Spotlight AR</div>
+                    <div role="listitem">State Street Global Services</div>
+                    <div role="listitem">T-Mobile Foundation</div>
+                    <div role="listitem">United Way of Greater Kansas City</div>
+                    <div role="listitem">VanTrust Real Estate, LLC - Kansas City</div>
+                    <div role="listitem">W.K. Kellogg Foundation</div>
                 </div>
             </div>
-        </div>
-        <!-- Funders section with accessibility roles -->
-        <div class="funders">
-            <h2>Our 2023-2024 Funders</h2>
-            <div class="row" role="list">
-                <div role="listitem">AT&T</div>
-                <div role="listitem">American Century</div>
-                <div role="listitem">Arvest Bank of Greater Kansas City</div>
-                <div role="listitem">Bank of America Charitable Foundation</div>
-                <div role="listitem">BioNexus KC</div>
-                <div role="listitem">CBIZ MHM, LLC</div>
-                <div role="listitem">Civic Council of Greater Kansas City</div>
-                <div role="listitem">Commerce Bancshares Foundation</div>
-                <div role="listitem">Common Wealth Charitable Fund</div>
-                <div role="listitem">Edward F. Swinney Trust</div>
-                <div role="listitem">Evergy Services, Inc.</div>
-                <div role="listitem">Ewing Marion Kauffman Foundation</div>
-                <div role="listitem">Francis Family Foundation</div>
-                <div role="listitem">George & Anne Murphy Charitable Fund</div>
-                <div role="listitem">Greater Kansas City Community Foundation</div>
-                <div role="listitem">H&R Block Foundation</div>
-                <div role="listitem">Hall Family Foundation</div>
-                <div role="listitem">Health Forward Foundation</div>
-                <div role="listitem">Kansas City National Security Campus managed by Honeywell FM&T</div>
-                <div role="listitem">J.C. Nichols Company Charitable Trust</div>
-                <div role="listitem">Kansas City Missouri Bar Foundation</div>
-                <div role="listitem">Opus Foundation</div>
-                <div role="listitem">Oracle Cerner Charitable Foundation</div>
-                <div role="listitem">PricewaterhouseCoopers</div>
-                <div role="listitem">Sherman Family Foundation</div>
-                <div role="listitem">Shumaker Family Foundation</div>
-                <div role="listitem">Spotlight AR</div>
-                <div role="listitem">State Street Global Services</div>
-                <div role="listitem">T-Mobile Foundation</div>
-                <div role="listitem">United Way of Greater Kansas City</div>
-                <div role="listitem">VanTrust Real Estate, LLC - Kansas City</div>
-                <div role="listitem">W.K. Kellogg Foundation</div>
-            </div>
-        </div>
+        </main>
+
         <!-- FOOTER -->
         <footer class="container mt-5">
             <div class="footer row">
@@ -273,7 +358,34 @@
                     </nav>
                 </div>
             </div>
+            
+            <!-- Copyright -->
+            <div class="text-center mt-3">
+                <p class="text-white">&copy; 2024 PREP-KC. All rights reserved.</p>
+            </div>
         </footer>
-        <!-- END FOOTER -->
+        
+        <!-- Back to Top Button -->
+        <button onclick="topFunction()" id="backToTopBtn" title="Go to top" aria-label="Back to top" style="display: none; position: fixed; bottom: 20px; right: 30px; z-index: 99; border: none; outline: none; background-color: #56B2CB; color: white; cursor: pointer; padding: 15px; border-radius: 10px; font-size: 18px;">
+            <i class="fas fa-chevron-up" aria-hidden="true"></i>
+        </button>
+        
+        <script>
+        // Back to Top Button functionality
+        window.onscroll = function() {scrollFunction()};
+        
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                document.getElementById("backToTopBtn").style.display = "block";
+            } else {
+                document.getElementById("backToTopBtn").style.display = "none";
+            }
+        }
+        
+        function topFunction() {
+            document.body.scrollTop = 0; // For Safari
+            document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+        }
+        </script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>    </body>
 </html>

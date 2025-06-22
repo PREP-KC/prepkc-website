@@ -33,15 +33,20 @@
     <link rel="canonical" href="https://prepkc.org/">
     
     <!-- Favicons -->
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/x-icon" href="/img/assets/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/assets/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/assets/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/img/assets/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/img/assets/android-chrome-512x512.png">
     <link rel="manifest" href="/site.webmanifest">
     
     <!-- Preloading improves performance by loading critical assets before they're needed -->
-    <link rel="preload" href="fonts/DINEngschriftStd.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/DINEngschriftStd.otf" as="font" type="font/otf" crossorigin>
     <link rel="preload" href="img/kc-2.png" as="image">
+    <link rel="preload" href="css/style.css" as="style">
+    <link rel="preload" href="css/index.css" as="style">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" as="style">
     
     <!-- External CSS libraries and custom stylesheets -->
     <!-- Always load third-party CSS before your custom CSS -->
@@ -90,6 +95,20 @@
       }
     }
     </script>
+    
+    <!-- Font display optimization -->
+    <style>
+        @font-face {
+            font-family: 'DINEngschriftStd';
+            src: url('fonts/DINEngschriftStd.otf') format('opentype');
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'Avenir';
+            src: url('fonts/AvenirMedium.ttf') format('truetype');
+            font-display: swap;
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation using HTMX to load content dynamically -->
@@ -105,7 +124,7 @@
         <p class="text-white text-center col-10 mx-auto display-6">
             In a world where zip codes can predict outcomes, PREP-KC 
             <span class="gradient-text">ignites potential</span> 
-            by bringing educators and industry professionals together to build paths to meaningful careers for students across the heart of bistate Kansas City.
+            by bringing educators and industry professionals together to build paths to meaningful careers for students across the heart of bistate Kansas City. As Missouri's leading education nonprofit, we're transforming Kansas City education through innovative career pathway programs.
         </p>
     </section>
 
@@ -115,19 +134,19 @@
         <!-- Each card is a clickable element with two parts:
              1. A large letter
              2. The word that letter stands for -->
-        <a class="prep-card" id="card1">
+        <a class="prep-card" id="card1" href="about.html" aria-label="Learn about our partnerships">
             <span class="letter">P</span>
             <span class="phrase">Partnership for</span>
         </a>
-        <a class="prep-card" id="card2">
+        <a class="prep-card" id="card2" href="districts/overview.html" aria-label="Explore our regional impact">
             <span class="letter">R</span>
             <span class="phrase">Regional</span>
         </a>
-        <a class="prep-card" id="card3">
+        <a class="prep-card" id="card3" href="strategies.html" aria-label="Discover our educational programs">
             <span class="letter">E</span>
             <span class="phrase">Educational</span>
         </a>
-        <a class="prep-card" id="card4">
+        <a class="prep-card" id="card4" href="volunteer.html" aria-label="Join our preparation programs">
             <span class="letter">P</span>
             <span class="phrase">Preparation</span>
         </a>
@@ -137,7 +156,7 @@
     <!-- The animation is controlled by JavaScript at the bottom of the page -->
     <section class="static-kc-box">
         <span class="fade-in">K C</span>
-        <img src="img/mathrelays2.JPG" alt="Math Realys" class="fade-in-image">
+        <img src="img/mathrelays2.JPG" alt="Students celebrating at PREP-KC Math Relays competition in Kansas City" class="fade-in-image">
     </section>
 
     <!-- Video Section -->
