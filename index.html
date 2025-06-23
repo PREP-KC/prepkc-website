@@ -148,17 +148,36 @@
         <img src="img/mathrelays2.JPG" alt="Students celebrating at PREP-KC Math Relays competition in Kansas City" class="fade-in-image">
     </section>
 
-    <!-- Video Section -->
-    <section class="video-section m-5">
-        <div class="ratio ratio-16x9 mx-auto col-10">
-            <iframe 
-                src="https://player.vimeo.com/video/191812434?h=2efccc1921" 
-                title="PREP-KC Introduction Video"
-                allowfullscreen
-                loading="lazy"
-            ></iframe>
+    <!-- Video Section with Map Background -->
+    <section class="video-section-new">
+        <div class="video-trigger-container">
+            <button id="video-trigger" 
+                    class="video-trigger-btn"
+                    onclick="openVideoOverlay()"
+                    aria-label="Play PREP-KC Introduction Video">
+                <div class="play-button">
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <polygon points="8,5 19,12 8,19" fill="currentColor"/>
+                    </svg>
+                </div>
+                <div class="video-info">
+                    <h3 class="video-title">PREP-KC Introduction</h3>
+                    <p class="video-description">Discover how we're transforming Kansas City education</p>
+                </div>
+            </button>
         </div>
     </section>
+
+    <!-- Video Overlay Section with HTMX Lazy Loading -->
+    <div id="video-overlay" 
+         class="video-overlay position-fixed w-100 h-100"
+         style="display: none; top: 0; left: 0; z-index: 1000; background: rgba(0,0,0,0.9);"
+         hx-get="video-content.html" 
+         hx-trigger="click"
+         hx-target="#video-content">
+        <div id="video-content" class="position-absolute top-50 start-50 translate-middle"></div>
+        <button class="btn-close position-absolute top-0 end-0 m-3" onclick="closeVideo()"></button>
+    </div>
 
     <!-- FOOTER -->
     <footer class="container mt-5">
@@ -221,6 +240,50 @@
 
         // Run the check whenever user scrolls
         window.addEventListener('scroll', checkScroll);
+
+        // Video Overlay Functions
+        function openVideoOverlay() {
+            const overlay = document.getElementById('video-overlay');
+            const videoContent = document.getElementById('video-content');
+            
+            // Create and insert iframe
+            const iframe = document.createElement('iframe');
+            iframe.src = 'https://player.vimeo.com/video/191812434?h=2efccc1921&autoplay=1';
+            iframe.title = 'PREP-KC Introduction Video';
+            iframe.allowfullscreen = true;
+            
+            videoContent.appendChild(iframe);
+            overlay.style.display = 'block';
+            
+            // Prevent body scroll
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeVideo() {
+            const overlay = document.getElementById('video-overlay');
+            const videoContent = document.getElementById('video-content');
+            
+            // Remove iframe to stop video
+            videoContent.innerHTML = '';
+            overlay.style.display = 'none';
+            
+            // Restore body scroll
+            document.body.style.overflow = '';
+        }
+
+        // Close video on escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeVideo();
+            }
+        });
+
+        // Close video on overlay click (but not on content)
+        document.getElementById('video-overlay').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeVideo();
+            }
+        });
     </script>    
     
     <!-- Bootstrap JavaScript bundle -->

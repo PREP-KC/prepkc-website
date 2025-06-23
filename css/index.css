@@ -291,8 +291,9 @@
     line-height: 1;
     padding: 20px 0;
     margin-top: 20px;
+    margin-bottom: 0; /* Remove bottom margin */
     filter: drop-shadow(3px 3px 3px #000);
-    overflow: hidden;
+    overflow: hidden; /* Back to hidden since video is separate */
     background-color: var(--color-yellow); /* Always show yellow background */
     /* CSS Containment for animation section */
     contain: layout style paint;
@@ -369,18 +370,187 @@
 /* Index page cards use the consolidated prep-card component from style.css
    Removed duplicate styling - managed centrally in style.css */
 
-.video-section {
+/* Video Section with Map Background */
+.video-section-new {
     position: relative;
-    background: var(--color-navy);
-    padding: var(--space-xl) 0;
-    /* CSS Containment for video section */
-    contain: layout style;
+    background: 
+        linear-gradient(rgba(0, 51, 76, 0.7), rgba(0, 51, 76, 0.7)),
+        url('../img/PREP_KC_Map.png') center/cover;
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 4rem 2rem;
 }
 
-.ratio {
-    box-shadow: var(--shadow-lg);
+.video-trigger-container {
+    position: relative;
+    z-index: 10;
+}
+
+.video-trigger-btn {
+    background: rgba(0, 51, 76, 0.9);
+    border: none;
     border-radius: var(--radius-lg);
-    overflow: hidden;
-    /* CSS Containment for iframe container */
-    contain: layout;
+    padding: 3rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(15px);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+    max-width: 600px;
+}
+
+.video-trigger-btn:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 
+        0 20px 40px rgba(0, 0, 0, 0.5),
+        0 0 0 3px var(--color-yellow, #F7E214);
+    background: rgba(0, 51, 76, 0.95);
+}
+
+.video-trigger-btn .play-button {
+    width: 100px;
+    height: 100px;
+    background: var(--color-yellow, #F7E214);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-navy, #00334C);
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+.video-trigger-btn:hover .play-button {
+    transform: scale(1.1);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+}
+
+.video-trigger-btn .play-button svg {
+    margin-left: 4px; /* Optical alignment */
+}
+
+.video-trigger-btn .video-info {
+    color: white;
+    text-align: left;
+    flex: 1;
+}
+
+.video-trigger-btn .video-title {
+    font-size: 2rem;
+    font-weight: 600;
+    margin: 0 0 1rem;
+    color: var(--color-yellow, #F7E214);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.video-trigger-btn .video-description {
+    font-size: 1.2rem;
+    margin: 0;
+    opacity: 0.9;
+    line-height: 1.5;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Video Overlay Styles */
+.video-overlay {
+    backdrop-filter: blur(8px);
+}
+
+#video-content iframe {
+    width: 90vw;
+    height: 50.625vw; /* 16:9 aspect ratio */
+    max-height: 90vh;
+    max-width: calc(90vh * 16/9);
+    border: none;
+    border-radius: var(--radius-lg);
+}
+
+.btn-close {
+    background: var(--color-yellow, #F7E214);
+    color: var(--color-navy, #00334C);
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-close:hover {
+    transform: scale(1.1);
+    background: white;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .video-section-new {
+        min-height: 40vh;
+        padding: 2rem 1rem;
+    }
+    
+    .video-trigger-btn {
+        padding: 2rem;
+        flex-direction: column;
+        text-align: center;
+        gap: 1.5rem;
+        max-width: 90%;
+    }
+    
+    .video-trigger-btn .play-button {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .video-trigger-btn .video-info {
+        text-align: center;
+    }
+    
+    .video-trigger-btn .video-title {
+        font-size: 1.5rem;
+    }
+    
+    .video-trigger-btn .video-description {
+        font-size: 1rem;
+    }
+    
+    #video-content iframe {
+        width: 95vw;
+        height: 53.4375vw;
+    }
+}
+
+@media (max-width: 480px) {
+    .video-section-new {
+        min-height: 35vh;
+        padding: 1.5rem 1rem;
+    }
+    
+    .video-trigger-btn {
+        padding: 1.5rem;
+        gap: 1rem;
+    }
+    
+    .video-trigger-btn .play-button {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .video-trigger-btn .video-title {
+        font-size: 1.25rem;
+    }
+    
+    .video-trigger-btn .video-description {
+        font-size: 0.9rem;
+    }
 }
