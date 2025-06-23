@@ -1,16 +1,15 @@
-/* Update body styles */
+/* Fix body styles - remove flex that conflicts with navbar */
 body {
     background-color: var(--color-yellow);
-    min-height: 100vh; /* Make body at least full viewport height */
-    display: flex;
-    flex-direction: column;
+    min-height: 100vh;
     margin: 0;
     padding: 0;
+    /* Remove flex layout that conflicts with navbar */
 }
 
-/* Make main content area flex-grow */
+/* Remove flex from container */
 .container {
-    flex: 1;
+    /* Remove flex: 1; */
 }
 
 /* Update footer styles */
@@ -19,7 +18,7 @@ body {
     margin-top: var(--space-lg);
     padding: var(--space-lg) 0;
     width: 100%;
-    margin-bottom: 0; /* Ensure no margin at bottom */
+    margin-bottom: 0;
 }
 
 /* Keep title in navy to match brand */
@@ -27,13 +26,18 @@ body {
     color: var(--color-navy);
 }
 
-.card-container {
+/* Fix the volunteer cards layout */
+.volunteer-opportunities {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5rem;
-    padding: 1rem 2rem;
-    max-width: 1400px;
+    gap: 2rem;
+    padding: 2rem 0;
+    max-width: 1200px;
     margin: 0 auto;
+}
+
+.volunteer-card {
+    /* Remove individual card container styling */
 }
 
 .card {
@@ -41,10 +45,11 @@ body {
     border-radius: 1rem;
     padding: 2.5rem;
     text-decoration: none;
-    transition: transform var(--transition-normal);
+    transition: all var(--transition-normal);
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     text-align: center;
     min-height: 200px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
@@ -53,29 +58,16 @@ body {
 .card:hover {
     transform: translateY(-5px);
     box-shadow: var(--shadow-lg);
+    text-decoration: none;
 }
 
-.card h2 {
+.card-content {
     font-family: 'DIN1451', system-ui, sans-serif;
-    font-size: 1.75rem;
-    margin-bottom: 1rem;
-    color: var(--color-navy);
-}
-
-#card3 h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
     color: var(--color-white);
-}
-
-.card-text {
-    font-family: 'Avenir', system-ui, sans-serif;
-    font-size: 1.1rem;
-    line-height: 1.5;
-    color: var(--color-navy);
-    opacity: 0.9;
-}
-
-#card3 .card-text {
-    color: var(--color-white);
+    text-transform: uppercase;
+    line-height: 1.2;
 }
 
 /* Card specific colors */
@@ -104,6 +96,18 @@ body {
     padding: 0 1rem;
 }
 
+/* Intro text styling */
+.intro-text {
+    font-family: 'Avenir', system-ui, sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--color-navy);
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 3rem;
+    padding: 0 1rem;
+}
+
 /* Nav link styling */
 .nav-link {
     color: var(--color-turquoise);
@@ -123,13 +127,19 @@ body {
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-    .card-container {
+    .volunteer-opportunities {
+        grid-template-columns: 1fr;
         padding: 1rem;
-        gap: 1rem;
+        gap: 1.5rem;
     }
 
     .card {
-        padding: 1.5rem;
+        padding: 2rem;
+        min-height: 150px;
+    }
+    
+    .card-content {
+        font-size: 1.25rem;
     }
 }
 

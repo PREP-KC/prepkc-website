@@ -67,12 +67,12 @@
 
 ### Performance Optimization
 - [ ] **Image optimization**
-  - [ ] Compress existing images (60-80% reduction possible)
-  - [ ] Convert to modern formats (WebP with fallbacks)
+  - [x] Compress existing images (60-80% reduction possible)
+  - [] Convert to modern formats (WebP with fallbacks)
   - [x] Add proper alt texts audit - many images missing descriptive alt text - Enhanced alt text across key pages ✅
   - [x] Implement lazy loading for better performance - Added to team photos and hero images ✅
-  - [ ] Optimize team photos in about.html (large file sizes)
-  - [ ] Optimize background images and hero images
+  - [x] Optimize team photos in about.html (large file sizes)
+  - [x] Optimize background images and hero images
 - [ ] **CSS/JS optimization**
   - [ ] Minify CSS files
   - [ ] Minify JavaScript
