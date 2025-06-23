@@ -129,6 +129,101 @@
 - [ ] **Add performance monitoring**
 - [ ] **Set up uptime monitoring**
 
+## 🎨 **CSS Architecture & Performance Audit**
+
+### Critical CSS Issues (Must Fix Immediately)
+- [ ] **Fix duplicate CSS custom properties** - Multiple files redefine `:root` variables (style.css, index.css, voyger.css)
+- [ ] **Consolidate font declarations** - Font-face declarations scattered across multiple files
+- [ ] **Remove unused/redundant CSS** - Many unused styles and repeated code blocks
+- [ ] **Fix CSS naming inconsistencies** - Mix of camelCase, kebab-case, and snake_case
+- [ ] **Standardize breakpoints** - Inconsistent media query breakpoints across files
+
+### CSS Organization & Structure
+- [ ] **Create CSS architecture plan**
+  - [ ] Separate base styles, components, utilities, and page-specific styles
+  - [ ] Establish consistent naming convention (BEM methodology recommended)
+  - [ ] Create style guide documentation
+- [ ] **Consolidate global styles**
+  - [ ] Move all CSS custom properties to single source
+  - [ ] Create consistent typography scale
+  - [ ] Standardize color palette usage
+- [ ] **Component-based CSS structure**
+  - [ ] Extract reusable components (cards, buttons, navigation)
+  - [ ] Create utility classes for common patterns
+  - [ ] Remove page-specific overrides
+
+### Performance Optimizations
+- [ ] **CSS file optimization**
+  - [ ] Minify CSS files for production
+  - [ ] Remove unused CSS selectors (estimated 30-40% reduction possible)
+  - [ ] Optimize CSS delivery (critical path CSS)
+  - [ ] Use CSS containment where appropriate
+- [ ] **Selector optimization**
+  - [ ] Replace inefficient selectors (avoid deep nesting, universal selectors)
+  - [ ] Use efficient CSS selectors (class-based over element-based)
+  - [ ] Remove `!important` declarations (currently 12+ instances)
+- [ ] **Animation & transition optimization**
+  - [ ] Use `transform` instead of changing layout properties
+  - [ ] Add `will-change` property for animated elements
+  - [ ] Implement `prefers-reduced-motion` consistently
+
+### CSS Quality & Maintainability
+- [ ] **Add comprehensive CSS comments**
+  - [ ] Document complex calculations and magic numbers
+  - [ ] Add section headers for better organization
+  - [ ] Explain business logic behind styling decisions
+- [ ] **Fix CSS specificity issues**
+  - [ ] Remove overly specific selectors
+  - [ ] Establish consistent specificity hierarchy
+  - [ ] Use CSS cascade properly
+- [ ] **Responsive design improvements**
+  - [ ] Consolidate media queries
+  - [ ] Use consistent breakpoint system
+  - [ ] Implement mobile-first approach consistently
+  - [ ] Add container queries for component-based responsive design
+
+### CSS Code Review Findings
+
+#### High Priority Issues:
+1. **Duplicate `:root` declarations** in style.css, index.css, and voyger.css
+2. **Font loading inconsistencies** - Multiple @font-face declarations
+3. **Unused CSS** - Large portions of voyger.css and impact.css appear unused
+4. **Inconsistent color usage** - Mix of CSS variables and hardcoded colors
+5. **Card component duplication** - Multiple card implementations with similar functionality
+
+#### Medium Priority Issues:
+1. **CSS file organization** - No clear separation of concerns
+2. **Naming conventions** - Mix of camelCase (.prepCard) and kebab-case (.prep-card)
+3. **Magic numbers** - Many hardcoded values without explanation
+4. **Responsive breakpoints** - Inconsistent across files
+5. **Animation performance** - Some animations could cause layout thrashing
+
+#### Low Priority Issues:
+1. **CSS comments** - Minimal documentation
+2. **Vendor prefixes** - Missing for some properties
+3. **Print styles** - Limited print CSS optimization
+4. **CSS Grid/Flexbox** - Inconsistent usage patterns
+
+### CSS Refactoring Plan
+- [ ] **Phase 1: Consolidation** (Week 1)
+  - [ ] Merge duplicate CSS variables into single source
+  - [ ] Consolidate font declarations
+  - [ ] Remove unused CSS rules
+- [ ] **Phase 2: Organization** (Week 2)
+  - [ ] Implement BEM naming convention
+  - [ ] Create component-based CSS structure
+  - [ ] Establish utility class system
+- [ ] **Phase 3: Optimization** (Week 3)
+  - [ ] Optimize selectors and reduce specificity
+  - [ ] Implement critical CSS strategy
+  - [ ] Add comprehensive documentation
+
+### CSS Tools & Automation
+- [ ] **CSS Linting** - Implement Stylelint with consistent rules
+- [ ] **CSS Formatting** - Set up Prettier for CSS
+- [ ] **CSS Analysis** - Use tools like PurgeCSS to identify unused styles
+- [ ] **Performance Monitoring** - Track CSS performance impact
+
 ## 🧪 **Testing & Quality Assurance**
 
 ### Cross-browser Testing
