@@ -1,9 +1,7 @@
-:root {
-    --breakpoint-sm: 576px;
-    --breakpoint-md: 768px;
-    --breakpoint-lg: 992px;
-    --breakpoint-xl: 1200px;
-}
+/* ==========================================================================
+   INDEX PAGE SPECIFIC STYLES
+   Note: Root variables are defined in style.css - do not duplicate here
+   ========================================================================== */
 
 @media (min-width: 768px) {
     .index-nav {
@@ -39,15 +37,21 @@
     }
 }
 
+/* Index page navbar overrides - remove background and increase logo size */
+.index-nav .navbar {
+    background-color: transparent !important;
+}
+
+.index-nav .navbar-brand img {
+    max-height: 180px !important; 
+    width: auto;
+}
+
+/* Navigation link overrides for index page */
 .navbar .nav-link:hover,
 .navbar .nav-link:focus,
 .navbar .nav-link.active {
-    color: var(--color-yellow) !important; /* Change the background color on hover, focus, and active */
-}
-
-.navbar-brand img {
-    max-height: 180px; 
-    width: auto;
+    color: var(--color-yellow);
 }
 
 .container-fluid {
@@ -290,6 +294,8 @@
     filter: drop-shadow(3px 3px 3px #000);
     overflow: hidden;
     background-color: var(--color-yellow); /* Always show yellow background */
+    /* CSS Containment for animation section */
+    contain: layout style paint;
 }
 
 .static-kc-box span {
@@ -360,164 +366,21 @@
     }
 }
 
-@media (max-width: var(--breakpoint-md)) {
-    .container-fluid {
-        padding: 0 var(--space-md);
-    }
-    
-    .card {
-        margin: 0 var(--space-xs);
-    }
-}
-
-/* Add subtle background patterns when not hovered */
-.card::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 60%);
-    opacity: 0.5;
-    z-index: 0;
-}
-
-/* Enhanced phrase styling with more dramatic animation */
-.card .phrase {
-    display: none;
-    font-size: 2.5em;
-    font-weight: 600;
-    margin-top: 20px;
-    z-index: 2;
-    color: #fff;
-    text-align: center;
-    filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.5));
-    opacity: 0;
-    transform: translateY(30px) scale(0.85); /* More dramatic initial position */
-    transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Bouncy easing */
-}
-
-.card:hover .phrase {
-    display: block;
-    opacity: 1;
-    transform: translateY(0) scale(1.1); /* Slightly larger end scale for emphasis */
-    animation: scaleBack 0.2s ease-out 0.25s forwards;
-}
-
-/* Add a quick scale-back animation */
-@keyframes scaleBack {
-    0% { transform: translateY(0) scale(1.1); }
-    100% { transform: translateY(0) scale(1); }
-}
-
-.card .letter {
-    /* ... existing styles ... */
-    transition: all 0.2s ease-in-out;
-}
-
-/* Maintain consistent card width */
-.card:hover {
-    min-height: 45vh;
-    flex: 1;
-    transform: translateY(-3px);
-}
-
-/* Responsive adjustments */
-@media (max-width: var(--breakpoint-lg)) {
-    .card {
-        height: 35vh;
-    }
-    
-    .card .letter {
-        font-size: 18vh;
-    }
-}
-
-@media (max-width: var(--breakpoint-md)) {
-    .container-fluid {
-        padding: 0 var(--space-sm);
-        gap: 8px;
-    }
-    
-    .card {
-        height: 35vh;
-    }
-    
-    .card .letter {
-        font-size: 15vh;
-    }
-    
-    .card .phrase {
-        font-size: 1.8em;
-    }
-}
-
-@media (max-width: var(--breakpoint-sm)) {
-    .card {
-        height: 35vh;
-    }
-    
-    .card .letter {
-        font-size: 12vh;
-    }
-}
-
-/* Base card styles */
-.prep-card {
-    /* ... existing styles ... */
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-
-/* Letter styles - ensure perfect centering */
-.prep-card .letter {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    margin: 0;
-    padding: 0;
-    width: auto;
-    height: auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* Phrase styles - improve centering and overlay */
-.prep-card .phrase {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 85%;
-    margin: 0;
-    padding: 1rem 1.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 20%;
-}
-
-/* Text overlay for the first card */
-#card1 .phrase {
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    font-weight: 600;
-}
+/* Index page cards use the consolidated prep-card component from style.css
+   Removed duplicate styling - managed centrally in style.css */
 
 .video-section {
     position: relative;
     background: var(--color-navy);
     padding: var(--space-xl) 0;
+    /* CSS Containment for video section */
+    contain: layout style;
 }
+
 .ratio {
     box-shadow: var(--shadow-lg);
     border-radius: var(--radius-lg);
     overflow: hidden;
+    /* CSS Containment for iframe container */
+    contain: layout;
 }

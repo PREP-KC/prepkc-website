@@ -9,7 +9,7 @@ body {
 
 /* Fix the nav container spacing issue */
 #nav-container {
-    min-height: 0 !important;
+    min-height: 0;
 }
 
 /* Remove flex from container */
@@ -31,61 +31,28 @@ body {
     color: var(--color-navy);
 }
 
-/* Fix the volunteer cards layout */
+/* Volunteer page grid layout */
 .volunteer-opportunities {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    padding: 2rem 0;
-    max-width: 1200px;
+    gap: var(--space-lg);
+    padding: var(--space-lg) 0;
+    max-width: var(--container-max-width);
     margin: 0 auto;
 }
 
-.volunteer-card {
-    /* Remove individual card container styling */
-}
-
-.card {
-    background-color: var(--color-white);
-    border-radius: 1rem;
-    padding: 2.5rem;
-    text-decoration: none;
-    transition: all var(--transition-normal);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    min-height: 200px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-lg);
-    text-decoration: none;
-}
-
-.card-content {
-    font-family: 'DIN1451', system-ui, sans-serif;
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: var(--color-white);
-    text-transform: uppercase;
-    line-height: 1.2;
-}
-
-/* Card specific colors */
+/* Using consolidated volunteer-card component from style.css */
+/* Card specific colors for volunteer page */
 #card1 {
-    background-color: #4BA3C3;
+    background-color: var(--color-blue);
 }
 
 #card2 {
-    background-color: #45B37C;
+    background-color: var(--color-green);
 }
 
 #card3 {
-    background-color: #FFB946;
+    background-color: var(--color-orange);
 }
 
 /* Title styling */
@@ -121,7 +88,7 @@ body {
 
 .nav-link:hover,
 .nav-link:focus {
-    color: var(--color-turquoise) !important;
+    color: var(--color-turquoise);
     transform: translateY(-2px);
     opacity: 0.8;
 }

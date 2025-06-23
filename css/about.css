@@ -12,13 +12,7 @@
     border-radius: 5px;
 }
 
-.board{
-    color: var(--color-navy);
-}
-
-.partners{
-    color: var(--color-navy);
-}
+/* Removed .partners class - not used in HTML */
 
 body{
     color: var(--color-yellow);
@@ -182,6 +176,8 @@ body{
     padding: var(--space-lg) 0;
     max-width: var(--container-max-width);
     margin: 0 auto;
+    /* CSS Containment for team section */
+    contain: layout style;
 }
 
 .team h2 {
@@ -414,22 +410,5 @@ body{
     }
 }
 
-/* Footer link color overrides */
-.footer-text a {
-    color: var(--color-yellow);
-}
-
-.footer-text a:hover {
-    color: var(--color-navy);
-}
-
-/* Social icon overrides */
-.social-icon {
-    color: var(--color-yellow);
-    border-color: var(--color-yellow);
-}
-
-.social-icon:hover {
-    color: var(--color-navy);
-    border-color: var(--color-navy);
-}
+/* These footer styles are redundant - handled in style.css main file
+   Removing duplicate footer styling to reduce CSS bloat */
