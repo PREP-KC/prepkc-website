@@ -11,14 +11,14 @@
         @font-face {
             font-family: 'DIN1451';
             src: url('fonts/DINEngschriftStd.woff2') format('woff2');
-            font-display: swap;
+            font-display: optional;
             font-weight: normal;
             font-style: normal;
         }
         @font-face {
             font-family: 'Avenir';
             src: url('fonts/AvenirMedium.woff2') format('woff2');
-            font-display: swap;
+            font-display: optional;
             font-weight: normal;
             font-style: normal;
         }
@@ -85,6 +85,7 @@
                 width: 100%;
                 max-width: var(--container-max-width);
                 padding: 0 var(--container-padding);
+                min-height: 80px; /* Reserve space for nav */
             }
         }
         .index-nav .navbar {
@@ -97,11 +98,17 @@
         /* Critical hero styles */
         .hero {
             padding: 3rem 1rem;
+            min-height: 200px; /* Reserve space */
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         .hero p {
             font-size: clamp(1.2rem, 4vw, 2.5rem);
             line-height: 1.4;
             max-width: 1200px;
+            margin: 0; /* Remove default margins */
+            contain: layout; /* Prevent layout shifts */
         }
         .gradient-text {
             background: linear-gradient(45deg, var(--color-turquoise), var(--color-yellow));
@@ -119,6 +126,7 @@
             margin: 0 auto;
             gap: 8px;
             flex-direction: row;
+            contain: layout style; /* Prevent layout shifts */
         }
         .prep-card {
             position: relative;
@@ -128,6 +136,7 @@
             justify-content: center;
             align-items: center;
             height: 45vh;
+            min-height: 300px; /* Ensure minimum height */
             font-weight: bold;
             color: white;
             cursor: pointer;
@@ -139,6 +148,7 @@
             transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
             box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
             border: 2px solid transparent;
+            contain: layout style; /* Prevent layout shifts */
         }
         .prep-card .letter {
             font-size: clamp(15vh, 20vw, 25vh);
@@ -166,6 +176,14 @@
                 min-height: 150px;
                 margin-bottom: 8px;
             }
+        }
+        .static-kc-box {
+            position: relative;
+            min-height: 400px; /* Reserve space */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            contain: layout style;
         }
     </style>
 
@@ -305,7 +323,12 @@
     <!-- KC Highlight Section with fade-in animation -->
     <section class="static-kc-box">
         <span class="fade-in">K C</span>
-        <img src="img/mathrelays2.JPG" alt="Students celebrating at PREP-KC Math Relays competition in Kansas City" class="fade-in-image">
+        <img src="img/mathrelays2.JPG" 
+             alt="Students celebrating at PREP-KC Math Relays competition in Kansas City" 
+             class="fade-in-image"
+             width="800" 
+             height="600"
+             loading="lazy">
     </section>
 
     <!-- Video Section with Map Background -->
