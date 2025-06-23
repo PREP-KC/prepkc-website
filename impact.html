@@ -11,13 +11,23 @@
       gtag('config', 'G-8TKE4R10Y3');
     </script>
     <!-- Meta tags help with SEO and mobile responsiveness -->
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="PREP-KC ignites potential by connecting educators and industry professionals to build meaningful career paths across Kansas City.">
+    <meta name="description" content="See PREP-KC's impact across Kansas City schools. Over 67,000 students served through career pathways, data science education, and industry partnerships in 6 districts.">
+    <title>Impact & Results - PREP-KC Kansas City Career Education</title>
+    
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="img/assets/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/assets/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/assets/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="img/assets/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="img/assets/android-chrome-512x512.png">
+    <link rel="manifest" href="img/assets/site.webmanifest">
     
     <!-- Preloading improves performance by loading critical assets before they're needed -->
-    <link rel="preload" href="fonts/DINEngschriftStd.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="img/kc-2.png" as="image">
+    <link rel="preload" href="fonts/DINEngschriftStd.otf" as="font" type="font/otf" crossorigin>
+    <link rel="preload" href="img/mva.JPG" as="image">
     
     <!-- External CSS libraries and custom stylesheets -->
     <!-- Always load third-party CSS before your custom CSS -->
@@ -27,26 +37,33 @@
     <link rel="stylesheet" href="css/impact.css">
     
     <!-- HTMX library enables AJAX functionality without writing JavaScript -->
-    <script src="https://unpkg.com/htmx.org@2.0.1"></script>
+    <script src="https://unpkg.com/htmx.org@2.0.1" integrity="sha384-QWGpdj554B4ETpJJC9z+ZHJcA/i59TyjxEPXiiUgN2WmTyV5OEZWCD6gQhgkdpB/" crossorigin="anonymous"></script>
 </head>
-<body>
+<body class="container">
+    <!-- Skip navigation link for accessibility -->
+    <a href="#main-content" class="visually-hidden-focusable btn btn-primary position-absolute" style="top: 10px; left: 10px; z-index: 1000;">Skip to main content</a>
+    
+    <div id="nav-container"></div>
+    <div hx-get="nav.html" hx-target="#nav-container" hx-trigger="load"></div>
+    
+    <!-- Breadcrumb navigation -->
+    <nav aria-label="breadcrumb" class="mt-3">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html" class="text-turquoise">Home</a></li>
+            <li class="breadcrumb-item active text-white" aria-current="page">Impact</li>
+        </ol>
+    </nav>
+    
     <!-- Main content wrapper -->
-    <main class="container">
-        <!-- Navigation section using HTMX for dynamic loading -->
-        <nav id="nav-container"></nav>
-        <div hx-get="nav.html" hx-target="#nav-container" hx-trigger="load"></div>
-
+    <main class="container" id="main-content" role="main">
         <!-- Hero Section -->
-        <header class="hero-section">
-            <div class="row">
-                <div class="col-lg-8 title-container">
-                    <h1 class="impact-title text-navy">Impact</h1>
-                </div>
-                <div class="col-lg-4 d-flex align-items-center">
-                    <p class="impact-subtitle text-gray">IT TAKES MORE THAN JUST GOOD GRADES TO MAKE THE GRADE.</p>
-                </div>
-            </div>
-        </header>
+        <section class="impact-hero" aria-label="Impact Overview">
+            <h1 class="impact-title text-navy">Impact</h1>
+            <p class="impact-description">
+                Discover how PREP-KC is transforming career readiness for Kansas City students through 
+                innovative programming, strategic partnerships, and measurable outcomes.
+            </p>
+        </section>
 
         <!-- Statistics Section -->
         <section class="row justify-content-center">
@@ -146,8 +163,36 @@
                 </nav>
             </div>
         </div>
+        
+        <!-- Copyright -->
+        <div class="text-center mt-3">
+            <p class="text-white">&copy; 2024 PREP-KC. All rights reserved.</p>
+        </div>
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    
+    <!-- Back to Top Button -->
+    <button onclick="topFunction()" id="backToTopBtn" title="Go to top" aria-label="Back to top" style="display: none; position: fixed; bottom: 20px; right: 30px; z-index: 99; border: none; outline: none; background-color: #56B2CB; color: white; cursor: pointer; padding: 15px; border-radius: 10px; font-size: 18px;">
+        <i class="fas fa-chevron-up" aria-hidden="true"></i>
+    </button>
+    
+    <script>
+    // Back to Top Button functionality
+    window.onscroll = function() {scrollFunction()};
+    
+    function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            document.getElementById("backToTopBtn").style.display = "block";
+        } else {
+            document.getElementById("backToTopBtn").style.display = "none";
+        }
+    }
+    
+    function topFunction() {
+        document.body.scrollTop = 0; // For Safari
+        document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <!-- Custom JavaScript for number animation -->
     <script>
     document.addEventListener('DOMContentLoaded', () => {

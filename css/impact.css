@@ -1,24 +1,19 @@
 body{
     background-color:#F7E214;
 }
+/* Impact page specific navbar toggler */
 .navbar-toggler-icon {
-    background-image: url("data:image/svg+xml;charset=UTF8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%2300334C' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E") !important;
+    background-image: url("data:image/svg+xml;charset=UTF8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%2300334C' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
 }
 
+/* Use standard card component with impact page customization */
 .custom-card {
     border: 2px solid var(--color-white);
-    padding: var(--space-md);
     background-color: var(--color-navy);
-    border-radius: var(--radius-lg);
+    color: var(--color-white);
     text-align: center;
-    margin-inline: auto;  /* Better than margin-left */
-    width: min(60%, 800px);  /* Better than max-width alone */
-    transition: transform var(--transition-normal), box-shadow var(--transition-normal);
-}
-
-.custom-card:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-lg);
+    margin-inline: auto;
+    width: min(60%, 800px);
 }
 
 .custom-image {
@@ -100,11 +95,11 @@ body{
     }
 }
 
-/* Add print styles */
+/* Print styles for impact page */
 @media print {
     .fade-in {
-        opacity: 1 !important;
-        transform: none !important;
+        opacity: 1;
+        transform: none;
     }
 }
 
@@ -160,6 +155,8 @@ body{
     margin-top: 1rem;
     box-shadow: var(--shadow-lg);
     margin-bottom: 1rem;
+    /* CSS Containment for stats section */
+    contain: layout style;
 }
 
 .stats-title {

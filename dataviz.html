@@ -1,4 +1,5 @@
-  <html lang="en-US">
+<!DOCTYPE html>
+<html lang="en">
     <head>
         <!-- Google tag (gtag.js) -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-8TKE4R10Y3"></script>
@@ -11,70 +12,154 @@
         </script>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="PREP-KC">
-        <title>PREP-KC</title>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <meta name="description" content="Join PREP-KC's DataViz Competition for Kansas City high school and middle school students. Transform complex data into engaging visual stories with $2,500 in prizes. Registration open September-March.">
+        <title>DataViz Competition - PREP-KC Kansas City Data Visualization</title>
+        
+        <!-- Open Graph / Facebook -->
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://prepkc.org/dataviz">
+        <meta property="og:title" content="DataViz Competition - PREP-KC Kansas City">
+        <meta property="og:description" content="High school and middle school students can compete in PREP-KC's DataViz Competition. Two divisions: Follow Your Passion and Community Impact. $2,500 prize pool available.">
+        <meta property="og:image" content="https://prepkc.org/img/logo/logo_yellow.png">
+        
+        <!-- Twitter -->
+        <meta property="twitter:card" content="summary_large_image">
+        <meta property="twitter:url" content="https://prepkc.org/dataviz">
+        <meta property="twitter:title" content="DataViz Competition - PREP-KC Kansas City">
+        <meta property="twitter:description" content="Join PREP-KC's DataViz Competition for Kansas City students. Transform data into visual stories with $2,500 in prizes.">
+        <meta property="twitter:image" content="https://prepkc.org/img/logo/logo_yellow.png">
+        
+        <!-- Canonical URL -->
+        <link rel="canonical" href="https://prepkc.org/dataviz">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="css/style.css">
+        
+        <!-- Structured Data for DataViz Competition -->
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "Event",
+          "name": "DataViz KC Competition",
+          "description": "Data visualization competition for Kansas City high school and middle school students. Transform complex data into engaging visual stories with $2,500 in prizes. Two divisions: Follow Your Passion and Community Impact.",
+          "url": "https://prepkc.org/dataviz",
+          "eventStatus": "https://schema.org/EventScheduled",
+          "startDate": "2024-09-28",
+          "endDate": "2025-03-31",
+          "organizer": {
+            "@type": "Organization",
+            "name": "PREP-KC",
+            "alternateName": "Partnership for Regional Educational Preparation - Kansas City",
+            "url": "https://prepkc.org"
+          },
+          "location": {
+            "@type": "Place",
+            "name": "Greater Kansas City Region",
+            "address": {
+              "@type": "PostalAddress",
+              "addressRegion": "MO",
+              "addressCountry": "US"
+            }
+          },
+          "audience": {
+            "@type": "EducationalAudience",
+            "educationalRole": "student",
+            "audienceType": "Middle School and High School students"
+          },
+          "about": ["Data Visualization", "Data Science", "STEM Education", "Technology"],
+          "educationalLevel": ["MiddleSchool", "HighSchool"],
+          "inLanguage": "en",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock"
+          },
+          "award": "$2,500 prize pool",
+          "maximumAttendeeCapacity": "Teams of up to 5",
+          "subEvent": [
+            {
+              "@type": "Event",
+              "name": "Follow Your Passion Division",
+              "audience": "High School students"
+            },
+            {
+              "@type": "Event",
+              "name": "Community Impact Division",
+              "audience": "Middle and High School students"
+            }
+          ]
+        }
+        </script>
     </head>
     <body class="container">
-        <!-- NAV BAR -->
-        <nav class="navbar navbar-expand-lg navbar-light bg-navy">
-            <a class="navbar-brand" href="index.html">
-                <img src="img/logo/logo_yellow.png" alt="Logo"> <!-- Adjust the path and add a CSS class -->
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-              <ul class="navbar-nav ms-auto"> <!-- ml-auto pushes the nav to the right -->
-                <li class="nav-item active">
-                  <a class="nav-link" href="index.html">Home</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="strategies.html">Strategies</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="about.html">About</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="impact.html">Impact</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="volunteer.html">Volunteer</a>
-                </li>
-              </ul>
-            </div>
-          </nav>
-        <!-- END NAV BAR -->
-        <!-- About -->
-        <div class="about">
-          <h2 class="text-center">Unlock the Power of Data Visualization</h2>
-          <p style="color:white;">Join our DataViz Competition, designed for high school students and teachers to explore data visualization. Transform complex data into engaging visual stories, with categories for every passion and a focus on community impact within the Greater Kansas City Region. Dive into the world of data and make your insights count!</p>
-          <p style="color:white;">The DataViz competition offers two divisions: "Follow Your Passion" for high school students to explore topics of their choice and "Community Impact" for both middle and high school students focusing on the Greater Kansas City Region. Eligibility extends to teams of up to 5, including teachers and students from PREP-KC partner districts. The competition window spans from September 28th to March 31st, with a $2,500 prize pool.</p>
-          <div class="text-center">
-            <a href="https://prepkcdataviz.org/" class="btn btn-primary">Learn More & Register</a>
-          </div>
-        </div>
-        <!-- FOOTER -->
-        <footer>
-            <div class="footer row">
-                <div class="footer-text col">
-                    <p>PREP-KC</p>
-                    <p>
-                        2300 Main St, Suite 340<br>
-                        Kansas City, MO 64108<br>
-                        816.931.PREP
-                    </p>
+        <!-- Skip navigation link for accessibility -->
+        <a href="#main-content" class="visually-hidden-focusable btn btn-primary position-absolute" style="top: 10px; left: 10px; z-index: 1000;">Skip to main content</a>
+        
+        <div id="nav-container"></div>
+        <div hx-get="nav.html" hx-target="#nav-container" hx-trigger="load"></div>
+        
+        <!-- Breadcrumb navigation -->
+        <nav aria-label="breadcrumb" class="mt-3">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html" class="text-turquoise">Home</a></li>
+                <li class="breadcrumb-item"><a href="strategies.html" class="text-turquoise">Programs</a></li>
+                <li class="breadcrumb-item active text-white" aria-current="page">DataViz KC</li>
+            </ol>
+        </nav>
+        
+        <!-- Main content with proper semantic structure -->
+        <main id="main-content" role="main">
+            <!-- Hero Section -->
+            <section class="hero-section" aria-label="DataViz KC Competition Introduction">
+                <div class="bg-navy rounded m-3 p-3">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <h1 class="text-yellow">DataViz KC</h1>
+                            <p class="text-white">
+                                Kansas City's premier high school data visualization competition, challenging students to tell compelling 
+                                stories with data while developing critical analytical and presentation skills.
+                            </p>
+                        </div>
+                        <div class="col-md-4 text-center">
+                            <img src="img/dsi.png" alt="DataViz KC logo representing data visualization and student competition" class="img-fluid" loading="lazy">
+                        </div>
+                    </div>
                 </div>
-                <div class="footer-social col">
-                    <p>Connect</p>
-                    <a href="https://www.facebook.com/prepkc/" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://twitter.com/PREPKC" class="social-icon"><i class="fab fa-twitter"></i></a>
-                    <a href="https://www.linkedin.com/company/prep-kc/" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
-                </div>
+            </section>
+            <!-- About -->
+            <div class="about">
+              <h2 class="text-center">Unlock the Power of Data Visualization</h2>
+              <p style="color:white;">Join our DataViz Competition, designed for high school students and teachers to explore data visualization. Transform complex data into engaging visual stories, with categories for every passion and a focus on community impact within the Greater Kansas City Region. Dive into the world of data and make your insights count!</p>
+              <p style="color:white;">The DataViz competition offers two divisions: "Follow Your Passion" for high school students to explore topics of their choice and "Community Impact" for both middle and high school students focusing on the Greater Kansas City Region. Eligibility extends to teams of up to 5, including teachers and students from PREP-KC partner districts. The competition window spans from September 28th to March 31st, with a $2,500 prize pool.</p>
+              <div class="text-center">
+                <a href="https://prepkcdataviz.org/" class="btn btn-primary me-3">Learn More & Register</a>
+                <a href="dsi.html" class="btn btn-outline-primary">Explore Data Science Initiative</a>
+              </div>
+              <div class="text-center mt-4">
+                <p class="text-white">DataViz KC is part of PREP-KC's comprehensive <a href="dsi.html" class="text-yellow">Data Science Initiative</a>, helping students develop data literacy skills. Winners can earn <a href="mva.html" class="text-yellow">Market Value Assets</a> toward college and career readiness.</p>
+              </div>
             </div>
-        </footer>
-        <!-- END FOOTER -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>    </body>
+            <!-- FOOTER -->
+            <footer>
+                <div class="footer row">
+                    <div class="footer-text col">
+                        <p>PREP-KC</p>
+                        <p>
+                            2300 Main St, Suite 340<br>
+                            Kansas City, MO 64108<br>
+                            816.931.PREP
+                        </p>
+                    </div>
+                    <div class="footer-social col">
+                        <p>Connect</p>
+                        <a href="https://www.facebook.com/prepkc/" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://twitter.com/PREPKC" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.linkedin.com/company/prep-kc/" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </footer>
+            <!-- END FOOTER -->
+        </main>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>    </body>
 </html>

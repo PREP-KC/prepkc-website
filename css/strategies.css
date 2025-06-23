@@ -1,4 +1,9 @@
 /* Header & Intro Section */
+.strategies-header {
+    /* CSS Containment for header section */
+    contain: layout style;
+}
+
 .strategies-title {
     font-family: 'DIN1451', system-ui, sans-serif;
     font-size: clamp(3rem, 6vw, 5rem);
@@ -37,6 +42,8 @@
     transition: all var(--transition-normal);
     position: relative;
     overflow: hidden;
+    /* CSS Containment for card components */
+    contain: layout style paint;
 }
 
 .continuum-card::before {
