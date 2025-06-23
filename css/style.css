@@ -824,3 +824,106 @@ hr.style-two {
         margin: 0 var(--space-xs);
     }
 }
+
+/* ==========================================================================
+   BUTTON COMPONENTS
+   ========================================================================== */
+
+/* Custom button styles using brand colors */
+.btn-primary {
+    background-color: var(--color-turquoise) !important;
+    border-color: var(--color-turquoise) !important;
+    color: var(--color-white) !important;
+    font-family: var(--font-family-secondary);
+    font-weight: 600;
+    padding: var(--space-sm) var(--space-lg);
+    border-radius: var(--radius-lg);
+    transition: all var(--transition-normal);
+    text-decoration: none;
+    display: inline-block;
+    box-shadow: var(--shadow-sm);
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    background-color: var(--color-yellow) !important;
+    border-color: var(--color-yellow) !important;
+    color: var(--color-navy) !important;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    text-decoration: none;
+}
+
+.btn-secondary {
+    background-color: var(--color-navy) !important;
+    border-color: var(--color-navy) !important;
+    color: var(--color-white) !important;
+    font-family: var(--font-family-secondary);
+    font-weight: 600;
+    padding: var(--space-sm) var(--space-lg);
+    border-radius: var(--radius-lg);
+    transition: all var(--transition-normal);
+    text-decoration: none;
+    display: inline-block;
+    box-shadow: var(--shadow-sm);
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus {
+    background-color: var(--color-turquoise) !important;
+    border-color: var(--color-turquoise) !important;
+    color: var(--color-white) !important;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    text-decoration: none;
+}
+
+/* Back to top button styling */
+#backToTopBtn {
+    background-color: var(--color-turquoise) !important;
+    color: var(--color-white) !important;
+    border: none !important;
+    outline: none !important;
+    cursor: pointer;
+    padding: 15px !important;
+    border-radius: var(--radius-lg) !important;
+    font-size: 18px !important;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    transition: all var(--transition-normal);
+    box-shadow: var(--shadow-md);
+}
+
+#backToTopBtn:hover {
+    background-color: var(--color-yellow) !important;
+    color: var(--color-navy) !important;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* Button size variations */
+.btn-lg {
+    padding: var(--space-md) var(--space-xl) !important;
+    font-size: var(--font-size-lg) !important;
+}
+
+.btn-sm {
+    padding: var(--space-xs) var(--space-md) !important;
+    font-size: var(--font-size-sm) !important;
+}
+
+/* Responsive button adjustments */
+@media (max-width: var(--breakpoint-md)) {
+    .btn-primary,
+    .btn-secondary {
+        padding: var(--space-xs) var(--space-md);
+        font-size: var(--font-size-sm);
+    }
+    
+    .btn-lg {
+        padding: var(--space-sm) var(--space-lg) !important;
+        font-size: var(--font-size-md) !important;
+    }
+}
