@@ -1,132 +1,16 @@
 /* ==========================================================================
-   INDEX PAGE SPECIFIC STYLES
-   Note: Root variables are defined in style.css - do not duplicate here
+   INDEX PAGE SPECIFIC STYLES - Non-Critical (Loaded Deferred)
+   Note: Critical above-the-fold styles are inlined in index.html
    ========================================================================== */
 
-@media (min-width: 768px) {
-    .index-nav {
-        background-image: url('../img/PREP_KC_Homepage_Header.jpg');
-        background-size: cover;
-        background-position: top center;
-        background-repeat: no-repeat;
-        height: 35vh;
-        min-height: 200px;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-        align-items: center;
-    }
-    /* Optional: Add a subtle overlay if nav text needs contrast */
-    .index-nav::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 60%; /* Cover only the top part */
-        background: linear-gradient(to bottom, rgba(0, 51, 76, 0.4), transparent); /* Darken top slightly */
-        z-index: 1;
-        pointer-events: none; /* Allow clicks through */
-    }
-    #nav-container {
-        position: relative; /* Ensure nav is above overlay */
-        z-index: 2;
-        width: 100%; /* Ensure nav container takes full width */
-        max-width: var(--container-max-width, 1200px); /* Align nav with content */
-        padding: 0 var(--container-padding, var(--space-lg)); /* Add padding */
-    }
-}
-
-/* Index page navbar overrides - remove background and increase logo size */
-.index-nav .navbar {
-    background-color: transparent !important;
-}
-
-.index-nav .navbar-brand img {
-    max-height: 180px !important; 
-    width: auto;
-}
-
-/* Navigation link overrides for index page */
+/* Enhanced navigation styles - loaded after critical CSS */
 .navbar .nav-link:hover,
 .navbar .nav-link:focus,
 .navbar .nav-link.active {
     color: var(--color-yellow);
 }
 
-.container-fluid {
-    display: flex;
-    padding: 0 var(--space-md);
-    width: 100%;
-    max-width: 1600px;
-    margin: 0 auto;
-    gap: 8px;
-    flex-direction: row; /* Default to row */
-}
-
-/* Add media query for small screens using Bootstrap's breakpoint */
-@media (max-width: 576px) { /* Bootstrap's sm breakpoint */
-    .container-fluid {
-        flex-direction: column;
-        padding: 0 var(--space-sm);
-    }
-
-    .prep-card {
-        height: 25vh;
-        min-height: 150px; /* Add minimum height */
-        margin-bottom: 8px; /* Add some spacing between stacked cards */
-    }
-}
-
-/* Adjust existing media queries to match Bootstrap breakpoints */
-@media (max-width: 768px) { /* Bootstrap's md breakpoint */
-    .prep-card .letter {
-        font-size: 15vh;
-    }
-    
-    .prep-card .phrase {
-        font-size: 1.5em;
-    }
-}
-
-/* Base card styles */
-.prep-card {
-    position: relative;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 45vh;
-    font-weight: bold;
-    color: white;
-    cursor: pointer;
-    padding: 15px;
-    text-align: center;
-    text-decoration: none;
-    border-radius: 24px;
-    overflow: hidden;
-    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-    border: 2px solid transparent;
-    transform-origin: center;
-}
-
-/* Letter styles */
-.prep-card .letter {
-    font-size: clamp(15vh, 20vw, 25vh);
-    color: var(--color-white);
-    text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
-    position: absolute;
-    z-index: 1;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    margin: 0;
-    transition: opacity 0.3s ease-in-out;
-}
-
-/* Phrase styles */
+/* Advanced prep card styles - hover effects and phrases */
 .prep-card .phrase {
     position: absolute;
     width: 100%;
@@ -142,7 +26,7 @@
     transition: opacity 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     background: linear-gradient(
         135deg,
-        rgba(0, 51, 76, 0.95),  /* Your navy color */
+        rgba(0, 51, 76, 0.95),
         rgba(0, 51, 76, 0.85)
     );
     padding: 1.5rem;
@@ -154,7 +38,7 @@
     transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-/* Hover effects */
+/* Hover effects - enhanced animations */
 .prep-card:hover {
     transform: translateY(-8px);
     border-color: var(--color-yellow);
@@ -169,23 +53,6 @@
 
 .prep-card:hover .phrase {
     opacity: 1;
-}
-
-/* Individual card background styles */
-#card1.prep-card {
-    background: linear-gradient(135deg, var(--color-turquoise), #3498db);
-}
-
-#card2.prep-card {
-    background: linear-gradient(135deg, var(--color-gray), #95a5a6);
-}
-
-#card3.prep-card {
-    background: linear-gradient(135deg, var(--color-navy), #2c3e50);
-}
-
-#card4.prep-card {
-    background: linear-gradient(135deg, var(--color-yellow), #f1c40f);
 }
 
 /* Background image hover effects */
@@ -223,7 +90,7 @@
     background-image: url('../img/three.jpg');
 }
 
-/* Responsive styles */
+/* Enhanced responsive styles for larger breakpoints */
 @media (max-width: var(--breakpoint-lg)) {
     .prep-card .letter {
         font-size: 22vh;
@@ -235,11 +102,6 @@
 }
 
 @media (max-width: var(--breakpoint-md)) {
-    .container-fluid {
-        padding: 0 var(--space-sm);
-        gap: 8px;
-    }
-    
     .prep-card .letter {
         font-size: 18vh;
     }
@@ -257,16 +119,6 @@
     .prep-card .phrase {
         font-size: 1.5em;
     }
-}
-
-/* Container styles */
-.container-fluid {
-    display: flex;
-    padding: 0 var(--space-md);
-    width: 100%;
-    max-width: 1600px;
-    margin: 0 auto;
-    gap: 8px;
 }
 
 /* Add subtle background patterns */
@@ -291,11 +143,10 @@
     line-height: 1;
     padding: 20px 0;
     margin-top: 20px;
-    margin-bottom: 0; /* Remove bottom margin */
+    margin-bottom: 0;
     filter: drop-shadow(3px 3px 3px #000);
-    overflow: hidden; /* Back to hidden since video is separate */
-    background-color: var(--color-yellow); /* Always show yellow background */
-    /* CSS Containment for animation section */
+    overflow: hidden;
+    background-color: var(--color-yellow);
     contain: layout style paint;
 }
 
@@ -327,16 +178,10 @@
     opacity: 1;
 }
 
-/* Hero section styling */
-.hero {
-    padding: var(--space-xl) 0;
-    background-color: var(--color-navy);
-}
-
+/* Enhanced hero section styling */
 .hero p {
     font-family: 'DIN1451', sans-serif;
     font-weight: 400;
-    line-height: 1.2;
     transform: translateY(20px);
     opacity: 0;
     animation: fadeInUp 1s ease-out forwards;
@@ -366,9 +211,6 @@
         object-position: top center;
     }
 }
-
-/* Index page cards use the consolidated prep-card component from style.css
-   Removed duplicate styling - managed centrally in style.css */
 
 /* Video Section with Map Background */
 .video-section-new {
