@@ -1,0 +1,143 @@
+/* ==========================================================================
+   DATA IN ACTION (DIA) PAGE STYLES
+   ========================================================================== */
+
+/* Event Card Styles */
+.card {
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(91, 192, 222, 0.3); /* Lighter blue shadow */
+    border: none;
+    border-radius: 10px;
+    background-color: white;
+    margin-bottom: 20px;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(91, 192, 222, 0.5); /* Enhanced lighter blue shadow on hover */
+}
+
+.card-body {
+    padding: 1.5rem;
+}
+
+.card-title {
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+/* Event Information Layout */
+.event-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.event-detail {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: 'Georgia', sans-serif;
+}
+
+.event-detail i {
+    width: 20px;
+}
+
+.event-detail span {
+    color: var(--color-navy);
+}
+
+/* Register Button Styles */
+.register-btn {
+    margin-top: 1.5rem;
+    background-color: var(--color-turquoise);
+    border: none;
+    padding: 0.8rem;
+    font-family: var(--font-family-primary);
+    text-transform: uppercase;
+    width: 100%;
+}
+
+.register-btn:hover {
+    background-color: var(--color-navy);
+}
+
+.btn-primary {
+    width: 100%;
+    margin-top: 1rem;
+}
+
+/* No Events Message */
+.no-events {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 2rem;
+    text-align: center;
+    margin: 2rem 0;
+}
+
+/* ==========================================================================
+   STICKY FOOTER LAYOUT
+   ========================================================================== */
+
+/* Sticky footer styles */
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 120px; /* Footer height plus extra space */
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px; /* Footer height */
+    left: 0;
+    padding: 0 15px;
+}
+
+#main-content {
+    padding-bottom: 40px; /* Space between content and footer */
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN
+   ========================================================================== */
+
+@media (max-width: var(--breakpoint-md)) {
+    .card-body {
+        padding: 1rem;
+    }
+    
+    .event-info {
+        gap: 0.75rem;
+    }
+    
+    .register-btn {
+        padding: 0.75rem;
+        font-size: 0.9rem;
+    }
+    
+    .no-events {
+        padding: 1.5rem;
+        margin: 1rem 0;
+    }
+}
+
+@media (max-width: var(--breakpoint-sm)) {
+    .card {
+        margin-bottom: 15px;
+    }
+    
+    .event-detail {
+        font-size: 0.9rem;
+    }
+    
+    .event-detail i {
+        width: 18px;
+    }
+} 
