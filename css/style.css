@@ -634,16 +634,22 @@ hr.style-two {
 
 .footer-text {
     font-family: 'Avenir', system-ui, sans-serif;
+    color: var(--color-white);
+    font-weight: 500;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .footer-text a {
-    color: var(--color-turquoise);
+    color: var(--color-white);
     text-decoration: none;
     transition: color var(--transition-normal);
+    font-weight: 600;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .footer-text a:hover {
     color: var(--color-yellow);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 .footer-social h2 {
@@ -660,7 +666,8 @@ hr.style-two {
 
 .social-icon {
     font-size: var(--font-size-lg);
-    color: var(--color-turquoise);
+    color: var(--color-white);
+    background-color: rgba(0, 51, 76, 0.8);
     transition: all var(--transition-normal);
     width: 40px;
     height: 40px;
@@ -668,11 +675,13 @@ hr.style-two {
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    border: 2px solid var(--color-turquoise);
+    border: 2px solid var(--color-white);
+    backdrop-filter: blur(4px);
 }
 
 .social-icon:hover {
-    color: var(--color-yellow);
+    color: var(--color-navy);
+    background-color: var(--color-yellow);
     border-color: var(--color-yellow);
     transform: translateY(-2px);
 }
