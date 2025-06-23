@@ -755,13 +755,15 @@ hr.style-two {
 
 /* Custom breadcrumb styling for better visibility on all backgrounds */
 .breadcrumb {
-    background-color: rgba(0, 51, 76, 0.95);
-    border-radius: var(--radius-lg);
-    padding: var(--space-sm) var(--space-md);
-    margin-bottom: var(--space-lg);
+    background-color: rgba(0, 51, 76, 0.95) !important;
+    border-radius: var(--radius-lg) !important;
+    padding: var(--space-sm) var(--space-md) !important;
+    margin-top: var(--space-xl) !important;
+    margin-bottom: var(--space-lg) !important;
     backdrop-filter: blur(8px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    box-shadow: var(--shadow-md);
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    border-top: 3px solid rgba(255, 255, 255, 0.9) !important;
+    box-shadow: var(--shadow-md) !important;
 }
 
 .breadcrumb-item {
