@@ -107,7 +107,12 @@
         <nav id="nav-container"></nav>
     </header>
     <!-- HTMX will automatically load nav.html when the page loads -->
-    <div hx-get="nav.html" hx-target="#nav-container" hx-trigger="load"></div>
+    <div hx-get="nav.html" 
+         hx-target="#nav-container" 
+         hx-trigger="load" 
+         hx-swap="innerHTML" 
+         hx-select="nav"
+         hx-push-url="false"></div>
 
     <!-- Hero Section -->
     <section class="hero">
@@ -289,5 +294,15 @@
     
     <!-- Bootstrap JavaScript bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <script>
+    // Preload nav content immediately when HTMX is ready
+    document.addEventListener('DOMContentLoaded', function() {
+        // Pre-fetch the nav content
+        if (window.htmx) {
+            htmx.trigger(document.body, 'load');
+        }
+    });
+    </script>
 </body>
 </html>
