@@ -42,7 +42,8 @@
     <link rel="manifest" href="img/assets/site.webmanifest">
     
     <!-- Preloading improves performance by loading critical assets before they're needed -->
-    <link rel="preload" href="fonts/DINEngschriftStd.otf" as="font" type="font/otf" crossorigin>
+    <link rel="preload" href="fonts/DINEngschriftStd.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/AvenirMedium.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="img/mathrelays2.JPG" as="image">
     <link rel="preload" href="css/style.css" as="style">
     <link rel="preload" href="css/index.css" as="style">
@@ -96,19 +97,7 @@
     }
     </script>
     
-    <!-- Font display optimization -->
-    <style>
-        @font-face {
-            font-family: 'DINEngschriftStd';
-            src: url('fonts/DINEngschriftStd.otf') format('opentype');
-            font-display: swap;
-        }
-        @font-face {
-            font-family: 'Avenir';
-            src: url('fonts/AvenirMedium.ttf') format('truetype');
-            font-display: swap;
-        }
-    </style>
+    <!-- Font display optimization handled by CSS file -->
 </head>
 <body>
     <!-- Navigation using HTMX to load content dynamically -->
@@ -134,19 +123,19 @@
         <!-- Each card is a clickable element with two parts:
              1. A large letter
              2. The word that letter stands for -->
-        <a class="prep-card" id="card1" href="about.html" aria-label="Learn about our partnerships">
+        <a class="prep-card" id="card1" aria-label="Learn about our partnerships">
             <span class="letter">P</span>
             <span class="phrase">Partnership for</span>
         </a>
-        <a class="prep-card" id="card2" href="districts/overview.html" aria-label="Explore our regional impact">
+        <a class="prep-card" id="card2" aria-label="Explore our regional impact">
             <span class="letter">R</span>
             <span class="phrase">Regional</span>
         </a>
-        <a class="prep-card" id="card3" href="strategies.html" aria-label="Discover our educational programs">
+        <a class="prep-card" id="card3" aria-label="Discover our educational programs">
             <span class="letter">E</span>
             <span class="phrase">Educational</span>
         </a>
-        <a class="prep-card" id="card4" href="volunteer.html" aria-label="Join our preparation programs">
+        <a class="prep-card" id="card4" aria-label="Join our preparation programs">
             <span class="letter">P</span>
             <span class="phrase">Preparation</span>
         </a>

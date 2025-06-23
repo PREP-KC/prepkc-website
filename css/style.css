@@ -2,10 +2,11 @@
    CSS RESET & FONT LOADING STRATEGY
    ========================================================================== */
 
-/* Font Loading Strategy - Single source for all fonts */
+/* Font Loading Strategy - Modern woff2 with fallbacks */
 @font-face {
     font-family: 'DIN1451';
-    src: url('../fonts/DINEngschriftStd.otf') format('opentype');
+    src: url('../fonts/DINEngschriftStd.woff2') format('woff2'),
+         url('../fonts/DINEngschriftStd.otf') format('opentype');
     font-display: swap;
     font-weight: normal;
     font-style: normal;
@@ -13,7 +14,8 @@
 
 @font-face {
     font-family: 'Avenir';
-    src: url('../fonts/AvenirMedium.ttf') format('truetype');
+    src: url('../fonts/AvenirMedium.woff2') format('woff2'),
+         url('../fonts/AvenirMedium.ttf') format('truetype');
     font-display: swap;
     font-weight: normal;
     font-style: normal;
