@@ -281,7 +281,7 @@ p, li {
     overflow: hidden;
     transition: all var(--transition-bounce);
     box-shadow: var(--shadow-lg);
-    border: 2px solid transparent;
+    border: 2px solid rgba(255, 255, 255, 0.3);
     transform-origin: center;
     /* CSS Containment for better performance with animations */
     contain: layout style paint;
