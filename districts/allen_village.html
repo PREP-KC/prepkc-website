@@ -12,190 +12,460 @@
     </script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Join volunteer opportunities with Allen Village School District through PREP-KC. Support students with career exploration, mentoring, and educational programs in Kansas City.">
-    <title>Allen Village School District Volunteer Events - PREP-KC</title>
+    <meta name="description" content="Volunteer with Allen Village through PREP-KC partnerships. Help provide career guidance, educational mentoring, and professional development opportunities.">
+    <title>Allen Village Volunteer Events - PREP-KC</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="../css/style.css">
     <style>
-        .card {
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(86, 178, 203, 0.3);
-            transition: all 0.3s ease;
-            margin-bottom: 20px;
+        /* Hero Section with Background Image */
+        .hero-section {
+            background: linear-gradient(rgba(0, 51, 76, 0.8), rgba(0, 51, 76, 0.9)), url('../img/4.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            padding: 4rem 0;
+            margin: -1.5rem -1.5rem 2rem -1.5rem;
+            border-radius: 0 0 20px 20px;
         }
         
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 15px rgba(86, 178, 203, 0.5);
+        .hero-content {
+            text-align: center;
+            color: white;
         }
         
-        .card-title {
-            font-family: 'Avenir', sans-serif;
-            font-size: 1.2rem;
-            margin-bottom: 1.5rem;
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
         
-        .event-info {
+        .hero-subtitle {
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            color: #FFD700;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+        
+        /* Filter Section */
+        .filter-section {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .filter-row {
+            display: grid;
+            grid-template-columns: 2fr 1fr auto;
+            gap: 1rem;
+            align-items: end;
+            margin-bottom: 1rem;
+        }
+        
+        .filter-group {
             display: flex;
             flex-direction: column;
-            gap: 1rem;
+            gap: 0.5rem;
         }
         
-        .event-detail {
+        .filter-label {
+            color: white;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin: 0;
+        }
+        
+        .filter-input {
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            border-radius: var(--radius-md);
+            padding: 0.75rem;
+            font-size: 0.9rem;
+            color: var(--color-navy);
+            transition: all var(--transition-normal);
+        }
+        
+        .filter-input:focus {
+            outline: 2px solid var(--color-yellow);
+            background: white;
+            box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.2);
+        }
+        
+        .filter-select {
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            border-radius: var(--radius-md);
+            padding: 0.75rem;
+            font-size: 0.9rem;
+            color: var(--color-navy);
+            cursor: pointer;
+            transition: all var(--transition-normal);
+        }
+        
+        .filter-select:focus {
+            outline: 2px solid var(--color-yellow);
+            background: white;
+        }
+        
+        .filter-btn {
+            background: var(--color-turquoise);
+            border: none;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all var(--transition-normal);
+            white-space: nowrap;
+        }
+        
+        .filter-btn:hover {
+            background: var(--color-navy);
+            transform: translateY(-2px);
+        }
+        
+        .filter-btn.secondary {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+        }
+        
+        .filter-btn.secondary:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+        
+        .filter-stats {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+            font-size: 0.9rem;
+            opacity: 0.9;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .filter-stats span {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.25rem 0.75rem;
+            border-radius: var(--radius-md);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        /* Clean Modern Event Cards */
+        .event-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .event-card {
+            background: var(--color-white);
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-md);
+            transition: all var(--transition-normal);
+            overflow: hidden;
+            border: 1px solid rgba(86, 178, 203, 0.1);
+        }
+        
+        .event-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--color-turquoise);
+        }
+        
+        .event-header {
+            background: var(--color-navy);
+            color: var(--color-white);
+            padding: 1.5rem;
+        }
+        
+        .event-title {
+            font-family: var(--font-family-primary);
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin: 0;
+            line-height: 1.4;
+            text-shadow: none;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            letter-spacing: 0.5px;
+            word-spacing: 1px;
+        }
+        
+        .event-body {
+            padding: 1.25rem;
+        }
+        
+        .event-meta {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.75rem;
+            margin-bottom: 1.25rem;
+        }
+        
+        .meta-item {
             display: flex;
             align-items: center;
             gap: 0.5rem;
-            font-family: 'Georgia', sans-serif;
+            font-size: 0.9rem;
+            color: var(--color-navy);
+            font-weight: 500;
+            padding: 0.5rem;
+            background: rgba(86, 178, 203, 0.05);
+            border-radius: var(--radius-md);
+            border-left: 2px solid var(--color-turquoise);
         }
         
-        .event-detail i {
-            width: 20px;
+        .meta-item i {
+            color: var(--color-turquoise);
+            width: 16px;
+            text-align: center;
+            font-size: 1rem;
+        }
+        
+        .event-type {
+            background: var(--color-yellow);
+            border: none;
+            border-radius: var(--radius-lg);
+            padding: 0.4rem 1rem;
+            font-size: 0.8rem;
+            color: var(--color-navy);
+            text-align: center;
+            margin-bottom: 1.25rem;
+            font-weight: 600;
+            display: inline-block;
+            width: 100%;
         }
         
         .register-btn {
-            margin-top: 1.5rem;
-            background-color: #56B2CB;
+            width: 100%;
+            background: var(--color-turquoise);
             border: none;
-            padding: 0.8rem;
-            font-family: 'DIN1451', sans-serif;
+            color: var(--color-white);
+            padding: 1rem 1.5rem;
+            border-radius: var(--radius-lg);
+            font-weight: 700;
             text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all var(--transition-normal);
+            font-size: 1rem;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+            font-family: var(--font-family-primary);
         }
         
         .register-btn:hover {
-            background-color: #00334C;
+            background: var(--color-navy);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+            text-decoration: none;
+            color: var(--color-white);
         }
         
-        .event-detail span {
-            color: #00334C;
+        .register-btn:focus {
+            outline: 2px solid var(--color-yellow);
+            outline-offset: 2px;
         }
         
-        .district-header {
-            margin-bottom: 2rem;
-            position: relative;
-        }
-        
-        .district-header::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 0;
-            width: 100%;
-            height: 3px;
-            background: linear-gradient(to right, rgba(86, 178, 203, 0.2), rgba(86, 178, 203, 1), rgba(86, 178, 203, 0.2));
-        }
-        
-        .no-events {
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
+        /* Info Section */
+        .info-section {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
             padding: 2rem;
-            text-align: center;
             margin: 2rem 0;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .info-text {
+            color: white;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+        
+        .about-btn {
+            background: linear-gradient(135deg, #FFD700, #FFA500);
+            border: none;
+            color: #00334C;
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            float: right;
+            margin-top: -3rem;
+        }
+        
+        .about-btn:hover {
+            background: linear-gradient(135deg, #FFA500, #FF8C00);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.4rem;
+            }
+            
+            .filter-row {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .filter-stats {
+                flex-direction: column;
+                gap: 0.5rem;
+                text-align: center;
+            }
+            
+            .event-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .event-card {
+                margin: 0 0.5rem;
+            }
+            
+            .event-meta {
+                grid-template-columns: 1fr;
+                gap: 0.75rem;
+            }
+            
+            .meta-item {
+                padding: 0.5rem;
+            }
+            
+            .about-btn {
+                float: none;
+                margin-top: 1rem;
+                width: 100%;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .event-grid {
+                gap: 1rem;
+            }
+            
+            .event-card {
+                margin: 0;
+            }
+            
+            .event-header {
+                padding: 1rem;
+            }
+            
+            .event-body {
+                padding: 1rem;
+            }
+            
+            .event-title {
+                font-size: 1.2rem;
+            }
+        }
+        
+        /* Loading and Empty States */
+        .loading-state, .empty-state {
+            text-align: center;
+            padding: 2rem;
+            color: white;
+        }
+        
+        .empty-state-icon {
+            margin-bottom: 1.5rem;
+        }
+        
+        .empty-state-cta {
+            margin-top: 1rem;
+        }
+        
+        .loading-spinner {
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            border-top: 4px solid #56B2CB;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 1rem;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
     </style>
     <script src="https://unpkg.com/htmx.org@2.0.1"></script>
-    <script>
-        function refreshContent() {
-            var container = document.getElementById('event-container');
-            htmx.ajax('GET', 'allen_village.html', '#event-container');
-        }
-
-        // Refresh content every 5 minutes (300000 milliseconds)
-        setInterval(refreshContent, 300000*30);
-    </script>
 </head>
 <body class="container">
     <div id="nav-container"></div>
     <div hx-get="../nav.html" hx-target="#nav-container" hx-trigger="load"></div>
     
-    <!-- District Header -->
-    <h1 class="text-center text-yellow mb-3">Allen Village School District</h1>
-    <div class="row align-items-center district-header">
-        <div class="col text-left">
-            <h2 class="text-turquoise">VOLUNTEER OPPORTUNITIES</h2>
-        </div>
-        <div class="col-3 text-end">
-            <a href="https://www.prepkccommunity.org/volunteer" class="btn btn-primary btn-lg m-3">About the Events</a>
+    <!-- Hero Section with Background Image -->
+    <div class="hero-section">
+        <div class="hero-content">
+            <h1 class="hero-title">Allen Village</h1>
+            <h2 class="hero-subtitle">VOLUNTEER OPPORTUNITIES</h2>
         </div>
     </div>
-
-    <p style="color:white;">PREP-KC supports career exploration opportunities for Allen Village School District students. Each event is listed below for volunteers to sign up as they are available.</p>
-    <p style="color:white;">We appreciate your help in carefully considering your availability to participate in our programming and understand that life happens. If you must cancel, please inform PREP-KC staff in advance if possible. We appreciate your help finding a replacement volunteer. Our students count on these life-changing experiences. Thank you!</p>
     
-    <div id="event-container" class="row row-cols-1 row-cols-md-3 g-4">
-        <!-- Content will be loaded here -->
+    <!-- Info Section -->
+    <div class="info-section">
+        <button class="about-btn" onclick="window.open('https://www.prepkccommunity.org/volunteer', '_blank')">
+            <i class="fas fa-info-circle"></i> About the Events
+        </button>
+        
+        <p class="info-text">
+            PREP-KC supports career exploration opportunities for Allen Village students. Each event is listed below for volunteers to sign up as they are available.
+        </p>
+        <p class="info-text">
+            We appreciate your help in carefully considering your availability to participate in our programming and understand that life happens. If you must cancel, please inform PREP-KC staff in advance if possible. We appreciate your help finding a replacement volunteer. Our students count on these life-changing experiences. Thank you!
+        </p>
     </div>
     
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            fetch('https://voluntold-prepkc.pythonanywhere.com/api/districts/Allen%20Village%20-%20District/events')
-                .then(response => response.json())
-                .then(events => {
-                    const container = document.getElementById('event-container');
-                    container.innerHTML = ''; // Clear existing content
-                    
-                    if(events.length === 0) {
-                        container.innerHTML = `
-                            <div class="col-12">
-                                <div class="no-events">
-                                    <h3 class="text-yellow">No Upcoming Events</h3>
-                                    <p class="text-white">There are currently no upcoming volunteer opportunities for Allen Village School District. Please check back later.</p>
-                                </div>
-                            </div>
-                        `;
-                        return;
-                    }
-                    
-                    events.forEach(event => {
-                        const card = `
-                            <div class="col">
-                                <div class="card h-100">
-                                    <div class="card-body">
-                                        <h3 class="card-title text-navy">${event.Name}</h3>
-                                        <div class="event-info">
-                                            <div class="event-detail">
-                                                <i class="fas fa-users text-turquoise"></i>
-                                                <span>Volunteers Needed: ${event.Available_Slots__c}</span>
-                                            </div>
-                                            <div class="event-detail">
-                                                <i class="fas fa-user-check text-turquoise"></i>
-                                                <span>Currently Filled: ${event.Filled_Volunteer_Jobs__c}</span>
-                                            </div>
-                                            <div class="event-detail">
-                                                <i class="far fa-calendar-alt text-turquoise"></i>
-                                                <span>${event.Date_and_Time_for_Cal__c}</span>
-                                            </div>
-                                            <div class="event-detail">
-                                                <i class="fas fa-tag text-turquoise"></i>
-                                                <span>${event.Session_Type__c}</span>
-                                            </div>
-                                            ${event.note ? `
-                                            <div class="event-detail note-section" style="background-color: #fff3cd; padding: 10px; border-radius: 5px; margin-top: 10px;">
-                                                <i class="fas fa-sticky-note text-warning"></i>
-                                                <span>${event.note}</span>
-                                            </div>
-                                            ` : ''}
-                                            <a href="${event.Registration_Link__c}" 
-                                               target="_blank" 
-                                               class="btn btn-primary register-btn">
-                                                <i class="fas fa-external-link-alt"></i> Register Now
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        `;
-                        container.innerHTML += card;
-                    });
-                })
-                .catch(error => {
-                    console.error('Error:', error);
-                    document.getElementById('event-container').innerHTML = 
-                        '<div class="alert alert-danger">Error loading events. Please try again later.</div>';
-                });
-        });
-    </script>
+    <!-- Filter Section -->
+    <div class="filter-section">
+        <div class="filter-row">
+            <div class="filter-group">
+                <label class="filter-label">Search Events</label>
+                <input type="text" id="searchInput" class="filter-input" placeholder="Search event names...">
+            </div>
+            <div class="filter-group">
+                <label class="filter-label">Event Type</label>
+                <select id="typeFilter" class="filter-select">
+                    <option value="">All Types</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <button id="clearFilters" class="filter-btn secondary">Clear</button>
+            </div>
+        </div>
+        <div class="filter-stats">
+            <span id="totalEvents">Total Events: 0</span>
+            <span id="filteredEvents">Showing: 0</span>
+        </div>
+    </div>
+    
+    <!-- Events Container -->
+    <div id="event-container">
+        <div class="loading-state">
+            <div class="loading-spinner"></div>
+            <p>Loading volunteer opportunities...</p>
+        </div>
+    </div>
     
     <!-- FOOTER -->
     <footer>
@@ -218,5 +488,157 @@
     </footer>
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    
+    <script>
+        let allEvents = [];
+        let filteredEvents = [];
+        
+        function populateEventTypes(events) {
+            const typeFilter = document.getElementById('typeFilter');
+            const types = [...new Set(events.map(event => event.Session_Type__c).filter(Boolean))];
+            
+            // Clear existing options except "All Types"
+            typeFilter.innerHTML = '<option value="">All Types</option>';
+            
+            // Add unique event types
+            types.forEach(type => {
+                const option = document.createElement('option');
+                option.value = type;
+                option.textContent = type;
+                typeFilter.appendChild(option);
+            });
+        }
+        
+        function updateFilterStats() {
+            document.getElementById('totalEvents').textContent = `Total Events: ${allEvents.length}`;
+            document.getElementById('filteredEvents').textContent = `Showing: ${filteredEvents.length}`;
+        }
+        
+        function filterEvents() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            const selectedType = document.getElementById('typeFilter').value;
+            
+            filteredEvents = allEvents.filter(event => {
+                // Text search filter
+                const matchesSearch = !searchTerm || event.Name.toLowerCase().includes(searchTerm);
+                
+                // Event type filter
+                const matchesType = !selectedType || event.Session_Type__c === selectedType;
+                
+                return matchesSearch && matchesType;
+            });
+            
+            updateFilterStats();
+            renderEvents(filteredEvents);
+        }
+        
+        function clearFilters() {
+            document.getElementById('searchInput').value = '';
+            document.getElementById('typeFilter').value = '';
+            
+            filteredEvents = [...allEvents];
+            updateFilterStats();
+            renderEvents(filteredEvents);
+        }
+        
+        function renderEvents(events) {
+            const container = document.getElementById('event-container');
+            
+            if (!events || events.length === 0) {
+                container.innerHTML = `
+                    <div class="empty-state">
+                        <div class="empty-state-icon">
+                            <i class="fas fa-calendar-check fa-4x" style="color: var(--color-turquoise); margin-bottom: 1rem;"></i>
+                        </div>
+                        <h3>No Events Found</h3>
+                        <p>No events match your current filters. Try adjusting your search criteria.</p>
+                        <div class="empty-state-cta">
+                            <p style="font-style: italic; opacity: 0.8; margin-top: 1rem;">
+                                <i class="fas fa-info-circle"></i> 
+                                New opportunities are added regularly. Check back soon!
+                            </p>
+                        </div>
+                    </div>
+                `;
+                return;
+            }
+            
+            const eventsHTML = events.map(event => `
+                <div class="event-card">
+                    <div class="event-header">
+                        <h3 class="event-title">${event.Name}</h3>
+                    </div>
+                    <div class="event-body">
+                        <div class="event-meta">
+                            <div class="meta-item">
+                                <i class="fas fa-users"></i>
+                                <span>Volunteers Needed: ${event.Available_Slots__c}</span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="far fa-calendar-alt"></i>
+                                <span>${event.Date_and_Time_for_Cal__c}</span>
+                            </div>
+                        </div>
+                        <div class="event-type">
+                            <i class="fas fa-tag"></i> ${event.Session_Type__c}
+                        </div>
+                        <a href="${event.Registration_Link__c}" 
+                           target="_blank" 
+                           class="register-btn">
+                            <i class="fas fa-external-link-alt"></i> Register Now
+                        </a>
+                    </div>
+                </div>
+            `).join('');
+            
+            container.innerHTML = `
+                <div class="event-grid">
+                    ${eventsHTML}
+                </div>
+            `;
+        }
+        
+        // Initialize with real API call
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('https://voluntold-prepkc.pythonanywhere.com/api/districts/Allen%20Village%20-%20District/events')
+                .then(response => response.json())
+                .then(events => {
+                    allEvents = events;
+                    filteredEvents = [...events];
+                    populateEventTypes(events);
+                    updateFilterStats();
+                    renderEvents(events);
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    document.getElementById('event-container').innerHTML = 
+                        '<div class="alert alert-danger">Error loading events. Please try again later.</div>';
+                });
+        });
+        
+        // Event listeners for filters
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('searchInput').addEventListener('input', filterEvents);
+            document.getElementById('typeFilter').addEventListener('change', filterEvents);
+            document.getElementById('clearFilters').addEventListener('click', clearFilters);
+        });
+        
+        // Auto-refresh functionality
+        setInterval(() => {
+            // Refresh events from API every 5 minutes
+            fetch('https://voluntold-prepkc.pythonanywhere.com/api/districts/Allen%20Village%20-%20District/events')
+                .then(response => response.json())
+                .then(events => {
+                    allEvents = events;
+                    filteredEvents = [...events];
+                    populateEventTypes(events);
+                    updateFilterStats();
+                    filterEvents(); // Re-apply current filters
+                })
+                .catch(error => {
+                    console.error('Error refreshing events:', error);
+                });
+        }, 300000); // 5 minutes
+    </script>
 </body>
 </html>
