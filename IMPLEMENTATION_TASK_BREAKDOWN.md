@@ -13,9 +13,9 @@ Since you're familiar with Node.js, we'll implement a comprehensive build pipeli
 **Estimated Time**: 2-3 days
 
 #### **Sub-tasks:**
-- [ ] **Initialize Node.js project**
-  - [ ] Run `npm init -y` in project root
-  - [ ] Create `.gitignore` file for Node.js
+- [x] **Initialize Node.js project**
+  - [x] Run `npm init -y` in project root
+  - [x] Create `.gitignore` file for Node.js
   - [ ] Set up project structure documentation
 
 - [ ] **Install essential build tools**
