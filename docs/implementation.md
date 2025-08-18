@@ -3,8 +3,8 @@
 ## Phase 1: Foundation
 
 ### Development Environment
-- [ ] Fix npm installation (PowerShell execution policy)
-- [ ] Initialize Node.js project: `npm init -y`
+- [x] Fix npm installation (PowerShell execution policy)
+- [x] Initialize Node.js project: `npm init -y`
 - [ ] Install build tools: Sass, PostCSS, image optimization
 - [ ] Create build configuration files
 - [ ] Test development server
