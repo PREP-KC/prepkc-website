@@ -284,10 +284,78 @@
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
         
+        .info-content {
+            display: flex;
+            gap: 2rem;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+        
+        .info-text-container {
+            flex: 2;
+        }
+        
+        .filter-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            min-width: 200px;
+        }
+        
         .info-text {
             color: white;
             margin-bottom: 1rem;
             line-height: 1.6;
+        }
+        
+        .filter-label {
+            color: white;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin: 0;
+        }
+        
+        .filter-select {
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            border-radius: var(--radius-md);
+            padding: 0.75rem;
+            font-size: 0.9rem;
+            color: var(--color-navy);
+            cursor: pointer;
+            transition: all var(--transition-normal);
+        }
+        
+        .filter-select:focus {
+            outline: 2px solid var(--color-yellow);
+            background: white;
+        }
+        
+        .filter-btn {
+            background: var(--color-turquoise);
+            border: none;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all var(--transition-normal);
+            white-space: nowrap;
+        }
+        
+        .filter-btn:hover {
+            background: var(--color-navy);
+            transform: translateY(-2px);
+        }
+        
+        .filter-btn.secondary {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+        }
+        
+        .filter-btn.secondary:hover {
+            background: rgba(255, 255, 255, 0.3);
         }
         
         .about-btn {
@@ -320,15 +388,14 @@
                 font-size: 1.4rem;
             }
             
-            .filter-row {
-                grid-template-columns: 1fr;
+            .info-content {
+                flex-direction: column;
                 gap: 1rem;
             }
             
-            .filter-stats {
-                flex-direction: column;
-                gap: 0.5rem;
-                text-align: center;
+            .filter-container {
+                min-width: auto;
+                width: 100%;
             }
             
             .event-grid {
@@ -424,39 +491,26 @@
     
     <!-- Info Section -->
     <div class="info-section">
-        <button class="about-btn" onclick="window.open('https://www.prepkccommunity.org/volunteer', '_blank')">
-            <i class="fas fa-info-circle"></i> About the Events
-        </button>
-        
-        <p class="info-text">
-            PREP-KC supports career exploration opportunities for Grandview School District students. Each event is listed below for volunteers to sign up as they are available.
-        </p>
-        <p class="info-text">
-            We appreciate your help in carefully considering your availability to participate in our programming and understand that life happens. If you must cancel, please inform PREP-KC staff in advance if possible. We appreciate your help finding a replacement volunteer. Our students count on these life-changing experiences. Thank you!
-        </p>
-    </div>
-    
-    <!-- Filter Section -->
-    <div class="filter-section">
-        <div class="filter-row">
-            <div class="filter-group">
-                <label class="filter-label">Search Events</label>
-                <input type="text" id="searchInput" class="filter-input" placeholder="Search event names...">
+        <div class="info-content">
+            <div class="info-text-container">
+                <p class="info-text">
+                    PREP-KC supports career exploration opportunities for Grandview School District students. Each event is listed below for volunteers to sign up as they are available.
+                </p>
+                <p class="info-text">
+                    We appreciate your help in carefully considering your availability to participate in our programming and understand that life happens. If you must cancel, please inform PREP-KC staff in advance if possible. We appreciate your help finding a replacement volunteer. Our students count on these life-changing experiences. Thank you!
+                </p>
             </div>
-            <div class="filter-group">
+            <div class="filter-container">
                 <label class="filter-label">Event Type</label>
                 <select id="typeFilter" class="filter-select">
                     <option value="">All Types</option>
                 </select>
-            </div>
-            <div class="filter-group">
                 <button id="clearFilters" class="filter-btn secondary">Clear</button>
             </div>
         </div>
-        <div class="filter-stats">
-            <span id="totalEvents">Total Events: 0</span>
-            <span id="filteredEvents">Showing: 0</span>
-        </div>
+        <button class="about-btn" onclick="window.open('https://www.prepkccommunity.org/volunteer', '_blank')">
+            <i class="fas fa-info-circle"></i> About the Events
+        </button>
     </div>
     
     <!-- Events Container -->
@@ -509,35 +563,23 @@
             });
         }
         
-        function updateFilterStats() {
-            document.getElementById('totalEvents').textContent = `Total Events: ${allEvents.length}`;
-            document.getElementById('filteredEvents').textContent = `Showing: ${filteredEvents.length}`;
-        }
-        
         function filterEvents() {
-            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
             const selectedType = document.getElementById('typeFilter').value;
             
             filteredEvents = allEvents.filter(event => {
-                // Text search filter
-                const matchesSearch = !searchTerm || event.Name.toLowerCase().includes(searchTerm);
-                
                 // Event type filter
                 const matchesType = !selectedType || event.Session_Type__c === selectedType;
                 
-                return matchesSearch && matchesType;
+                return matchesType;
             });
             
-            updateFilterStats();
             renderEvents(filteredEvents);
         }
         
         function clearFilters() {
-            document.getElementById('searchInput').value = '';
             document.getElementById('typeFilter').value = '';
             
             filteredEvents = [...allEvents];
-            updateFilterStats();
             renderEvents(filteredEvents);
         }
         
@@ -606,7 +648,6 @@
                     allEvents = events;
                     filteredEvents = [...events];
                     populateEventTypes(events);
-                    updateFilterStats();
                     renderEvents(events);
                 })
                 .catch(error => {
@@ -618,7 +659,6 @@
         
         // Event listeners for filters
         document.addEventListener('DOMContentLoaded', function() {
-            document.getElementById('searchInput').addEventListener('input', filterEvents);
             document.getElementById('typeFilter').addEventListener('change', filterEvents);
             document.getElementById('clearFilters').addEventListener('click', clearFilters);
         });
@@ -632,7 +672,6 @@
                     allEvents = events;
                     filteredEvents = [...events];
                     populateEventTypes(events);
-                    updateFilterStats();
                     filterEvents(); // Re-apply current filters
                 })
                 .catch(error => {

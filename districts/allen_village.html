@@ -48,28 +48,38 @@
             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
         }
         
-        /* Filter Section */
-        .filter-section {
-            background: rgba(255, 255, 255, 0.1);
+        /* Info Section Layout */
+        .info-section {
+            background: rgba(255, 255, 255, 0.05);
             border-radius: 15px;
             padding: 2rem;
-            margin-bottom: 2rem;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            margin: 2rem 0;
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
         
-        .filter-row {
-            display: grid;
-            grid-template-columns: 2fr 1fr auto;
-            gap: 1rem;
-            align-items: end;
+        .info-content {
+            display: flex;
+            gap: 2rem;
+            align-items: flex-start;
             margin-bottom: 1rem;
         }
         
-        .filter-group {
+        .info-text-container {
+            flex: 2;
+        }
+        
+        .filter-container {
+            flex: 1;
             display: flex;
             flex-direction: column;
             gap: 0.5rem;
+            min-width: 200px;
+        }
+        
+        .info-text {
+            color: white;
+            margin-bottom: 1rem;
+            line-height: 1.6;
         }
         
         .filter-label {
@@ -77,22 +87,6 @@
             font-size: 0.9rem;
             font-weight: 600;
             margin: 0;
-        }
-        
-        .filter-input {
-            background: rgba(255, 255, 255, 0.9);
-            border: none;
-            border-radius: var(--radius-md);
-            padding: 0.75rem;
-            font-size: 0.9rem;
-            color: var(--color-navy);
-            transition: all var(--transition-normal);
-        }
-        
-        .filter-input:focus {
-            outline: 2px solid var(--color-yellow);
-            background: white;
-            box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.2);
         }
         
         .filter-select {
@@ -137,23 +131,17 @@
             background: rgba(255, 255, 255, 0.3);
         }
         
-        .filter-stats {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            color: white;
-            font-size: 0.9rem;
-            opacity: 0.9;
-            margin-top: 1rem;
-            padding-top: 1rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.2);
-        }
-        
-        .filter-stats span {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 0.25rem 0.75rem;
-            border-radius: var(--radius-md);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .info-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .filter-container {
+                min-width: auto;
+                width: 100%;
+            }
         }
         
         /* Clean Modern Event Cards */
@@ -424,40 +412,29 @@
     
     <!-- Info Section -->
     <div class="info-section">
+        <div class="info-content">
+            <div class="info-text-container">
+                <p class="info-text">
+                    PREP-KC supports career exploration opportunities for Allen Village School District students. Each event is listed below for volunteers to sign up as they are available.
+                </p>
+                <p class="info-text">
+                    We appreciate your help in carefully considering your availability to participate in our programming and understand that life happens. If you must cancel, please inform PREP-KC staff in advance if possible. We appreciate your help finding a replacement volunteer. Our students count on these life-changing experiences. Thank you!
+                </p>
+            </div>
+            <div class="filter-container">
+                 <label class="filter-label">Event Type</label>
+                 <select id="typeFilter" class="filter-select">
+                     <option value="">All Types</option>
+                 </select>
+                 <button id="clearFilters" class="filter-btn secondary">Clear</button>
+             </div>
+         </div>
         <button class="about-btn" onclick="window.open('https://www.prepkccommunity.org/volunteer', '_blank')">
             <i class="fas fa-info-circle"></i> About the Events
         </button>
-        
-        <p class="info-text">
-            PREP-KC supports career exploration opportunities for Allen Village students. Each event is listed below for volunteers to sign up as they are available.
-        </p>
-        <p class="info-text">
-            We appreciate your help in carefully considering your availability to participate in our programming and understand that life happens. If you must cancel, please inform PREP-KC staff in advance if possible. We appreciate your help finding a replacement volunteer. Our students count on these life-changing experiences. Thank you!
-        </p>
     </div>
     
-    <!-- Filter Section -->
-    <div class="filter-section">
-        <div class="filter-row">
-            <div class="filter-group">
-                <label class="filter-label">Search Events</label>
-                <input type="text" id="searchInput" class="filter-input" placeholder="Search event names...">
-            </div>
-            <div class="filter-group">
-                <label class="filter-label">Event Type</label>
-                <select id="typeFilter" class="filter-select">
-                    <option value="">All Types</option>
-                </select>
-            </div>
-            <div class="filter-group">
-                <button id="clearFilters" class="filter-btn secondary">Clear</button>
-            </div>
-        </div>
-        <div class="filter-stats">
-            <span id="totalEvents">Total Events: 0</span>
-            <span id="filteredEvents">Showing: 0</span>
-        </div>
-    </div>
+
     
     <!-- Events Container -->
     <div id="event-container">
@@ -509,35 +486,25 @@
             });
         }
         
-        function updateFilterStats() {
-            document.getElementById('totalEvents').textContent = `Total Events: ${allEvents.length}`;
-            document.getElementById('filteredEvents').textContent = `Showing: ${filteredEvents.length}`;
-        }
+
         
         function filterEvents() {
-            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
             const selectedType = document.getElementById('typeFilter').value;
             
             filteredEvents = allEvents.filter(event => {
-                // Text search filter
-                const matchesSearch = !searchTerm || event.Name.toLowerCase().includes(searchTerm);
-                
-                // Event type filter
+                // Event type filter only
                 const matchesType = !selectedType || event.Session_Type__c === selectedType;
                 
-                return matchesSearch && matchesType;
+                return matchesType;
             });
             
-            updateFilterStats();
             renderEvents(filteredEvents);
         }
         
         function clearFilters() {
-            document.getElementById('searchInput').value = '';
             document.getElementById('typeFilter').value = '';
             
             filteredEvents = [...allEvents];
-            updateFilterStats();
             renderEvents(filteredEvents);
         }
         
@@ -551,7 +518,7 @@
                             <i class="fas fa-calendar-check fa-4x" style="color: var(--color-turquoise); margin-bottom: 1rem;"></i>
                         </div>
                         <h3>No Events Found</h3>
-                        <p>No events match your current filters. Try adjusting your search criteria.</p>
+                        <p>No events match your current filter. Try selecting a different event type.</p>
                         <div class="empty-state-cta">
                             <p style="font-style: italic; opacity: 0.8; margin-top: 1rem;">
                                 <i class="fas fa-info-circle"></i> 
@@ -606,7 +573,6 @@
                     allEvents = events;
                     filteredEvents = [...events];
                     populateEventTypes(events);
-                    updateFilterStats();
                     renderEvents(events);
                 })
                 .catch(error => {
@@ -618,7 +584,6 @@
         
         // Event listeners for filters
         document.addEventListener('DOMContentLoaded', function() {
-            document.getElementById('searchInput').addEventListener('input', filterEvents);
             document.getElementById('typeFilter').addEventListener('change', filterEvents);
             document.getElementById('clearFilters').addEventListener('click', clearFilters);
         });
@@ -632,7 +597,6 @@
                     allEvents = events;
                     filteredEvents = [...events];
                     populateEventTypes(events);
-                    updateFilterStats();
                     filterEvents(); // Re-apply current filters
                 })
                 .catch(error => {
