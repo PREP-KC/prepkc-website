@@ -1,143 +1,260 @@
 /* ==========================================================================
-   DATA IN ACTION (DIA) PAGE STYLES
+   DATA IN ACTION (DIA) PAGE STYLES - TABLE-BASED LAYOUT
    ========================================================================== */
 
-/* Event Card Styles */
-.card {
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 6px rgba(91, 192, 222, 0.3); /* Lighter blue shadow */
-    border: none;
-    border-radius: 10px;
-    background-color: white;
+/* Main Container */
+#main-content {
+    padding-bottom: 20px;
+}
+
+/* Sidebar Filter */
+.filter-sidebar {
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 20px;
+}
+
+.filter-sidebar h5 {
+    color: #00334C;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    border-bottom: 2px solid #56B2CB;
+    padding-bottom: 8px;
+}
+
+.filter-sidebar .form-label {
+    font-weight: 600;
+    color: #00334C;
+    margin-bottom: 6px;
+    font-size: 12px;
+}
+
+.filter-sidebar .form-control {
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 6px 10px;
+    font-size: 13px;
+    margin-bottom: 8px;
+}
+
+.filter-sidebar .form-control:focus {
+    border-color: #56B2CB;
+    box-shadow: 0 0 0 2px rgba(86, 178, 203, 0.2);
+}
+
+.filter-sidebar .btn {
+    padding: 6px 12px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+/* Events Table Container */
+#dia-events-container {
+    margin-top: 1rem;
+}
+
+/* Compact Events Table */
+.events-table {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
 }
 
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 15px rgba(91, 192, 222, 0.5); /* Enhanced lighter blue shadow on hover */
-}
-
-.card-body {
-    padding: 1.5rem;
-}
-
-.card-title {
-    font-weight: bold;
-    margin-bottom: 1rem;
-}
-
-/* Event Information Layout */
-.event-info {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-.event-detail {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-family: 'Georgia', sans-serif;
-}
-
-.event-detail i {
-    width: 20px;
-}
-
-.event-detail span {
-    color: var(--color-navy);
-}
-
-/* Register Button Styles */
-.register-btn {
-    margin-top: 1.5rem;
-    background-color: var(--color-turquoise);
-    border: none;
-    padding: 0.8rem;
-    font-family: var(--font-family-primary);
-    text-transform: uppercase;
+.events-table table {
     width: 100%;
+    border-collapse: collapse;
+    margin: 0;
+}
+
+.events-table th {
+    background: #00334C;
+    color: white;
+    padding: 12px 16px;
+    text-align: left;
+    font-size: 14px;
+    font-weight: 600;
+    border: none;
+}
+
+.events-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 14px;
+    vertical-align: middle;
+}
+
+.events-table tr:hover {
+    background-color: #f8f9fa;
+}
+
+.events-table tr:last-child td {
+    border-bottom: none;
+}
+
+/* Table Column Styling */
+.event-school {
+    font-weight: 600;
+    color: #00334C;
+    min-width: 200px;
+}
+
+.event-date {
+    color: #818387;
+    white-space: nowrap;
+    min-width: 180px;
+}
+
+.event-time {
+    color: #818387;
+    white-space: nowrap;
+    min-width: 120px;
+}
+
+.event-location {
+    color: #818387;
+    min-width: 120px;
+}
+
+.event-action {
+    text-align: center;
+    min-width: 120px;
+}
+
+/* Compact Register Button */
+.register-btn {
+    background: #56B2CB;
+    border: none;
+    padding: 6px 12px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-radius: 4px;
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.2s ease;
 }
 
 .register-btn:hover {
-    background-color: var(--color-navy);
-}
-
-.btn-primary {
-    width: 100%;
-    margin-top: 1rem;
+    background: #00334C;
+    transform: translateY(-1px);
+    color: white;
+    text-decoration: none;
 }
 
 /* No Events Message */
 .no-events {
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-    padding: 2rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    padding: 24px;
     text-align: center;
-    margin: 2rem 0;
+    margin: 24px 0;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.no-events h3 {
+    margin-bottom: 12px;
+}
+
+/* Project Mentor Section */
+#project-mentor-section {
+    margin-top: 32px;
+}
+
+#project-mentor-section h2 {
+    margin-bottom: 16px;
+}
+
+#project-mentor-section p {
+    margin-bottom: 16px;
+    font-size: 14px;
+    line-height: 1.5;
 }
 
 /* ==========================================================================
-   STICKY FOOTER LAYOUT
+   RESPONSIVE TABLE DESIGN
    ========================================================================== */
 
-/* Sticky footer styles */
-html {
-    position: relative;
-    min-height: 100%;
+/* Mobile - Stacked Layout */
+@media (max-width: 991px) {
+    .filter-sidebar {
+        position: static;
+        margin-bottom: 20px;
+        margin-top: 20px;
+    }
 }
 
-body {
-    margin-bottom: 120px; /* Footer height plus extra space */
+@media (max-width: 767px) {
+    .events-table {
+        overflow-x: auto;
+    }
+    
+    .events-table table {
+        min-width: 600px;
+    }
+    
+    .event-school {
+        min-width: 180px;
+    }
+    
+    .event-date {
+        min-width: 160px;
+    }
+    
+    .event-time {
+        min-width: 100px;
+    }
+    
+    .event-location {
+        min-width: 100px;
+    }
+    
+    .event-action {
+        min-width: 100px;
+    }
 }
 
-footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 100px; /* Footer height */
-    left: 0;
-    padding: 0 15px;
+/* Small Tablets */
+@media (min-width: 768px) and (max-width: 991px) {
+    .events-table th,
+    .events-table td {
+        padding: 10px 12px;
+        font-size: 13px;
+    }
+    
+    .event-school {
+        min-width: 180px;
+    }
 }
 
-#main-content {
-    padding-bottom: 40px; /* Space between content and footer */
+/* Large Screens */
+@media (min-width: 1200px) {
+    .events-table th,
+    .events-table td {
+        padding: 14px 18px;
+        font-size: 15px;
+    }
 }
 
 /* ==========================================================================
-   RESPONSIVE DESIGN
+   PERFORMANCE OPTIMIZATIONS
    ========================================================================== */
 
-@media (max-width: var(--breakpoint-md)) {
-    .card-body {
-        padding: 1rem;
-    }
-    
-    .event-info {
-        gap: 0.75rem;
-    }
-    
-    .register-btn {
-        padding: 0.75rem;
-        font-size: 0.9rem;
-    }
-    
-    .no-events {
-        padding: 1.5rem;
-        margin: 1rem 0;
-    }
+.events-table {
+    will-change: transform;
 }
 
-@media (max-width: var(--breakpoint-sm)) {
-    .card {
-        margin-bottom: 15px;
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    .register-btn:hover {
+        transform: none;
     }
-    
-    .event-detail {
-        font-size: 0.9rem;
-    }
-    
-    .event-detail i {
-        width: 18px;
-    }
+} 
 } 

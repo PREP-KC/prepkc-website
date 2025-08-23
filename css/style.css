@@ -242,6 +242,20 @@ p, li {
     color: var(--color-navy);
 }
 
+/* Compact Card Variants for DIA Page */
+.card.compact {
+    padding: var(--space-md);
+}
+
+.card.compact .card-title {
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--space-sm);
+}
+
+.card.compact .card-body {
+    padding: var(--space-md);
+}
+
 .card-text {
     font-family: var(--font-family-secondary);
     line-height: 1.6;
