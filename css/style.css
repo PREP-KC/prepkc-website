@@ -943,3 +943,19 @@ hr.style-two {
         font-size: var(--font-size-md) !important;
     }
 }
+
+/* ==========================================================================
+   DSI PAGE STYLES - Consolidated from dsi.css
+   ========================================================================== */
+
+/* DSI page heading adjustments */
+.dsi-page h2 {
+    margin-top: var(--space-xs);
+    margin-bottom: var(--space-xs);
+}
+
+/* DSI page aside styling */
+.dsi-page aside {
+    font-weight: bold;
+    line-height: 90%;
+}

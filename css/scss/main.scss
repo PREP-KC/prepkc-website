@@ -4,27 +4,36 @@
 
 // Base styles
 @import 'base/variables';
-@import 'base/reset';
-@import 'base/typography';
 
-// Components
-@import 'components/buttons';
-@import 'components/cards';
-@import 'components/navigation';
+// TODO: Create these files as part of Task 1.2: SCSS Architecture Setup
+// @import 'base/reset';
+// @import 'base/typography';
 
-// Layout
-@import 'layout/header';
-@import 'layout/footer';
-@import 'layout/grid';
+// TODO: Create these files as part of Task 2.1: Core Component Library
+// @import 'components/buttons';
+// @import 'components/cards';
+// @import 'components/navigation';
 
-// Pages
-@import 'pages/home';
-@import 'pages/about';
-@import 'pages/strategies';
-@import 'pages/impact';
-@import 'pages/volunteer';
-@import 'pages/programs';
+// TODO: Create these files as part of Task 2.2: Layout System Development
+// @import 'layout/header';
+// @import 'layout/footer';
+// @import 'layout/grid';
 
-// Utilities
-@import 'utilities/helpers';
-@import 'utilities/animations';
+// TODO: Create these files as part of Task 2.3: Utility System Implementation
+// @import 'pages/home';
+// @import 'pages/about';
+// @import 'pages/strategies';
+// @import 'pages/impact';
+// @import 'pages/volunteer';
+// @import 'pages/programs';
+
+// TODO: Create these files as part of Task 2.3: Utility System Implementation
+// @import 'utilities/helpers';
+// @import 'utilities/animations';
+
+// Temporary placeholder to ensure compilation works
+// This will be replaced as we build the foundation
+body {
+  // Ensure the compiled CSS has some content
+  font-family: var(--font-family-primary);
+}
