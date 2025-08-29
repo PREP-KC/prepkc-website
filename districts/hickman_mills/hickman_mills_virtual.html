@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8TKE4R10Y3"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-8TKE4R10Y3');
+    </script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Virtual volunteer opportunities with Hickman Mills School District through PREP-KC partnerships. Help provide remote career guidance and educational mentoring from anywhere.">
+    <title>Hickman Mills School District Virtual Events - PREP-KC</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../../css/style.css">
+    <style>
+        /* Hero Section with Background Image */
+        .hero-section {
+            background: linear-gradient(rgba(0, 51, 76, 0.8), rgba(0, 51, 76, 0.9)), url('../../img/4.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            padding: 4rem 0;
+            margin: -1.5rem -1.5rem 2rem -1.5rem;
+            border-radius: 0 0 20px 20px;
+        }
+        
+        .hero-content {
+            text-align: center;
+            color: white;
+        }
+        
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .hero-subtitle {
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            color: #FFD700;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+        
+        .hero-type-badge {
+            display: inline-block;
+            background: var(--color-yellow);
+            color: var(--color-navy);
+            padding: 0.5rem 1.5rem;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-top: 1rem;
+        }
+        
+        /* Info Section Layout */
+        .info-section {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem 0;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .info-content {
+            display: flex;
+            gap: 2rem;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+        
+        .info-text-container {
+            flex: 1;
+        }
+        
+        .info-text {
+            color: white;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .info-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+        
+        /* Clean Modern Event Cards */
+        .event-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .event-card {
+            background: var(--color-white);
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-md);
+            transition: all var(--transition-normal);
+            overflow: hidden;
+            border: 1px solid rgba(86, 178, 203, 0.1);
+        }
+        
+        .event-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--color-turquoise);
+        }
+        
+        .event-header {
+            background: var(--color-navy);
+            color: var(--color-white);
+            padding: 1.5rem;
+        }
+        
+        .event-title {
+            font-family: var(--font-family-primary);
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin: 0;
+            line-height: 1.4;
+            text-shadow: none;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            letter-spacing: 0.5px;
+            word-spacing: 1px;
+        }
+        
+        .event-body {
+            padding: 1.25rem;
+        }
+        
+        .event-meta {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.75rem;
+            margin-bottom: 1.25rem;
+        }
+        
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            color: var(--color-navy);
+            font-weight: 500;
+            padding: 0.5rem;
+            background: rgba(86, 178, 203, 0.05);
+            border-radius: var(--radius-md);
+            border-left: 2px solid var(--color-turquoise);
+        }
+        
+        .meta-item i {
+            color: var(--color-turquoise);
+            width: 16px;
+            text-align: center;
+            font-size: 1rem;
+        }
+        
+        .event-type {
+            background: var(--color-yellow);
+            border: none;
+            border-radius: var(--radius-lg);
+            padding: 0.4rem 1rem;
+            font-size: 0.8rem;
+            color: var(--color-navy);
+            text-align: center;
+            margin-bottom: 1.25rem;
+            font-weight: 600;
+            display: inline-block;
+            width: 100%;
+        }
+        
+        .register-btn {
+            width: 100%;
+            background: var(--color-turquoise);
+            border: none;
+            color: var(--color-white);
+            padding: 1rem 1.5rem;
+            border-radius: var(--radius-lg);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all var(--transition-normal);
+            font-size: 1rem;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+            font-family: var(--font-family-primary);
+        }
+        
+        .register-btn:hover {
+            background: var(--color-navy);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+            text-decoration: none;
+            color: var(--color-white);
+        }
+        
+        .register-btn:focus {
+            outline: 2px solid var(--color-yellow);
+            outline-offset: 2px;
+        }
+        
+        /* Info Section */
+        .info-section {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem 0;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .info-text {
+            color: white;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+        
+        .about-btn {
+            background: linear-gradient(135deg, #FFD700, #FFA500);
+            border: none;
+            color: #00334C;
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            float: right;
+            margin-top: -3rem;
+        }
+        
+        .about-btn:hover {
+            background: linear-gradient(135deg, #FFA500, #FF8C00);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+        }
+        
+        /* Back to Event Types Link */
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .back-link:hover {
+            color: var(--color-yellow);
+            text-decoration: none;
+            transform: translateX(-5px);
+        }
+        
+        .back-link i {
+            font-size: 1.2rem;
+        }
+        
+        /* Loading State */
+        .loading-state {
+            text-align: center;
+            padding: 3rem;
+            color: var(--color-navy);
+        }
+        
+        .loading-spinner {
+            border: 4px solid rgba(86, 178, 203, 0.1);
+            border-left: 4px solid var(--color-turquoise);
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 1rem;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* No Events State */
+        .no-events {
+            text-align: center;
+            padding: 3rem;
+            color: var(--color-navy);
+        }
+        
+        .no-events i {
+            font-size: 4rem;
+            color: rgba(86, 178, 203, 0.3);
+            margin-bottom: 1rem;
+        }
+        
+        .no-events h3 {
+            color: var(--color-navy);
+            margin-bottom: 1rem;
+        }
+        
+        .no-events p {
+            color: #6c757d;
+            margin-bottom: 2rem;
+        }
+        
+        .browse-other-types {
+            display: inline-block;
+            background: var(--color-turquoise);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .browse-other-types:hover {
+            background: var(--color-navy);
+            transform: translateY(-2px);
+            color: white;
+            text-decoration: none;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.4rem;
+            }
+            
+            .event-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .event-card {
+                margin: 0 0.5rem;
+            }
+            
+            .event-meta {
+                grid-template-columns: 1fr;
+                gap: 0.75rem;
+            }
+            
+            .meta-item {
+                padding: 0.5rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .event-grid {
+                gap: 1rem;
+            }
+            
+            .event-card {
+                margin: 0;
+            }
+            
+            .event-header {
+                padding: 1rem;
+            }
+            
+            .event-body {
+                padding: 1rem;
+            }
+            
+            .event-title {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+    <script src="https://unpkg.com/htmx.org@2.0.1"></script>
+</head>
+<body class="container">
+    <div id="nav-container"></div>
+    <div hx-get="../../nav.html" hx-target="#nav-container" hx-trigger="load"></div>
+    
+    <!-- Hero Section with Background Image -->
+    <div class="hero-section">
+        <div class="hero-content">
+            <h1 class="hero-title">Hickman Mills School District</h1>
+            <h2 class="hero-subtitle">VIRTUAL VOLUNTEER OPPORTUNITIES</h2>
+            <div class="hero-type-badge">
+                <i class="fas fa-laptop"></i> Virtual Events
+            </div>
+        </div>
+    </div>
+    
+    <!-- Info Section -->
+    <div class="info-section">
+        <a href="hickman_mills_event_types.html" class="back-link">
+            <i class="fas fa-arrow-left"></i>
+            Back to Event Types
+        </a>
+        
+        <div class="info-content">
+            <div class="info-text-container">
+                <p class="info-text">
+                    PREP-KC supports virtual volunteer opportunities for Hickman Mills School District. These remote projects can be completed online from anywhere, perfect for those who want to contribute while maintaining flexibility and accessibility.
+                </p>
+                <p class="info-text">
+                    We appreciate your help in carefully considering your availability to participate in our programming and understand that life happens. If you must cancel, please inform PREP-KC staff in advance if possible. We appreciate your help finding a replacement volunteer. Our students count on these virtual learning experiences. Thank you!
+                </p>
+            </div>
+        </div>
+        <button class="about-btn" onclick="window.open('https://www.prepkccommunity.org/volunteer', '_blank')">
+            <i class="fas fa-info-circle"></i> About the Events
+        </button>
+    </div>
+    
+    <!-- Events Container -->
+    <div id="event-container">
+        <div class="loading-state">
+            <div class="loading-spinner"></div>
+            <p>Loading virtual volunteer opportunities...</p>
+        </div>
+    </div>
+    
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer row">
+            <div class="footer-text col">
+                <p>PREP-KC<br>
+                    info@prepkc.org<br>
+                    2300 Main St, Suite 340<br>
+                    Kansas City, MO 64108<br>
+                    816.931.PREP
+                </p>
+            </div>
+            <div class="footer-social col">
+                <p>Connect</p>
+                <a href="https://www.facebook.com/prepkc/" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://twitter.com/PREPKC" class="social-icon"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.linkedin.com/company/prep-kc/" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    
+    <script>
+        let allEvents = [];
+        let filteredEvents = [];
+        
+        function filterEvents() {
+            // Filter to show only virtual events
+            filteredEvents = allEvents.filter(event => {
+                // Primary filter: Only show virtual events
+                const isVirtual = event.Session_Type__c && 
+                    (event.Session_Type__c.toLowerCase().includes('virtual') || 
+                     event.Session_Type__c.toLowerCase().includes('online') ||
+                     event.Session_Type__c.toLowerCase().includes('remote') ||
+                     event.Session_Type__c.toLowerCase().includes('digital') ||
+                     event.Session_Type__c.toLowerCase().includes('webinar'));
+                
+                return isVirtual;
+            });
+            
+            displayEvents();
+        }
+        
+        function displayEvents() {
+            const container = document.getElementById('event-container');
+            
+            if (filteredEvents.length === 0) {
+                container.innerHTML = `
+                    <div class="no-events">
+                        <i class="fas fa-laptop"></i>
+                        <h3>No Virtual Events Available</h3>
+                        <p>There are currently no virtual volunteer opportunities available for Hickman Mills School District.</p>
+                        <p>Please check back later or browse other event types.</p>
+                        <a href="hickman_mills_event_types.html" class="browse-other-types">
+                            Browse Other Event Types
+                        </a>
+                    </div>
+                `;
+                return;
+            }
+            
+            const eventsHTML = filteredEvents.map(event => `
+                <div class="event-card">
+                    <div class="event-header">
+                        <h3 class="event-title">${event.Name || 'Event Title'}</h3>
+                    </div>
+                    <div class="event-body">
+                        <div class="event-meta">
+                            <div class="meta-item">
+                                <i class="fas fa-users"></i>
+                                <span>Volunteers Needed: ${event.Available_Slots__c || 'TBD'}</span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="far fa-calendar-alt"></i>
+                                <span>${event.Date_and_Time_for_Cal__c || 'Date & Time TBD'}</span>
+                            </div>
+                        </div>
+                        <div class="event-type">
+                            <i class="fas fa-tag"></i> ${event.Session_Type__c || 'Virtual Event'}
+                        </div>
+                        <a href="${event.Registration_Link__c || '#'}" 
+                           target="_blank" 
+                           class="register-btn">
+                            <i class="fas fa-external-link-alt"></i> Register Now
+                        </a>
+                    </div>
+                </div>
+            `).join('');
+            
+            container.innerHTML = `
+                <div class="event-grid">
+                    ${eventsHTML}
+                </div>
+            `;
+        }
+        
+        // Event listeners
+        document.addEventListener('DOMContentLoaded', function() {
+            // Load events from API
+            fetch('https://voluntold-prepkc.pythonanywhere.com/api/districts/Hickman%20Mills%20School%20District/events')
+                .then(response => response.json())
+                .then(events => {
+                    allEvents = events;
+                    filterEvents();
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    document.getElementById('event-container').innerHTML = 
+                        '<div class="alert alert-danger">Error loading events. Please try again later.</div>';
+                });
+        });
+        
+        function registerForEvent(eventId) {
+            // Placeholder for registration functionality
+            alert('Registration functionality will be implemented here for event: ' + eventId);
+        }
+    </script>
+</body>
+</html>

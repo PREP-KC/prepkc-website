@@ -12,15 +12,15 @@
     </script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Join Test District volunteer opportunities with PREP-KC. Support students through career exploration, mentoring, and educational pathway programs.">
-    <title>Test District Volunteer Events - PREP-KC</title>
+    <meta name="description" content="Volunteer with Hickman Mills through PREP-KC partnerships. Help provide career guidance, educational mentoring, and professional development opportunities.">
+    <title>Hickman Mills Volunteer Events - PREP-KC</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <link rel="stylesheet" type="text/css" href="../../css/style.css">
     <style>
         /* Hero Section with Background Image */
         .hero-section {
-            background: linear-gradient(rgba(0, 51, 76, 0.8), rgba(0, 51, 76, 0.9)), url('../img/crossroads.jpg');
+            background: linear-gradient(rgba(0, 51, 76, 0.8), rgba(0, 51, 76, 0.9)), url('../../img/4.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -229,31 +229,19 @@
             font-size: 1rem;
         }
         
-                 .event-type {
-             background: var(--color-yellow);
-             border: none;
-             border-radius: var(--radius-lg);
-             padding: 0.4rem 1rem;
-             font-size: 0.8rem;
-             color: var(--color-navy);
-             text-align: center;
-             margin-bottom: 1rem;
-             font-weight: 600;
-             display: inline-block;
-             width: 100%;
-         }
-         
-         .event-note {
-             background: rgba(86, 178, 203, 0.1);
-             border: 1px solid rgba(86, 178, 203, 0.2);
-             border-radius: var(--radius-md);
-             padding: 0.75rem;
-             margin-bottom: 1.25rem;
-             font-size: 0.9rem;
-             color: var(--color-navy);
-             font-style: italic;
-             line-height: 1.4;
-         }
+        .event-type {
+            background: var(--color-yellow);
+            border: none;
+            border-radius: var(--radius-lg);
+            padding: 0.4rem 1rem;
+            font-size: 0.8rem;
+            color: var(--color-navy);
+            text-align: center;
+            margin-bottom: 1.25rem;
+            font-weight: 600;
+            display: inline-block;
+            width: 100%;
+        }
         
         .register-btn {
             width: 100%;
@@ -296,10 +284,78 @@
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
         
+        .info-content {
+            display: flex;
+            gap: 2rem;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+        
+        .info-text-container {
+            flex: 2;
+        }
+        
+        .filter-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            min-width: 200px;
+        }
+        
         .info-text {
             color: white;
             margin-bottom: 1rem;
             line-height: 1.6;
+        }
+        
+        .filter-label {
+            color: white;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin: 0;
+        }
+        
+        .filter-select {
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            border-radius: var(--radius-md);
+            padding: 0.75rem;
+            font-size: 0.9rem;
+            color: var(--color-navy);
+            cursor: pointer;
+            transition: all var(--transition-normal);
+        }
+        
+        .filter-select:focus {
+            outline: 2px solid var(--color-yellow);
+            background: white;
+        }
+        
+        .filter-btn {
+            background: var(--color-turquoise);
+            border: none;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all var(--transition-normal);
+            white-space: nowrap;
+        }
+        
+        .filter-btn:hover {
+            background: var(--color-navy);
+            transform: translateY(-2px);
+        }
+        
+        .filter-btn.secondary {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+        }
+        
+        .filter-btn.secondary:hover {
+            background: rgba(255, 255, 255, 0.3);
         }
         
         .about-btn {
@@ -332,15 +388,14 @@
                 font-size: 1.4rem;
             }
             
-            .filter-row {
-                grid-template-columns: 1fr;
+            .info-content {
+                flex-direction: column;
                 gap: 1rem;
             }
             
-            .filter-stats {
-                flex-direction: column;
-                gap: 0.5rem;
-                text-align: center;
+            .filter-container {
+                min-width: auto;
+                width: 100%;
             }
             
             .event-grid {
@@ -424,51 +479,38 @@
 </head>
 <body class="container">
     <div id="nav-container"></div>
-    <div hx-get="../nav.html" hx-target="#nav-container" hx-trigger="load"></div>
+    <div hx-get="../../nav.html" hx-target="#nav-container" hx-trigger="load"></div>
     
     <!-- Hero Section with Background Image -->
     <div class="hero-section">
         <div class="hero-content">
-            <h1 class="hero-title">Test District</h1>
+            <h1 class="hero-title">Hickman Mills</h1>
             <h2 class="hero-subtitle">VOLUNTEER OPPORTUNITIES</h2>
         </div>
     </div>
     
     <!-- Info Section -->
     <div class="info-section">
-        <button class="about-btn" onclick="window.open('https://www.prepkccommunity.org/volunteer', '_blank')">
-            <i class="fas fa-info-circle"></i> About the Events
-        </button>
-        
-        <p class="info-text">
-            PREP-KC supports career exploration opportunities for Test District students. Each event is listed below for volunteers to sign up as they are available.
-        </p>
-        <p class="info-text">
-            We appreciate your help in carefully considering your availability to participate in our programming and understand that life happens. If you must cancel, please inform PREP-KC staff in advance if possible. We appreciate your help finding a replacement volunteer. Our students count on these life-changing experiences. Thank you!
-        </p>
-    </div>
-    
-    <!-- Filter Section -->
-    <div class="filter-section">
-        <div class="filter-row">
-            <div class="filter-group">
-                <label class="filter-label">Search Events</label>
-                <input type="text" id="searchInput" class="filter-input" placeholder="Search event names...">
+        <div class="info-content">
+            <div class="info-text-container">
+                <p class="info-text">
+                    PREP-KC supports career exploration opportunities for Hickman Mills students. Each event is listed below for volunteers to sign up as they are available.
+                </p>
+                <p class="info-text">
+                    We appreciate your help in carefully considering your availability to participate in our programming and understand that life happens. If you must cancel, please inform PREP-KC staff in advance if possible. We appreciate your help finding a replacement volunteer. Our students count on these life-changing experiences. Thank you!
+                </p>
             </div>
-            <div class="filter-group">
+            <div class="filter-container">
                 <label class="filter-label">Event Type</label>
                 <select id="typeFilter" class="filter-select">
                     <option value="">All Types</option>
                 </select>
-            </div>
-            <div class="filter-group">
                 <button id="clearFilters" class="filter-btn secondary">Clear</button>
             </div>
         </div>
-        <div class="filter-stats">
-            <span id="totalEvents">Total Events: 0</span>
-            <span id="filteredEvents">Showing: 0</span>
-        </div>
+        <button class="about-btn" onclick="window.open('https://www.prepkccommunity.org/volunteer', '_blank')">
+            <i class="fas fa-info-circle"></i> About the Events
+        </button>
     </div>
     
     <!-- Events Container -->
@@ -521,35 +563,23 @@
             });
         }
         
-        function updateFilterStats() {
-            document.getElementById('totalEvents').textContent = `Total Events: ${allEvents.length}`;
-            document.getElementById('filteredEvents').textContent = `Showing: ${filteredEvents.length}`;
-        }
-        
         function filterEvents() {
-            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
             const selectedType = document.getElementById('typeFilter').value;
             
             filteredEvents = allEvents.filter(event => {
-                // Text search filter
-                const matchesSearch = !searchTerm || event.Name.toLowerCase().includes(searchTerm);
-                
                 // Event type filter
                 const matchesType = !selectedType || event.Session_Type__c === selectedType;
                 
-                return matchesSearch && matchesType;
+                return matchesType;
             });
             
-            updateFilterStats();
             renderEvents(filteredEvents);
         }
         
         function clearFilters() {
-            document.getElementById('searchInput').value = '';
             document.getElementById('typeFilter').value = '';
             
             filteredEvents = [...allEvents];
-            updateFilterStats();
             renderEvents(filteredEvents);
         }
         
@@ -575,34 +605,33 @@
                 return;
             }
             
-                         const eventsHTML = events.map(event => `
-                 <div class="event-card">
-                     <div class="event-header">
-                         <h3 class="event-title">${event.Name}</h3>
-                     </div>
-                     <div class="event-body">
-                         <div class="event-meta">
-                             <div class="meta-item">
-                                 <i class="fas fa-users"></i>
-                                 <span>Volunteers Needed: ${event.Available_Slots__c}</span>
-                             </div>
-                             <div class="meta-item">
-                                 <i class="far fa-calendar-alt"></i>
-                                 <span>${event.Date_and_Time_for_Cal__c}</span>
-                             </div>
-                         </div>
-                         <div class="event-type">
-                             <i class="fas fa-tag"></i> ${event.Session_Type__c}
-                         </div>
-                         ${event.note ? `<div class="event-note">${event.note}</div>` : ''}
-                         <a href="${event.Registration_Link__c}" 
-                            target="_blank" 
-                            class="register-btn">
-                             <i class="fas fa-external-link-alt"></i> Register Now
-                         </a>
-                     </div>
-                 </div>
-             `).join('');
+            const eventsHTML = events.map(event => `
+                <div class="event-card">
+                    <div class="event-header">
+                        <h3 class="event-title">${event.Name}</h3>
+                    </div>
+                    <div class="event-body">
+                        <div class="event-meta">
+                            <div class="meta-item">
+                                <i class="fas fa-users"></i>
+                                <span>Volunteers Needed: ${event.Available_Slots__c}</span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="far fa-calendar-alt"></i>
+                                <span>${event.Date_and_Time_for_Cal__c}</span>
+                            </div>
+                        </div>
+                        <div class="event-type">
+                            <i class="fas fa-tag"></i> ${event.Session_Type__c}
+                        </div>
+                        <a href="${event.Registration_Link__c}" 
+                           target="_blank" 
+                           class="register-btn">
+                            <i class="fas fa-external-link-alt"></i> Register Now
+                        </a>
+                    </div>
+                </div>
+            `).join('');
             
             container.innerHTML = `
                 <div class="event-grid">
@@ -611,20 +640,15 @@
             `;
         }
         
-        // Initialize with real test API call
+        // Initialize with real API call
         document.addEventListener('DOMContentLoaded', function() {
-            fetch('https://voluntold-prepkc.pythonanywhere.com/api/v1/test/events')
+            fetch('https://voluntold-prepkc.pythonanywhere.com/api/districts/Hickman%20Mills%20School%20District/events')
                 .then(response => response.json())
-                .then(data => {
-                    // Filter only events that should be displayed
-                    const visibleEvents = data.events.filter(event => 
-                        event.Display_on_Website__c === true
-                    );
-                    allEvents = visibleEvents;
-                    filteredEvents = [...visibleEvents];
-                    populateEventTypes(visibleEvents);
-                    updateFilterStats();
-                    renderEvents(visibleEvents);
+                .then(events => {
+                    allEvents = events;
+                    filteredEvents = [...events];
+                    populateEventTypes(events);
+                    renderEvents(events);
                 })
                 .catch(error => {
                     console.error('Error:', error);
@@ -635,25 +659,19 @@
         
         // Event listeners for filters
         document.addEventListener('DOMContentLoaded', function() {
-            document.getElementById('searchInput').addEventListener('input', filterEvents);
             document.getElementById('typeFilter').addEventListener('change', filterEvents);
             document.getElementById('clearFilters').addEventListener('click', clearFilters);
         });
         
         // Auto-refresh functionality
         setInterval(() => {
-            // Refresh events from test API every 5 minutes
-            fetch('https://voluntold-prepkc.pythonanywhere.com/api/v1/test/events')
+            // Refresh events from API every 5 minutes
+            fetch('https://voluntold-prepkc.pythonanywhere.com/api/districts/Hickman%20Mills%20School%20District/events')
                 .then(response => response.json())
-                .then(data => {
-                    // Filter only events that should be displayed
-                    const visibleEvents = data.events.filter(event => 
-                        event.Display_on_Website__c === true
-                    );
-                    allEvents = visibleEvents;
-                    filteredEvents = [...visibleEvents];
-                    populateEventTypes(visibleEvents);
-                    updateFilterStats();
+                .then(events => {
+                    allEvents = events;
+                    filteredEvents = [...events];
+                    populateEventTypes(events);
                     filterEvents(); // Re-apply current filters
                 })
                 .catch(error => {
