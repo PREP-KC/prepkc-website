@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8TKE4R10Y3"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-8TKE4R10Y3');
+    </script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Guadalupe In-Person Events - PREP-KC Kansas City Partner Schools</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../../css/style.css">
+    <style>
+        /* Hero Section with Background Image */
+        .hero-section {
+            background: linear-gradient(rgba(0, 51, 76, 0.9)), url('../../img/4.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            padding: 6rem 0;
+            margin: -1.5rem -1.5rem 3rem -1.5rem;
+            border-radius: 0 0 25px 25px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(86, 178, 203, 0.3), rgba(0, 51, 76, 0.8));
+            z-index: 1;
+        }
+        
+        .hero-content {
+            text-align: center;
+            color: white;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero-title {
+            font-size: 4rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            background: linear-gradient(135deg, #FFD700, #FFA500);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            color: #56B2CB;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+            font-weight: 300;
+        }
+        
+        .hero-type-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--color-turquoise), var(--color-navy));
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: 600;
+            margin-top: 1rem;
+            box-shadow: 0 4px 15px rgba(86, 178, 203, 0.3);
+        }
+        
+        /* Info Section */
+        .info-section {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 20px;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(86, 178, 203, 0.1);
+            position: relative;
+        }
+        
+        .info-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--color-turquoise), var(--color-yellow));
+            border-radius: 20px 20px 0 0;
+        }
+        
+        .info-content {
+            display: flex;
+            gap: 2rem;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+        
+        .info-text-container {
+            flex: 2;
+        }
+        
+        .info-text {
+            color: var(--color-navy);
+            margin-bottom: 1rem;
+            line-height: 1.6;
+            font-size: 1.1rem;
+        }
+        
+        .info-actions {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            min-width: 200px;
+        }
+        
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--color-navy);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            background: rgba(86, 178, 203, 0.1);
+            border: 2px solid transparent;
+        }
+        
+        .back-link:hover {
+            color: var(--color-turquoise);
+            text-decoration: none;
+            transform: translateX(-5px);
+            border-color: var(--color-turquoise);
+            background: rgba(86, 178, 203, 0.2);
+        }
+        
+        .back-link i {
+            font-size: 1.2rem;
+        }
+        
+        .about-btn {
+            background: linear-gradient(135deg, #FFD700, #FFA500);
+            border: none;
+            color: #00334C;
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+        }
+        
+        .about-btn:hover {
+            background: linear-gradient(135deg, #FFA500, #FF8C00);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4);
+            color: #00334C;
+            text-decoration: none;
+        }
+        
+        /* Events Container */
+        .events-container {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(86, 178, 203, 0.1);
+        }
+        
+        .events-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .events-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--color-navy);
+            margin-bottom: 1rem;
+            position: relative;
+        }
+        
+        .events-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--color-turquoise), var(--color-yellow));
+            border-radius: 2px;
+        }
+        
+        .events-subtitle {
+            font-size: 1.2rem;
+            color: var(--color-navy);
+            opacity: 0.8;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* Event Cards */
+        .event-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .event-card {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            overflow: hidden;
+            border: 2px solid transparent;
+        }
+        
+        .event-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+            border-color: var(--color-turquoise);
+        }
+        
+        .event-header {
+            background: var(--color-navy);
+            color: white;
+            padding: 1.5rem;
+        }
+        
+        .event-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin: 0;
+            line-height: 1.4;
+        }
+        
+        .event-body {
+            padding: 1.5rem;
+        }
+        
+        .event-meta {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            color: var(--color-navy);
+            font-weight: 500;
+            padding: 0.75rem;
+            background: rgba(86, 178, 203, 0.05);
+            border-radius: 10px;
+            border-left: 3px solid var(--color-turquoise);
+        }
+        
+        .meta-item i {
+            color: var(--color-turquoise);
+            width: 16px;
+            text-align: center;
+            font-size: 1rem;
+        }
+        
+        .event-type {
+            background: var(--color-yellow);
+            border: none;
+            border-radius: 15px;
+            padding: 0.5rem 1rem;
+            font-size: 0.8rem;
+            color: var(--color-navy);
+            text-align: center;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+            display: inline-block;
+            width: 100%;
+        }
+        
+        .register-btn {
+            width: 100%;
+            background: linear-gradient(135deg, var(--color-turquoise), var(--color-navy));
+            border: none;
+            color: white;
+            padding: 1rem 1.5rem;
+            border-radius: 15px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(86, 178, 203, 0.3);
+        }
+        
+        .register-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(86, 178, 203, 0.4);
+            color: white;
+            text-decoration: none;
+        }
+        
+        /* Loading and Empty States */
+        .loading-state, .empty-state {
+            text-align: center;
+            padding: 3rem;
+            color: var(--color-navy);
+        }
+        
+        .loading-spinner {
+            border: 4px solid rgba(86, 178, 203, 0.3);
+            border-top: 4px solid var(--color-turquoise);
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 1rem;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .empty-state-icon {
+            margin-bottom: 1.5rem;
+            color: var(--color-turquoise);
+        }
+        
+        .empty-state h3 {
+            color: var(--color-navy);
+            margin-bottom: 1rem;
+        }
+        
+        .empty-state p {
+            color: #6c757d;
+            margin-bottom: 1rem;
+        }
+        
+        .no-events {
+            background: rgba(86, 178, 203, 0.05);
+            border: 2px dashed var(--color-turquoise);
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            color: var(--color-navy);
+        }
+        
+        .browse-other-types {
+            margin-top: 1rem;
+            padding: 1rem;
+            background: rgba(255, 215, 0, 0.1);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 215, 0, 0.3);
+        }
+        
+        .browse-other-types a {
+            color: var(--color-navy);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .browse-other-types a:hover {
+            color: var(--color-turquoise);
+            text-decoration: underline;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .info-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .info-actions {
+                min-width: auto;
+                width: 100%;
+            }
+            
+            .event-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .event-meta {
+                grid-template-columns: 1fr;
+                gap: 0.75rem;
+            }
+            
+            .events-title {
+                font-size: 2rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero-section {
+                padding: 4rem 0;
+            }
+            
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .events-container {
+                padding: 1.5rem;
+            }
+            
+            .events-title {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body class="container">
+    <!-- Hero Section -->
+    <div class="hero-section">
+        <div class="hero-content">
+            <h1 class="hero-title">Guadalupe</h1>
+            <h2 class="hero-subtitle">IN-PERSON VOLUNTEER OPPORTUNITIES</h2>
+            <div class="hero-type-badge">In-Person Events</div>
+        </div>
+    </div>
+    
+    <!-- Info Section -->
+    <div class="info-section">
+        <div class="info-content">
+            <div class="info-text-container">
+                <p class="info-text">
+                    In-person volunteer opportunities at Guadalupe allow you to directly interact with students through career exploration, mentoring, and hands-on activities. These face-to-face experiences create meaningful connections and lasting impact on student development.
+                </p>
+                <p class="info-text">
+                    We appreciate your help in carefully considering your availability to participate in our programming and understand that life happens. If you must cancel, please inform PREP-KC staff in advance if possible. We appreciate your help finding a replacement volunteer. Our students count on these life-changing experiences. Thank you!
+                </p>
+            </div>
+            <div class="info-actions">
+                <a href="guadalupe_event_types.html" class="back-link">
+                    <i class="fas fa-arrow-left"></i>
+                    Back to Event Types
+                </a>
+                <a href="https://www.prepkccommunity.org/volunteer" target="_blank" class="about-btn">
+                    <i class="fas fa-info-circle"></i> About the Events
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Events Container -->
+    <div class="events-container">
+        <div class="events-header">
+            <h2 class="events-title">Available In-Person Events</h2>
+            <p class="events-subtitle">
+                Browse and register for face-to-face volunteer opportunities
+            </p>
+        </div>
+        
+        <div id="event-container">
+            <div class="loading-state">
+                <div class="loading-spinner"></div>
+                <p>Loading in-person volunteer opportunities...</p>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    
+    <script>
+        let allEvents = [];
+        let filteredEvents = [];
+        
+        function filterEvents() {
+            filteredEvents = allEvents.filter(event => {
+                const isInPerson = event.Session_Type__c &&
+                    (event.Session_Type__c.toLowerCase().includes('in-person') ||
+                     event.Session_Type__c.toLowerCase().includes('in person') ||
+                     event.Session_Type__c.toLowerCase().includes('on-site') ||
+                     event.Session_Type__c.toLowerCase().includes('onsite'));
+                return isInPerson;
+            });
+            displayEvents();
+        }
+        
+        function displayEvents() {
+            const container = document.getElementById('event-container');
+            
+            if (!filteredEvents || filteredEvents.length === 0) {
+                container.innerHTML = `
+                    <div class="no-events">
+                        <div class="empty-state-icon">
+                            <i class="fas fa-users fa-4x"></i>
+                        </div>
+                        <h3>No In-Person Events Available</h3>
+                        <p>Currently, there are no in-person volunteer opportunities available. Please check back later for new opportunities.</p>
+                        <div class="browse-other-types">
+                            <p><i class="fas fa-info-circle"></i> 
+                                <a href="guadalupe_event_types.html">Browse other event types</a> or check the main events page for all available opportunities.
+                            </p>
+                        </div>
+                    </div>
+                `;
+                return;
+            }
+            
+            const eventsHTML = filteredEvents.map(event => `
+                <div class="event-card">
+                    <div class="event-header">
+                        <h3 class="event-title">${event.Name}</h3>
+                    </div>
+                    <div class="event-body">
+                        <div class="event-meta">
+                            <div class="meta-item">
+                                <i class="fas fa-users"></i>
+                                <span>Volunteers Needed: ${event.Available_Slots__c}</span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="far fa-calendar-alt"></i>
+                                <span>${event.Date_and_Time_for_Cal__c}</span>
+                            </div>
+                        </div>
+                        <div class="event-type">
+                            <i class="fas fa-tag"></i> ${event.Session_Type__c}
+                        </div>
+                        <a href="${event.Registration_Link__c}" 
+                           target="_blank" 
+                           class="register-btn">
+                            <i class="fas fa-external-link-alt"></i> Register Now
+                        </a>
+                    </div>
+                </div>
+            `).join('');
+            
+            container.innerHTML = `
+                <div class="event-grid">
+                    ${eventsHTML}
+                </div>
+            `;
+        }
+        
+        // Initialize with API call
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('https://voluntold-prepkc.pythonanywhere.com/api/districts/GUADALUPE%20CENTERS%20SCHOOLS/events')
+                .then(response => response.json())
+                .then(events => {
+                    allEvents = events;
+                    filterEvents();
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    document.getElementById('event-container').innerHTML = 
+                        '<div class="alert alert-danger">Error loading events. Please try again later.</div>';
+                });
+        });
+        
+        function registerForEvent(eventId) {
+            alert('Registration functionality will be implemented here for event: ' + eventId);
+        }
+    </script>
+</body>
+</html>
