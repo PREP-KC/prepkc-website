@@ -58,32 +58,32 @@
         <main role="main">
             <h1 class="text-center text-yellow mb-3">Data In Action Events</h1>
 
-            <div class="row">
-                <!-- Events Table -->
-                <div class="col-lg-9">
-                    <div id="dia-events-container">
-                        <!-- Events will be dynamically loaded here -->
+            <!-- Filter Bar -->
+            <div class="filter-bar">
+                <div class="row align-items-center">
+                    <div class="col-auto">
+                        <h6 class="text-navy mb-0">Filter Events:</h6>
+                    </div>
+                    <div class="col-auto">
+                        <label for="startDate" class="form-label small">From:</label>
+                        <input type="date" class="form-control form-control-sm" id="startDate">
+                    </div>
+                    <div class="col-auto">
+                        <label for="endDate" class="form-label small">To:</label>
+                        <input type="date" class="form-control form-control-sm" id="endDate">
+                    </div>
+                    <div class="col-auto">
+                        <button type="button" class="btn btn-primary btn-sm" onclick="filterEvents()">Filter</button>
+                    </div>
+                    <div class="col-auto">
+                        <button type="button" class="btn btn-outline-secondary btn-sm" onclick="clearFilter()">Clear</button>
                     </div>
                 </div>
-                
-                <!-- Compact Sidebar Filter -->
-                <div class="col-lg-3">
-                    <div class="filter-sidebar">
-                        <h5 class="text-navy mb-3">Filter Events</h5>
-                        <div class="mb-3">
-                            <label for="startDate" class="form-label small">From Date:</label>
-                            <input type="date" class="form-control form-control-sm" id="startDate">
-                        </div>
-                        <div class="mb-3">
-                            <label for="endDate" class="form-label small">To Date:</label>
-                            <input type="date" class="form-control form-control-sm" id="endDate">
-                        </div>
-                        <div class="d-grid gap-2">
-                            <button type="button" class="btn btn-primary btn-sm" onclick="filterEvents()">Filter</button>
-                            <button type="button" class="btn btn-outline-secondary btn-sm" onclick="clearFilter()">Clear</button>
-                        </div>
-                    </div>
-                </div>
+            </div>
+
+            <!-- Events Cards -->
+            <div id="dia-events-container">
+                <!-- Events will be dynamically loaded here -->
             </div>
         </main>
     </div>
@@ -154,7 +154,7 @@
             endDate.value = `${endYear}-07-31`;
         }
 
-         // Helper function to create events table
+         // Helper function to create events cards
          function createEventsTable(events) {
              const container = document.getElementById('dia-events-container');
              
@@ -168,55 +168,57 @@
                  return;
              }
              
-             const tableHTML = `
-                 <div class="events-table">
-                     <table>
-                         <thead>
-                             <tr>
-                                 <th>School & Event</th>
-                                 <th>Date</th>
-                                 <th>Time</th>
-                                 <th>Location</th>
-                                 <th>Action</th>
-                             </tr>
-                         </thead>
-                         <tbody>
-                             ${events.map(event => {
-                                 // Clean up the event name for better display
-                                 const cleanName = event.Name
-                                     .replace(/\s*-\s*\d{1,2}\/\d{1,2}\/\d{2,4}\s*-\s*\d{1,2}:\d{2}(?:\s*[AP]M)?/g, '') // Remove date/time from title
-                                     .replace(/\s*-\s*\d{1,2}:\d{2}(?:\s*[AP]M)?/g, '') // Remove time only
-                                     .trim();
-                                 
-                                 // Parse date and time
-                                 const dateTimeStr = event.Date_and_Time_for_Cal__c;
-                                 const dateMatch = dateTimeStr.match(/(\d{1,2}\/\d{1,2}\/\d{2,4})/);
-                                 const timeMatch = dateTimeStr.match(/(\d{1,2}:\d{2}\s*[AP]M)\s*to\s*(\d{1,2}:\d{2}\s*[AP]M)/);
-                                 
-                                 const date = dateMatch ? dateMatch[1] : dateTimeStr;
-                                 const time = timeMatch ? `${timeMatch[1]} - ${timeMatch[2]}` : dateTimeStr;
-                                 
-                                 return `
-                                     <tr>
-                                         <td class="event-school">${cleanName}</td>
-                                         <td class="event-date">${date}</td>
-                                         <td class="event-time">${time}</td>
-                                         <td class="event-location">Kansas City Area</td>
-                                         <td class="event-action">
-                                             <a href="https://www.tfaforms.com/4937950?tfa_2256=${event.Id}" 
-                                                target="_blank" 
-                                                class="register-btn">
-                                                 Register
-                                             </a>
-                                         </td>
-                                     </tr>
-                                 `;
-                             }).join('')}
-                         </tbody>
-                     </table>
+             const cardsHTML = `
+                 <div class="events-cards">
+                     <div class="row g-4">
+                         ${events.map(event => {
+                             // Clean up the event name for better display
+                             const cleanName = event.Name
+                                 .replace(/\s*-\s*\d{1,2}\/\d{1,2}\/\d{2,4}\s*-\s*\d{1,2}:\d{2}(?:\s*[AP]M)?/g, '') // Remove date/time from title
+                                 .replace(/\s*-\s*\d{1,2}:\d{2}(?:\s*[AP]M)?/g, '') // Remove time only
+                                 .trim();
+                             
+                             // Parse date and time
+                             const dateTimeStr = event.Date_and_Time_for_Cal__c;
+                             const dateMatch = dateTimeStr.match(/(\d{1,2}\/\d{1,2}\/\d{2,4})/);
+                             const timeMatch = dateTimeStr.match(/(\d{1,2}:\d{2}\s*[AP]M)\s*to\s*(\d{1,2}:\d{2}\s*[AP]M)/);
+                             
+                             const date = dateMatch ? dateMatch[1] : dateTimeStr;
+                             const time = timeMatch ? `${timeMatch[1]} - ${timeMatch[2]}` : dateTimeStr;
+                             
+                             return `
+                                 <div class="col-xl-3 col-lg-4 col-md-6">
+                                     <div class="event-card">
+                                         <div class="card-header">
+                                             <h5 class="event-title">${cleanName}</h5>
+                                         </div>
+                                         <div class="card-body">
+                                             <div class="event-details">
+                                                 <div class="event-date">
+                                                     <i class="fas fa-calendar-alt"></i>
+                                                     <span>${date}</span>
+                                                 </div>
+                                                 <div class="event-time">
+                                                     <i class="fas fa-clock"></i>
+                                                     <span>${time}</span>
+                                                 </div>
+                                             </div>
+                                             <div class="card-footer">
+                                                 <a href="https://www.tfaforms.com/4937950?tfa_2256=${event.Id}" 
+                                                    target="_blank" 
+                                                    class="register-btn">
+                                                     Register
+                                                 </a>
+                                             </div>
+                                         </div>
+                                     </div>
+                                 </div>
+                             `;
+                         }).join('')}
+                     </div>
                  </div>
              `;
-             container.innerHTML = tableHTML;
+             container.innerHTML = cardsHTML;
          }
 
          // Filter events by date range
