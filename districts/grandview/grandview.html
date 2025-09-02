@@ -12,15 +12,15 @@
     </script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Volunteer with Grandview School District through PREP-KC partnerships. Help provide career guidance, educational mentoring, and professional development opportunities.">
-    <title>Grandview School District Volunteer Events - PREP-KC</title>
+    <meta name="description" content="Volunteer with Grandview through PREP-KC partnerships. Help provide career guidance, educational mentoring, and professional development opportunities.">
+    <title>Grandview Volunteer Events - PREP-KC</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="../css/style.css">
     <style>
         /* Hero Section with Background Image */
         .hero-section {
-            background: linear-gradient(rgba(0, 51, 76, 0.8), rgba(0, 51, 76, 0.9)), url('../img/3.jpg');
+            background: linear-gradient(rgba(0, 51, 76, 0.8), rgba(0, 51, 76, 0.9)), url('../../img/4.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -48,28 +48,38 @@
             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
         }
         
-        /* Filter Section */
-        .filter-section {
-            background: rgba(255, 255, 255, 0.1);
+        /* Info Section Layout */
+        .info-section {
+            background: rgba(255, 255, 255, 0.05);
             border-radius: 15px;
             padding: 2rem;
-            margin-bottom: 2rem;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            margin: 2rem 0;
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
         
-        .filter-row {
-            display: grid;
-            grid-template-columns: 2fr 1fr auto;
-            gap: 1rem;
-            align-items: end;
+        .info-content {
+            display: flex;
+            gap: 2rem;
+            align-items: flex-start;
             margin-bottom: 1rem;
         }
         
-        .filter-group {
+        .info-text-container {
+            flex: 2;
+        }
+        
+        .filter-container {
+            flex: 1;
             display: flex;
             flex-direction: column;
             gap: 0.5rem;
+            min-width: 200px;
+        }
+        
+        .info-text {
+            color: white;
+            margin-bottom: 1rem;
+            line-height: 1.6;
         }
         
         .filter-label {
@@ -77,22 +87,6 @@
             font-size: 0.9rem;
             font-weight: 600;
             margin: 0;
-        }
-        
-        .filter-input {
-            background: rgba(255, 255, 255, 0.9);
-            border: none;
-            border-radius: var(--radius-md);
-            padding: 0.75rem;
-            font-size: 0.9rem;
-            color: var(--color-navy);
-            transition: all var(--transition-normal);
-        }
-        
-        .filter-input:focus {
-            outline: 2px solid var(--color-yellow);
-            background: white;
-            box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.2);
         }
         
         .filter-select {
@@ -137,23 +131,17 @@
             background: rgba(255, 255, 255, 0.3);
         }
         
-        .filter-stats {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            color: white;
-            font-size: 0.9rem;
-            opacity: 0.9;
-            margin-top: 1rem;
-            padding-top: 1rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.2);
-        }
-        
-        .filter-stats span {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 0.25rem 0.75rem;
-            border-radius: var(--radius-md);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .info-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .filter-container {
+                min-width: auto;
+                width: 100%;
+            }
         }
         
         /* Clean Modern Event Cards */
@@ -284,78 +272,10 @@
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
         
-        .info-content {
-            display: flex;
-            gap: 2rem;
-            align-items: flex-start;
-            margin-bottom: 1rem;
-        }
-        
-        .info-text-container {
-            flex: 2;
-        }
-        
-        .filter-container {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-            min-width: 200px;
-        }
-        
         .info-text {
             color: white;
             margin-bottom: 1rem;
             line-height: 1.6;
-        }
-        
-        .filter-label {
-            color: white;
-            font-size: 0.9rem;
-            font-weight: 600;
-            margin: 0;
-        }
-        
-        .filter-select {
-            background: rgba(255, 255, 255, 0.9);
-            border: none;
-            border-radius: var(--radius-md);
-            padding: 0.75rem;
-            font-size: 0.9rem;
-            color: var(--color-navy);
-            cursor: pointer;
-            transition: all var(--transition-normal);
-        }
-        
-        .filter-select:focus {
-            outline: 2px solid var(--color-yellow);
-            background: white;
-        }
-        
-        .filter-btn {
-            background: var(--color-turquoise);
-            border: none;
-            color: white;
-            padding: 0.75rem 1.5rem;
-            border-radius: var(--radius-md);
-            font-weight: 600;
-            cursor: pointer;
-            transition: all var(--transition-normal);
-            white-space: nowrap;
-        }
-        
-        .filter-btn:hover {
-            background: var(--color-navy);
-            transform: translateY(-2px);
-        }
-        
-        .filter-btn.secondary {
-            background: rgba(255, 255, 255, 0.2);
-            color: white;
-        }
-        
-        .filter-btn.secondary:hover {
-            background: rgba(255, 255, 255, 0.3);
         }
         
         .about-btn {
@@ -388,14 +308,15 @@
                 font-size: 1.4rem;
             }
             
-            .info-content {
-                flex-direction: column;
+            .filter-row {
+                grid-template-columns: 1fr;
                 gap: 1rem;
             }
             
-            .filter-container {
-                min-width: auto;
-                width: 100%;
+            .filter-stats {
+                flex-direction: column;
+                gap: 0.5rem;
+                text-align: center;
             }
             
             .event-grid {
@@ -479,12 +400,12 @@
 </head>
 <body class="container">
     <div id="nav-container"></div>
-    <div hx-get="../nav.html" hx-target="#nav-container" hx-trigger="load"></div>
+            <div hx-get="../nav.html" hx-target="#nav-container" hx-trigger="load"></div>
     
     <!-- Hero Section with Background Image -->
     <div class="hero-section">
         <div class="hero-content">
-            <h1 class="hero-title">Grandview School District</h1>
+            <h1 class="hero-title">Grandview</h1>
             <h2 class="hero-subtitle">VOLUNTEER OPPORTUNITIES</h2>
         </div>
     </div>
@@ -501,17 +422,19 @@
                 </p>
             </div>
             <div class="filter-container">
-                <label class="filter-label">Event Type</label>
-                <select id="typeFilter" class="filter-select">
-                    <option value="">All Types</option>
-                </select>
-                <button id="clearFilters" class="filter-btn secondary">Clear</button>
-            </div>
-        </div>
+                 <label class="filter-label">Event Type</label>
+                 <select id="typeFilter" class="filter-select">
+                     <option value="">All Types</option>
+                 </select>
+                 <button id="clearFilters" class="filter-btn secondary">Clear</button>
+             </div>
+         </div>
         <button class="about-btn" onclick="window.open('https://www.prepkccommunity.org/volunteer', '_blank')">
             <i class="fas fa-info-circle"></i> About the Events
         </button>
     </div>
+    
+
     
     <!-- Events Container -->
     <div id="event-container">
@@ -563,11 +486,13 @@
             });
         }
         
+
+        
         function filterEvents() {
             const selectedType = document.getElementById('typeFilter').value;
             
             filteredEvents = allEvents.filter(event => {
-                // Event type filter
+                // Event type filter only
                 const matchesType = !selectedType || event.Session_Type__c === selectedType;
                 
                 return matchesType;
@@ -593,7 +518,7 @@
                             <i class="fas fa-calendar-check fa-4x" style="color: var(--color-turquoise); margin-bottom: 1rem;"></i>
                         </div>
                         <h3>No Events Found</h3>
-                        <p>No events match your current filters. Try adjusting your search criteria.</p>
+                        <p>No events match your current filter. Try selecting a different event type.</p>
                         <div class="empty-state-cta">
                             <p style="font-style: italic; opacity: 0.8; margin-top: 1rem;">
                                 <i class="fas fa-info-circle"></i> 

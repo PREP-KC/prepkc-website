@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
@@ -12,7 +13,7 @@
     </script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>KCPS In-Person Events - PREP-KC Kansas City Partner Schools</title>
+    <title>KCKPS Data in Action Events - PREP-KC Kansas City Partner Schools</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="../../css/style.css">
@@ -448,9 +449,9 @@
     <!-- Hero Section -->
     <div class="hero-section">
         <div class="hero-content">
-            <h1 class="hero-title">KCPS</h1>
-            <h2 class="hero-subtitle">IN-PERSON VOLUNTEER OPPORTUNITIES</h2>
-            <div class="hero-type-badge">In-Person Events</div>
+            <h1 class="hero-title">KCKPS</h1>
+            <h2 class="hero-subtitle">DATA IN ACTION VOLUNTEER OPPORTUNITIES</h2>
+            <div class="hero-type-badge">Data in Action Events</div>
         </div>
     </div>
     
@@ -459,14 +460,14 @@
         <div class="info-content">
             <div class="info-text-container">
                 <p class="info-text">
-                    In-person volunteer opportunities at KCPS allow you to directly interact with students through career exploration, mentoring, and hands-on activities. These face-to-face experiences create meaningful connections and lasting impact on student development.
+                    Data in Action volunteer opportunities at KCKPS focus on analytics, research, and insights that help improve educational outcomes and program effectiveness. These opportunities allow volunteers to contribute their data expertise while supporting student success.
                 </p>
                 <p class="info-text">
                     We appreciate your help in carefully considering your availability to participate in our programming and understand that life happens. If you must cancel, please inform PREP-KC staff in advance if possible. We appreciate your help finding a replacement volunteer. Our students count on these life-changing experiences. Thank you!
                 </p>
             </div>
             <div class="info-actions">
-                <a href="kcps_event_types.html" class="back-link">
+                <a href="allen_village_event_types.html" class="back-link">
                     <i class="fas fa-arrow-left"></i>
                     Back to Event Types
                 </a>
@@ -480,16 +481,16 @@
     <!-- Events Container -->
     <div class="events-container">
         <div class="events-header">
-            <h2 class="events-title">Available In-Person Events</h2>
+            <h2 class="events-title">Available Data in Action Events</h2>
             <p class="events-subtitle">
-                Browse and register for face-to-face volunteer opportunities
+                Browse and register for data-driven volunteer opportunities
             </p>
         </div>
         
         <div id="event-container">
             <div class="loading-state">
                 <div class="loading-spinner"></div>
-                <p>Loading in-person volunteer opportunities...</p>
+                <p>Loading data in action volunteer opportunities...</p>
             </div>
         </div>
     </div>
@@ -504,22 +505,13 @@
             filteredEvents = allEvents.filter(event => {
                 const sessionType = event.Session_Type__c ? event.Session_Type__c.toLowerCase() : '';
                 
-                // Define in-person event types - exclude DIA events
-                const inPersonTypes = [
-                    'career jumping',
-                    'in-person',
-                    'in person',
-                    'on-site',
-                    'onsite',
-                    'face-to-face',
-                    'face to face'
+                // Define data in action event types - only DIA events
+                const dataInActionTypes = [
+                    'dia'
                 ];
                 
-                // Check if it's in-person AND not a DIA event
-                const isInPerson = inPersonTypes.some(type => sessionType.includes(type));
-                const isNotDIA = !sessionType.includes('dia');
-                
-                return isInPerson && isNotDIA;
+                const isDataInAction = dataInActionTypes.some(type => sessionType.includes(type));
+                return isDataInAction;
             });
             displayEvents();
         }
@@ -531,13 +523,13 @@
                 container.innerHTML = `
                     <div class="no-events">
                         <div class="empty-state-icon">
-                            <i class="fas fa-users fa-4x"></i>
+                            <i class="fas fa-chart-line fa-4x"></i>
                         </div>
-                        <h3>No In-Person Events Available</h3>
-                        <p>Currently, there are no in-person volunteer opportunities available. Please check back later for new opportunities.</p>
+                        <h3>No Data in Action Events Available</h3>
+                        <p>Currently, there are no data in action volunteer opportunities available. Please check back later for new opportunities.</p>
                         <div class="browse-other-types">
                             <p><i class="fas fa-info-circle"></i> 
-                                <a href="kcps_event_types.html">Browse other event types</a> or check the main events page for all available opportunities.
+                                <a href="allen_village_event_types.html">Browse other event types</a> or check the main events page for all available opportunities.
                             </p>
                         </div>
                     </div>
@@ -582,7 +574,7 @@
         
         // Initialize with API call
         document.addEventListener('DOMContentLoaded', function() {
-            fetch('https://voluntold-prepkc.pythonanywhere.com/api/districts/Kansas%20City%20Public%20Schools/events')
+            fetch('https://voluntold-prepkc.pythonanywhere.com/api/districts/Kansas%20City%20Kansas%20Public%20Schools/events')
                 .then(response => response.json())
                 .then(events => {
                     allEvents = events;
