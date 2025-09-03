@@ -172,11 +172,14 @@
                  <div class="events-cards">
                      <div class="row g-4">
                          ${events.map(event => {
-                             // Clean up the event name for better display
-                             const cleanName = event.Name
-                                 .replace(/\s*-\s*\d{1,2}\/\d{1,2}\/\d{2,4}\s*-\s*\d{1,2}:\d{2}(?:\s*[AP]M)?/g, '') // Remove date/time from title
-                                 .replace(/\s*-\s*\d{1,2}:\d{2}(?:\s*[AP]M)?/g, '') // Remove time only
-                                 .trim();
+                                                         // Clean up the event name for better display
+                            const cleanName = event.Name
+                                .replace(/\s*-\s*\d{1,2}\/\d{1,2}\/\d{2,4}\s*-\s*\d{1,2}:\d{2}(?:\s*[AP]M)?/g, '') // Remove date/time from title
+                                .replace(/\s*-\s*\d{1,2}:\d{2}(?:\s*[AP]M)?/g, '') // Remove time only
+                                .replace(/Speakeram/g, 'Speaker') // Fix Speakeram -> Speaker
+                                .replace(/Speakerpm/g, 'Speaker') // Fix Speakerpm -> Speaker
+                                .replace(/Datapm/g, 'Data') // Fix Datapm -> Data
+                                .trim();
                              
                              // Parse date and time
                              const dateTimeStr = event.Date_and_Time_for_Cal__c;
