@@ -65,22 +65,63 @@
             </p>
         </section>
 
-        <!-- Statistics Section -->
-        <section class="row justify-content-center">
-            <div class="col-md-10">
-                <article class="stats-container">
-                    <h2 class="stats-title">THE POSITIVE IMPACT OF PARTNERSHIPS</h2>
-                    <h3 class="stats-year"><u>2024-2025 School Year</u></h3>
-                    <!-- Using semantic paragraph tags for better structure -->
-                    <p class="stats-content">
-                        <span class="impact-number fade-in" data-value="1080">0</span> volunteers engaged from<br/>
-                        <span class="impact-number fade-in" data-value="411">0</span> businesses and postsecondary institutions<br/>
-                        participated in <span class="impact-number fade-in" data-value="488">0</span> virtual and in-person events, and<br/>
-                        provided <span class="impact-number fade-in" data-value="4,673">0</span> volunteer hours<br/>
-                        while connecting with <span class="impact-number fade-in" data-value="7188">0</span> students in person and<br/>
-                        approximately <span class="impact-number fade-in" data-value="16750">0</span> students virtually.
-                    </p>
+        <!-- Statistics and Recognition Section -->
+        <section class="row justify-content-center g-4">
+            <!-- Stats Section - Takes up 3/4 width -->
+            <div class="col-lg-8">
+                <article class="stats-container-enhanced">
+                    <div class="stats-header">
+                        <h2 class="stats-title-enhanced">THE POSITIVE IMPACT OF PARTNERSHIPS</h2>
+                        <div class="stats-year-badge">2024-2025 School Year</div>
+                    </div>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <span class="impact-number-enhanced fade-in" data-value="1080">0</span>
+                            <span class="stat-label">volunteers engaged from</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="impact-number-enhanced fade-in" data-value="411">0</span>
+                            <span class="stat-label">businesses and postsecondary institutions</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="impact-number-enhanced fade-in" data-value="488">0</span>
+                            <span class="stat-label">virtual and in-person events</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="impact-number-enhanced fade-in" data-value="4,673">0</span>
+                            <span class="stat-label">volunteer hours provided</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="impact-number-enhanced fade-in" data-value="7188">0</span>
+                            <span class="stat-label">students connected in person</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="impact-number-enhanced fade-in" data-value="16750">0</span>
+                            <span class="stat-label">students connected virtually</span>
+                        </div>
+                    </div>
                 </article>
+            </div>
+            
+            <!-- United Way Recognition - Takes up 1/4 width -->
+            <div class="col-lg-4">
+                <div class="united-way-recognition-enhanced">
+                    <div class="recognition-header">
+                        <h4 class="recognition-title-enhanced">Recognized by</h4>
+                        <h5 class="recognition-subtitle">United Way of Greater Kansas City</h5>
+                    </div>
+                    <div class="logo-container-enhanced">
+                        <img src="img/impact100logo/Artboard 1@2x.png" 
+                             alt="United Way of Greater Kansas City Impact 100 Logo" 
+                             class="united-way-logo-enhanced">
+                    </div>
+                    <div class="recognition-badge">
+                        <span class="badge-text">Impact 100 Initiative</span>
+                    </div>
+                    <p class="recognition-text-enhanced">
+                        PREP-KC is proud to be part of United Way's Impact 100 initiative, highlighting our commitment to creating meaningful change in Kansas City education.
+                    </p>
+                </div>
             </div>
         </section>
 
@@ -196,7 +237,7 @@
     <!-- Custom JavaScript for number animation -->
     <script>
     document.addEventListener('DOMContentLoaded', () => {
-        const numbers = document.querySelectorAll('.impact-number');
+        const numbers = document.querySelectorAll('.impact-number-enhanced');
         let delay = 0;
 
         numbers.forEach((number, index) => {
@@ -205,13 +246,13 @@
                 const finalValue = parseInt(number.dataset.value.replace(',', ''));
                 animateNumber(number, finalValue);
             }, delay);
-            delay += 1000; // Increase delay for each subsequent number
+            delay += 200; // Faster animation between numbers
         });
     });
 
     function animateNumber(element, final) {
         let start = 0;
-        const duration = 1000; // 1 seconds
+        const duration = 1200; // 1.2 seconds
         const step = timestamp => {
             if (!start) start = timestamp;
             const progress = Math.min((timestamp - start) / duration, 1);

@@ -326,3 +326,243 @@ body{
 .container:last-of-type {
     padding-bottom: 0;
 }
+
+/* Enhanced Statistics Container */
+.stats-container-enhanced {
+    background: linear-gradient(135deg, var(--color-navy) 0%, rgba(0, 51, 76, 0.95) 100%);
+    border-radius: 20px;
+    padding: 2.5rem;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(86, 178, 203, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.stats-container-enhanced::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--color-turquoise), var(--color-yellow), var(--color-turquoise));
+}
+
+.stats-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.stats-title-enhanced {
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    font-weight: 800;
+    color: var(--color-yellow);
+    margin-bottom: 1rem;
+    letter-spacing: 0.5px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.stats-year-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--color-turquoise), rgba(86, 178, 203, 0.8));
+    color: var(--color-navy);
+    padding: 0.5rem 1.5rem;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    border: 1px solid rgba(86, 178, 203, 0.3);
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.stat-item:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.impact-number-enhanced {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-weight: 900;
+    color: var(--color-yellow);
+    display: block;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    line-height: 1;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: 
+        opacity 0.6s ease,
+        transform 0.6s ease;
+}
+
+.impact-number-enhanced.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.stat-label {
+    color: var(--color-white);
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.3;
+    opacity: 0.9;
+}
+
+/* Enhanced United Way Recognition */
+.united-way-recognition-enhanced {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    border: 2px solid var(--color-turquoise);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+}
+
+.united-way-recognition-enhanced::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--color-turquoise), var(--color-yellow));
+}
+
+.recognition-header {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.recognition-title-enhanced {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--color-navy);
+    margin-bottom: 0.5rem;
+    opacity: 0.8;
+}
+
+.recognition-subtitle {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--color-navy);
+    margin-bottom: 0;
+}
+
+.logo-container-enhanced {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem 0;
+    flex-grow: 1;
+    min-height: 250px;
+}
+
+.united-way-logo-enhanced {
+    max-width: 100%;
+    max-height: 280px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15));
+    transition: transform 0.3s ease;
+}
+
+.united-way-logo-enhanced:hover {
+    transform: scale(1.05);
+}
+
+.recognition-badge {
+    text-align: center;
+    margin: 1rem 0;
+}
+
+.badge-text {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--color-turquoise), var(--color-navy));
+    color: white;
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+.recognition-text-enhanced {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: var(--color-navy);
+    text-align: center;
+    margin-bottom: 0;
+    opacity: 0.8;
+    font-style: italic;
+}
+
+/* Responsive adjustments */
+@media (max-width: 991px) {
+    .stats-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1rem;
+    }
+    
+    .united-way-recognition-enhanced {
+        margin-top: 2rem;
+        padding: 1.5rem;
+    }
+    
+    .united-way-logo-enhanced {
+        max-height: 200px;
+    }
+}
+
+@media (max-width: 768px) {
+    .stats-container-enhanced {
+        padding: 1.5rem;
+    }
+    
+    .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .stat-item {
+        padding: 1rem;
+    }
+    
+    .united-way-recognition-enhanced {
+        margin: 1rem 0;
+        padding: 1.2rem;
+    }
+    
+    .united-way-logo-enhanced {
+        max-height: 160px;
+    }
+    
+    .impact-number-enhanced {
+        font-size: 2.5rem;
+    }
+}
