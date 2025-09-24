@@ -552,7 +552,7 @@
                         <div class="event-type">
                             <i class="fas fa-tag"></i> ${event.Session_Type__c}
                         </div>
-                        <a href="${event.Registration_Link__c}" 
+                        <a href="https://www.tfaforms.com/4937950?tfa_2256=${event.Id}" 
                            target="_blank" 
                            class="register-btn">
                             <i class="fas fa-external-link-alt"></i> Register Now
@@ -570,7 +570,7 @@
         
         // Initialize with API call
         document.addEventListener('DOMContentLoaded', function() {
-            fetch('https://voluntold-prepkc.pythonanywhere.com/api/districts/GUADALUPE%20CENTERS%20SCHOOLS/events')
+            fetch('https://voluntold-prepkc.pythonanywhere.com/events/volunteer_signup_api')
                 .then(response => response.json())
                 .then(events => {
                     allEvents = events;

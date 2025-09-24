@@ -464,9 +464,19 @@
         </div>
     </footer>
     
+    <script src="https://unpkg.com/htmx.org@2.0.1"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     
     <script>
+        function refreshContent() {
+            var container = document.getElementById('event-container');
+            // Reload the page content to refresh events
+            location.reload();
+        }
+
+        // Refresh content every 5 minutes (300000 milliseconds)
+        setInterval(refreshContent, 300000*30);
+
         let allEvents = [];
         let filteredEvents = [];
         
@@ -549,7 +559,7 @@
                         <div class="event-type">
                             <i class="fas fa-tag"></i> ${event.Session_Type__c}
                         </div>
-                        <a href="${event.Registration_Link__c}" 
+                        <a href="https://www.tfaforms.com/4937950?tfa_2256=${event.Id}" 
                            target="_blank" 
                            class="register-btn">
                             <i class="fas fa-external-link-alt"></i> Register Now
@@ -567,7 +577,7 @@
         
         // Initialize with real API call
         document.addEventListener('DOMContentLoaded', function() {
-            fetch('https://voluntold-prepkc.pythonanywhere.com/api/districts/Kansas%20City%20Public%20Schools/events')
+            fetch('https://voluntold-prepkc.pythonanywhere.com/events/volunteer_signup_api')
                 .then(response => response.json())
                 .then(events => {
                     allEvents = events;
@@ -591,7 +601,7 @@
         // Auto-refresh functionality
         setInterval(() => {
             // Refresh events from API every 5 minutes
-            fetch('https://voluntold-prepkc.pythonanywhere.com/api/districts/Kansas%20City%20Public%20Schools/events')
+            fetch('https://voluntold-prepkc.pythonanywhere.com/events/volunteer_signup_api')
                 .then(response => response.json())
                 .then(events => {
                     allEvents = events;
