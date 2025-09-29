@@ -592,7 +592,7 @@
         
         // Initialize with API call
         document.addEventListener('DOMContentLoaded', function() {
-            fetch('https://voluntold-prepkc.pythonanywhere.com/events/volunteer_signup_api')
+            fetch('https://voluntold-prepkc.pythonanywhere.com/api/districts/Kansas%20City%20Public%20Schools%20%28MO%29/events')
                 .then(response => response.json())
                 .then(events => {
                     allEvents = events;

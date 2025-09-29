@@ -580,7 +580,7 @@
         
         // Initialize with API call
         document.addEventListener('DOMContentLoaded', function() {
-            fetch('https://voluntold-prepkc.pythonanywhere.com/events/volunteer_signup_api')
+            fetch('https://voluntold-prepkc.pythonanywhere.com/api/districts/Allen%20Village%20-%20District/events')
                 .then(response => response.json())
                 .then(events => {
                     allEvents = events;
