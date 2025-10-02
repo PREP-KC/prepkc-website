@@ -512,12 +512,24 @@
         
         function filterEvents() {
             filteredEvents = allEvents.filter(event => {
-                const isInPerson = event.Session_Type__c &&
-                    (event.Session_Type__c.toLowerCase().includes('in-person') ||
-                     event.Session_Type__c.toLowerCase().includes('in person') ||
-                     event.Session_Type__c.toLowerCase().includes('on-site') ||
-                     event.Session_Type__c.toLowerCase().includes('onsite'));
-                return isInPerson;
+                // Check if event should be displayed on website
+                if (!event.Display_on_Website__c) {
+                    return false;
+                }
+                
+                // For in-person events, we'll include all events that are NOT explicitly virtual
+                const sessionType = event.Session_Type__c ? event.Session_Type__c.toLowerCase() : '';
+                const isVirtual = sessionType.includes('virtual') || 
+                                 sessionType.includes('online') || 
+                                 sessionType.includes('remote') ||
+                                 sessionType.includes('zoom') ||
+                                 sessionType.includes('webinar');
+                
+                // Exclude DIA events from in-person page
+                const isNotDIA = !sessionType.includes('dia');
+                
+                // Include all non-virtual, non-DIA events as in-person events
+                return !isVirtual && isNotDIA;
             });
             displayEvents();
         }
