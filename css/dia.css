@@ -7,6 +7,80 @@
     padding-bottom: 20px;
 }
 
+/* Event Types Explanation Section */
+.event-types-section {
+    margin-bottom: 24px;
+}
+
+.event-types-section .btn-outline-info {
+    border-color: #56B2CB;
+    color: #56B2CB;
+    font-weight: 600;
+    padding: 12px 20px;
+    transition: all 0.3s ease;
+}
+
+.event-types-section .btn-outline-info:hover {
+    background-color: #56B2CB;
+    color: white;
+    border-color: #56B2CB;
+}
+
+.event-types-section .btn-outline-info .fa-chevron-down {
+    transition: transform 0.3s ease;
+}
+
+.event-types-section .btn-outline-info[aria-expanded="true"] .fa-chevron-down {
+    transform: rotate(180deg);
+}
+
+.event-types-section .card {
+    border: 1px solid #56B2CB;
+    border-top: none;
+    border-radius: 0 0 8px 8px;
+}
+
+.event-types-section .accordion-item {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(86, 178, 203, 0.3);
+}
+
+.event-types-section .accordion-item:last-child {
+    border-bottom: none;
+}
+
+.event-types-section .accordion-button {
+    padding: 16px 20px;
+    font-size: 16px;
+    border: none;
+}
+
+.event-types-section .accordion-button:not(.collapsed) {
+    background-color: rgba(86, 178, 203, 0.1);
+    color: #56B2CB;
+    box-shadow: none;
+}
+
+.event-types-section .accordion-button:focus {
+    box-shadow: none;
+    border: none;
+}
+
+.event-types-section .accordion-button::after {
+    filter: brightness(0) saturate(100%) invert(67%) sepia(29%) saturate(1077%) hue-rotate(150deg) brightness(92%) contrast(85%);
+}
+
+.event-types-section .accordion-body {
+    padding: 20px;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+.event-types-section .accordion-body p {
+    margin-bottom: 0;
+}
+
 /* Horizontal Filter Bar */
 .filter-bar {
     background: white;
@@ -193,6 +267,24 @@
 /* ==========================================================================
    RESPONSIVE CARD DESIGN
    ========================================================================== */
+
+/* Mobile Event Types Section */
+@media (max-width: 767px) {
+    .event-types-section .btn-outline-info {
+        padding: 10px 16px;
+        font-size: 14px;
+    }
+    
+    .event-types-section .accordion-button {
+        padding: 12px 16px;
+        font-size: 14px;
+    }
+    
+    .event-types-section .accordion-body {
+        padding: 16px;
+        font-size: 14px;
+    }
+}
 
 /* Mobile Filter Bar */
 @media (max-width: 767px) {
