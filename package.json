@@ -4,6 +4,19 @@
   "description": "PREP-KC Website",
   "main": "index.js",
   "scripts": {
+    "dev": "live-server --port=3000 --open=/",
+    "build": "npm-run-all build:*",
+    "build:css": "sass css/scss/main.scss:dist/css/style.css --style=compressed",
+    "build:images": "node scripts/optimize-images.js",
+    "build:js": "esbuild js/main.js --bundle --minify --outfile=dist/js/main.js",
+    "watch": "npm-run-all --parallel watch:*",
+    "lint": "npm-run-all lint:*",
+    "lint:js": "eslint js/**/*.js",
+    "lint:css": "stylelint 'css/**/*.scss'",
+    "lint:html": "html-validate **/*.html",
+    "format": "prettier --write '**/*.{html,css,scss,js}'",
+    "format:check": "prettier --check '**/*.{html,css,scss,js}'",
+    "quality": "npm run lint && npm run format:check",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -16,5 +29,23 @@
   "bugs": {
     "url": "https://github.com/PREP-KC/prepkc-website/issues"
   },
-  "homepage": "https://github.com/PREP-KC/prepkc-website#readme"
+  "homepage": "https://github.com/PREP-KC/prepkc-website#readme",
+  "devDependencies": {
+    "autoprefixer": "^10.4.21",
+    "cssnano": "^7.1.0",
+    "esbuild": "^0.25.9",
+    "eslint": "^9.33.0",
+    "html-validate": "^10.0.0",
+    "husky": "^9.1.7",
+    "live-server": "^1.2.2",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.5.6",
+    "pre-commit": "^1.2.2",
+    "prettier": "^3.6.2",
+    "sass": "^1.90.0",
+    "sharp": "^0.34.3",
+    "stylelint": "^16.23.1",
+    "svgo": "^4.0.0",
+    "terser": "^5.43.1"
+  }
 }

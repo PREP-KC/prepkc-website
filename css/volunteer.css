@@ -42,18 +42,7 @@ body {
 }
 
 /* Using consolidated volunteer-card component from style.css */
-/* Card specific colors for volunteer page */
-#card1 {
-    background-color: var(--color-blue);
-}
-
-#card2 {
-    background-color: var(--color-green);
-}
-
-#card3 {
-    background-color: var(--color-orange);
-}
+/* Card styling is now handled in the inline CSS in volunteer.html */
 
 /* Title styling */
 .page-title {

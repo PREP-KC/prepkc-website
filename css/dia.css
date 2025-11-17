@@ -1,143 +1,377 @@
 /* ==========================================================================
-   DATA IN ACTION (DIA) PAGE STYLES
+   DATA IN ACTION (DIA) PAGE STYLES - CARD-BASED LAYOUT
    ========================================================================== */
 
-/* Event Card Styles */
-.card {
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 6px rgba(91, 192, 222, 0.3); /* Lighter blue shadow */
-    border: none;
-    border-radius: 10px;
-    background-color: white;
+/* Main Container */
+#main-content {
+    padding-bottom: 20px;
+}
+
+/* Event Types Explanation Section */
+.event-types-section {
     margin-bottom: 20px;
 }
 
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 15px rgba(91, 192, 222, 0.5); /* Enhanced lighter blue shadow on hover */
+.event-type-card {
+    background: white;
+    border-radius: 8px;
+    padding: 16px;
+    height: 100%;
+    border-left: 4px solid #56B2CB;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    transition: all 0.2s ease;
 }
 
-.card-body {
-    padding: 1.5rem;
+.event-type-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    transform: translateY(-2px);
 }
 
-.card-title {
-    font-weight: bold;
-    margin-bottom: 1rem;
-}
-
-/* Event Information Layout */
-.event-info {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-.event-detail {
+.event-type-title {
+    color: #00334C;
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 8px;
     display: flex;
     align-items: center;
-    gap: 0.5rem;
-    font-family: 'Georgia', sans-serif;
 }
 
-.event-detail i {
-    width: 20px;
+.event-type-title i {
+    color: #56B2CB;
+    font-size: 16px;
 }
 
-.event-detail span {
-    color: var(--color-navy);
+.event-type-description {
+    color: #333;
+    font-size: 13px;
+    line-height: 1.5;
+    margin-bottom: 0;
 }
 
-/* Register Button Styles */
-.register-btn {
-    margin-top: 1.5rem;
-    background-color: var(--color-turquoise);
+/* Horizontal Filter Bar */
+.filter-bar {
+    background: white;
+    border-radius: 8px;
+    padding: 16px 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 24px;
+}
+
+.filter-bar h6 {
+    color: #00334C;
+    font-size: 14px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.filter-bar .form-label {
+    font-weight: 600;
+    color: #00334C;
+    margin-bottom: 4px;
+    font-size: 11px;
+    margin-right: 8px;
+}
+
+.filter-bar .form-control {
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 6px 10px;
+    font-size: 13px;
+    width: 140px;
+}
+
+.filter-bar .form-control:focus {
+    border-color: #56B2CB;
+    box-shadow: 0 0 0 2px rgba(86, 178, 203, 0.2);
+}
+
+.filter-bar .btn {
+    padding: 6px 12px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-left: 8px;
+}
+
+/* Events Cards Container */
+#dia-events-container {
+    margin-top: 1rem;
+}
+
+.events-cards {
+    margin-bottom: 20px;
+}
+
+/* Event Card Styling */
+.event-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.event-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.event-card .card-header {
+    background: #00334C;
+    color: white;
+    padding: 16px 20px;
+    border-radius: 12px 12px 0 0;
     border: none;
-    padding: 0.8rem;
-    font-family: var(--font-family-primary);
+}
+
+.event-card .card-body {
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.event-card .card-footer {
+    padding: 0 20px 20px 20px;
+    background: transparent;
+    border: none;
+    margin-top: auto;
+}
+
+/* Event Title */
+.event-title {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0;
+    line-height: 1.4;
+    color: white;
+}
+
+/* Event Details */
+.event-details {
+    margin-bottom: 16px;
+}
+
+.event-date,
+.event-time {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+    color: #00334C;
+    font-size: 14px;
+}
+
+.event-date i,
+.event-time i {
+    color: #56B2CB;
+    margin-right: 8px;
+    width: 16px;
+    text-align: center;
+}
+
+.event-date span,
+.event-time span {
+    font-weight: 500;
+}
+
+/* Register Button */
+.register-btn {
+    background: #56B2CB;
+    border: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 600;
     text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-radius: 6px;
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.2s ease;
     width: 100%;
+    text-align: center;
 }
 
 .register-btn:hover {
-    background-color: var(--color-navy);
-}
-
-.btn-primary {
-    width: 100%;
-    margin-top: 1rem;
+    background: #00334C;
+    transform: translateY(-1px);
+    color: white;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(0, 51, 76, 0.3);
 }
 
 /* No Events Message */
 .no-events {
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-    padding: 2rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    padding: 24px;
     text-align: center;
-    margin: 2rem 0;
+    margin: 24px 0;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.no-events h3 {
+    margin-bottom: 12px;
+}
+
+/* Project Mentor Section */
+#project-mentor-section {
+    margin-top: 32px;
+}
+
+#project-mentor-section h2 {
+    margin-bottom: 16px;
+}
+
+#project-mentor-section p {
+    margin-bottom: 16px;
+    font-size: 14px;
+    line-height: 1.5;
 }
 
 /* ==========================================================================
-   STICKY FOOTER LAYOUT
+   RESPONSIVE CARD DESIGN
    ========================================================================== */
 
-/* Sticky footer styles */
-html {
-    position: relative;
-    min-height: 100%;
-}
-
-body {
-    margin-bottom: 120px; /* Footer height plus extra space */
-}
-
-footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 100px; /* Footer height */
-    left: 0;
-    padding: 0 15px;
-}
-
-#main-content {
-    padding-bottom: 40px; /* Space between content and footer */
-}
-
-/* ==========================================================================
-   RESPONSIVE DESIGN
-   ========================================================================== */
-
-@media (max-width: var(--breakpoint-md)) {
-    .card-body {
-        padding: 1rem;
+/* Mobile Event Types Section */
+@media (max-width: 767px) {
+    .event-type-card {
+        padding: 12px;
     }
     
-    .event-info {
-        gap: 0.75rem;
+    .event-type-title {
+        font-size: 14px;
+    }
+    
+    .event-type-title i {
+        font-size: 14px;
+    }
+    
+    .event-type-description {
+        font-size: 12px;
+    }
+}
+
+/* Mobile Filter Bar */
+@media (max-width: 767px) {
+    .filter-bar {
+        padding: 12px 16px;
+    }
+    
+    .filter-bar .row {
+        flex-direction: column;
+        align-items: flex-start !important;
+    }
+    
+    .filter-bar .col-auto {
+        margin-bottom: 8px;
+        width: 100%;
+    }
+    
+    .filter-bar .form-control {
+        width: 100%;
+        max-width: 200px;
+    }
+    
+    .filter-bar .btn {
+        margin-left: 0;
+        margin-right: 8px;
+    }
+}
+
+/* Mobile Cards */
+@media (max-width: 767px) {
+    .event-card .card-header {
+        padding: 12px 16px;
+    }
+    
+    .event-card .card-body {
+        padding: 16px;
+    }
+    
+    .event-card .card-footer {
+        padding: 0 16px 16px 16px;
+    }
+    
+    .event-title {
+        font-size: 14px;
+    }
+    
+    .event-date,
+    .event-time {
+        font-size: 13px;
     }
     
     .register-btn {
-        padding: 0.75rem;
-        font-size: 0.9rem;
-    }
-    
-    .no-events {
-        padding: 1.5rem;
-        margin: 1rem 0;
+        padding: 8px 16px;
+        font-size: 13px;
     }
 }
 
-@media (max-width: var(--breakpoint-sm)) {
-    .card {
-        margin-bottom: 15px;
+/* Small Tablets */
+@media (min-width: 768px) and (max-width: 991px) {
+    .event-card .card-header {
+        padding: 14px 18px;
     }
     
-    .event-detail {
-        font-size: 0.9rem;
+    .event-card .card-body {
+        padding: 18px;
     }
     
-    .event-detail i {
-        width: 18px;
+    .event-card .card-footer {
+        padding: 0 18px 18px 18px;
+    }
+    
+    .event-title {
+        font-size: 15px;
+    }
+}
+
+/* Large Screens */
+@media (min-width: 1200px) {
+    .event-card .card-header {
+        padding: 18px 22px;
+    }
+    
+    .event-card .card-body {
+        padding: 22px;
+    }
+    
+    .event-card .card-footer {
+        padding: 0 22px 22px 22px;
+    }
+    
+    .event-title {
+        font-size: 17px;
+    }
+    
+    .event-date,
+    .event-time {
+        font-size: 15px;
+    }
+}
+
+/* ==========================================================================
+   PERFORMANCE OPTIMIZATIONS
+   ========================================================================== */
+
+.event-card {
+    will-change: transform;
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    .event-type-card:hover {
+        transform: none;
+    }
+    
+    .event-card:hover {
+        transform: none;
+    }
+    
+    .register-btn:hover {
+        transform: none;
     }
 } 

@@ -10,6 +10,7 @@ This folder contains all documentation for the PREP-KC website optimization proj
 - **[Content Strategy](content-strategy.md)** - Content planning and user experience
 - **[Implementation Guide](implementation.md)** - Step-by-step tasks and progress tracking
 - **[Technical Details](technical.md)** - Build tools, architecture, and configuration
+- **[Commands](commands.md)** - CLI commands and operations reference
 
 ## Philosophy
 Keep it simple. Keep it current. One source of truth per topic.

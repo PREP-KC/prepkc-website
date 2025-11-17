@@ -19,7 +19,7 @@ body{
     background-color: var(--color-turquoise);
 }
 .nav-link{
-    color: #F7E214;
+    color: var(--color-yellow);
 }
 
 .team .col {
