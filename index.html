@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <!-- Charset must be within first 1024 bytes -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <!-- Critical CSS inlined for above-the-fold content -->
     <style>
         /* Critical CSS - fonts, variables, and above-the-fold styles */
@@ -15,6 +16,7 @@
             font-weight: normal;
             font-style: normal;
         }
+
         @font-face {
             font-family: 'Avenir';
             src: url('fonts/AvenirMedium.woff2') format('woff2');
@@ -22,6 +24,7 @@
             font-weight: normal;
             font-style: normal;
         }
+
         :root {
             --color-navy: #00334C;
             --color-turquoise: #56B2CB;
@@ -36,15 +39,20 @@
             --container-max-width: 1200px;
             --container-padding: 1.5rem;
         }
-        *, *::before, *::after {
+
+        *,
+        *::before,
+        *::after {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
+
         html {
             line-height: 1.15;
             -webkit-text-size-adjust: 100%;
         }
+
         body {
             background-color: var(--color-navy);
             font-family: var(--font-family-secondary);
@@ -54,6 +62,7 @@
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
         }
+
         /* Critical navigation styles */
         @media (min-width: 768px) {
             .index-nav {
@@ -68,6 +77,7 @@
                 justify-content: flex-end;
                 align-items: center;
             }
+
             .index-nav::before {
                 content: '';
                 position: absolute;
@@ -79,37 +89,47 @@
                 z-index: 1;
                 pointer-events: none;
             }
+
             #nav-container {
                 position: relative;
                 z-index: 2;
                 width: 100%;
                 max-width: var(--container-max-width);
                 padding: 0 var(--container-padding);
-                min-height: 80px; /* Reserve space for nav */
+                min-height: 80px;
+                /* Reserve space for nav */
             }
         }
+
         .index-nav .navbar {
             background-color: transparent !important;
         }
+
         .index-nav .navbar-brand img {
             max-height: 180px !important;
             width: auto;
         }
+
         /* Critical hero styles */
         .hero {
             padding: 3rem 1rem;
-            min-height: 200px; /* Reserve space */
+            min-height: 200px;
+            /* Reserve space */
             display: flex;
             align-items: center;
             justify-content: center;
         }
+
         .hero p {
             font-size: clamp(1.2rem, 4vw, 2.5rem);
             line-height: 1.4;
             max-width: 1200px;
-            margin: 0; /* Remove default margins */
-            contain: layout; /* Prevent layout shifts */
+            margin: 0;
+            /* Remove default margins */
+            contain: layout;
+            /* Prevent layout shifts */
         }
+
         .gradient-text {
             background: linear-gradient(45deg, var(--color-turquoise), var(--color-yellow));
             background-clip: text;
@@ -117,6 +137,7 @@
             -webkit-text-fill-color: transparent;
             background-size: 400% 400%;
         }
+
         /* Critical prep cards layout */
         .container-fluid {
             display: flex;
@@ -126,8 +147,10 @@
             margin: 0 auto;
             gap: 8px;
             flex-direction: row;
-            contain: layout style; /* Prevent layout shifts */
+            contain: layout style;
+            /* Prevent layout shifts */
         }
+
         .prep-card {
             position: relative;
             flex: 1;
@@ -136,7 +159,8 @@
             justify-content: center;
             align-items: center;
             height: 45vh;
-            min-height: 300px; /* Ensure minimum height */
+            min-height: 300px;
+            /* Ensure minimum height */
             font-weight: bold;
             color: white;
             cursor: pointer;
@@ -148,8 +172,10 @@
             transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
             box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
             border: 2px solid rgba(255, 255, 255, 0.3);
-            contain: layout style; /* Prevent layout shifts */
+            contain: layout style;
+            /* Prevent layout shifts */
         }
+
         .prep-card .letter {
             font-size: clamp(15vh, 20vw, 25vh);
             color: var(--color-white);
@@ -162,24 +188,40 @@
             margin: 0;
             transition: opacity 0.3s ease-in-out;
         }
-        #card1.prep-card { background: linear-gradient(135deg, var(--color-turquoise), #3498db); }
-        #card2.prep-card { background: linear-gradient(135deg, var(--color-gray), #95a5a6); }
-        #card3.prep-card { background: linear-gradient(135deg, var(--color-navy), #2c3e50); }
-        #card4.prep-card { background: linear-gradient(135deg, var(--color-yellow), #f1c40f); }
+
+        #card1.prep-card {
+            background: linear-gradient(135deg, var(--color-turquoise), #3498db);
+        }
+
+        #card2.prep-card {
+            background: linear-gradient(135deg, var(--color-gray), #95a5a6);
+        }
+
+        #card3.prep-card {
+            background: linear-gradient(135deg, var(--color-navy), #2c3e50);
+        }
+
+        #card4.prep-card {
+            background: linear-gradient(135deg, var(--color-yellow), #f1c40f);
+        }
+
         @media (max-width: 576px) {
             .container-fluid {
                 flex-direction: column;
                 padding: 0 0.5rem;
             }
+
             .prep-card {
                 height: 25vh;
                 min-height: 150px;
                 margin-bottom: 8px;
             }
         }
+
         .static-kc-box {
             position: relative;
-            min-height: 400px; /* Reserve space */
+            min-height: 400px;
+            /* Reserve space */
             display: flex;
             align-items: center;
             justify-content: center;
@@ -190,11 +232,11 @@
     <!-- Async Google Analytics - non-blocking -->
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
+        function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
         gtag('config', 'G-8TKE4R10Y3');
         // Load GA script asynchronously after page load
-        window.addEventListener('load', function() {
+        window.addEventListener('load', function () {
             const script = document.createElement('script');
             script.async = true;
             script.src = 'https://www.googletagmanager.com/gtag/js?id=G-8TKE4R10Y3';
@@ -203,26 +245,29 @@
     </script>
 
     <!-- Meta tags help with SEO and mobile responsiveness -->
-    <meta name="description" content="PREP-KC ignites potential by connecting educators and industry professionals to build meaningful career paths across Kansas City.">
+    <meta name="description"
+        content="PREP-KC ignites potential by connecting educators and industry professionals to build meaningful career paths across Kansas City.">
     <title>PREP-KC - Partnership for Regional Educational Preparation Kansas City</title>
-    
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://prepkc.org/">
     <meta property="og:title" content="PREP-KC - Partnership for Regional Educational Preparation Kansas City">
-    <meta property="og:description" content="PREP-KC ignites potential by connecting educators and industry professionals to build meaningful career paths across Kansas City.">
+    <meta property="og:description"
+        content="PREP-KC ignites potential by connecting educators and industry professionals to build meaningful career paths across Kansas City.">
     <meta property="og:image" content="https://prepkc.org/img/logo/logo_yellow.png">
-    
+
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://prepkc.org/">
     <meta property="twitter:title" content="PREP-KC - Partnership for Regional Educational Preparation Kansas City">
-    <meta property="twitter:description" content="PREP-KC ignites potential by connecting educators and industry professionals to build meaningful career paths across Kansas City.">
+    <meta property="twitter:description"
+        content="PREP-KC ignites potential by connecting educators and industry professionals to build meaningful career paths across Kansas City.">
     <meta property="twitter:image" content="https://prepkc.org/img/logo/logo_yellow.png">
-    
+
     <!-- Canonical URL -->
     <link rel="canonical" href="https://prepkc.org/">
-    
+
     <!-- Favicons -->
     <link rel="icon" type="image/x-icon" href="img/assets/favicon.ico">
     <link rel="icon" type="image/png" sizes="32x32" href="img/assets/favicon-32x32.png">
@@ -231,22 +276,26 @@
     <link rel="icon" type="image/png" sizes="192x192" href="img/assets/android-chrome-192x192.png">
     <link rel="icon" type="image/png" sizes="512x512" href="img/assets/android-chrome-512x512.png">
     <link rel="manifest" href="img/assets/site.webmanifest">
-    
+
     <!-- Critical resource hints -->
     <link rel="preload" href="fonts/DINEngschriftStd.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="fonts/AvenirMedium.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="img/mathrelays2.JPG" as="image">
     <link rel="preload" href="img/PREP_KC_Homepage_Header.jpg" as="image">
-    
+
     <!-- DNS prefetch for external resources -->
     <link rel="dns-prefetch" href="//cdn.jsdelivr.net">
     <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
     <link rel="dns-prefetch" href="//unpkg.com">
-    
+
     <!-- Preload critical external CSS -->
-    <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin="anonymous">
-    <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" crossorigin="anonymous"></noscript>
-    
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" as="style"
+        onload="this.onload=null;this.rel='stylesheet'" crossorigin="anonymous">
+    <noscript>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+            crossorigin="anonymous">
+    </noscript>
+
     <!-- Structured Data (Organization Schema) for better SEO -->
     <script type="application/ld+json">
     {
@@ -285,6 +334,7 @@
     }
     </script>
 </head>
+
 <body>
     <!-- Navigation using HTMX to load content dynamically -->
     <header class="index-nav">
@@ -294,9 +344,11 @@
     <!-- Hero Section -->
     <section class="hero">
         <p class="text-white text-center col-10 mx-auto display-6">
-            In a world where zip codes can predict outcomes, PREP-KC 
-            <span class="gradient-text">ignites potential</span> 
-            by bringing educators and industry professionals together to build paths to meaningful careers for students across the heart of bistate Kansas City. As Missouri's leading education nonprofit, we're transforming Kansas City education through innovative career pathway programs.
+            In a world where zip codes can predict outcomes, PREP-KC
+            <span class="gradient-text">ignites potential</span>
+            by bringing educators and industry professionals together to build paths to meaningful careers for students
+            across the heart of bistate Kansas City. As the region's leading intermediary serving 9 urban school
+            districts, we're transforming how students prepare for success after high school.
         </p>
     </section>
 
@@ -323,24 +375,18 @@
     <!-- KC Highlight Section with fade-in animation -->
     <section class="static-kc-box">
         <span class="fade-in">K C</span>
-        <img src="img/mathrelays2.JPG" 
-             alt="Students celebrating at PREP-KC Math Relays competition in Kansas City" 
-             class="fade-in-image"
-             width="800" 
-             height="600"
-             loading="lazy">
+        <img src="img/mathrelays2.JPG" alt="Students celebrating at PREP-KC Math Relays competition in Kansas City"
+            class="fade-in-image" width="800" height="600" loading="lazy">
     </section>
 
     <!-- Video Section with Map Background -->
     <section class="video-section-new">
         <div class="video-trigger-container">
-            <button id="video-trigger" 
-                    class="video-trigger-btn"
-                    onclick="openVideoOverlay()"
-                    aria-label="Play PREP-KC Introduction Video">
+            <button id="video-trigger" class="video-trigger-btn" onclick="openVideoOverlay()"
+                aria-label="Play PREP-KC Introduction Video">
                 <div class="play-button">
                     <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <polygon points="8,5 19,12 8,19" fill="currentColor"/>
+                        <polygon points="8,5 19,12 8,19" fill="currentColor" />
                     </svg>
                 </div>
                 <div class="video-info">
@@ -352,9 +398,8 @@
     </section>
 
     <!-- Video Overlay Section -->
-    <div id="video-overlay" 
-         class="video-overlay position-fixed w-100 h-100"
-         style="display: none; top: 0; left: 0; z-index: 1000; background: rgba(0,0,0,0.9);">
+    <div id="video-overlay" class="video-overlay position-fixed w-100 h-100"
+        style="display: none; top: 0; left: 0; z-index: 1000; background: rgba(0,0,0,0.9);">
         <div id="video-content" class="position-absolute top-50 start-50 translate-middle"></div>
         <button class="btn-close position-absolute top-0 end-0 m-3" onclick="closeVideo()"></button>
     </div>
@@ -363,7 +408,7 @@
     <footer class="container mt-5">
         <div class="footer row">
             <address class="footer-text col">
-                <p> 
+                <p>
                     PREP-KC<br>
                     <a href="mailto:info@prepkc.org">info@prepkc.org</a><br>
                     2300 Main St, Suite 340<br>
@@ -394,32 +439,32 @@
     <!-- Deferred CSS loading for non-critical styles -->
     <script>
         // Load non-critical CSS after page load
-        window.addEventListener('load', function() {
+        window.addEventListener('load', function () {
             // Load Font Awesome CSS
             const fontAwesome = document.createElement('link');
             fontAwesome.rel = 'stylesheet';
             fontAwesome.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css';
             fontAwesome.crossOrigin = 'anonymous';
             document.head.appendChild(fontAwesome);
-            
+
             // Load remaining custom CSS
             const styleCSS = document.createElement('link');
             styleCSS.rel = 'stylesheet';
             styleCSS.href = 'css/style.css';
             document.head.appendChild(styleCSS);
-            
+
             const indexCSS = document.createElement('link');
             indexCSS.rel = 'stylesheet';
             indexCSS.href = 'css/index.css';
             document.head.appendChild(indexCSS);
-            
+
             // Load HTMX
             const htmx = document.createElement('script');
             htmx.src = 'https://unpkg.com/htmx.org@2.0.1';
             document.head.appendChild(htmx);
-            
+
             // Load navigation after HTMX is ready
-            htmx.onload = function() {
+            htmx.onload = function () {
                 const navContainer = document.getElementById('nav-container');
                 if (navContainer && window.htmx) {
                     fetch('nav.html')
@@ -443,13 +488,13 @@
         function openVideoOverlay() {
             const overlay = document.getElementById('video-overlay');
             const videoContent = document.getElementById('video-content');
-            
+
             const iframe = document.createElement('iframe');
             iframe.src = 'https://player.vimeo.com/video/191812434?h=2efccc1921&autoplay=1';
             iframe.title = 'PREP-KC Introduction Video';
             iframe.allowfullscreen = true;
             iframe.style.cssText = 'width: 90vw; height: 50vw; max-width: 800px; max-height: 450px; border: none;';
-            
+
             videoContent.appendChild(iframe);
             overlay.style.display = 'block';
             document.body.style.overflow = 'hidden';
@@ -458,28 +503,28 @@
         function closeVideo() {
             const overlay = document.getElementById('video-overlay');
             const videoContent = document.getElementById('video-content');
-            
+
             videoContent.innerHTML = '';
             overlay.style.display = 'none';
             document.body.style.overflow = '';
         }
 
         // Close video on escape key
-        document.addEventListener('keydown', function(e) {
+        document.addEventListener('keydown', function (e) {
             if (e.key === 'Escape') {
                 closeVideo();
             }
         });
 
         // Close video on overlay click
-        document.getElementById('video-overlay').addEventListener('click', function(e) {
+        document.getElementById('video-overlay').addEventListener('click', function (e) {
             if (e.target === this) {
                 closeVideo();
             }
         });
 
         // KC Box Animation - defer until content loads
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const kcBox = document.querySelector('.static-kc-box');
             if (kcBox) {
                 const kcText = kcBox.querySelector('span');
@@ -488,7 +533,7 @@
                 function checkScroll() {
                     const kcBoxTop = kcBox.getBoundingClientRect().top;
                     const windowHeight = window.innerHeight;
-                    
+
                     if (kcBoxTop < windowHeight * 0.75) {
                         if (kcText) kcText.classList.add('visible');
                         if (kcImage) kcImage.classList.add('visible');
@@ -506,7 +551,7 @@
 
     <!-- Deferred Bootstrap JavaScript -->
     <script>
-        window.addEventListener('load', function() {
+        window.addEventListener('load', function () {
             const bootstrap = document.createElement('script');
             bootstrap.src = 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js';
             bootstrap.integrity = 'sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz';
@@ -515,4 +560,5 @@
         });
     </script>
 </body>
+
 </html>
