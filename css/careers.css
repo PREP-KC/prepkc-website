@@ -238,9 +238,6 @@
     background: linear-gradient(135deg, var(--color-navy), #1a4a5e);
 }
 
-.job-card:nth-child(3) .job-card-header {
-    background: linear-gradient(135deg, #2c3e50, var(--color-gray));
-}
 
 .job-card-header .job-type {
     display: inline-block;
