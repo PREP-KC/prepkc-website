@@ -227,6 +227,152 @@
             justify-content: center;
             contain: layout style;
         }
+
+        /* TEMPORARY: 20th Anniversary Gift Campaign — remove before redesign launch */
+        .anniversary-gift-section {
+            padding: 3rem 1.5rem;
+            background: linear-gradient(135deg, rgba(0, 51, 76, 0.5), rgba(86, 178, 203, 0.15));
+            border-top: 1px solid rgba(86, 178, 203, 0.25);
+            border-bottom: 1px solid rgba(86, 178, 203, 0.25);
+        }
+
+        .anniversary-gift-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .anniversary-gift-heading {
+            font-family: 'DIN1451', system-ui, sans-serif;
+            font-size: clamp(1.8rem, 5vw, 3rem);
+            color: #F7E214;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+            margin-bottom: 0.5rem;
+        }
+
+        .anniversary-gift-subhead {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2rem;
+        }
+
+        .anniversary-gift-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .anniversary-gift-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 16px;
+            padding: 2rem 1.5rem;
+            color: #ffffff;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .anniversary-gift-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #56B2CB, #F7E214);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .anniversary-gift-card--featured::before {
+            opacity: 1;
+        }
+
+        .anniversary-gift-card:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(86, 178, 203, 0.4);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        .anniversary-gift-card:hover::before {
+            opacity: 1;
+        }
+
+        .anniversary-gift-card__icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            line-height: 1;
+        }
+
+        .anniversary-gift-card__title {
+            font-family: 'DIN1451', system-ui, sans-serif;
+            font-size: 1.8rem;
+            color: #F7E214;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            text-decoration: none;
+        }
+
+        .anniversary-gift-card__desc {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .anniversary-gift-card__cta {
+            font-family: 'DIN1451', system-ui, sans-serif;
+            font-size: 1rem;
+            color: #F7E214;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 0.7rem 1.5rem;
+            border: 2px solid #F7E214;
+            border-radius: 30px;
+            transition: all 0.2s ease;
+            width: 100%;
+            display: block;
+            text-align: center;
+        }
+
+        .anniversary-gift-card--featured .anniversary-gift-card__cta,
+        .anniversary-gift-card:hover .anniversary-gift-card__cta {
+            background: #F7E214;
+            color: #00334C;
+        }
+
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: giftFadeInUp 0.9s ease-out forwards;
+        }
+
+        @keyframes giftFadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .anniversary-gift-grid {
+                grid-template-columns: 1fr;
+                max-width: 420px;
+                margin: 0 auto;
+            }
+        }
+
+        /* END TEMPORARY */
     </style>
 
     <!-- Async Google Analytics - non-blocking -->
@@ -378,6 +524,38 @@
         <img src="img/mathrelays2.JPG" alt="Students celebrating at PREP-KC Math Relays competition in Kansas City"
             class="fade-in-image" width="800" height="600" loading="lazy">
     </section>
+
+    <!-- TEMPORARY: 20th Anniversary Gift Campaign — remove before redesign launch -->
+    <section class="anniversary-gift-section" id="anniversary-gift">
+        <div class="anniversary-gift-container">
+            <h2 class="anniversary-gift-heading fade-in-up" style="animation-delay: 0.2s;">Celebrating 20 Years of
+                Impact</h2>
+            <p class="anniversary-gift-subhead fade-in-up" style="animation-delay: 0.4s;">Every gift fuels the next
+                chapter of student success in Kansas City.</p>
+
+            <div class="anniversary-gift-grid">
+                <a href="https://givebutter.com/PrepKC20" target="_blank" rel="noopener noreferrer"
+                    class="anniversary-gift-card anniversary-gift-card--featured fade-in-up"
+                    style="animation-delay: 0.6s;">
+                    <div class="anniversary-gift-card__icon">💛</div>
+                    <h3 class="anniversary-gift-card__title">Donate Now</h3>
+                    <p class="anniversary-gift-card__desc">Your contribution directly supports student programs, career
+                        experiences, and the Market Value Assets that change lives every day.</p>
+                    <span class="anniversary-gift-card__cta">Give Now &rarr;</span>
+                </a>
+
+                <a href="https://prepkc.org/staging/celebrate" class="anniversary-gift-card fade-in-up"
+                    style="animation-delay: 0.8s;">
+                    <div class="anniversary-gift-card__icon">&#x1F389;</div>
+                    <h3 class="anniversary-gift-card__title">20th Anniversary</h3>
+                    <p class="anniversary-gift-card__desc">For two decades, PREP-KC has built bridges between education
+                        and industry. Explore our celebration and see the journey.</p>
+                    <span class="anniversary-gift-card__cta">Explore the Celebration &rarr;</span>
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- END TEMPORARY SECTION -->
 
     <!-- Video Section with Map Background -->
     <section class="video-section-new">
