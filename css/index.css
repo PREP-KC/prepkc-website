@@ -396,3 +396,136 @@
         font-size: 0.9rem;
     }
 }
+
+/* === TEMPORARY: 20th Anniversary Gift Campaign === */
+.anniversary-gift-section {
+    padding: 3rem 1rem 1rem;
+    background: linear-gradient(135deg, rgba(0, 51, 76, 0.4), rgba(86, 178, 203, 0.15));
+    border-top: 1px solid rgba(86, 178, 203, 0.25);
+    border-bottom: 1px solid rgba(86, 178, 203, 0.25);
+    position: relative;
+    contain: layout style;
+    margin-bottom: 2rem;
+}
+.anniversary-gift-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+.anniversary-gift-heading {
+    font-family: var(--font-family-primary);
+    font-size: clamp(2rem, 5vw, 3rem);
+    color: var(--color-yellow);
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    margin-bottom: 0.5rem;
+}
+.anniversary-gift-subhead {
+    font-family: var(--font-family-secondary);
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 2rem;
+}
+.anniversary-gift-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.anniversary-gift-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 16px;
+    padding: 2rem 1.5rem;
+    color: inherit;
+    text-decoration: none !important;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+.anniversary-gift-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 4px;
+    background: linear-gradient(90deg, var(--color-turquoise), var(--color-yellow));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+.anniversary-gift-card:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(86, 178, 203, 0.4);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    color: inherit;
+}
+.anniversary-gift-card:hover::before {
+    opacity: 1;
+}
+
+.anniversary-gift-card--featured {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+.anniversary-gift-card--featured::before {
+    opacity: 1;
+}
+
+.anniversary-gift-card__icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    line-height: 1;
+}
+.anniversary-gift-card__title {
+    font-family: var(--font-family-primary);
+    font-size: 1.8rem;
+    color: var(--color-yellow) !important;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+.anniversary-gift-card__desc {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+.anniversary-gift-card__cta {
+    font-family: var(--font-family-primary);
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: var(--color-yellow);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 0.8rem 1.5rem;
+    border: 2px solid var(--color-yellow);
+    border-radius: 30px;
+    transition: all 0.2s ease;
+    width: 100%;
+}
+.anniversary-gift-card--featured .anniversary-gift-card__cta {
+    background: var(--color-yellow);
+    color: var(--color-navy) !important;
+}
+.anniversary-gift-card:hover .anniversary-gift-card__cta {
+    background: var(--color-yellow);
+    color: var(--color-navy) !important;
+}
+
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease-out forwards;
+}
+
+@media (max-width: 768px) {
+    .anniversary-gift-grid {
+        grid-template-columns: 1fr;
+        max-width: 450px;
+        margin: 0 auto;
+    }
+}
+/* === END TEMPORARY === */
