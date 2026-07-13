@@ -567,7 +567,7 @@
         
         // Initialize with real API call
         document.addEventListener('DOMContentLoaded', function() {
-            fetch('https://voluntold-prepkc.pythonanywhere.com/api/districts/Kansas%20City%20Kansas%20Public%20Schools/events')
+            fetch('https://volunteach-prepkc.pythonanywhere.com/api/districts/Kansas%20City%20Kansas%20Public%20Schools/events')
                 .then(response => response.json())
                 .then(events => {
                     allEvents = events;
@@ -591,7 +591,7 @@
         // Auto-refresh functionality
         setInterval(() => {
             // Refresh events from API every 5 minutes
-            fetch('https://voluntold-prepkc.pythonanywhere.com/api/districts/Kansas%20City%20Kansas%20Public%20Schools/events')
+            fetch('https://volunteach-prepkc.pythonanywhere.com/api/districts/Kansas%20City%20Kansas%20Public%20Schools/events')
                 .then(response => response.json())
                 .then(events => {
                     allEvents = events;
