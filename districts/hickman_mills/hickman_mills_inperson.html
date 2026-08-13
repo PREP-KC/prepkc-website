@@ -502,11 +502,6 @@
         
         function filterEvents() {
             filteredEvents = allEvents.filter(event => {
-                // Check if event should be displayed on website
-                if (!event.Display_on_Website__c) {
-                    return false;
-                }
-                
                 // For in-person events, we'll include all events that are NOT explicitly virtual
                 const sessionType = event.Session_Type__c ? event.Session_Type__c.toLowerCase() : '';
                 const isVirtual = sessionType.includes('virtual') || 
